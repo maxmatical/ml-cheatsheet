@@ -4,8 +4,15 @@ collection of projects done using fastai as well as useful scripts and functions
 
 ## Things that can improve results
 optimizer: radam
+
+For adam based optimizers in general, try setting eps = 0.1 or eps = 0.01
+
 set bn_wd = False, true_wd = True
+
 loss_func=LabelSmoothingCrossEntropy() for CV
+
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
+
 setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
+
 For CV: use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
