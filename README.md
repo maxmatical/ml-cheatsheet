@@ -23,3 +23,5 @@ loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 loss_func=LabelSmoothingCrossEntropy() for CV
 
 use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
+
+use test time augmentation
