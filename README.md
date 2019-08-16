@@ -20,6 +20,18 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 ### NLP:
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 
+Fixing mismatch between vocab size in data_clas and data_lm:
+
+```
+data_clas.vocab.itos = data_lm.vocab.itos
+
+```
+Before the following line
+```
+learn_c = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.3)
+```
+This has fixed the error.
+
 
 ### CV:
 loss_func=LabelSmoothingCrossEntropy() for CV
