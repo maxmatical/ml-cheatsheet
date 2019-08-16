@@ -32,6 +32,9 @@ learn_c = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.3)
 ```
 This has fixed the error.
 
+Concatenating models to use metadata: https://towardsdatascience.com/next-best-action-prediction-with-text-and-metadata-building-an-agent-assistant-81117730be6b
+
+and notebook https://www.kaggle.com/adai183/metadata-enhanced-text-classification
 
 ### CV:
 loss_func=LabelSmoothingCrossEntropy() for CV
