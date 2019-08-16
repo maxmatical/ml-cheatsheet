@@ -16,3 +16,6 @@ loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 For CV: use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
+
+Average a bunch of models together trained with different seeds/hyperparameters
+
