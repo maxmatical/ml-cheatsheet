@@ -17,6 +17,8 @@ Average a bunch of models together trained with different seeds/hyperparameters
 
 setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
+Try using SGD, can maybe generalize better
+
 ### NLP:
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 
