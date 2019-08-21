@@ -23,7 +23,16 @@ Ranger optimizer: https://medium.com/@lessw/new-deep-learning-optimizer-ranger-s
 
 https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
+try early stopping
 
+```
+learn = cnn_learner(data, base_arch=models.resnet152 ,
+                    metrics=[quadratic_kappa],model_dir='/kaggle',
+                    pretrained=True,
+                    callback_fns=[partial(EarlyStoppingCallback, monitor='quadratic_kappa', 
+                                          min_delta=0.01, patience=3)])
+
+```
 
 ### NLP:
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
