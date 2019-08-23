@@ -23,14 +23,14 @@ Ranger optimizer: https://medium.com/@lessw/new-deep-learning-optimizer-ranger-s
 
 https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
-try early stopping
+**Save best model**
 
 ```
-learn = cnn_learner(data, base_arch=models.resnet152 ,
-                    metrics=[quadratic_kappa],model_dir='/kaggle',
-                    pretrained=True,
-                    callback_fns=[partial(EarlyStoppingCallback, monitor='quadratic_kappa', 
-                                          min_delta=0.01, patience=3)])
+learn.fit_one_cycle(10,
+                   slice(lr/(2.6**4),lr), 
+                   moms=(0.8,0.7),
+                   callbacks=[SaveModelCallback(learn, every='improvement', monitor='accuracy', 
+                                                             name='best_classifier_final')])
 
 ```
 
