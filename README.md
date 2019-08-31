@@ -23,6 +23,9 @@ Ranger optimizer: https://medium.com/@lessw/new-deep-learning-optimizer-ranger-s
 
 https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
+https://github.com/mgrankin/over9000
+
+
 **Save best model**
 
 ```
