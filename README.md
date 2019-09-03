@@ -25,6 +25,8 @@ https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
 https://github.com/mgrankin/over9000
 
+**Note:** run `learn.fit_fc()` with new optimizers
+
 
 **Save best model**
 
