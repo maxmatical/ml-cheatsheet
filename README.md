@@ -19,7 +19,9 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 Try using **SGD (momentum = 0.9, nesterov = True)**, can maybe generalize better
 
-Ranger optimizer: https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
+***Ranger optimizer:***
+
+https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
 
 https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
@@ -54,9 +56,23 @@ learn_c = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.3)
 ```
 This has fixed the error.
 
-Concatenating models to use metadata: https://towardsdatascience.com/next-best-action-prediction-with-text-and-metadata-building-an-agent-assistant-81117730be6b
+***Concatenating models to use metadata:***
+
+https://towardsdatascience.com/next-best-action-prediction-with-text-and-metadata-building-an-agent-assistant-81117730be6b
 
 and notebook https://www.kaggle.com/adai183/metadata-enhanced-text-classification
+
+***Can try using QRNNs***
+
+https://github.com/piegu/language-models 
+
+https://github.com/piegu/language-models/blob/master/lm2-french.ipynb 
+
+***BERT + Fastai***
+
+Medium article: https://medium.com/@abhikjha/fastai-integration-with-bert-a0a66b1cecbe 
+
+Jupyter notebook: https://www.kaggle.com/abhikjha/jigsaw-toxicity-bert-with-fastai-and-fastai/notebook 
 
 ### CV:
 loss_func=LabelSmoothingCrossEntropy() for CV
