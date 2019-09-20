@@ -19,7 +19,7 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 Try using **SGD (momentum = 0.9, nesterov = True)**, can maybe generalize better
 
-***Ranger optimizer:***
+**Ranger optimizer:**
 
 https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
 
@@ -41,6 +41,11 @@ learn.fit_one_cycle(10,
 
 ```
 
+** Handling imbalanced data**
+
+- They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
+- paper: https://arxiv.org/abs/1710.05381
+
 ### NLP:
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 
@@ -56,19 +61,19 @@ learn_c = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.3)
 ```
 This has fixed the error.
 
-***Concatenating models to use metadata:***
+**Concatenating models to use metadata:**
 
 https://towardsdatascience.com/next-best-action-prediction-with-text-and-metadata-building-an-agent-assistant-81117730be6b
 
 and notebook https://www.kaggle.com/adai183/metadata-enhanced-text-classification
 
-***Can try using QRNNs***
+**Can try using QRNN***
 
 https://github.com/piegu/language-models 
 
 https://github.com/piegu/language-models/blob/master/lm2-french.ipynb 
 
-***BERT + Fastai***
+**BERT + Fastai**
 
 Medium article: https://medium.com/@abhikjha/fastai-integration-with-bert-a0a66b1cecbe 
 
