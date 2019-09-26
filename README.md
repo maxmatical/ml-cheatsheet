@@ -9,7 +9,7 @@ optimizer: radam
 
 ![radam in fastai](https://github.com/maxmatical/fast.ai/blob/master/radam.png)
 
-For adam based optimizers in general, try setting eps = 0.1 or eps = 0.01
+For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]
 
 set bn_wd = False, true_wd = True
 
