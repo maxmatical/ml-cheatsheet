@@ -85,3 +85,9 @@ loss_func=LabelSmoothingCrossEntropy() for CV
 use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 
 use test time augmentation
+
+### Time Series
+
+1D Resnet: https://github.com/tcapelle/TimeSeries_fastai 
+
+https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
