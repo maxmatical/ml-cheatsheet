@@ -50,6 +50,8 @@ learn.fit_one_cycle(10,
 
 Unpublished work has shown even better results by using only two phases: the same phase 1, followed by a second phase where we do a cosine annealing from lr_max to 0. The momentum goes from mom_min to mom_max by following the symmetric cosine (see graph a bit below).
 
+https://docs.fast.ai/callbacks.general_sched.html (for cosine annealing)
+
 ### NLP:
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 
