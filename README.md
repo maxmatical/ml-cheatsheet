@@ -41,12 +41,12 @@ learn.fit_one_cycle(10,
 
 ```
 
-** Handling imbalanced data**
+**Handling imbalanced data**
 
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
 
-** 2 phase for one cycle **
+**2 phase for one cycle **
 
 Unpublished work has shown even better results by using only two phases: the same phase 1, followed by a second phase where we do a cosine annealing from lr_max to 0. The momentum goes from mom_min to mom_max by following the symmetric cosine (see graph a bit below).
 
