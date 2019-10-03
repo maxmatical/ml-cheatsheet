@@ -92,6 +92,14 @@ use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 
 use test time augmentation
 
+
+**Res2net**
+
+https://forums.fast.ai/t/res2net-with-some-improvements-and-implementation/54199
+
+https://medium.com/@lessw/res2net-new-deep-learning-multi-scale-architecture-for-improved-object-detection-with-existing-de13095c9654
+
+
 ### Time Series
 
 1D Resnet: https://github.com/tcapelle/TimeSeries_fastai 
