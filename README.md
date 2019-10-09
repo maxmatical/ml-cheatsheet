@@ -19,7 +19,7 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 Try using **SGD (momentum = 0.9, nesterov = True)**, can maybe generalize better
 
-**Ranger optimizer:**
+#### **Ranger optimizer:**
 
 https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
 
