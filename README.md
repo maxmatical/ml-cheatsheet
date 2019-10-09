@@ -31,7 +31,7 @@ https://github.com/mgrankin/over9000
 **Note:** run `learn.fit_fc()` with new optimizers (flat + cosine anneling)
 
 
-**Save best model**
+### **Save best model**
 
 ```
 learn.fit_one_cycle(10,
@@ -42,21 +42,25 @@ learn.fit_one_cycle(10,
 
 ```
 
-**Handling imbalanced data**
+### **Handling imbalanced data**
 
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
 
-**2 phase for one cycle**
+### **2 phase for one cycle**
 
 Unpublished work has shown even better results by using only two phases: the same phase 1, followed by a second phase where we do a cosine annealing from lr_max to 0. The momentum goes from mom_min to mom_max by following the symmetric cosine (see graph a bit below).
 
 https://docs.fast.ai/callbacks.general_sched.html (for cosine annealing)
 
-### NLP:
+## NLP:
+
+### **Label Smoothing**:
+
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 
-Fixing mismatch between vocab size in data_clas and data_lm:
+
+### Fixing mismatch between vocab size in data_clas and data_lm:
 
 ```
 data_clas.vocab.itos = data_lm.vocab.itos
@@ -68,25 +72,27 @@ learn_c = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.3)
 ```
 This has fixed the error.
 
-**Concatenating models to use metadata:**
+### **Concatenating models to use metadata:**
 
 https://towardsdatascience.com/next-best-action-prediction-with-text-and-metadata-building-an-agent-assistant-81117730be6b
 
 and notebook https://www.kaggle.com/adai183/metadata-enhanced-text-classification
 
-**Can try using QRNN***
+### **Can try using QRNN***
 
 https://github.com/piegu/language-models 
 
 https://github.com/piegu/language-models/blob/master/lm2-french.ipynb 
 
-**BERT + Fastai**
+### **BERT + Fastai**
 
 Medium article: https://medium.com/@abhikjha/fastai-integration-with-bert-a0a66b1cecbe 
 
 Jupyter notebook: https://www.kaggle.com/abhikjha/jigsaw-toxicity-bert-with-fastai-and-fastai/notebook 
 
-### CV:
+## CV:
+
+### Misc
 loss_func=LabelSmoothingCrossEntropy() for CV
 
 use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
@@ -94,15 +100,17 @@ use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 use test time augmentation
 
 
-**Res2net**
+### **Res2net**
 
 https://forums.fast.ai/t/res2net-with-some-improvements-and-implementation/54199
 
 https://medium.com/@lessw/res2net-new-deep-learning-multi-scale-architecture-for-improved-object-detection-with-existing-de13095c9654
 
 
-### Time Series
+## Time Series
 
-1D Resnet: https://github.com/tcapelle/TimeSeries_fastai 
+### **1D Resnet**:
+
+https://github.com/tcapelle/TimeSeries_fastai 
 
 https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
