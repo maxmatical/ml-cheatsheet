@@ -46,6 +46,7 @@ learn.fit_one_cycle(10,
 
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
+- fastai callback: https://forums.fast.ai/t/pytorch-1-3-breaks-oversamplingcallback/56488
 
 ## NLP:
 
@@ -108,3 +109,5 @@ https://medium.com/@lessw/res2net-new-deep-learning-multi-scale-architecture-for
 https://github.com/tcapelle/TimeSeries_fastai 
 
 https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
+
+https://github.com/timeseriesAI/timeseriesAI
