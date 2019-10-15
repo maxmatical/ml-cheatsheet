@@ -30,6 +30,8 @@ https://github.com/mgrankin/over9000
 
 **Note:** run `learn.fit_fc()` with new optimizers (flat + cosine anneling)
 
+According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_adequacy_of_untuned_warmup_for_adaptive/, it seems like AdamW is still the best way to go
+
 
 ### **Save best model**
 
