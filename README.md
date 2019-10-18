@@ -50,6 +50,13 @@ learn.fit_one_cycle(10,
 - paper: https://arxiv.org/abs/1710.05381
 - fastai callback: https://forums.fast.ai/t/pytorch-1-3-breaks-oversamplingcallback/56488
 
+### **Learning rate**
+
+- Try a smaller learning rate for the unfrozen model 
+  - up to learn.freeze_to(-2) can keep lr in last layer
+  - learn.freeze_to(-2) -> lr/2
+  - learn.unfreeze() -> lr/10 in the last layer (also divide the slice lr in earlier layers by same values)
+
 ## NLP:
 
 ### **Label Smoothing**:
@@ -86,6 +93,14 @@ https://github.com/piegu/language-models/blob/master/lm2-french.ipynb
 Medium article: https://medium.com/@abhikjha/fastai-integration-with-bert-a0a66b1cecbe 
 
 Jupyter notebook: https://www.kaggle.com/abhikjha/jigsaw-toxicity-bert-with-fastai-and-fastai/notebook 
+
+### **AWD-LSTM Specific**
+
+- Higher drop_mult on LM learner (1.), then smaller dropout on classifier
+
+- Ensemble a fwd and backwards bwd = True models
+  - backwards model: https://github.com/fastai/course-nlp/blob/master/nn-vietnamese-bwd.ipynb 
+  - ensemble model: https://github.com/fastai/course-nlp 
 
 ## CV:
 
