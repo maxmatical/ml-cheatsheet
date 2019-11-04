@@ -58,7 +58,14 @@ learn.fit_one_cycle(10,
   - learn.unfreeze() -> lr/10 in the last layer (also divide the slice lr in earlier layers by same values)
   
 ### Custom models: using optuna to tune hyperparameters
+
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
+
+### Batch size finder
+
+https://medium.com/@danielhuynh_48554/implementing-a-batch-size-finder-in-fastai-how-to-get-a-4x-speedup-with-better-generalization-813d686f6bdf
+
+Github: https://github.com/DanyWind/fastai_bs_finder
 
 ## NLP:
 
