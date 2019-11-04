@@ -61,6 +61,10 @@ learn.fit_one_cycle(10,
 
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
 
+### Batch size:
+
+it seems like 32/64 is the best starting point
+
 ### Batch size finder
 
 https://medium.com/@danielhuynh_48554/implementing-a-batch-size-finder-in-fastai-how-to-get-a-4x-speedup-with-better-generalization-813d686f6bdf
