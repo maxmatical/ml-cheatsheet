@@ -108,6 +108,11 @@ Medium article: https://medium.com/@abhikjha/fastai-integration-with-bert-a0a66b
 
 Jupyter notebook: https://www.kaggle.com/abhikjha/jigsaw-toxicity-bert-with-fastai-and-fastai/notebook 
 
+### Roberta + Fastai
+https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c 
+
+Notebook:https://github.com/devkosal/fastai_roberta/blob/master/fastai_roberta_imdb/Using%20RoBERTa%20with%20Fastai%20Tutorial.ipynb 
+
 ### **AWD-LSTM Specific**
 
 - Higher drop_mult on LM learner (1.), then smaller dropout on classifier
