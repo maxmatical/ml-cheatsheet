@@ -71,6 +71,10 @@ https://medium.com/@danielhuynh_48554/implementing-a-batch-size-finder-in-fastai
 
 Github: https://github.com/DanyWind/fastai_bs_finder
 
+### Gradient Accumulation
+
+https://github.com/akashpalrecha/custom-fastai-callbacks
+
 ## NLP:
 
 ### **Label Smoothing**:
