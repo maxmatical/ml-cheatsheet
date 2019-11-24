@@ -151,3 +151,9 @@ https://github.com/tcapelle/TimeSeries_fastai
 https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
 
 https://github.com/timeseriesAI/timeseriesAI
+
+## Audio
+
+https://github.com/mogwai/fastai_audio
+
+https://github.com/fastai/course-v3/blob/master/nbs/dl2/audio.ipynb
