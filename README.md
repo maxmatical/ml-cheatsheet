@@ -61,6 +61,8 @@ learn.fit_one_cycle(10,
 
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
 
+Hyperband https://gist.github.com/PetrochukM/2c5fae9daf0529ed589018c6353c9f7b
+
 ### Batch size:
 
 it seems like 32/64 is the best starting point
