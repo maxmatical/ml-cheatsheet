@@ -108,16 +108,9 @@ https://github.com/piegu/language-models
 
 https://github.com/piegu/language-models/blob/master/lm2-french.ipynb 
 
-### **BERT + Fastai**
+### Transformers (BERT, RoBERTa, etc.) with fastai
 
-Medium article: https://medium.com/@abhikjha/fastai-integration-with-bert-a0a66b1cecbe 
-
-Jupyter notebook: https://www.kaggle.com/abhikjha/jigsaw-toxicity-bert-with-fastai-and-fastai/notebook 
-
-### Roberta + Fastai
-https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c 
-
-Notebook:https://github.com/devkosal/fastai_roberta/blob/master/fastai_roberta_imdb/Using%20RoBERTa%20with%20Fastai%20Tutorial.ipynb 
+https://towardsdatascience.com/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert-4f41ee18ecb2?fbclid=IwAR2_MQh2XzsKEKqwckIShH8-wO5io6rD1wXb4nTn3-eABj8boE9jOYd3zsM 
 
 ### **AWD-LSTM Specific**
 
