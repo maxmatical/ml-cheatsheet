@@ -8,6 +8,7 @@ Gist: https://gist.github.com/Deepblue129/2c5fae9daf0529ed589018c6353c9f7b
 import math
 import logging
 import random
+import sys
 
 from tqdm import tqdm
 
@@ -264,7 +265,13 @@ import unittest
 import random
 from skopt.space import Real, Integer
 
-from lib.utils import config_logging
+def config_logging():
+    """ Configure the root logger with basic settings.
+    """
+    logging.basicConfig(
+        format='[%(asctime)s][%(processName)s][%(name)s][%(levelname)s] %(message)s',
+        level=logging.INFO,
+        stream=sys.stdout)
 config_logging()
 
 mock_dimensions = [Integer(1, 100, name='integer')]
