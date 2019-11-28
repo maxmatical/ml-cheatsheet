@@ -63,7 +63,7 @@ https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288
 
 Hyperband https://gist.github.com/PetrochukM/2c5fae9daf0529ed589018c6353c9f7b
 
-Hyperband example: full_twitter_sentiment_transformers.ipynb
+Hyperband example: full_twitter_sentiment_transformers.ipynb or hyperband_test.ipynb
 
 ### Batch size:
 
@@ -115,7 +115,7 @@ RoBERTa: https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7
 
 Huggingface transformers: https://towardsdatascience.com/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert-4f41ee18ecb2?fbclid=IwAR2_MQh2XzsKEKqwckIShH8-wO5io6rD1wXb4nTn3-eABj8boE9jOYd3zsM 
 
-**Tip:**: sometimes training the entire model can have equal or better performance than freezing and gradually unfreezing model
+**Tip:** sometimes training the entire model can have equal or better performance than freezing and gradually unfreezing model
 
 ### **AWD-LSTM Specific**
 
