@@ -57,11 +57,13 @@ learn.fit_one_cycle(10,
   - learn.freeze_to(-2) -> lr/2
   - learn.unfreeze() -> lr/10 in the last layer (also divide the slice lr in earlier layers by same values)
   
-### Custom models: using optuna to tune hyperparameters
+### Hyperparameter tuning: using optuna to tune hyperparameters
 
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
 
 Hyperband https://gist.github.com/PetrochukM/2c5fae9daf0529ed589018c6353c9f7b
+
+Hyperband example: full_twitter_sentiment_transformers.ipynb
 
 ### Batch size:
 
