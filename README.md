@@ -113,6 +113,8 @@ RoBERTa: https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7
 
 Huggingface transformers: https://towardsdatascience.com/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert-4f41ee18ecb2?fbclid=IwAR2_MQh2XzsKEKqwckIShH8-wO5io6rD1wXb4nTn3-eABj8boE9jOYd3zsM 
 
+**Tip:**: sometimes training the entire model can have equal or better performance than freezing and gradually unfreezing model
+
 ### **AWD-LSTM Specific**
 
 - Higher drop_mult on LM learner (1.), then smaller dropout on classifier
