@@ -152,3 +152,19 @@ https://github.com/timeseriesAI/timeseriesAI
 https://github.com/mogwai/fastai_audio
 
 https://github.com/fastai/course-v3/blob/master/nbs/dl2/audio.ipynb
+
+## Semi-supervised learning/self training (for large unlabelled dataset and small labelled dataset)
+
+### Semi-weakly supervised learning
+
+https://ai.facebook.com/blog/billion-scale-semi-supervised-learning/ **also semi-supervised learning**
+
+### Weakly and semi-supervised learning
+
+https://ai.facebook.com/blog/mapping-the-world-to-help-aid-workers-with-weakly-semi-supervised-learning/
+
+### Weakly supervised learning
+
+https://engineering.fb.com/ml-applications/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/
+
+
