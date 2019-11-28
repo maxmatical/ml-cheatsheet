@@ -75,7 +75,7 @@ Github: https://github.com/DanyWind/fastai_bs_finder
 
 ### Gradient Accumulation
 
-https://github.com/akashpalrecha/custom-fastai-callbacks
+https://docs.fast.ai/train.html#AccumulateScheduler
 
 ## NLP:
 
