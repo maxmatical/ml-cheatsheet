@@ -167,4 +167,8 @@ https://ai.facebook.com/blog/mapping-the-world-to-help-aid-workers-with-weakly-s
 
 https://engineering.fb.com/ml-applications/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/
 
+### self training with noisy student
+
+https://arxiv.org/abs/1911.04252 
+
 
