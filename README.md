@@ -176,4 +176,9 @@ https://engineering.fb.com/ml-applications/advancing-state-of-the-art-image-reco
 
 https://arxiv.org/abs/1911.04252 
 
+### practical application of self training
+
+https://arxiv.org/abs/1904.04445
+
+
 
