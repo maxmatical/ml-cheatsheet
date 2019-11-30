@@ -79,6 +79,10 @@ Github: https://github.com/DanyWind/fastai_bs_finder
 
 https://docs.fast.ai/train.html#AccumulateScheduler
 
+### Distributed training with multiple GPUs
+
+https://docs.fast.ai/distributed.html
+
 ## NLP:
 
 ### **Label Smoothing**:
