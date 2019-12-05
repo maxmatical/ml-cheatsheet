@@ -85,6 +85,8 @@ https://docs.fast.ai/distributed.html
 
 ### Cosine LR schedule with restarts
 
+https://docs.fast.ai/callbacks.general_sched.html#TrainingPhase-and-General-scheduler
+
 ## NLP:
 
 ### **Label Smoothing**:
