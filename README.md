@@ -83,6 +83,8 @@ https://docs.fast.ai/train.html#AccumulateScheduler
 
 https://docs.fast.ai/distributed.html
 
+### Cosine LR schedule with restarts
+
 ## NLP:
 
 ### **Label Smoothing**:
