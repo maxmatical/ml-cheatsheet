@@ -87,6 +87,11 @@ https://docs.fast.ai/distributed.html
 
 https://docs.fast.ai/callbacks.general_sched.html#TrainingPhase-and-General-scheduler
 
+### NaNs in fp16():
+
+set eps to 1e-4
+https://forums.fast.ai/t/mixed-precision-training/29601/21
+
 ## NLP:
 
 ### **Label Smoothing**:
