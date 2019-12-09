@@ -1,6 +1,10 @@
 # fast.ai
 
-collection of projects done using fastai as well as useful scripts and functions to improve results
+collection of projects done using fastai as well as useful resources to improve results
+
+# Step 1
+
+**Try to find kaggle contests/other projects tackling the same problem with SOTA results**
 
 # Things that can improve results
 
