@@ -197,5 +197,9 @@ https://arxiv.org/abs/1911.04252
 
 https://arxiv.org/abs/1904.04445
 
+### Don't use label smoothing for teachers (in distillation process)
+
+https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020 
+
 
 
