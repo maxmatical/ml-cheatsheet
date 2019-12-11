@@ -93,7 +93,7 @@ https://docs.fast.ai/callbacks.general_sched.html#TrainingPhase-and-General-sche
 
 ### NaNs in fp16():
 
-set eps to 1e-4
+set eps to 1e-4, or lower lr
 https://forums.fast.ai/t/mixed-precision-training/29601/21
 
 ## NLP:
@@ -167,6 +167,12 @@ don't do too much EDA at the beginning, risk overfitting. Do "ml driven EDA"
 ### Working with dates
 
 Use fastai [add_datepart](https://docs.fast.ai/tabular.transform.html#add_datepart) or [add_cyclic_datepart](https://docs.fast.ai/tabular.transform.html#add_cyclic_datepart)
+
+### Saving dfs
+save to feather `df.to_feather('...')`
+
+### Importance of a good validation set
+- validation set needs to be representative of the test/deployment data
 
 ## Time Series
 
