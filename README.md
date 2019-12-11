@@ -93,7 +93,7 @@ https://docs.fast.ai/callbacks.general_sched.html#TrainingPhase-and-General-sche
 
 ### NaNs in fp16():
 
-set eps to 1e-4 (or higher, 1e-2, 0.1, or 1.0), or lower lr
+set eps to 1e-4 (or higher, 1e-2, 0.1, or 1.0), or [lower lr by about 10x or so](https://forums.fast.ai/t/a-code-first-introduction-to-natural-language-processing-2019/50203/27)
 https://forums.fast.ai/t/mixed-precision-training/29601/21
 
 ### LabelSmoothing loss on everything!
@@ -182,6 +182,8 @@ save to feather `df.to_feather('...')`
 
 ### Importance of a good validation set
 - validation set needs to be representative of the test/deployment data
+
+
 
 ## Time Series
 
