@@ -158,6 +158,15 @@ https://forums.fast.ai/t/res2net-with-some-improvements-and-implementation/54199
 
 https://medium.com/@lessw/res2net-new-deep-learning-multi-scale-architecture-for-improved-object-detection-with-existing-de13095c9654
 
+## Tabular data
+
+### EDA
+
+don't do too much EDA at the beginning, risk overfitting. Do "ml driven EDA"
+
+### Working with dates
+
+Use fastai [add_datepart](https://docs.fast.ai/tabular.transform.html#add_datepart) or [add_cyclic_datepart](https://docs.fast.ai/tabular.transform.html#add_cyclic_datepart)
 
 ## Time Series
 
