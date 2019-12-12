@@ -184,6 +184,9 @@ save to feather `df.to_feather('...')`
 - validation set needs to be representative of the test/deployment data
 - can use test data to see how correlated is validation performance to test performance (only time to look at test data)
 
+### Look at feature importance ASAP
+- build a rf/gbm (doesn't have to be very accurate), then evaluate feature importance right after
+- use either sklearn or SHAP
 
 ## Time Series
 
