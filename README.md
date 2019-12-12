@@ -182,7 +182,7 @@ save to feather `df.to_feather('...')`
 
 ### Importance of a good validation set
 - validation set needs to be representative of the test/deployment data
-
+- can use test data to see how correlated is validation performance to test performance (only time to look at test data)
 
 
 ## Time Series
