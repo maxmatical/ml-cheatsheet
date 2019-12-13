@@ -192,7 +192,7 @@ save to feather `df.to_feather('...')`
   
 ### One hot encoding
 - can be useful for low cardinality categorical variables (6-7 can be a good starting point)
-- use `proc_df` function from old fastai structured
+- use [`proc_df`](https://github.com/fastai/fastai/blob/master/old/fastai/structured.py) function from old fastai structured
 - may not improve performance, but can yield additional insight into feature importance
 
 ## Time Series
