@@ -188,7 +188,7 @@ save to feather `df.to_feather('...')`
 - build a rf/gbm (doesn't have to be very accurate), then evaluate feature importance right after
 - use either sklearn or SHAP
 - try throwing away unimportant columns and refit a model -> should get similar (or slightly) better results, but much faster
-  - re-run feature importance since co-linearity is removed, makes feature importance a lot more clearer
+  - re-run feature importance since colinearity is removed, makes feature importance a lot more clearer
 
 ## Time Series
 
