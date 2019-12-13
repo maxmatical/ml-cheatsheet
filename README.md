@@ -189,6 +189,11 @@ save to feather `df.to_feather('...')`
 - use either sklearn or SHAP
 - try throwing away unimportant columns and refit a model -> should get similar (or slightly) better results, but much faster
   - re-run feature importance since colinearity is removed, makes feature importance a lot more clearer
+  
+### One hot encoding
+- can be useful for low cardinality categorical variables (6-7 can be a good starting point)
+- use `proc_df` function from old fastai structured
+- may not improve performance, but can yield additional insight into feature importance
 
 ## Time Series
 
