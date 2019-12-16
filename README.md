@@ -183,6 +183,9 @@ save to feather `df.to_feather('...')`
 ### Importance of a good validation set
 - validation set needs to be representative of the test/deployment data (70/15/15 split is a good starting pt)
 - can use test data to see how correlated is validation performance to test performance (only time to look at test data)
+  1. build 5 models (varying in how good they perform on validation data)
+  2. predict on both validation and test dataset
+  3. plot val_score vs test_score, see how well is the correlation
 - if there is a temporal aspect to the data, ALWAYS split by time
   - after getting a good model on validation data, retrain the same model (same hyperparameters) on train + val data (**for temporal data**)
 
