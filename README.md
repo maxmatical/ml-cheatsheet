@@ -196,7 +196,8 @@ save to feather `df.to_feather('...')`
 - may not improve performance, but can yield additional insight into feature importance
 
 ### Removing redundant features
-- use dendrograms (ON THE TRIMMED FEATURES IF YOU DID FEATURE IMPORTANCE)
+- use dendrograms (ON ONLY THE INTERESTING FEATURES IF YOU DID FEATURE IMPORTANCE BEFOREHAND)
+- REMOVE REDUNDANT FEATURES AFTER FEATURE IMPORTANCE
 ```
 from scipy.cluster import hierarchy as hc
 corr = np.round(scipy.stats.spearmanr(df_keep).correlation, 4)
@@ -208,7 +209,30 @@ dendrogram = hc.dendrogram(z, labels=df_keep.columns, # note df_keep.columns is 
 plt.show()
 
 ```
-
+- the further the splits are to the bottom (or right) of the plot means they are more closely related
+- Drop columns one at a time and see if validation score improves or drops
+  - if only drops a little bit, but makes model simpler, can go with that option (tradeoff a bit of performance for speed)
+  - Don't drop all columns in a group, even if dropping each column individually doesn't affect performance much
+  
+### Partial dependence plots
+- looking at relationship between feature and label when all other features are the same
+- more useful for understanding data, rather than for predictive power
+```
+from pdpbox import pdp
+from plotnine import *
+m = RandomForestRegressor(n_estimators=40, min_samples_leaf=3, max_features=0.5, n_jobs=-1, oob_score=True)
+m.fit(X_train, y_train)
+def plot_pdp(feat, clusters=None, feat_name=None):
+    feat_name = feat_name or feat
+    p = pdp.pdp_isolate(m, x, feat) # m here is the trained rf model, x is the x_train or sample of x_train
+    return pdp.pdp_plot(p, feat_name, plot_lines=True, 
+                        cluster=clusters is not None, 
+                        n_cluster_centers=clusters)plot_pdp('YearMade')
+                        
+# then
+plot_pdp('YearMade', clusters=5) 
+```
+  
 ## Time Series
 
 ### **1D Resnet**:
