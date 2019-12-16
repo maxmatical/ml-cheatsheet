@@ -195,6 +195,20 @@ save to feather `df.to_feather('...')`
 - use [`proc_df`](https://github.com/fastai/fastai/blob/master/old/fastai/structured.py) function from old fastai structured
 - may not improve performance, but can yield additional insight into feature importance
 
+### Removing redundant features
+- use dendrograms (ON THE TRIMMED FEATURES IF YOU DID FEATURE IMPORTANCE)
+```
+from scipy.cluster import hierarchy as hc
+corr = np.round(scipy.stats.spearmanr(df_keep).correlation, 4)
+corr_condensed = hc.distance.squareform(1-corr)
+z = hc.linkage(corr_condensed, method='average')
+fig = plt.figure(figsize=(16,10))
+dendrogram = hc.dendrogram(z, labels=df_keep.columns, 
+      orientation='left', leaf_font_size=16)
+plt.show()
+
+```
+
 ## Time Series
 
 ### **1D Resnet**:
