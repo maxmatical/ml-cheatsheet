@@ -181,8 +181,10 @@ save to feather `df.to_feather('...')`
 - use full model/data at the last step
 
 ### Importance of a good validation set
-- validation set needs to be representative of the test/deployment data
+- validation set needs to be representative of the test/deployment data (70/15/15 split is a good starting pt)
 - can use test data to see how correlated is validation performance to test performance (only time to look at test data)
+- if there is a temporal aspect to the data, ALWAYS split by time
+  - after getting a good model on validation data, retrain the same model (same hyperparameters) on train + val data (**for temporal data**)
 
 ### Look at feature importance ASAP
 - build a rf/gbm (doesn't have to be very accurate), then evaluate feature importance right after
@@ -231,6 +233,11 @@ def plot_pdp(feat, clusters=None, feat_name=None):
                         
 # then
 plot_pdp('YearMade', clusters=5) 
+
+# interaction plots between 2 features
+feats = ['saleElapsed', 'YearMade']
+p = pdp.pdp_interact(m, x, feats)
+pdp.pdp_interact_plot(p, feats)
 ```
   
 ## Time Series
