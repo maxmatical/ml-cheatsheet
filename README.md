@@ -203,7 +203,7 @@ corr = np.round(scipy.stats.spearmanr(df_keep).correlation, 4)
 corr_condensed = hc.distance.squareform(1-corr)
 z = hc.linkage(corr_condensed, method='average')
 fig = plt.figure(figsize=(16,10))
-dendrogram = hc.dendrogram(z, labels=df_keep.columns, 
+dendrogram = hc.dendrogram(z, labels=df_keep.columns, # note df_keep.columns is after removing non-important features
       orientation='left', leaf_font_size=16)
 plt.show()
 
