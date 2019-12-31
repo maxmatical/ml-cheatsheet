@@ -251,7 +251,9 @@ Only for tree based models (issues with extrapolation)
 3. Look at feature importance to see which features are most time sensitive
 4. Remove each feature **one at a time** to see if improves performance on validation data
 5. Remove the unhelpful features
-  
+
+Alternative: use NNs (can easily handle extrapolation into future)
+
 ## Time Series
 
 ### **1D Resnet**:
