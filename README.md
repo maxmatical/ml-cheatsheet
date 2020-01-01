@@ -254,7 +254,7 @@ Remove time dependent variables from the model
 4. Remove each feature **one at a time** to see if improves performance on validation data
 5. Remove the unhelpful features
 
-Alternative: use NNs (can easily handle extrapolation into future)
+Alternative: use NNs (can easily handle extrapolation into future) **OR** detrend data (with differencing)
 
 ## Time Series
 
