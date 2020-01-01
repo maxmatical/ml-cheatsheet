@@ -246,6 +246,8 @@ pdp.pdp_interact_plot(p, feats)
 ### Extrapolation for time dependent data (if test/live data is time dependent)
 
 Only for tree based models (issues with extrapolation)
+
+Remove time dependent variables from the model
 1. Create label for `is_test = 1` or `is_test = 0`
 2. Train model to predict `is_test`
 3. Look at feature importance to see which features are most time sensitive
