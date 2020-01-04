@@ -98,6 +98,10 @@ https://forums.fast.ai/t/mixed-precision-training/29601/21
 
 ### LabelSmoothing loss on everything!
 
+### Proper size of validation set
+
+Run model with same hyperparameters 5 times, see the `std` of metric as well as standard error (`std/sqrt(n)`) to see how consistent it is  
+
 ## NLP:
 
 ### **Label Smoothing**:
@@ -255,10 +259,6 @@ Remove time dependent variables from the model
 5. Remove the unhelpful features
 
 Alternative: use NNs (can easily handle extrapolation into future) **OR** detrend data (with differencing)
-
-### Proper size of validation set
-
-Run model with same hyperparameters 5 times, see the `std` of metric as well as standard error (`std/sqrt(n)`) to see how consistent it is  
 
 ## Time Series
 
