@@ -83,6 +83,8 @@ Github: https://github.com/DanyWind/fastai_bs_finder
 
 https://docs.fast.ai/train.html#AccumulateScheduler
 
+[Gradient accumulation for mixed precision](https://forums.fast.ai/t/gradient-accumulation-with-fp16-training/61263/2)
+
 ### Distributed training with multiple GPUs
 
 https://docs.fast.ai/distributed.html
