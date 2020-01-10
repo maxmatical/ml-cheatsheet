@@ -152,7 +152,7 @@ Huggingface transformers: https://towardsdatascience.com/fastai-with-transformer
 
 ## CV:
 
-### Misc
+### General
 loss_func=LabelSmoothingCrossEntropy() for CV
 
 use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
@@ -165,6 +165,9 @@ use test time augmentation
 https://forums.fast.ai/t/res2net-with-some-improvements-and-implementation/54199
 
 https://medium.com/@lessw/res2net-new-deep-learning-multi-scale-architecture-for-improved-object-detection-with-existing-de13095c9654
+
+### Image segmentation with attention
+can try using `self_attention = True`
 
 ## Tabular data
 
