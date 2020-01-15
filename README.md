@@ -30,7 +30,7 @@ https://github.com/mgrankin/over9000
 
 For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]
 
-set bn_wd = False, true_wd = True
+**set bn_wd = False, true_wd = True**
 
 **Note:** run `learn.fit_fc()` with new optimizers (flat + cosine anneling)
 
