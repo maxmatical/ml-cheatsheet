@@ -18,11 +18,9 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 Average a bunch of models together trained with different seeds/hyperparameters
 
-
-
 ### **Ranger/General optimizer related tips:**
 Ranger seems to work really well
-![ranger()]
+![ranger](https://github.com/maxmatical/fast.ai/blob/master/ranger.png)
 
 https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
 
