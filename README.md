@@ -10,21 +10,19 @@ collection of projects done using fastai as well as useful resources to improve 
 
 ## General
 
-### optimizer: radam
+### FP16
+setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
-![radam in fastai](https://github.com/maxmatical/fast.ai/blob/master/radam.png)
 
-For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]
-
-set bn_wd = False, true_wd = True
+### Model ensembling
 
 Average a bunch of models together trained with different seeds/hyperparameters
 
-setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
-Try using **SGD (momentum = 0.9, nesterov = True)**, can maybe generalize better
 
-### **Ranger optimizer + extensions:**
+### **Ranger/General optimizer related tips:**
+Ranger seems to work really well
+![ranger()]
 
 https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
 
@@ -32,9 +30,15 @@ https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
 https://github.com/mgrankin/over9000
 
+For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]
+
+set bn_wd = False, true_wd = True
+
 **Note:** run `learn.fit_fc()` with new optimizers (flat + cosine anneling)
 
 According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_adequacy_of_untuned_warmup_for_adaptive/, it seems like AdamW is still the best way to go
+
+Try using **SGD (momentum = 0.9, nesterov = True)**, can maybe generalize better
 
 
 ### **Save best model**
