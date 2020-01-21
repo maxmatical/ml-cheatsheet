@@ -63,6 +63,8 @@ learn.fit_one_cycle(10,
   - learn.freeze_to(-2) -> lr/2
   - learn.unfreeze() -> lr/10 in the last layer (also divide the slice lr in earlier layers by same values)
   
+ - [Choose 10x less LR than lowest point in LR Finder](https://forums.fast.ai/t/how-to-choose-the-learning-rate/61931/5)
+  
 ### Hyperparameter tuning: using optuna to tune hyperparameters
 
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
