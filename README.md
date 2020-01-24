@@ -28,7 +28,11 @@ https://github.com/lessw2020/Ranger-Deep-Learning-Optimizer
 
 https://github.com/mgrankin/over9000
 
-For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]
+For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]. Change with
+```
+eps = 1e-4
+learn.opt_func = partial(learn.opt_func, eps=eps)
+```
 
 **set bn_wd = False, true_wd = True**
 
