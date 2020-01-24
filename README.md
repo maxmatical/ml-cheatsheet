@@ -164,6 +164,8 @@ use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 
 use test time augmentation
 
+### More CNN archs (Resnext, SENet etc.)
+https://github.com/PPPW/deep-learning-random-explore/blob/master/CNN_archs/cnn_archs.ipynb
 
 ### **Res2net**
 
