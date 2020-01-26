@@ -181,6 +181,9 @@ https://medium.com/@lessw/res2net-new-deep-learning-multi-scale-architecture-for
 ### Image segmentation with attention
 can try using `self_attention = True`
 
+### Image captioning
+https://github.com/fg91/Neural-Image-Caption-Generation-Tutorial
+
 ## Tabular data
 
 ### EDA
