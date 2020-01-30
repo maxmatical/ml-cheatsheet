@@ -322,5 +322,6 @@ https://arxiv.org/abs/1904.04445
 
 https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020 
 
-
+### Fastai article on self-supervised learning
+https://www.fast.ai/2020/01/13/self_supervised/
 
