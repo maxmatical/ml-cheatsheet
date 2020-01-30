@@ -280,7 +280,7 @@ Remove time dependent variables from the model
 
 Alternative: use NNs (can easily handle extrapolation into future) **OR** detrend data (with differencing)
 
-## Time Series
+## Time Series classification
 
 ### **1D Resnet**:
 
@@ -289,6 +289,11 @@ https://github.com/tcapelle/TimeSeries_fastai
 https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
 
 https://github.com/timeseriesAI/timeseriesAI
+
+## Time series forecasting
+### N-BEATS
+article https://towardsdatascience.com/n-beats-beating-statistical-models-with-neural-nets-28a4ba4a4de8
+paper https://arxiv.org/abs/1905.10437
 
 ## Audio
 
