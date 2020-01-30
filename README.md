@@ -93,7 +93,7 @@ https://docs.fast.ai/train.html#AccumulateScheduler
 
 [Gradient accumulation for mixed precision](https://forums.fast.ai/t/gradient-accumulation-with-fp16-training/61263/2)
 
-[Example Notebook of grad accumulation](https://github.com/maxmatical/fast.ai/blob/master/Gradient_Accumulation_tests.ipynbb)
+[Example Notebook of grad accumulation](https://github.com/maxmatical/fast.ai/blob/master/Gradient_Accumulation_tests.ipynb)
 
 ### Distributed training with multiple GPUs
 
