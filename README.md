@@ -280,6 +280,15 @@ Remove time dependent variables from the model
 
 Alternative: use NNs (can easily handle extrapolation into future) **OR** detrend data (with differencing)
 
+### General Procedure
+1. start with RF for steps above
+2. Move on to GBT/NN after feature engineering
+
+### Tabnet
+[Discussion](https://forums.fast.ai/t/tabnet-with-fastai-v2/62600)
+
+[Fastai v2 Implementation](https://github.com/mgrankin/fast_tabnet) 
+
 ## Time Series classification
 
 ### **1D Resnet**:
