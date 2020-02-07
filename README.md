@@ -300,6 +300,10 @@ Alternative: use NNs (can easily handle extrapolation into future) **OR** detren
 
 [Fastai v2 Implementation](https://github.com/mgrankin/fast_tabnet) 
 
+### Shap + Fastai
+
+https://github.com/muellerzr/fastai2-SHAP 
+
 ## Time Series classification
 
 ### **1D Resnet**:
