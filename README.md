@@ -69,13 +69,15 @@ learn.fit_one_cycle(10,
   
  - [Choose 10x less LR than lowest point in LR Finder](https://forums.fast.ai/t/how-to-choose-the-learning-rate/61931/5)
   
-### Hyperparameter tuning: using optuna to tune hyperparameters
+### Hyperparameter tuning: using optuna/hyperband to tune hyperparameters
 
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
 
 Hyperband https://gist.github.com/PetrochukM/2c5fae9daf0529ed589018c6353c9f7b
 
 Hyperband example: [full_twitter_sentiment_transformers.ipynb](https://github.com/maxmatical/fast.ai/blob/master/full_twitter_sentiment_transformers.ipynb) or [hyperband_test.ipynb](https://github.com/maxmatical/fast.ai/blob/master/hyperband_test.ipynb)
+
+[Optuna + hyperband](https://optuna.readthedocs.io/en/latest/reference/pruners.html)
 
 ### Batch size:
 
