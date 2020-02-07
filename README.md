@@ -79,6 +79,8 @@ Hyperband example: [full_twitter_sentiment_transformers.ipynb](https://github.co
 
 [Optuna + hyperband](https://optuna.readthedocs.io/en/latest/reference/pruners.html)
 
+[Optuna + fastai example](https://github.com/optuna/optuna/blob/master/examples/fastai_simple.py). Can change ` optuna.pruners.MedianPruner()` to `optuna.pruners.HyperbandPruner()`
+
 ### Batch size:
 
 it seems like 32/64 is the best starting point
