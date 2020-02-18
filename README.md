@@ -81,6 +81,13 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 
 [Optuna + fastai example](https://github.com/optuna/optuna/blob/master/examples/fastai_simple.py). Can change ` optuna.pruners.MedianPruner()` to `optuna.pruners.HyperbandPruner()`
 
+Load model with best hyperparameters
+
+```
+model.set_params(**study.best_params)
+model.fit(X, y)
+```
+
 ### Batch size:
 
 it seems like 32/64 is the best starting point
