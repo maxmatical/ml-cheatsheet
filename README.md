@@ -349,6 +349,7 @@ https://engineering.fb.com/ml-applications/advancing-state-of-the-art-image-reco
 ### self training with noisy student
 
 https://arxiv.org/abs/1911.04252 
+![noisy student diagram](https://github.com/maxmatical/fast.ai/blob/master/images/noisy-student.jpg)
 
 ### practical application of self training
 
@@ -365,4 +366,6 @@ https://www.fast.ai/2020/01/13/self_supervised/
 Similar to self-learning (but same model architecture) (i.e. teacher-student with same model)
 
 https://arxiv.org/abs/2002.05715
+
+![self-distillation](https://github.com/maxmatical/fast.ai/blob/master/images/self-distillation.jpg)
 
