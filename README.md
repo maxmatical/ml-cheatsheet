@@ -361,3 +361,8 @@ https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-wh
 ### Fastai article on self-supervised learning
 https://www.fast.ai/2020/01/13/self_supervised/
 
+### Self-distillation
+Similar to self-learning (but same model architecture) (i.e. teacher-student with same model)
+
+https://arxiv.org/abs/2002.05715
+
