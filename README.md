@@ -372,6 +372,6 @@ https://arxiv.org/abs/2002.05715
 
 ![self-distillation](https://github.com/maxmatical/fast.ai/blob/master/images/self-distillation.jpg)
 
-### Self-supervised learning for CV using fastai2
+### Self-supervised learning for CV imagenette using fastai2 (inpainting)
 https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a4c0924db613c2f7f5/01_InpaintingImageWang/03_ImageWang_Leadboard_192.ipynb
 
