@@ -345,6 +345,8 @@ https://ai.facebook.com/blog/billion-scale-semi-supervised-learning/ **also semi
 
 https://ai.facebook.com/blog/mapping-the-world-to-help-aid-workers-with-weakly-semi-supervised-learning/
 
+[Pytorch semi-supervised learning example](https://colab.research.google.com/github/pytorch/pytorch.github.io/blob/master/assets/hub/facebookresearch_semi-supervised-ImageNet1K-models_resnext.ipynb)
+
 ### Weakly supervised learning
 
 https://engineering.fb.com/ml-applications/advancing-state-of-the-art-image-recognition-with-deep-learning-on-hashtags/
@@ -371,6 +373,8 @@ Similar to self-learning (but same model architecture) (i.e. teacher-student wit
 https://arxiv.org/abs/2002.05715
 
 ![self-distillation](https://github.com/maxmatical/fast.ai/blob/master/images/self-distillation.jpg)
+
+[Pytorch distllation example](https://github.com/peterliht/knowledge-distillation-pytorch)
 
 ### Self-supervised learning for CV imagenette using fastai2 (inpainting)
 https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a4c0924db613c2f7f5/01_InpaintingImageWang/03_ImageWang_Leadboard_192.ipynb
