@@ -378,6 +378,7 @@ https://arxiv.org/abs/2002.05715
 [Mnist example with trained teacher](https://github.com/peterliht/knowledge-distillation-pytorch/blob/master/mnist/distill_mnist.py)
 
 Idea for distillation in fastai: Create new `fit_distill` function based off of `fit` and `loss_batch` in basic train to incorporate the predictions from the teacher model. Can optionally set LR scheduler to onecycle 
+  - Can also be extended for weakly-supervised learing as well (get rid of ground truth labels in loss fn)
 
 ### Self-supervised learning for CV imagenette using fastai2 (inpainting)
 https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a4c0924db613c2f7f5/01_InpaintingImageWang/03_ImageWang_Leadboard_192.ipynb
