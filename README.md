@@ -59,6 +59,28 @@ learn.fit_one_cycle(10,
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
 - fastai callback: https://forums.fast.ai/t/pytorch-1-3-breaks-oversamplingcallback/56488
+```
+from torch.utils.data.sampler import WeightedRandomSampler    
+# callback
+class OverSamplingCallback(LearnerCallback):
+    def __init__(self,learn:Learner):
+        super().__init__(learn)
+        self.labels = self.learn.data.train_dl.dataset.y
+        _, counts = np.unique(self.labels,return_counts=True)
+        self.weights = torch.DoubleTensor((1/counts)[self.labels])
+        self.label_counts = np.bincount([self.learn.data.train_dl.dataset.y[i] for i in range(len(self.learn.data.train_dl.dataset))])
+        self.total_len_oversample = int(self.learn.data.c*np.max(self.label_counts))
+
+    def on_train_begin(self, **kwargs):
+        self.learn.data.train_dl.dl.batch_sampler = BatchSampler(WeightedRandomSampler(self.weights,self.total_len_oversample), self.learn.data.train_dl.batch_size,False)
+        
+learn.fit_one_cycle(args.n_epochs, 
+                  args.lr, 
+                  pct_start = args.pct_start,
+                  callbacks=[OverSamplingCallback(learn),
+                             SaveModelCallback(learn, every='improvement', monitor='f_beta', 
+                                               name=f'{args.model}_classifier_stage1{use_mixup}{suffix}')])
+```
 
 ### **Learning rate**
 
