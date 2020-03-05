@@ -53,6 +53,8 @@ learn.fit_one_cycle(10,
                                                              name='best_classifier_final')])
 
 ```
+### Early stopping
+https://docs.fast.ai/callbacks.tracker.html#EarlyStoppingCallback
 
 ### **Handling imbalanced data**
 
