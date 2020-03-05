@@ -81,7 +81,7 @@ learn.fit_one_cycle(args.n_epochs,
                              SaveModelCallback(learn, every='improvement', monitor='f_beta', 
                                                name=f'{args.model}_classifier_stage1{use_mixup}{suffix}')])
 ```
-
+**Note**: can try applying a threshold such that you don't get a 50/50 split (i.e. 70/30 class split may work better)
 ### **Learning rate**
 
 - Try a smaller learning rate for the unfrozen model 
