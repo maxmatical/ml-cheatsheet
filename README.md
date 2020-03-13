@@ -348,6 +348,8 @@ https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
 
 https://github.com/timeseriesAI/timeseriesAI
 
+https://github.com/ai-fast-track/timeseries
+
 ## Time series forecasting
 ### N-BEATS
 article https://towardsdatascience.com/n-beats-beating-statistical-models-with-neural-nets-28a4ba4a4de8
