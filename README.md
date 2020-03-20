@@ -380,14 +380,14 @@ https://engineering.fb.com/ml-applications/advancing-state-of-the-art-image-reco
 
 https://arxiv.org/abs/1911.04252 
 ![noisy student diagram](https://github.com/maxmatical/fast.ai/blob/master/images/noisy-student.jpg)
+Note:
+- Train student on both labelled and out of sample data -> create new dataset that combines both
+- Can either use hard or soft pseudo labelling (soft pseudo labels might be slightly better)
+
 
 ### practical application of self training
 
 https://arxiv.org/abs/1904.04445
-
-### Don't use label smoothing for teachers (in distillation process)
-
-https://medium.com/@lessw/label-smoothing-deep-learning-google-brain-explains-why-it-works-and-when-to-use-sota-tips-977733ef020 
 
 ### Fastai article on self-supervised learning
 https://www.fast.ai/2020/01/13/self_supervised/
