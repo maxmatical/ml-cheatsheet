@@ -392,6 +392,9 @@ https://arxiv.org/abs/1904.04445
 ### Fastai article on self-supervised learning
 https://www.fast.ai/2020/01/13/self_supervised/
 
+### Fastai Rotation based self-supervised learning
+https://amarsaini.github.io/Epoching-Blog/jupyter/2020/03/23/Self-Supervision-with-FastAI.html#FastAI-Vision-Learner-[Transfer-Classification]
+
 ### Self-distillation
 Similar to self-learning (but same model architecture) (i.e. teacher-student with same model)
 
