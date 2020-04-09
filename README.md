@@ -383,6 +383,7 @@ https://arxiv.org/abs/1911.04252
 Note:
 - Train student on both labelled and out of sample data -> create new dataset that combines both
 - Can either use hard or soft pseudo labelling (soft pseudo labels might be slightly better)
+- possible loss for soft speudo labels: https://discuss.pytorch.org/t/catrogircal-cross-entropy-with-soft-classes/50871
 
 
 ### practical application of self training
