@@ -334,6 +334,8 @@ Alternative: use NNs (can easily handle extrapolation into future) **OR** detren
 
 [Fastai v2 Implementation](https://github.com/mgrankin/fast_tabnet) 
 
+[Tabnet example](https://www.kaggle.com/syzymon/covid19-tabnet-fast-ai-baseline)
+
 ### Shap + Fastai
 
 https://github.com/muellerzr/fastai2-SHAP 
