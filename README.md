@@ -85,6 +85,14 @@ learn.fit_one_cycle(args.n_epochs,
 ```
 **Note**: can try applying a threshold such that you don't get a 50/50 split (i.e. 70/30 class split may work better)
 
+### choosing LR
+
+- somewhere between steepest point and min loss pt /10
+```
+lr_min, lr_steep = learn.lr_find()
+print(f"choose lr between {lr_steep} and {lr_min/10}")
+```
+
 ### Learning rate tips for transfer learning
 
 - decrease base learning rate for the unfrozen model 
@@ -96,18 +104,29 @@ learn.fit_one_cycle(args.n_epochs,
 ```
 learn.freeze()
 learn.fit_one_cycle(1, lr)
-lr /=2
 learn.unfreeze()
+lr /=2
 learn.fit_once_cycle(1, slice(lr/100, lr))
 
 ```
-  
-### choosing LR
+### Alternative LR strategy for transfer learning (more time consuming)
+- instead of `lr /= 2`, run `learn.lr_find() at each stage of unfreezing
+- might be better, but more time consuming
 
-- somewhere between steepest point and min loss pt /10
 ```
+learn.freeze()
 lr_min, lr_steep = learn.lr_find()
 print(f"choose lr between {lr_steep} and {lr_min/10}")
+lr = ...
+learn.fit_one_cycle(1, lr)
+
+learn.unfreeze()
+lr_min, lr_steep = learn.lr_find()
+print(f"choose lr between {lr_steep} and {lr_min/10}")
+lr = ...
+learn.fit_once_cycle(1, slice(lr/100, lr))
+
+
 ```
 
 ### Hyperparameter tuning: using optuna/hyperband to tune hyperparameters
