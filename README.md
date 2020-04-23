@@ -53,6 +53,11 @@ learn.fit_one_cycle(10,
                                                              name='best_classifier_final')])
 
 ```
+### Save best model vs reducing number of epochs
+- might be better to re-train at reduced number of epochs (the epoch with best metric) instead of using `SaveModelCallback`
+- want a model with low learning rate
+
+
 ### Early stopping
 https://docs.fast.ai/callbacks.tracker.html#EarlyStoppingCallback
 
