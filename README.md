@@ -84,15 +84,32 @@ learn.fit_one_cycle(args.n_epochs,
                                                name=f'{args.model}_classifier_stage1{use_mixup}{suffix}')])
 ```
 **Note**: can try applying a threshold such that you don't get a 50/50 split (i.e. 70/30 class split may work better)
-### **Learning rate**
 
-- Try a smaller learning rate for the unfrozen model 
-  - up to learn.freeze_to(-2) can keep lr in last layer
-  - learn.freeze_to(-2) -> lr/2
-  - learn.unfreeze() -> lr/10 in the last layer (also divide the slice lr in earlier layers by same values)
+### Learning rate tips for transfer learning
+
+- decrease base learning rate for the unfrozen model 
+  - up to `learn.freeze_to(-2)` can keep lr in last layer
+  - `learn.freeze_to(-2)` and onwards -> lr/2
+  - `learn.unfreeze()` -> base_lr between `[lr/10, lr/2]` in the last layer
+  - divide the sliced lr in earlier layers by the same value
   
- - [Choose 10x less LR than lowest point in LR Finder](https://forums.fast.ai/t/how-to-choose-the-learning-rate/61931/5)
+```
+learn.freeze()
+learn.fit_one_cycle(1, lr)
+lr /=2
+learn.unfreeze()
+learn.fit_once_cycle(1, slice(lr/100, lr))
+
+```
   
+### choosing LR
+
+- somewhere between steepest point and min loss pt /10
+```
+lr_min, lr_steep = learn.lr_find()
+print(f"choose lr between {lr_steep} and {lr_min/10}")
+```
+
 ### Hyperparameter tuning: using optuna/hyperband to tune hyperparameters
 
 https://medium.com/@crcrpar/optuna-fastai-tabular-model-001-55777031e288 
