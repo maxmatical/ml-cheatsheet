@@ -314,15 +314,7 @@ save to feather `df.to_feather('...')`
 - use dendrograms (ON ONLY THE INTERESTING FEATURES IF YOU DID FEATURE IMPORTANCE BEFOREHAND)
 - REMOVE REDUNDANT FEATURES AFTER FEATURE IMPORTANCE
 ```
-from scipy.cluster import hierarchy as hc
-corr = np.round(scipy.stats.spearmanr(df_keep).correlation, 4)
-corr_condensed = hc.distance.squareform(1-corr)
-z = hc.linkage(corr_condensed, method='average')
-fig = plt.figure(figsize=(16,10))
-dendrogram = hc.dendrogram(z, labels=df_keep.columns, # note df_keep.columns is after removing non-important features
-      orientation='left', leaf_font_size=16)
-plt.show()
-
+cluster_columns(features) # new fastai2 feature
 ```
 - the further the splits are to the bottom (or right) of the plot means they are more closely related
 - Drop columns one at a time and see if validation score improves or drops
