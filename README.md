@@ -360,7 +360,7 @@ Alternative: use NNs (can easily handle extrapolation into future) **OR** detren
 
 ### NN Categorical embedding with high cardinality variable
 
-- Don't want to have too many `cat_vars` with high cardinality, will take up lots of parameters in embedding layer
+- Don't want to have too many `cat_vars` with high cardinality, will take up lots of parameters in embedding layer (since each level needs its own embedding layer)
 - Use RF to see if you can remove any of those vars without degreading performance
 
 ### General Procedure
