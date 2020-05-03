@@ -358,6 +358,11 @@ Remove time dependent variables from the model
 
 Alternative: use NNs (can easily handle extrapolation into future) **OR** detrend data (with differencing)
 
+### NN Categorical embedding with high cardinality variable
+
+- Don't want to have too many `cat_vars` with high cardinality, will take up lots of parameters in embedding layer
+- Use RF to see if you can remove any of those vars without degreading performance
+
 ### General Procedure
 1. start with RF for steps above
 2. Move on to GBT/NN after feature engineering
