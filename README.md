@@ -242,6 +242,9 @@ Huggingface transformers: https://towardsdatascience.com/fastai-with-transformer
 - Ensemble a fwd and backwards bwd = True models
   - backwards model: https://github.com/fastai/course-nlp/blob/master/nn-vietnamese-bwd.ipynb 
   - ensemble model: https://github.com/fastai/course-nlp 
+  
+### Data augmentation for NLP
+- translate text into another language, then translate back
 
 ## CV:
 
