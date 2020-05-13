@@ -457,6 +457,5 @@ https://arxiv.org/abs/2002.05715
 https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a4c0924db613c2f7f5/01_InpaintingImageWang/03_ImageWang_Leadboard_192.ipynb
 
 ## Multi-task Learning
-
-### [Example of multi-task learning with CNNs in fastai v1](https://gist.github.com/yang-zhang/ec071ae4775c2125595fd80f40efb0d6) 
-
+- [Example of multi-task learning with CNNs in fastai v1](https://gist.github.com/yang-zhang/ec071ae4775c2125595fd80f40efb0d6) 
+- [Another example of multi-task learning on the same dataset (with NA's introduced to simulate missing data](https://nbviewer.jupyter.org/gist/denisvlr/802f980ff6b6296beaaea1a592724a51)
