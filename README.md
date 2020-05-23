@@ -148,6 +148,12 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 
 Load model with best hyperparameters
 
+### AutoML with microsoft NNI (supports population based training)
+https://github.com/microsoft/nni
+
+- [Population based training (PBT) with NNI](https://github.com/microsoft/nni/blob/master/docs/en_US/Tuner/PBTTuner.md)
+- supports NAS (see documentation)
+
 ```
 model.set_params(**study.best_params)
 model.fit(X, y)
