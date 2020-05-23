@@ -147,17 +147,17 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 [Optuna + fastai example](https://github.com/optuna/optuna/blob/master/examples/fastai_simple.py). Can change ` optuna.pruners.MedianPruner()` to `optuna.pruners.HyperbandPruner()`
 
 Load model with best hyperparameters
-
+```
+model.set_params(**study.best_params)
+model.fit(X, y)
+```
 ### AutoML with microsoft NNI (supports population based training)
 https://github.com/microsoft/nni
 
 - [Population based training (PBT) with NNI](https://github.com/microsoft/nni/blob/master/docs/en_US/Tuner/PBTTuner.md)
 - supports NAS (see documentation)
 
-```
-model.set_params(**study.best_params)
-model.fit(X, y)
-```
+
 
 ### Batch size:
 
