@@ -9,8 +9,11 @@ collection of projects done using fastai as well as useful resources to improve 
 # Things that can improve results
 
 ## General
+### Resource for fastai2 for various DL tasks
+https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
 
 ### FP16
+
 setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 
