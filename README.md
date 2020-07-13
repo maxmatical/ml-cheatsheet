@@ -149,6 +149,8 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 
 [Optuna + fastai example](https://github.com/optuna/optuna/blob/master/examples/fastai_simple.py). Can change ` optuna.pruners.MedianPruner()` to `optuna.pruners.HyperbandPruner()`
 
+**note:** for pretrained models, save and reload weights every trial
+
 Load model with best hyperparameters
 ```
 model.set_params(**study.best_params)
