@@ -211,6 +211,9 @@ Run model with same hyperparameters 5 times, see the `std` of metric as well as 
 
 ## NLP:
 
+### data augmentation: back translate
+https://amitness.com/2020/02/back-translation-in-google-sheets/
+
 ### **Label Smoothing**:
 
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
