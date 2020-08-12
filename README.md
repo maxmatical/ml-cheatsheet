@@ -270,6 +270,9 @@ use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 
 use test time augmentation
 
+### Progressive resizing
+can speed up model training if needed
+
 ### More CNN archs (Resnext, SENet etc.)
 https://github.com/PPPW/deep-learning-random-explore/blob/master/CNN_archs/cnn_archs.ipynb
 
