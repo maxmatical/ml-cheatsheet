@@ -270,6 +270,12 @@ use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 
 use test time augmentation
 
+### transfer learning with ranger
+Something like:
+1. train head: `learn.freeze()` -> `lr`
+2. train backbone: `learn.unfreeze()` -> `lr/10`
+3. further training: `learn.unfreeze()` -> `lr/100`
+
 ### Progressive resizing
 can speed up model training if needed
 
