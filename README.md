@@ -273,11 +273,11 @@ use test time augmentation
 ### sample training script
 ![fastai_cnn_learner.py](https://github.com/maxmatical/fast.ai/blob/master/fastai_cnn_learner.py)
 
-### transfer learning with ranger
+### transfer learning with ranger + fit_fc
 Something like:
 1. train head: `learn.freeze()` -> `lr`
-2. train backbone: `learn.unfreeze()` -> between `lr/10` and `lr/50`
-3. further training: `learn.unfreeze()` -> `lr/100`
+2. train backbone: `learn.unfreeze()` -> between `lr/10` and `lr/50` (consider lowering pct_start to 0.1-0.3)
+3. further training: `learn.unfreeze()` -> `lr/100`(consider lowering pct_start to 0.1-0.3)
 
 ### Progressive resizing
 can speed up model training if needed
