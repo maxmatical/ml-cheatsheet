@@ -273,7 +273,7 @@ use test time augmentation
 ### transfer learning with ranger
 Something like:
 1. train head: `learn.freeze()` -> `lr`
-2. train backbone: `learn.unfreeze()` -> `lr/10`
+2. train backbone: `learn.unfreeze()` -> between `lr/10` and `lr/50`
 3. further training: `learn.unfreeze()` -> `lr/100`
 
 ### Progressive resizing
