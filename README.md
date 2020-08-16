@@ -270,6 +270,9 @@ use mixup learner = Learner(data, model, metrics=[accuracy]).mixup()
 
 use test time augmentation
 
+### sample training script
+![fastai_cnn_learner.py](https://github.com/maxmatical/fast.ai/blob/master/fastai_cnn_learner.py)
+
 ### transfer learning with ranger
 Something like:
 1. train head: `learn.freeze()` -> `lr`
