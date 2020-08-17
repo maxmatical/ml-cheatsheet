@@ -300,6 +300,9 @@ https://github.com/fg91/Neural-Image-Caption-Generation-Tutorial
 ### Imagenette (and vairants) leaderboards 
 https://github.com/fastai/imagenette 
 
+### View misclassifications
+https://docs.fast.ai/widgets.class_confusion.html
+
 ## Tabular data
 
 ### EDA
