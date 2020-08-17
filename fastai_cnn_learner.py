@@ -67,7 +67,7 @@ def train_fit_fc():
     learn.unfreeze()
     learn.fit_fc(40,
                 lr/10, # try between [lr/10, lr/50]
-                start_pct=0.7,
+                start_pct=0.3,
                 callbacks = [SaveModelCallback(learn, every='improvement', monitor='accuracy', 
                                                 name='stage2'),
                             EarlyStoppingCallback(learn, monitor="accuracy", patience = 10)])
@@ -79,7 +79,7 @@ def train_fit_fc():
     learn.unfreeze()
     learn.fit_fc(60,
                 lr/100, # try between [lr/50, lr/100]
-                start_pct=0.7,
+                start_pct=0.1,
                 callbacks = [SaveModelCallback(learn, every='improvement', monitor='accuracy', 
                                                 name='stage3'),
                             EarlyStoppingCallback(learn, monitor="accuracy", patience = 15)])
@@ -154,9 +154,19 @@ def train_one_cycle():
     learn.load("stage3-onecycle")
     learn.export("/home/max/project/stage3-onecycle-checkpt")
 
+def eval():
+    learn = load_learner("data", "stage3")
+    print(learn.validate())
+    interp = ClassificationInterpretation.from_learner(learn)
+    top_losses = interp.plot_top_losses(49, figsize=(30,22), return_fig=True)
+    top_losses.savefig("stage-3-occasion-classifier-top-loss.jpg", dpi = 1000)
+    confusion_matrix = interp.plot_confusion_matrix(figsize=(12,12), return_fig=True)
+    confusion_matrix.savefig("stage-3-occasion-classifier-confusion-atrix.jpg", dpi = 1000)
+    print(interp.most_confused(min_val=2))
                                         
 
 if __name__ == "__main__":
     # gen_data()
     train_fit_fc()
     # train_one_cycle()
+    eval()
