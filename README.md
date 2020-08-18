@@ -21,6 +21,10 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 
 Average a bunch of models together trained with different seeds/hyperparameters
 
+easy way to snapshot ensemble:
+- checkpoint learners at end of training cycle (`fit_fc` or `fit_one_cycle`) as `stage1, stage2...`
+- at inference, load multiple learners from each checkpoint and ensemble predictions
+
 ### **Ranger/General optimizer related tips:**
 Ranger seems to work really well
 ![ranger](https://github.com/maxmatical/fast.ai/blob/master/ranger.png)
