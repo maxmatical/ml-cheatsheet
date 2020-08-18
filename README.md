@@ -494,3 +494,4 @@ https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a
 ## Model deployment
 ### flask + gunicorn
 https://towardsdatascience.com/deploying-a-machine-learning-model-as-a-rest-api-4a03b865c166
+`PYTHONPATH=. venv/bin/gunicorn -w 3 -t 600 --bind 192.168.0.215:4025 server:app`
