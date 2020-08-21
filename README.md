@@ -26,7 +26,8 @@ easy way to snapshot ensemble:
 - at inference, load multiple learners from each checkpoint and ensemble predictions
 
 ### **Ranger/General optimizer related tips:**
-Ranger seems to work really well
+Ranger seems to work really well (try with both `fit_one_cycle` and `fit_fc`
+  - `fit_one_cycle` may be better for transfer learning
 ![ranger](https://github.com/maxmatical/fast.ai/blob/master/ranger.png)
 
 https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
@@ -96,6 +97,22 @@ learn.fit_one_cycle(args.n_epochs,
                                                name=f'{args.model}_classifier_stage1{use_mixup}{suffix}')])
 ```
 **Note**: can try applying a threshold such that you don't get a 50/50 split (i.e. 70/30 class split may work better)
+
+**Weighted loss function**
+`min_class` will have weight of 1
+other classes will have weight of $sqrt(min_samples)/sqrt(n_samples)$
+```
+if weighted_loss:
+    class_weights = []
+    for c in learn.data.classes:
+        class_weights.append(1/math.sqrt(len(df_train[df_train[LABEL_FIELD]==c])))
+    max_weight = max(class_weights)
+    class_weights = np.array(class_weights)/max_weight
+    class_weights = torch.from_numpy(class_weights).float().cuda()
+    loss_func = nn.CrossEntropyLoss(weight=class_weights)
+    learn.loss_func = loss_func
+print(f"using {learn.loss_func}")
+```
 
 ### choosing LR
 
