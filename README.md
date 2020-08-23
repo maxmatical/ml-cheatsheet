@@ -432,6 +432,9 @@ Alternative: use NNs (can easily handle extrapolation into future) **OR** detren
 
 https://github.com/muellerzr/fastai2-SHAP 
 
+### imputing missing features with MICE
+[MICE](https://github.com/AnotherSamWilson/miceForest)
+
 ## Time Series classification
 
 ### **1D Resnet**:
