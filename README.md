@@ -243,12 +243,15 @@ https://forums.fast.ai/t/mixed-precision-training/29601/21
 
 Run model with same hyperparameters 5 times, see the `std` of metric as well as standard error (`std/sqrt(n)`) to see how consistent it is  
 
-### Useful pytorch libraries
-[pytorch catalyst](https://github.com/catalyst-team/catalyst)
-
 ### Productionizing models
 [jit + quantization](https://forums.fast.ai/t/using-torch-quantization/56582)
  - use try static quantization `torch.quantization.quantize`
+ 
+### Dealing with noisy labels (incorrect labels)
+1. train model
+2. predict on training data
+3. Sort by loss/class confusion (eg diff between top k logits/predicted probs)
+4. Relabel as needed
 
 ## NLP:
 
