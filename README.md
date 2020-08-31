@@ -253,6 +253,8 @@ Run model with same hyperparameters 5 times, see the `std` of metric as well as 
 3. Sort by loss/class confusion (eg diff between top k logits/predicted probs)
 4. Relabel as needed
 
+**Tip:** Can use class confusion on unlabelled data to prioritize classes for manual labelling
+
 ## NLP:
 
 ### data augmentation: back translate
