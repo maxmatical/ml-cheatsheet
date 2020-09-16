@@ -190,6 +190,8 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 
 [Optuna + fastai example](https://github.com/optuna/optuna/blob/master/examples/fastai_simple.py). Can change ` optuna.pruners.MedianPruner()` to `optuna.pruners.HyperbandPruner()`
 
+[ASHA](https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.SuccessiveHalvingPruner.html#optuna.pruners.SuccessiveHalvingPruner) might perform better than hyperband/PBT [source](https://arxiv.org/pdf/1810.05934.pdf) 
+
 **note:** for pretrained models, save and reload weights every trial
 
 Load model with best hyperparameters
