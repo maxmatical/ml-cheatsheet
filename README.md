@@ -265,6 +265,8 @@ Run model with same hyperparameters 5 times, see the `std` of metric as well as 
 ### Fastai2 with transformers:
 https://github.com/morganmcg1/fasthugs
 
+https://github.com/ohmeow/blurr
+
 ### data augmentation: back translate
 https://amitness.com/2020/02/back-translation-in-google-sheets/
 
