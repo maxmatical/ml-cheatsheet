@@ -12,6 +12,9 @@ collection of projects done using fastai as well as useful resources to improve 
 ### Resource for fastai2 for various DL tasks
 https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
 
+### fastai2 extensions
+https://github.com/nestordemeure/fastai-extensions-repository
+
 ### FP16
 
 setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
@@ -258,6 +261,9 @@ Run model with same hyperparameters 5 times, see the `std` of metric as well as 
 **Tip:** Can use class confusion on unlabelled data to prioritize classes for manual labelling
 
 ## NLP:
+
+### Fastai2 with transformers:
+https://github.com/morganmcg1/fasthugs
 
 ### data augmentation: back translate
 https://amitness.com/2020/02/back-translation-in-google-sheets/
