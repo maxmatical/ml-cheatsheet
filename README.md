@@ -195,6 +195,8 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 
 [ASHA](https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.SuccessiveHalvingPruner.html#optuna.pruners.SuccessiveHalvingPruner) might perform better than hyperband/PBT [source](https://arxiv.org/pdf/1810.05934.pdf) 
 
+[Optuna + ray tune](https://medium.com/optuna/scaling-up-optuna-with-ray-tune-88f6ca87b8c7)
+
 **note:** for pretrained models, save and reload weights every trial
 
 Load model with best hyperparameters
