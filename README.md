@@ -343,6 +343,11 @@ can speed up model training if needed
 ### More CNN archs (Resnext, SENet etc.)
 https://github.com/PPPW/deep-learning-random-explore/blob/master/CNN_archs/cnn_archs.ipynb
 
+### CNN archs with timm and fastai2 
+guide: https://walkwithfastai.com/vision.external.timm#Bringing-in-External-Models-into-the-Framework
+
+https://github.com/rwightman/pytorch-image-models
+
 ### **Res2net**
 
 https://forums.fast.ai/t/res2net-with-some-improvements-and-implementation/54199
