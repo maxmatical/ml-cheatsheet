@@ -567,4 +567,4 @@ https://www.datacamp.com/community/tutorials/machine-learning-models-api-python
 https://github.com/fastai/course-v3/blob/master/docs/deployment_amzn_sagemaker.md
 
 ### fastai + torchserve + sagemaker
-https://github.com/aws-samples/amazon-sagemaker-endpoint-deployment-of-fastai-model-with-torchserve?s=09&fbclid=IwAR2z3ojmsfeZP40brPyLO2z3WylegjVQKv2YDPRgLwGEFDrq8kMFubZ-7Gg#deployment-to-amazon-sagemaker-inference-endpoint 
+https://github.com/aws-samples/amazon-sagemaker-endpoint-deployment-of-fastai-model-with-torchserve
