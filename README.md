@@ -558,7 +558,13 @@ https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a
 
 
 ## Model deployment
-### flask + gunicorn
+### flask + gunicorn (easiest, not for scaling)
 https://towardsdatascience.com/deploying-a-machine-learning-model-as-a-rest-api-4a03b865c166
 https://www.datacamp.com/community/tutorials/machine-learning-models-api-python
 `PYTHONPATH=. venv/bin/gunicorn -w 3 -t 600 --bind 192.168.0.215:4025 server:app`
+
+### fastai + aws sagemaker 
+https://github.com/fastai/course-v3/blob/master/docs/deployment_amzn_sagemaker.md
+
+### fastai + torchserve + sagemaker
+https://github.com/aws-samples/amazon-sagemaker-endpoint-deployment-of-fastai-model-with-torchserve?s=09&fbclid=IwAR2z3ojmsfeZP40brPyLO2z3WylegjVQKv2YDPRgLwGEFDrq8kMFubZ-7Gg#deployment-to-amazon-sagemaker-inference-endpoint 
