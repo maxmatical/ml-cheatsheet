@@ -2,9 +2,14 @@
 
 collection of projects done using fastai as well as useful resources to improve results
 
+
+
 # Step 1
 
 **Try to find kaggle contests/other projects tackling the same problem with SOTA results**
+
+# fastai2 extension libraries
+https://github.com/nestordemeure/fastai-extensions-repository
 
 # Things that can improve results
 
@@ -12,8 +17,6 @@ collection of projects done using fastai as well as useful resources to improve 
 ### Resource for fastai2 for various DL tasks
 https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
 
-### fastai2 extensions
-https://github.com/nestordemeure/fastai-extensions-repository
 
 ### FP16
 
