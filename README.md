@@ -597,3 +597,11 @@ https://github.com/fastai/course-v3/blob/master/docs/deployment_amzn_sagemaker.m
 
 ### fastai + torchserve + sagemaker
 https://github.com/aws-samples/amazon-sagemaker-endpoint-deployment-of-fastai-model-with-torchserve
+
+### fastai 1 + bentoml and kubernetes
+https://course19.fast.ai/deployment_docker_kubernetes.html
+
+### fastai2 + bentoml
+https://docs.bentoml.org/en/latest/frameworks.html#fastai-v2
+
+https://github.com/bentoml/gallery#fastai
