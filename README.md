@@ -605,3 +605,6 @@ https://course19.fast.ai/deployment_docker_kubernetes.html
 https://docs.bentoml.org/en/latest/frameworks.html#fastai-v2
 
 https://github.com/bentoml/gallery#fastai
+
+## bentoml basics
+https://docs.bentoml.org/en/latest/concepts.html?fbclid=IwAR3J05Bl7o5YLOF76v_WEIq1aAAgE0H0JJAphOr10VYuqf1qhfd0UKUIbs0
