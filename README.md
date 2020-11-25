@@ -395,6 +395,11 @@ https://github.com/fastai/imagenette
 ### View misclassifications
 https://docs.fast.ai/widgets.class_confusion.html
 
+### object detection 
+https://airctic.com/getting_started/
+
+https://airctic.com/retinanet/
+
 ## Tabular data
 
 ### EDA
