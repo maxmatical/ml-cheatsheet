@@ -11,6 +11,10 @@ collection of projects done using fastai as well as useful resources to improve 
 # fastai2 extension libraries
 https://github.com/nestordemeure/fastai-extensions-repository
 
+# production setting considerations
+- have train/val/test set
+- test set small set of gold standard data points
+
 # Things that can improve results
 
 ## General
