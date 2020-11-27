@@ -540,10 +540,25 @@ https://github.com/fastai/course-v3/blob/master/nbs/dl2/audio.ipynb
 
 ## Semi-supervised learning/self training (for large unlabelled dataset and small labelled dataset)
 
-## using pseudo-labels with fastai 
+### using pseudo-labels with fastai 
 https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Pseudo-Labeling.html?fbclid=IwAR2WB6NAosbALCwB5HlIaNiCyRtQTjQEe5v1m8XjZAFyoLCppLC4-g5kj4I#What-Next?
 
 **Tip**: This same approach can be used on unlabeled data to get data points the model is confident in to expand the training data. 
+
+### predicting soft pseudo-labels (distributions) to use for distillation/self training etc.
+2 ways
+
+1. array datasets with `n x k` matrix of preds as label
+
+2. csv/df datasets with 
+```
+data | c1 | c2 | ... |cn
+x    | y1 | y2 | ... |yn
+
+```
+where `yi` is the predicted probablilty of class `ci`
+
+and use `MSE` as loss function
 
 ### Semi-weakly supervised learning
 
@@ -585,12 +600,7 @@ https://arxiv.org/abs/2002.05715
 
 ![self-distillation](https://github.com/maxmatical/fast.ai/blob/master/images/self-distillation.jpg)
 
-[Pytorch distllation example](https://github.com/peterliht/knowledge-distillation-pytorch)
-
-[Mnist example with trained teacher](https://github.com/peterliht/knowledge-distillation-pytorch/blob/master/mnist/distill_mnist.py)
-
-**Idea for distillation in fastai**: Create new `fit_distill` function based off of `fit` and `loss_batch` in basic train to incorporate the predictions from the teacher model. Can optionally set LR scheduler to onecycle 
-  - Can also be extended for weakly-supervised learing as well (get rid of ground truth labels in loss fn)
+**Note**: process is similar to psuedo-labels, just without any additional unlabelled data (predict soft-labels on itself to train)
 
 ### Self-supervised learning for CV imagenette using fastai2 (inpainting)
 https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a4c0924db613c2f7f5/01_InpaintingImageWang/03_ImageWang_Leadboard_192.ipynb
