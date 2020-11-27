@@ -540,6 +540,11 @@ https://github.com/fastai/course-v3/blob/master/nbs/dl2/audio.ipynb
 
 ## Semi-supervised learning/self training (for large unlabelled dataset and small labelled dataset)
 
+## using pseudo-labels with fastai 
+https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Pseudo-Labeling.html?fbclid=IwAR2WB6NAosbALCwB5HlIaNiCyRtQTjQEe5v1m8XjZAFyoLCppLC4-g5kj4I#What-Next?
+
+**Tip**: This same approach can be used on unlabeled data to get data points the model is confident in to expand the training data. 
+
 ### Semi-weakly supervised learning
 
 https://ai.facebook.com/blog/billion-scale-semi-supervised-learning/ **also semi-supervised learning**
