@@ -555,6 +555,15 @@ https://isaac-flath.github.io/blog/deep%20learning/2020/11/26/Pseudo-Labeling.ht
 data | c1 | c2 | ... |cn
 x    | y1 | y2 | ... |yn
 
+
+data = (ImageList
+    .from_df(path=tub_path, df=df)
+    .split_by_rand_pct()
+    .label_from_df(cols=[c1,c2,..., cn],label_cls=FloatList)
+    .transform(get_transforms(do_flip=False), size=(120,160))
+    .databunch()
+    .normalize(imagenet_stats))
+
 ```
 where `yi` is the predicted probablilty of class `ci`
 
