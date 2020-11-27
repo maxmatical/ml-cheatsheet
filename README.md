@@ -568,6 +568,7 @@ data = (ImageList
 where `yi` is the predicted probablilty of class `ci`
 
 and use `MSE` as loss function
+ - maybe `nn.BCEWithLogitsLoss` or even `FocalLoss`, with `valid_loss` as monitor will work better
 
 ### Semi-weakly supervised learning
 
