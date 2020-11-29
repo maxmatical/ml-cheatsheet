@@ -519,11 +519,11 @@ https://github.com/muellerzr/fastai2-SHAP
 
 ### **1D Resnet**:
 
+https://github.com/timeseriesAI/tsai
+
 https://github.com/tcapelle/TimeSeries_fastai 
 
 https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
-
-https://github.com/timeseriesAI/timeseriesAI
 
 https://github.com/ai-fast-track/timeseries
 
