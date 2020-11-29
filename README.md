@@ -282,12 +282,8 @@ https://forums.fast.ai/t/mixed-precision-training/29601/21
 ### Proper size of validation set
 
 Run model with same hyperparameters 5 times, see the `std` of metric as well as standard error (`std/sqrt(n)`) to see how consistent it is  
-
-### Productionizing models
-[jit + quantization](https://forums.fast.ai/t/using-torch-quantization/56582)
- - use try static quantization `torch.quantization.quantize`
  
-### Dealing with noisy labels (incorrect labels)
+### Diagnose model performance
 1. train model
 2. predict on training data
 3. Sort by loss/class confusion (eg diff between top k logits/predicted probs)
@@ -628,6 +624,11 @@ https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a
 
 
 ## Model deployment
+### Speed up inference with jit and quantization
+[jit + quantization](https://forums.fast.ai/t/using-torch-quantization/56582)
+ - dynamic quantization: https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/dynamic_quantization_bert_tutorial.ipynb#scrollTo=IzyVSIKYIgN5
+ - use try static quantization `torch.quantization.quantize`
+
 ### flask + gunicorn (easiest, not for scaling)
 https://towardsdatascience.com/deploying-a-machine-learning-model-as-a-rest-api-4a03b865c166
 https://www.datacamp.com/community/tutorials/machine-learning-models-api-python
@@ -647,5 +648,5 @@ https://docs.bentoml.org/en/latest/frameworks.html#fastai-v2
 
 https://github.com/bentoml/gallery#fastai
 
-## bentoml basics
+### bentoml basics
 https://docs.bentoml.org/en/latest/concepts.html?fbclid=IwAR3J05Bl7o5YLOF76v_WEIq1aAAgE0H0JJAphOr10VYuqf1qhfd0UKUIbs0
