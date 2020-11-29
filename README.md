@@ -348,6 +348,9 @@ Huggingface transformers: https://towardsdatascience.com/fastai-with-transformer
 ### Data augmentation for NLP
 - translate text into another language, then translate back
 
+### repo with transformer related code (training, inference, hpo, pseudolabel training)
+https://github.com/maxmatical/fastai-transformers
+
 ## CV:
 
 ### General
