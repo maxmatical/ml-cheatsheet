@@ -628,6 +628,15 @@ https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a
 [jit + quantization](https://forums.fast.ai/t/using-torch-quantization/56582)
  - dynamic quantization: https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/dynamic_quantization_bert_tutorial.ipynb#scrollTo=IzyVSIKYIgN5
  - use try static quantization `torch.quantization.quantize`
+ 
+quantize with
+```
+model = learn.model
+quantized_model = torch.quantization.quantize_dynamic(
+    model, {torch.nn.Linear}, dtype=torch.qint8
+)
+learn.model = quantized_model
+```
 
 ### flask + gunicorn (easiest, not for scaling)
 https://towardsdatascience.com/deploying-a-machine-learning-model-as-a-rest-api-4a03b865c166
