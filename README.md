@@ -640,6 +640,8 @@ quantized_model = torch.quantization.quantize_dynamic(
 )
 learn.model = quantized_model
 ```
+### Using Dynamic and static quantization
+https://spell.ml/blog/pytorch-quantization-X8e7wBAAACIAHPhT
 
 ### flask + gunicorn (easiest, not for scaling)
 https://towardsdatascience.com/deploying-a-machine-learning-model-as-a-rest-api-4a03b865c166
