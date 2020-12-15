@@ -287,9 +287,11 @@ Run model with same hyperparameters 5 times, see the `std` of metric as well as 
 1. train model
 2. predict on training data
 3. Sort by loss/class confusion (eg diff between top k logits/predicted probs)
-4. Relabel as needed
+4. Use this as a guide to prioritize data collection
+  - Relabel as needed
 
-**Tip:** Can use class confusion on unlabelled data to prioritize classes for manual labelling
+**Tip:** Can use class loss/confusion and generate unlabelled data pseudolabels (if you have unlabelled data) to prioritize classes for manual labelling
+  - eg `cats` and `dogs` get confused a lot in validation data, predict on unlabelled dataset, and focus on predictions of `cats` and `dogs` for manual labelling
 
 ## NLP:
 
