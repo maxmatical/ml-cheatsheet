@@ -678,7 +678,7 @@ learn.model = quantized_model
 ### Using Dynamic and static quantization
 https://spell.ml/blog/pytorch-quantization-X8e7wBAAACIAHPhT
 
-### Using jit to export `learn.moel` as `torch.script`
+### Using jit to export `learn.model` as `torch.script`
 https://drhb.github.io/blog/fastai/2020/03/22/Fastai-Jit.html
 
 ### speed up fastai inference
