@@ -54,7 +54,9 @@ eps = 1e-4
 learn.opt_func = partial(learn.opt_func, eps=eps)
 ```
 [RangerAdabelief](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
+
 [RangerAdabelief repo](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
+
 [RangerAdabelief episilon values](https://github.com/juntang-zhuang/Adabelief-Optimizer#2-epsilon)
 
 **set bn_wd = False, true_wd = True**
