@@ -684,6 +684,8 @@ https://drhb.github.io/blog/fastai/2020/03/22/Fastai-Jit.html
 ### speed up fastai inference
 https://forums.fast.ai/t/speeding-up-fastai2-inference-and-a-few-things-learned/66179
 
+- it looks like using `learn.model` directly instead of `learn.get_preds` gives some speedup
+
 - for nlp (transformers), to tokenize and numericalze text, we need to do (from https://huggingface.co/transformers/custom_datasets.html?highlight=tokenizer%20encode) 
 
 ``` 
