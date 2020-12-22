@@ -9,7 +9,7 @@ collection of projects done using fastai as well as useful resources to improve 
 4. [Tabular]
 5. [Timeseries]
 6. [Audio]
-7. [Semi-supervised/self-training]
+7. [Semi-supervised learning, self-training, and distillation]
 8. [Multi-task Learning]
 9. [Model Deployment]
 10. [Speed up Model Inference]
