@@ -684,4 +684,19 @@ https://drhb.github.io/blog/fastai/2020/03/22/Fastai-Jit.html
 ### speed up fastai inference
 https://forums.fast.ai/t/speeding-up-fastai2-inference-and-a-few-things-learned/66179
 
+- for nlp (transformers), to tokenize and numericalze text, we need to do 
+``` 
+from transformers import RobertaTokenizer
+tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
+text = "some string here"
+tokens = tokenizer.tokenize(text)
+x = tokenizer.encode(tokens)
+print(x)
+```
+so the `item_tfms` pipeline should look something like 
+```
+from transformers import RobertaTokenizer
+tokenizer = RobertaTokenizer.from_pretrained("roberta-base")
+item_tfms = [tokenizer.tokenize(), tokenizer.encode(), ToTensor()]
+```
 
