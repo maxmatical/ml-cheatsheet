@@ -53,6 +53,8 @@ For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]. Change 
 eps = 1e-4
 learn.opt_func = partial(learn.opt_func, eps=eps)
 ```
+[RangerAdabelief](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
+[RangerAdabelief repo](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
 
 **set bn_wd = False, true_wd = True**
 
