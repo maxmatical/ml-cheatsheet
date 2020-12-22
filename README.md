@@ -638,21 +638,6 @@ https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a
 
 
 ## Model deployment
-### Speed up inference with jit and quantization
-[jit + quantization](https://forums.fast.ai/t/using-torch-quantization/56582)
- - dynamic quantization: https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/dynamic_quantization_bert_tutorial.ipynb#scrollTo=IzyVSIKYIgN5
- - use try static quantization `torch.quantization.quantize`
- 
-quantize with
-```
-model = learn.model
-quantized_model = torch.quantization.quantize_dynamic(
-    model, {torch.nn.Linear}, dtype=torch.qint8
-)
-learn.model = quantized_model
-```
-### Using Dynamic and static quantization
-https://spell.ml/blog/pytorch-quantization-X8e7wBAAACIAHPhT
 
 ### flask + gunicorn (easiest, not for scaling)
 https://towardsdatascience.com/deploying-a-machine-learning-model-as-a-rest-api-4a03b865c166
@@ -675,3 +660,28 @@ https://github.com/bentoml/gallery#fastai
 
 ### bentoml basics
 https://docs.bentoml.org/en/latest/concepts.html?fbclid=IwAR3J05Bl7o5YLOF76v_WEIq1aAAgE0H0JJAphOr10VYuqf1qhfd0UKUIbs0
+
+## speed up model inference
+### Speed up inference with jit and quantization
+[jit + quantization](https://forums.fast.ai/t/using-torch-quantization/56582)
+ - dynamic quantization: https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/dynamic_quantization_bert_tutorial.ipynb#scrollTo=IzyVSIKYIgN5
+ - use try static quantization `torch.quantization.quantize`
+ 
+quantize with
+```
+model = learn.model
+quantized_model = torch.quantization.quantize_dynamic(
+    model, {torch.nn.Linear}, dtype=torch.qint8
+)
+learn.model = quantized_model
+```
+### Using Dynamic and static quantization
+https://spell.ml/blog/pytorch-quantization-X8e7wBAAACIAHPhT
+
+### Using jit to export `learn.moel` as `torch.script`
+https://drhb.github.io/blog/fastai/2020/03/22/Fastai-Jit.html
+
+### speed up fastai inference
+https://forums.fast.ai/t/speeding-up-fastai2-inference-and-a-few-things-learned/66179
+
+
