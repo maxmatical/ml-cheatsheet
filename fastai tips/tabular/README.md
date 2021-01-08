@@ -104,3 +104,6 @@ https://github.com/muellerzr/fastai2-SHAP
 
 ### imputing missing features with MICE
 [MICE](https://github.com/AnotherSamWilson/miceForest)
+
+### AutoML with AutoGluon could also help for tabular models(not directly fastai)
+https://auto.gluon.ai/stable/index.html
