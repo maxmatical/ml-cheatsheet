@@ -96,11 +96,7 @@ Alternative: use NNs (can easily handle extrapolation into future) **OR** detren
 2. Move on to GBT/NN after feature engineering
 
 ### Tabnet
-[Discussion](https://forums.fast.ai/t/tabnet-with-fastai-v2/62600)
-
-[Fastai v2 Implementation](https://github.com/mgrankin/fast_tabnet) 
-
-[Tabnet example](https://www.kaggle.com/syzymon/covid19-tabnet-fast-ai-baseline)
+https://walkwithfastai.com/TabNet
 
 ### Shap + Fastai
 
