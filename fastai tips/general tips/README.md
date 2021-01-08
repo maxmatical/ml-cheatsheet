@@ -254,6 +254,8 @@ https://github.com/microsoft/nni
 - [Docs here](https://nni.readthedocs.io/en/latest/)
 - supports NAS with pytorch 
 
+### AutoML with autogluon
+https://auto.gluon.ai/stable/index.html
 
 
 ### Batch size:
