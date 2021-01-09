@@ -13,3 +13,4 @@ collection of projects done using fastai as well as useful resources to improve 
 8. [Multi-task Learning](https://github.com/maxmatical/fast.ai/tree/master/fastai%20tips/multi-task%20learning)
 9. [Model Deployment](https://github.com/maxmatical/fast.ai/tree/master/fastai%20tips/Model%20deployment)
 10. [Speed up Model Inference](https://github.com/maxmatical/fast.ai/tree/master/fastai%20tips/Speed%20up%20model%20inference)
+11. [Reinforcement learning](https://github.com/maxmatical/fast.ai/tree/master/fastai%20tips/Reinforcement%20Learning)
