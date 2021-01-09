@@ -26,3 +26,13 @@ Note: For faster wall-time, PPO and A2C are fastest. DQN/QR-DQN are slower wall-
 
 ### Creating custom gym environments:
 https://stable-baselines3.readthedocs.io/en/master/guide/custom_env.html 
+
+### Normalizing input features
+https://stable-baselines.readthedocs.io/en/master/guide/examples.html#pybullet-normalizing-input-features
+
+- assumes all inputs are continuous (not necessarily true)
+- also assumes reset state is always the same
+
+### Normalize continuous variables for tabular data
+- Can't use `VecNormalize`
+- Better to preprocess data (in tabular form beforehand)
