@@ -36,3 +36,4 @@ https://stable-baselines.readthedocs.io/en/master/guide/examples.html#pybullet-n
 ### Normalize continuous variables for tabular data
 - Can't use `VecNormalize`
 - Better to preprocess data (in tabular form beforehand)
+- eg `(df[col]-df[col].mean())/df[col].std()`
