@@ -16,6 +16,18 @@ https://github.com/nestordemeure/fastai-extensions-repository
 
 multi-gpu training in notebooks: https://github.com/philtrade/mpify
 
+ 
+# Diagnose model performance
+1. train model
+2. predict on training data
+3. Sort by loss/class confusion (eg diff between top k logits/predicted probs)
+4. Use this as a guide to prioritize data collection
+  - Relabel as needed
+
+**Tip:** Can use class loss/confusion and generate unlabelled data pseudolabels (if you have unlabelled data) to prioritize classes for manual labelling
+  - eg `cats` and `dogs` get confused a lot in validation data, predict on unlabelled dataset, and focus on predictions of `cats` and `dogs` for manual labelling
+
+
 # production setting considerations
 - have train/val/test set
 - test set small set of gold standard data points
@@ -294,13 +306,6 @@ https://forums.fast.ai/t/mixed-precision-training/29601/21
 ### Proper size of validation set
 
 Run model with same hyperparameters 5 times, see the `std` of metric as well as standard error (`std/sqrt(n)`) to see how consistent it is  
- 
-### Diagnose model performance
-1. train model
-2. predict on training data
-3. Sort by loss/class confusion (eg diff between top k logits/predicted probs)
-4. Use this as a guide to prioritize data collection
-  - Relabel as needed
 
-**Tip:** Can use class loss/confusion and generate unlabelled data pseudolabels (if you have unlabelled data) to prioritize classes for manual labelling
-  - eg `cats` and `dogs` get confused a lot in validation data, predict on unlabelled dataset, and focus on predictions of `cats` and `dogs` for manual labelling
+### Speed up pytorch models
+https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_here_are_17_ways_of_making_pytorch_training/
