@@ -107,3 +107,6 @@ https://github.com/muellerzr/fastai2-SHAP
 
 ### AutoML with AutoGluon could also help for tabular models(not directly fastai)
 https://auto.gluon.ai/stable/index.html
+
+### Speeding up tabular learning by converting DF -> numpy
+https://muellerzr.github.io/fastblog/2020/04/22/TabularNumpy.html
