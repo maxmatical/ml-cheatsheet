@@ -79,4 +79,16 @@ https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a
 
 ### meta pseudo labels
 [paper](https://arxiv.org/pdf/2003.10580.pdf)
+MPL algorithm:
+```
+for t in range(epochs):
+    1. train teacher network on labelled data (1 epoch)
+    2. predict on unlabelled data
+    3. train student network on unlabelled data (1 epoch)
+    4. student predict on a validation set for labelled data to get y_pred_student
+    5. use loss(y_val, y_pred_student) (nn.CrossEntropyLoss, etc.) as loss for teacher
+    6. gradient update for teacher (gradient through gradient method)
+    
+
+```
 
