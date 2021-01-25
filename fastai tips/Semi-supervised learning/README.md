@@ -5,7 +5,15 @@ https://isaac-flath.github.io/blog/deep%20learning/2020/12/15/Pseudo-Labeling.ht
 
 **Tip**: This same approach can be used on all (or some, based on level of confidence) of the unlabeled data to expand the training data. 
 
-**Note**: Not 100% wether fine-tuning on the original labelled dataset after training on labelled+unlabelled will improve results
+**Multiple ways of using unlabelled data**
+1. (only if unlabelled data >> labelled data)
+    - train on pseudo-labelled data
+    - fine tune on labelled data
+2. train on pseudo-labelled data + labelled data
+
+3. train on pseudo-labelled data + labelled data, fine-tune on labelled data
+
+ Not 100% sure which way is best
 
 ### predicting soft pseudo-labels (distributions) to use for distillation/self training etc.
 2 ways
