@@ -1,9 +1,9 @@
 ## Semi-supervised learning/self training (for large unlabelled dataset and small labelled dataset)
 
 ### using pseudo-labels with fastai (expand training data)
-https://isaac-flath.github.io/blog/deep learning/2020/12/15/Pseudo-Labeling.html
+https://isaac-flath.github.io/blog/deep%20learning/2020/12/15/Pseudo-Labeling.html
 
-**Tip**: This same approach can be used on unlabeled data to get data points the model is confident in to expand the training data. 
+**Tip**: This same approach can be used on all (or some, based on level of confidence) of the unlabeled data to expand the training data. 
 
 ### predicting soft pseudo-labels (distributions) to use for distillation/self training etc.
 2 ways
