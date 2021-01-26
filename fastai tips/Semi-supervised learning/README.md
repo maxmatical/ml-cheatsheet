@@ -7,11 +7,14 @@ https://isaac-flath.github.io/blog/deep%20learning/2020/12/15/Pseudo-Labeling.ht
 
 **Multiple ways of using unlabelled data**
 1. (only if unlabelled data >> labelled data)
-    - train on pseudo-labelled data
+    - train on ALL pseudo-labelled data
     - fine tune on labelled data
-2. train on pseudo-labelled data + labelled data
+    
+2. train on labelled data + **ALL** of pseudo-labelled data
 
-3. train on pseudo-labelled data + labelled data, fine-tune on labelled data
+3. train on labelled data  + **SOME** of pseudo-labelled data, based on confidence (eg `predicted_proba >= 0.9`)
+
+4. train on labelled data +  **ALL** pseudo-labelled data. Then further fine-tune on labelled data
 
  Not 100% sure which way is best
 
