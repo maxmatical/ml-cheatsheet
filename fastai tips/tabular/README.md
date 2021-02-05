@@ -105,8 +105,9 @@ https://github.com/muellerzr/fastai2-SHAP
 ### imputing missing features with MICE
 [MICE](https://github.com/AnotherSamWilson/miceForest)
 
-### AutoML with AutoGluon could also help for tabular models(not directly fastai)
-https://auto.gluon.ai/stable/index.html
+### AutoML options for tabular models
+[AutoGluon](https://auto.gluon.ai/stable/index.html)
+[MLJar](https://github.com/mljar/mljar-supervised)
 
 ### Speeding up tabular learning by converting DF -> numpy
 https://muellerzr.github.io/fastblog/2020/04/22/TabularNumpy.html
