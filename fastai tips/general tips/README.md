@@ -309,3 +309,7 @@ Run model with same hyperparameters 5 times, see the `std` of metric as well as 
 
 ### Speed up pytorch models
 https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_here_are_17_ways_of_making_pytorch_training/
+
+### multilabel stratified sampling
+
+https://twitter.com/abhi1thakur/status/1357653979400982529?s=20
