@@ -23,7 +23,9 @@ can speed up model training if needed
 https://github.com/PPPW/deep-learning-random-explore/blob/master/CNN_archs/cnn_archs.ipynb
 
 ### CNN archs with timm and fastai2 
-guide: https://walkwithfastai.com/vision.external.timm#Bringing-in-External-Models-into-the-Framework
+guide: https://jarvislabs.ai/blogs/multiGPUs (timmm + multiple gpus)
+
+https://walkwithfastai.com/vision.external.timm#Bringing-in-External-Models-into-the-Framework
 
 https://github.com/rwightman/pytorch-image-models
 
