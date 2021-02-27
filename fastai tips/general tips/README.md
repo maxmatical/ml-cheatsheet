@@ -290,7 +290,7 @@ https://docs.fast.ai/train.html#AccumulateScheduler
 
 ### Distributed training with multiple GPUs
 
-https://docs.fast.ai/distributed.html
+https://jarvislabs.ai/blogs/multiGPUs
 
 ### Cosine LR schedule with restarts
 
