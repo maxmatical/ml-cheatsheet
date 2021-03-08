@@ -1,6 +1,6 @@
 ## Model deployment
 
-### flask + gunicorn
+### flask + gunicorn (not the fastest, most general)
 
 flask: good for web dev
 
@@ -22,6 +22,8 @@ https://github.com/fastai/course-v3/blob/master/docs/deployment_amzn_sagemaker.m
 
 ### fastai + torchserve + sagemaker
 https://github.com/aws-samples/amazon-sagemaker-endpoint-deployment-of-fastai-model-with-torchserve
+
+### BentoML (pure model serving)
 
 ### fastai 1 + bentoml and kubernetes
 https://course19.fast.ai/deployment_docker_kubernetes.html
