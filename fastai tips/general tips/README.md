@@ -18,6 +18,7 @@
   - If a class has lots of data (imbalanced relative to rest of data) and is performing well, can try removing some data to see if:
     1. performance of that class does not decrease
     2. performance of other classes improve
+    If both cases are true, consider removing some data from that class
 
 # fastai2 extension libraries
 https://github.com/nestordemeure/fastai-extensions-repository
