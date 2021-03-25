@@ -15,7 +15,7 @@
 - An active process > just collecting data
 - Want to collect more data for challenging/underperforming classes
 - Collecting more data for high performing classes can hinder performance of other classes
-  - If a class has lots of data and is performing well, can try removing some data to see if:
+  - If a class has lots of data (imbalanced relative to rest of data) and is performing well, can try removing some data to see if:
     1. performance of that class does not decrease
     2. performance of other classes improve
 
