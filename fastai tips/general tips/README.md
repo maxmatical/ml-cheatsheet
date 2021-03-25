@@ -4,12 +4,20 @@
 0. **(Optional) Try to find kaggle contests/other projects tackling the same problem with SOTA results**
 1. start with the data you have, run a few models with some manual hyperparameter tuning to get a good starting point
 2. if you need to improve performance, look to improve data first
-  - collecting additional data
+  - collecting additional data (**see section on data curation**)
     - can leverage semi-supervised methods [here](https://github.com/maxmatical/fast.ai/tree/master/fastai%20tips/Semi-supervised%20learning)
   - cleaning/removing noisy data
   - fixing labels
  3. if no further improvements on data side (or cost/benefit too high), then run hyperparameter tuning
   - can try hyperparameter tuning on a subset of data for faster experimentation (only if subset gains => full data gains)
+
+# Data curation
+- An active process > just collecting data
+- Want to collect more data for challenging/underperforming classes
+- Collecting more data for high performing classes can hinder performance of other classes
+  - If a class has lots of data and is performing well, can try removing some data to see if:
+    1. performance of that class does not decrease
+    2. performance of other classes improve
 
 # fastai2 extension libraries
 https://github.com/nestordemeure/fastai-extensions-repository
