@@ -322,3 +322,11 @@ https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_here_are_17_ways_of_m
 ### multilabel stratified sampling
 
 https://twitter.com/abhi1thakur/status/1357653979400982529?s=20
+
+### Make sure `val` and `test` data performance is correlated
+have data in `train/val/test`. what happens if `val` performance is high, but `test` performance is low?
+
+1. check if `val` and `test` performance are correlated
+  - eg if `val` goes up, does `test` go up? same with down
+2. if no, need to reconstruct val data such that it's correlated with test data performance
+3. if yes, just keep improving validation performance
