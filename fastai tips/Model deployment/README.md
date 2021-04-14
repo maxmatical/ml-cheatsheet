@@ -1,5 +1,13 @@
 ## Model deployment
 
+### Some fastai deployment options:
+https://twitter.com/TheZachMueller/status/1382459910907162626
+
+includes: all fastai, pytorch, and ONNX
+
+https://muellerzr.github.io/fastinference/
+
+
 ### flask + gunicorn (not the fastest, most general)
 
 flask: good for web dev
