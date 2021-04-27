@@ -19,6 +19,18 @@
     1. performance of that class does not decrease
     2. performance of other classes improve
     If both cases are true, consider removing some data from that class
+    
+## Adeptmind data curation process
+1. train on data
+2. evaluation (per class p/r/f1 and overall accuracy) on validation data
+  - look at underperforming classes
+3. predict on unlabelled dataset (if there is one)
+4. use unlabelled predictions to validate/improve training dataset
+  - add incorrectly predicted examples back to training data with correct class
+  - can add correct examples, but want to avoid collecting too many examples for high performing classes
+  - **note:** can really only improve precision for that class, improving recall might require actively sourcing positive examples for that class
+
+**note:** can also do step **3** on training data to monitor/improve training data quality
 
 # fastai2 extension libraries
 https://github.com/nestordemeure/fastai-extensions-repository
