@@ -213,6 +213,8 @@ class WeightedFocalLoss(nn.Module):
         return F_loss.mean()
 ```
 
+**Weighted Dataloader** https://www.kaggle.com/dienhoa/healthy-lung-classification-spectrogram-fast-ai
+
 ### choosing LR
 
 - somewhere between steepest point and min loss pt /10
