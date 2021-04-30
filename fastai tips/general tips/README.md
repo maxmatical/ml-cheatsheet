@@ -124,9 +124,10 @@ class WeightedFocalLoss(nn.Module):
 ```
 
 ### Weighted Dataloader
-samples data accorted to probability of appearing in data
+samples data accorted to probability of appearing in batch
+https://docs.fast.ai/callback.data.html#Datasets.weighted_dataloaders
 
-https://www.kaggle.com/dienhoa/healthy-lung-classification-spectrogram-fast-ai
+WeightedDL example: https://www.kaggle.com/dienhoa/healthy-lung-classification-spectrogram-fast-ai
 
 # Things that can improve results
 
