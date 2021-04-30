@@ -344,3 +344,6 @@ have data in `train/val/test`. what happens if `val` performance is high, but `t
   - eg if `val` goes up, does `test` go up? same with down
 2. if no, need to reconstruct val data such that it's correlated with test data performance
 3. if yes, just keep improving validation performance
+
+### Prediction for long-tailed events
+https://doordash.engineering/2021/04/28/improving-eta-prediction-accuracy-for-long-tail-events/
