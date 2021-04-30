@@ -53,6 +53,81 @@ multi-gpu training in notebooks: https://github.com/philtrade/mpify
 - have train/val/test set
 - test set small set of gold standard data points
 
+# Handling imbalanced data
+
+## naive oversampling data
+- They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
+- paper: https://arxiv.org/abs/1710.05381
+
+
+## Weighted loss function
+
+### basic weighted loss for CE
+`min_class` will have weight of 1
+other classes will have weight of $sqrt(min_samples)/sqrt(n_samples)$
+```
+if weighted_loss:
+    class_weights = []
+    for c in learn.data.classes:
+        class_weights.append(1/math.sqrt(len(df_train[df_train[LABEL_FIELD]==c])))
+    max_weight = max(class_weights)
+    class_weights = np.array(class_weights)/max_weight
+    class_weights = torch.from_numpy(class_weights).float().cuda()
+    loss_func = nn.CrossEntropyLoss(weight=class_weights)
+    learn.loss_func = loss_func
+print(f"using {learn.loss_func}")
+```
+### focal loss (only for binary??)
+```
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=1., gamma=1.):
+        super().__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+
+    def forward(self, inputs, targets, **kwargs):
+        CE_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
+        pt = torch.exp(-CE_loss)
+        F_loss = self.alpha * ((1-pt)**self.gamma) * CE_loss
+        return F_loss.mean()
+
+class WeightedFocalLoss(nn.Module):
+    def __init__(self, alpha=.25, gamma=2.):
+        super().__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+
+    def forward(self, inputs, targets, **kwargs):
+        CE_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
+        pt = torch.exp(-CE_loss)
+        F_loss = self.alpha * ((1-pt)**self.gamma) * CE_loss
+        return F_loss.mean()
+
+```
+
+**focal loss for 1 output:** 
+```
+class WeightedFocalLoss(nn.Module):
+    "Non weighted version of Focal Loss"
+    def __init__(self, alpha=.25, gamma=2):
+        super(WeightedFocalLoss, self).__init__()
+        self.alpha = torch.tensor([alpha, 1-alpha]).cuda()
+        self.gamma = gamma
+
+    def forward(self, inputs, targets):
+        BCE_loss = F.binary_cross_entropy_with_logits(inputs, targets, reduction='none')
+        targets = targets.type(torch.long)
+        at = self.alpha.gather(0, targets.data.view(-1))
+        pt = torch.exp(-BCE_loss)
+        F_loss = at*(1-pt)**self.gamma * BCE_loss
+        return F_loss.mean()
+```
+
+### Weighted Dataloader
+samples data accorted to probability of appearing in data
+
+https://www.kaggle.com/dienhoa/healthy-lung-classification-spectrogram-fast-ai
+
 # Things that can improve results
 
 ## General
@@ -122,98 +197,6 @@ learn.fit_one_cycle(10,
 ### Early stopping
 https://docs.fast.ai/callbacks.tracker.html#EarlyStoppingCallback
 
-### **Handling imbalanced data**
-
-- They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
-- paper: https://arxiv.org/abs/1710.05381
-- fastai callback: https://forums.fast.ai/t/pytorch-1-3-breaks-oversamplingcallback/56488
-```
-from torch.utils.data.sampler import WeightedRandomSampler    
-# callback
-class OverSamplingCallback(LearnerCallback):
-    def __init__(self,learn:Learner):
-        super().__init__(learn)
-        self.labels = self.learn.data.train_dl.dataset.y
-        _, counts = np.unique(self.labels,return_counts=True)
-        self.weights = torch.DoubleTensor((1/counts)[self.labels])
-        self.label_counts = np.bincount([self.learn.data.train_dl.dataset.y[i] for i in range(len(self.learn.data.train_dl.dataset))])
-        self.total_len_oversample = int(self.learn.data.c*np.max(self.label_counts))
-
-    def on_train_begin(self, **kwargs):
-        self.learn.data.train_dl.dl.batch_sampler = BatchSampler(WeightedRandomSampler(self.weights,self.total_len_oversample), self.learn.data.train_dl.batch_size,False)
-        
-learn.fit_one_cycle(args.n_epochs, 
-                  args.lr, 
-                  pct_start = args.pct_start,
-                  callbacks=[OverSamplingCallback(learn),
-                             SaveModelCallback(learn, every='improvement', monitor='f_beta', 
-                                               name=f'{args.model}_classifier_stage1{use_mixup}{suffix}')])
-```
-
-**Note**: can try applying a threshold such that you don't get a 50/50 split (i.e. 70/30 class split may work better) by changing `self.total_len_oversample`
-
-**Weighted loss function**
-`min_class` will have weight of 1
-other classes will have weight of $sqrt(min_samples)/sqrt(n_samples)$
-```
-if weighted_loss:
-    class_weights = []
-    for c in learn.data.classes:
-        class_weights.append(1/math.sqrt(len(df_train[df_train[LABEL_FIELD]==c])))
-    max_weight = max(class_weights)
-    class_weights = np.array(class_weights)/max_weight
-    class_weights = torch.from_numpy(class_weights).float().cuda()
-    loss_func = nn.CrossEntropyLoss(weight=class_weights)
-    learn.loss_func = loss_func
-print(f"using {learn.loss_func}")
-```
-**focal loss (only for binary??)
-```
-class FocalLoss(nn.Module):
-    def __init__(self, alpha=1., gamma=1.):
-        super().__init__()
-        self.alpha = alpha
-        self.gamma = gamma
-
-    def forward(self, inputs, targets, **kwargs):
-        CE_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
-        pt = torch.exp(-CE_loss)
-        F_loss = self.alpha * ((1-pt)**self.gamma) * CE_loss
-        return F_loss.mean()
-
-class WeightedFocalLoss(nn.Module):
-    def __init__(self, alpha=.25, gamma=2.):
-        super().__init__()
-        self.alpha = alpha
-        self.gamma = gamma
-
-    def forward(self, inputs, targets, **kwargs):
-        CE_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
-        pt = torch.exp(-CE_loss)
-        F_loss = self.alpha * ((1-pt)**self.gamma) * CE_loss
-        return F_loss.mean()
-
-```
-
-**focal loss for 1 output:** 
-```
-class WeightedFocalLoss(nn.Module):
-    "Non weighted version of Focal Loss"
-    def __init__(self, alpha=.25, gamma=2):
-        super(WeightedFocalLoss, self).__init__()
-        self.alpha = torch.tensor([alpha, 1-alpha]).cuda()
-        self.gamma = gamma
-
-    def forward(self, inputs, targets):
-        BCE_loss = F.binary_cross_entropy_with_logits(inputs, targets, reduction='none')
-        targets = targets.type(torch.long)
-        at = self.alpha.gather(0, targets.data.view(-1))
-        pt = torch.exp(-BCE_loss)
-        F_loss = at*(1-pt)**self.gamma * BCE_loss
-        return F_loss.mean()
-```
-
-**Weighted Dataloader** https://www.kaggle.com/dienhoa/healthy-lung-classification-spectrogram-fast-ai
 
 ### choosing LR
 
