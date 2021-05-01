@@ -45,6 +45,13 @@ and use `MSE` as loss function
  - will `nn.CrossEntropyLoss` work?
  - `MSE` if output is logits, `BCE/CE` if output is predicted probability (b/w 0 and 1)
 
+### custom accuracy function with soft psuedo-labels
+use when psuedo-labels are soft probability distributions or logits
+```
+def custom_accuracy(pred, target):
+    return (pred.argmax(dim=1) == target.argmax(dim=1)).float().mean()
+```
+
 ### self supervised learning fastai extension
 https://keremturgutlu.github.io/self_supervised/
 
