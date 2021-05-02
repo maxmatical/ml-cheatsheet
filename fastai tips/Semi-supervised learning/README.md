@@ -115,3 +115,6 @@ for t in range(epochs):
 
 ```
 
+### example of self-distillation/soft-pseudolabels
+https://github.com/maxmatical/fast.ai/blob/master/fastai_hf_self_distillation.ipynb
+
