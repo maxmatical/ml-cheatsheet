@@ -331,3 +331,16 @@ have data in `train/val/test`. what happens if `val` performance is high, but `t
 
 ### Prediction for long-tailed events
 https://doordash.engineering/2021/04/28/improving-eta-prediction-accuracy-for-long-tail-events/
+
+### random pytorch tips
+https://www.reddit.com/r/MachineLearning/comments/n9fti7/d_a_few_helpful_pytorch_tips_examples_included/
+
+
+1. Create tensors directly on the target device using the `device` parameter.
+2. Use `Sequential` layers when possible for cleaner code.
+3. Don't make lists of layers, they don't get registered by the `nn.Module` class correctly. Instead you should pass the list into a `Sequential` layer as an unpacked parameter.
+4. PyTorch has some awesome objects and functions for distributions that I think are underused at `torch.distributions`.
+5. When storing tensor metrics in between epochs, make sure to call `.detach()` on them to avoid a memory leak.
+6. You can clear GPU cache with `torch.cuda.empty_cache()`, which is helpful if you want to delete and recreate a large model while using a notebook.
+7. Don't forget to call `model.eval()` before you start testing! It's simple but I forget it all the time. This will make necessary changes to layer behavior that changes in between training and eval stages (e.g. stop dropout, batch norm averaging)
+
