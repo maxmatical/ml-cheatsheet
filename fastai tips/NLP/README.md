@@ -2,7 +2,7 @@
 ## NLP:
 
 ### Fastai2 with transformers:
-https://github.com/morganmcg1/fasthugs
+https://github.com/aikindergarten/fasthugs
 
 https://github.com/ohmeow/blurr
 
