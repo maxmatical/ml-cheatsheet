@@ -27,7 +27,7 @@ PYTHONPATH=. venv/bin/gunicorn -w 3 -t 600 --bind 0.0.0.0:{port_number} main:app
 # -w is number of workers
 # -t is timeout in ms
 ```
-some optimiations for flask with request batching: https://www.sicara.ai/blog/optimize-response-time-api
+**some optimiations for flask with request batching:** https://www.sicara.ai/blog/optimize-response-time-api
 - still not as fast as tfserve/torchserve, but useful to understand how model serving frameworks work to reduce latency 
 
 ### fastai + aws sagemaker 
