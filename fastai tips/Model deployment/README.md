@@ -11,6 +11,7 @@ https://muellerzr.github.io/fastinference/
 
 - quantization, available in pytorch
 - pruning, knowledge distillation (teacher student), lottery ticket hypothesis: https://nathanhubens.github.io/fasterai/
+  - note: knowledge distillation will work for self-distillation, but not when there's unlabelled data
 
 
 ### flask + gunicorn (not the fastest, most general)
