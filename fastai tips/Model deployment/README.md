@@ -7,6 +7,11 @@ includes: all fastai, pytorch, and ONNX
 
 https://muellerzr.github.io/fastinference/
 
+### model compression
+
+- quantization, available in pytorch
+- pruning, knowledge distillation (teacher student), lottery ticket hypothesis: https://nathanhubens.github.io/fasterai/
+
 
 ### flask + gunicorn (not the fastest, most general)
 
