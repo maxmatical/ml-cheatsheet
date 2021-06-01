@@ -101,7 +101,8 @@ https://arxiv.org/abs/2002.05715
 https://github.com/JoshVarty/SelfSupervisedLearning/blob/34ab526d39b31f976bc821a4c0924db613c2f7f5/01_InpaintingImageWang/03_ImageWang_Leadboard_192.ipynb
 
 library for knowledge-distillation (can be used for self-distillation): https://nathanhubens.github.io/fasterai/
-    - note: will only work if all data is labelled, can't use when there's unlabelled data
+
+- note: will only work if all data is labelled, can't use when there's unlabelled data
 
 ### meta pseudo labels
 [paper](https://arxiv.org/pdf/2003.10580.pdf)
@@ -118,6 +119,6 @@ for t in range(epochs):
 
 ```
 
-### example of self-distillation/soft-pseudolabels
+### example of self-training/soft-pseudolabels
 https://github.com/maxmatical/fast.ai/blob/master/fastai_hf_self_distillation.ipynb
 
