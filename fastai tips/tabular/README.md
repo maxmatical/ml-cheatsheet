@@ -111,3 +111,6 @@ https://github.com/muellerzr/fastai2-SHAP
 
 ### Speeding up tabular learning by converting DF -> numpy
 https://muellerzr.github.io/fastblog/2020/04/22/TabularNumpy.html
+
+### SAINT 
+https://twitter.com/TheZachMueller/status/1400533460784197638
