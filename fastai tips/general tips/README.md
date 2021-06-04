@@ -149,9 +149,13 @@ easy way to snapshot ensemble:
 - checkpoint learners at end of training cycle (`fit_fc` or `fit_one_cycle`) as `stage1, stage2...`
 - at inference, load multiple learners from each checkpoint and ensemble predictions
 
-### **Ranger/General optimizer related tips:**
-Ranger seems to work really well (try with both `fit_one_cycle` and `fit_fc`
-  - `fit_one_cycle` may be better for transfer learning
+another way to ensemble: using stratified k-fold cv, then ensemble models together. [see here](https://walkwithfastai.com/tab.cv)
+
+### Optimizers
+See `optimizers.py`
+
+**Ranger** seems to work really well (try with both `fit_one_cycle` and `fit_flat_cos`)
+  - `fit_flat_cos` seems to work better for Ranger
 ![ranger](https://github.com/maxmatical/fast.ai/blob/master/ranger.png)
 
 https://medium.com/@lessw/new-deep-learning-optimizer-ranger-synergistic-combination-of-radam-lookahead-for-the-best-of-2dc83f79a48d
@@ -165,19 +169,23 @@ For adam based optimizers in general, try setting eps =[1.0, 0.1, 0.01]. Change 
 eps = 1e-4
 learn.opt_func = partial(learn.opt_func, eps=eps)
 ```
-[RangerAdabelief](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
+[**RangerAdabelief**](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
 
 [RangerAdabelief repo](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
 
 [RangerAdabelief episilon values](https://github.com/juntang-zhuang/Adabelief-Optimizer#2-epsilon)
 
+For **RangerAdabelief**, try `eps=1e-8` for CV, `eps=1e-16` for NLP, ``eps=1e-12` for RL as default values (try a eps sweep for hyperparam tuning)
+
 **set bn_wd = False, true_wd = True**
 
-**Note:** run `learn.fit_fc()` with new optimizers (flat + cosine anneling)
+**Note:** run `learn.fit_flat_cos()` with new optimizers (flat + cosine anneling)
 
-According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_adequacy_of_untuned_warmup_for_adaptive/, it seems like AdamW is still the best way to go
+According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_adequacy_of_untuned_warmup_for_adaptive/, it seems like AdamW may still be competitive
 
 Try using **SGD (momentum = 0.9, nesterov = True)**, can maybe generalize better
+
+[**Shapeness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) may be better for `ViT` and `MLP_Mixer` on cv tasks (in `optimzers.py`)
 
 
 ### **Save best model**
