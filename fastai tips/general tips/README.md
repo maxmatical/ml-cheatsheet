@@ -149,7 +149,8 @@ easy way to snapshot ensemble:
 - checkpoint learners at end of training cycle (`fit_fc` or `fit_one_cycle`) as `stage1, stage2...`
 - at inference, load multiple learners from each checkpoint and ensemble predictions
 
-another way to ensemble: using stratified k-fold cv, then ensemble models together. [see here](https://walkwithfastai.com/tab.cv)
+another way to ensemble: using stratified k-fold cv (to train k models), then ensemble models together. [see here](https://walkwithfastai.com/tab.cv)
+- k-fold cv for imagewoof: https://walkwithfastai.com/Cross_Validation#What-is-K-Fold-Cross-Validation?
 
 ### Optimizers
 See `optimizers.py`
