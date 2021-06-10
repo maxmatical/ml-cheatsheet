@@ -58,3 +58,7 @@ Huggingface transformers: https://towardsdatascience.com/fastai-with-transformer
 
 ### repo with transformer related code (training, inference, hpo, pseudolabel training)
 https://github.com/maxmatical/fastai-transformers
+
+### GPT-x for zero-shot learning
+
+GPT-J-6B (on par with GPT-3 6.7B model): https://arankomatsuzaki.wordpress.com/2021/06/04/gpt-j/
