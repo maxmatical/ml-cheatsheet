@@ -6,8 +6,7 @@ https://github.com/aikindergarten/fasthugs
 
 https://github.com/ohmeow/blurr
 
-### data augmentation: back translate
-https://amitness.com/2020/02/back-translation-in-google-sheets/
+**Tip:** seems like unfreezing and fine-tuning entire model can have equal or better performance than freezing and gradually unfreezing model
 
 ### **Label Smoothing**:
 
@@ -38,12 +37,6 @@ https://github.com/piegu/language-models
 
 https://github.com/piegu/language-models/blob/master/lm2-french.ipynb 
 
-### Transformers (BERT, RoBERTa, etc.) with fastai
-RoBERTa: https://medium.com/analytics-vidhya/using-roberta-with-fastai-for-nlp-7ed3fed21f6c
-
-Huggingface transformers: https://towardsdatascience.com/fastai-with-transformers-bert-roberta-xlnet-xlm-distilbert-4f41ee18ecb2?fbclid=IwAR2_MQh2XzsKEKqwckIShH8-wO5io6rD1wXb4nTn3-eABj8boE9jOYd3zsM 
-
-**Tip:** sometimes training the entire model can have equal or better performance than freezing and gradually unfreezing model
 
 ### **AWD-LSTM Specific**
 
@@ -54,7 +47,8 @@ Huggingface transformers: https://towardsdatascience.com/fastai-with-transformer
   - ensemble model: https://github.com/fastai/course-nlp 
   
 ### Data augmentation for NLP
-- translate text into another language, then translate back
+- backtranslation - translate text into another language, then translate back: https://amitness.com/2020/02/back-translation-in-google-sheets/
+- other methods: https://arxiv.org/abs/2106.07499
 
 ### repo with transformer related code (training, inference, hpo, pseudolabel training)
 https://github.com/maxmatical/fastai-transformers
@@ -62,3 +56,5 @@ https://github.com/maxmatical/fastai-transformers
 ### GPT-x for zero-shot learning
 
 GPT-J-6B (on par with GPT-3 6.7B model): https://arankomatsuzaki.wordpress.com/2021/06/04/gpt-j/
+
+example notebook: https://github.com/maxmatical/fast.ai/blob/master/GPT_J_6B_Topic_Modelling.ipynb
