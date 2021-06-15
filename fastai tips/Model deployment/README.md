@@ -1,6 +1,13 @@
 ## Model deployment
 
-### Some fastai deployment options:
+### fastai + pure pytorch deployment options (with jit tracing) examples:
+https://github.com/maxmatical/fast.ai/blob/master/fastai_%2B_blurr_%2B_deberta_classification.ipynb
+
+- can also add quantization
+**note:** with pytorch 1.9+, can use `with torch.inference_mode():` instead of `with torch.no_grad():` for even faster inference speedup
+
+
+### Some fastai/pytorch deployment options:
 https://twitter.com/TheZachMueller/status/1382459910907162626
 
 includes: all fastai, pytorch, and ONNX
