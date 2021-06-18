@@ -49,6 +49,7 @@ https://github.com/piegu/language-models/blob/master/lm2-french.ipynb
 ### Data augmentation for NLP
 - backtranslation - translate text into another language, then translate back: https://amitness.com/2020/02/back-translation-in-google-sheets/
 - other methods: https://arxiv.org/abs/2106.07499
+- data augmentation library https://github.com/facebookresearch/AugLy
 
 ### repo with transformer related code (training, inference, hpo, pseudolabel training)
 https://github.com/maxmatical/fastai-transformers
