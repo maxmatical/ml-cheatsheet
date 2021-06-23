@@ -51,3 +51,6 @@ https://docs.fast.ai/widgets.class_confusion.html
 https://airctic.com/getting_started/
 
 https://airctic.com/retinanet/
+
+### Timm and unets
+https://www.youtube.com/watch?v=552FVdcHIUU
