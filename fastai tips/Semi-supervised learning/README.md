@@ -122,3 +122,8 @@ for t in range(epochs):
 ### example of self-training/soft-pseudolabels
 https://github.com/maxmatical/fast.ai/blob/master/fastai_hf_self_distillation.ipynb
 
+### self-supervised learning with fastai
+https://github.com/KeremTurgutlu/self_supervised
+
+contains algos like DINO, BYOL, SwAV etc.
+
