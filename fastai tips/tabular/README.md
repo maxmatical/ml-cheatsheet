@@ -114,3 +114,8 @@ https://muellerzr.github.io/fastblog/2020/04/22/TabularNumpy.html
 
 ### SAINT 
 https://twitter.com/TheZachMueller/status/1400533460784197638
+
+### GBM
+- light gbm or catboost (catboost seems to be best single model)
+- https://catboost.ai/docs/concepts/about.html
+- hyperparam tuning for catboost https://catboost.ai/docs/concepts/parameter-tuning.html
