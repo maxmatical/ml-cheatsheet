@@ -8,6 +8,9 @@ https://github.com/ohmeow/blurr
 
 **Tip:** seems like unfreezing and fine-tuning entire model can have equal or better performance than freezing and gradually unfreezing model
 
+**General models to use**
+- classification: (distil)roberta, bart, deberta
+
 ### **Label Smoothing**:
 
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
