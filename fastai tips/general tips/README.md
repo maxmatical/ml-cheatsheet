@@ -379,4 +379,11 @@ class HEM(Callback):
         return reduce_loss(top_losses, getattr(self.old_lf, 'reduction', 'mean'))
 ```
 
+### Dealing with positive-negative imbalance in multi-label data
+- issue: if have a lot of classes, each class will see a lot of negative examples per 1 positive example
+- solution: 
+  - use a lower threhsold with BCE
+  - use a different loss function than BCE
+  - focal loss
+  - [Asymmetric Loss For Multi-Label Classification](https://github.com/Alibaba-MIIL/ASL)
 
