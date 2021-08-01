@@ -83,24 +83,27 @@ print(f"using {learn.loss_func}")
   - set both = 1 for regular focal loss, and `alpha = 0.25, gamma = 2.` for weighted focal loss
 - weighted focal loss for **multi-label**
   ```
-  class WeightedFocalLoss(nn.Module):
-    """ 
-    weighted version of Focal Loss
-    use alpha, gamma = 1., 1. for non-weighted version
-    """
-    def __init__(self, alpha=.25, gamma=2):
-        super(WeightedFocalLoss, self).__init__()
-        self.alpha = torch.tensor([alpha, 1-alpha]).cuda() # note this part might need to be changed!!
-        self.gamma = gamma
+  class MultiLabelFocalLoss(nn.Module):
+      def __init__(self, alpha=1, gamma=2, logits=False, reduction='mean'):
+          """
+          focal loss for multi label
+          can set alpha, gamma = 1, 1 for non weighted
+          reduction is either "mean", "sum", or None
+          """
+          super(FocalLoss, self).__init__()
+          self.alpha = alpha
+          self.gamma = gamma
+          self.logits = logits
+          self.reduction = reduction
 
-    def forward(self, inputs, targets):
-        BCE_loss = F.binary_cross_entropy_with_logits(inputs, targets, reduction='none')
-        targets = targets.type(torch.long)
-        at = self.alpha.gather(0, targets.data.view(-1))
-        pt = torch.exp(-BCE_loss)
-        F_loss = at*(1-pt)**self.gamma * BCE_loss
-        return F_loss.mean()
-
+      def forward(self, inputs, targets):
+          if self.logits:
+              BCE_loss = F.binary_cross_entropy_with_logits(inputs, targets, reduction='none')
+          else:
+              BCE_loss = F.binary_cross_entropy(inputs, targets, reduction='none')
+          pt = torch.exp(-BCE_loss)
+          fl_loss = self.alpha * (1-pt)**self.gamma * BCE_loss
+          return fl_loss.mean() if self.reduce == 'mean' else fl_loss.sum() if self.reduce == 'sum' else fl_loss
   ```
 
 
