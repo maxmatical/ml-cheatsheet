@@ -77,41 +77,20 @@ if weighted_loss:
     learn.loss_func = loss_func
 print(f"using {learn.loss_func}")
 ```
-### focal loss (only for binary??)
-```
-class FocalLoss(nn.Module):
-    def __init__(self, alpha=1., gamma=1.):
-        super().__init__()
-        self.alpha = alpha
-        self.gamma = gamma
-
-    def forward(self, inputs, targets, **kwargs):
-        CE_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
-        pt = torch.exp(-CE_loss)
-        F_loss = self.alpha * ((1-pt)**self.gamma) * CE_loss
-        return F_loss.mean()
-
-class WeightedFocalLoss(nn.Module):
-    def __init__(self, alpha=.25, gamma=2.):
-        super().__init__()
-        self.alpha = alpha
-        self.gamma = gamma
-
-    def forward(self, inputs, targets, **kwargs):
-        CE_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
-        pt = torch.exp(-CE_loss)
-        F_loss = self.alpha * ((1-pt)**self.gamma) * CE_loss
-        return F_loss.mean()
-
-```
-
-**focal loss for 1 output:** 
-```
-class WeightedFocalLoss(nn.Module):
-    "Non weighted version of Focal Loss"
+### focal loss
+- [fastai version (for multi-class classification)](https://docs.fast.ai/losses.html#FocalLossFlat)
+  - gamma is `gamma` and alpha is `weight` in constructor
+  - set both = 1 for regular focal loss, and `alpha = 0.25, gamma = 2.` for weighted focal loss
+- weighted focal loss for **multi-label**
+  ```
+  class WeightedFocalLoss(nn.Module):
+    """ 
+    weighted version of Focal Loss
+    use alpha, gamma = 1., 1. for non-weighted version
+    """
     def __init__(self, alpha=.25, gamma=2):
         super(WeightedFocalLoss, self).__init__()
-        self.alpha = torch.tensor([alpha, 1-alpha]).cuda()
+        self.alpha = torch.tensor([alpha, 1-alpha]).cuda() # note this part might need to be changed!!
         self.gamma = gamma
 
     def forward(self, inputs, targets):
@@ -121,7 +100,9 @@ class WeightedFocalLoss(nn.Module):
         pt = torch.exp(-BCE_loss)
         F_loss = at*(1-pt)**self.gamma * BCE_loss
         return F_loss.mean()
-```
+
+  ```
+
 
 ### Weighted Dataloader
 samples data accorted to probability of appearing in batch
