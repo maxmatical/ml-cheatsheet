@@ -64,3 +64,6 @@ https://docs.bentoml.org/en/latest/concepts.html?fbclid=IwAR3J05Bl7o5YLOF76v_WEI
 
 ### TensorRT (for deployment with Nvidia GPUS)
 https://github.com/NVIDIA-AI-IOT/torch2trt
+
+### Applying GPU to Snap-Scale Machine Learning Inference
+https://eng.snap.com/applying_gpu_to_snap
