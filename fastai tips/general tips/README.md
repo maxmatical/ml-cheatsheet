@@ -371,3 +371,7 @@ class HEM(Callback):
   - focal loss
   - [Asymmetric Loss For Multi-Label Classification](https://github.com/Alibaba-MIIL/ASL)
 
+### training models that don't fit in GPU
+- use DeepSpeed https://github.com/microsoft/DeepSpeed (model parallelism, ZeRO optimizer, etc.)
+  - [getting started](https://www.deepspeed.ai/getting-started/)
+- simple model parallelism https://pytorch.org/tutorials/intermediate/model_parallel_tutorial.html
