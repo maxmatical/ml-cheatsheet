@@ -377,3 +377,5 @@ class HEM(Callback):
 - simple model parallelism https://pytorch.org/tutorials/intermediate/model_parallel_tutorial.html
 
 ### using fastai in pytorch training loop
+[example notebook](https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb)
+- uses fastai loss functions and `flat_cos` learning rate scheduler 
