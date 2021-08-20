@@ -54,3 +54,6 @@ https://airctic.com/retinanet/
 
 ### Timm and unets
 https://www.youtube.com/watch?v=552FVdcHIUU
+
+### BlurPool for shift invariance
+[example notebook](https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette%20-%205%20epochs.ipynb)
