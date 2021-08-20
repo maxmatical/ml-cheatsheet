@@ -375,3 +375,5 @@ class HEM(Callback):
 - use DeepSpeed https://github.com/microsoft/DeepSpeed (model parallelism, ZeRO optimizer, etc.)
   - [getting started](https://www.deepspeed.ai/getting-started/)
 - simple model parallelism https://pytorch.org/tutorials/intermediate/model_parallel_tutorial.html
+
+### using fastai in pytorch training loop
