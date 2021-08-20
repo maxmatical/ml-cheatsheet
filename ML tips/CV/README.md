@@ -43,6 +43,7 @@ https://github.com/fg91/Neural-Image-Caption-Generation-Tutorial
 
 ### Imagenette (and vairants) leaderboards 
 https://github.com/fastai/imagenette 
+- reaching top of lbs with some tricks (blurpool, hyperparam tuning, ranger, labelsmoothing, resnext, etc.)[https://radekosmulski.com/how-to-reach-the-top-of-the-imagenette-leaderboard/]
 
 ### View misclassifications
 https://docs.fast.ai/widgets.class_confusion.html
