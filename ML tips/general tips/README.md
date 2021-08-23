@@ -271,8 +271,8 @@ https://auto.gluon.ai/stable/index.html
 
 
 ### Batch size:
-
-it seems like 32/64 is the best starting point
+For speed: set bs to as large as will fit in GPU memory
+For generalization performance: it seems like 32/64 is the best for generalization (more updates, more noise for regularization)
 
 ### Batch size finder
 
