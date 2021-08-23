@@ -156,21 +156,69 @@ learn.opt_func = partial(learn.opt_func, eps=eps)
 ```
 [**RangerAdabelief**](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
 
-[RangerAdabelief repo](https://forums.fast.ai/t/gradient-centralization-ranger-optimizer-updated-with-it/68420/18)
+[RangerAdabelief repo](https://github.com/juntang-zhuang/Adabelief-Optimizer)
 
 [RangerAdabelief episilon values](https://github.com/juntang-zhuang/Adabelief-Optimizer#2-epsilon)
 
-For **RangerAdabelief**, try `eps=1e-8` for CV, `eps=1e-16` for NLP, ``eps=1e-12` for RL as default values (try a eps sweep for hyperparam tuning)
+For **RangerAdabelief**, try `eps=1e-8` for CV, `eps=1e-16` for NLP, `eps=1e-12` for RL as default values (try a eps sweep for hyperparam tuning)
 
-**set bn_wd = False, true_wd = True**
+- **set `true_wd = True, bn_wd = False`**
 
-**Note:** run `learn.fit_flat_cos()` with new optimizers (flat + cosine anneling)
+- **Note:** run `learn.fit_flat_cos()` with new optimizers (flat + cosine anneling)
 
 According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_adequacy_of_untuned_warmup_for_adaptive/, it seems like AdamW may still be competitive
 
 Try using **SGD (momentum = 0.9, nesterov = True) or RMSPROP(momentum=0.9)**, can maybe generalize better (try for CV, maybe also works for NLP)
 
 [**Shapeness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) may be better for `ViT` and `MLP_Mixer` on cv tasks (in `optimzers.py`)
+
+Optimizers to try
+```
+optimizer_config_mapping = {
+    "adamw": {"optimizer": AdamW, "wd": {"true_wd": True, "bn_wd": True}},
+    "ranger": {"optimizer": Ranger, "wd": {"true_wd": True, "bn_wd": False}},
+    "ranger_nogc": {
+        "optimizer": Ranger,
+        "hyperparameters": {"use_gc": False},
+        "wd": {"true_wd": True, "bn_wd": False},
+    },
+    "rangeradabelief": {"optimizer": RangerAdaBelief, "wd": {"true_wd": True, "bn_wd": False}},
+    "rangeradabelief_nogc": {
+        "optimizer": RangerAdaBelief,
+        "hyperparameters": {"use_gc": False},
+        "wd": {"true_wd": True, "bn_wd": False},
+    },
+    "sam": {
+        "optimizer": SAM,
+        "hyperparameters": {"base_optimizer": AdamW},
+        "wd": {"true_wd": True, "bn_wd": False},
+    },
+    "sgd": {
+        "optimizer": SGD,
+        "hyperparameters": {"momentum": 0, "nesterov": False},
+        "wd": {"true_wd": True, "bn_wd": False},
+        "set_betas": False,
+    },
+    "sgd_momentum": {
+        "optimizer": SGD,
+        "hyperparameters": {"momentum": 0.9, "nesterov": False},
+        "wd": {"true_wd": True, "bn_wd": False},
+        "set_betas": False,
+    },
+    "sgd_nesterov": {
+        "optimizer": SGD,
+        "hyperparameters": {"momentum": 0.9, "nesterov": True},
+        "wd": {"true_wd": True, "bn_wd": False},
+        "set_betas": False,
+    },
+    "rmsprop": {
+        "optimizer": RMSprop,
+        "hyperparameters": {"momentum": 0.9},
+        "wd": {"true_wd": True, "bn_wd": False},
+        "set_betas": False,
+    },
+}
+```
 
 
 ### **Save best model**
