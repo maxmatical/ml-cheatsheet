@@ -30,14 +30,46 @@ x    | y1 | y2 | ... |yn
 
 
 data = (ImageList
-    .from_df(path=tub_path, df=df)
+    .from_df(path=path, df=df)
     .split_by_rand_pct()
     .label_from_df(cols=[c1,c2,..., cn],label_cls=FloatList)
     .transform(get_transforms(do_flip=False), size=(120,160))
     .databunch()
     .normalize(imagenet_stats))
+    
+### or in fastai v2
 
+
+
+# defining batch and individual image transforms
+size = 224
+tfms = aug_transforms(size=size, max_rotate=20, max_zoom=1.3, max_lighting=0.4, max_warp=0.4,
+                      p_affine=1., p_lighting=1.)
+item_tfms = RandomResizedCrop(460, min_scale=0.75, ratio=(1.,1.)) # used to get images all the same size
+
+# batch transforms
+batch_tfms = [*tfms, Normalize.from_stats(*imagenet_stats)]
+
+# datablock
+dblock_clas = DataBlock(blocks=(ImageBlock, RegressionBlock),
+                   splitter=ColSplitter("is_valid"),
+                   get_x=ColReader("data"),
+                   get_y=ColReader([c1, c2, ..., cn]),
+                   item_tfms=Resize(224),
+                   batch_tfms=aug_transforms())
+                   
+dls = dblock_clas.dataloaders(df, bs=64)
+# then use dls in learner
+
+
+# for text
+dblock_clas = DataBlock(blocks=(TextBlock.from_df('text', seq_len=72, vocab=dls.vocab), RegressionBlock),
+                      get_x=ColReader("data"),
+                      get_y=ColReader([c1, c2, ... , cn),
+                      splitter=ColSplitter())
 ```
+
+
 where `yi` is the predicted probablilty of class `ci`
 
 and use `MSE` as loss function
