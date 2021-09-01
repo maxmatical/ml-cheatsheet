@@ -171,7 +171,7 @@ According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_a
 Try using **SGD (momentum = 0.9, nesterov = True) or RMSPROP(momentum=0.9)**, can maybe generalize better (try for CV, maybe also works for NLP)
 
 [**Shapeness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) may be better for `ViT` and `MLP_Mixer` on cv tasks
-  - use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/SAM.py
+  - use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
 
 Optimizers to try
 ```
@@ -381,31 +381,8 @@ https://www.reddit.com/r/MachineLearning/comments/n9fti7/d_a_few_helpful_pytorch
 6. You can clear GPU cache with `torch.cuda.empty_cache()`, which is helpful if you want to delete and recreate a large model while using a notebook.
 7. Don't forget to call `model.eval()` before you start testing! It's simple but I forget it all the time. This will make necessary changes to layer behavior that changes in between training and eval stages (e.g. stop dropout, batch norm averaging)
 
-### hard example mining
-```
-from fastai2.vision.all import *
-
-class HEM(Callback):
-    run_after,run_valid = [Normalize],False
-    
-    def __init__(self, top_k=0.5): self.top_k = top_k
-        
-    def begin_fit(self):
-        self.old_lf,self.learn.loss_func = self.learn.loss_func,self.lf
-        
-    def after_fit(self):
-        self.learn.loss_func = self.old_lf
-
-    def lf(self, pred, *yb):
-        if not self.training: return self.old_lf(pred, *yb)
-        # Select top_k samples to keep. If it's between [0,1), means a percentage of batch size
-        top_k = self.top_k if self.top_k >= 1 else round(pred.shape[0] * self.top_k)
-        with NoneReduce(self.old_lf) as lf:
-            losses = lf(pred,*yb)
-            top_losses = losses.topk(top_k, sorted=False)[0]
-            
-        return reduce_loss(top_losses, getattr(self.old_lf, 'reduction', 'mean'))
-```
+### hard example mining/batch loss filter
+batch loss filter callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
 
 ### Dealing with positive-negative imbalance in multi-label data
 - issue: if have a lot of classes, each class will see a lot of negative examples per 1 positive example
