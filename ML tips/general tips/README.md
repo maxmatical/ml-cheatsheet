@@ -170,7 +170,8 @@ According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_a
 
 Try using **SGD (momentum = 0.9, nesterov = True) or RMSPROP(momentum=0.9)**, can maybe generalize better (try for CV, maybe also works for NLP)
 
-[**Shapeness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) may be better for `ViT` and `MLP_Mixer` on cv tasks (in `optimzers.py`)
+[**Shapeness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) may be better for `ViT` and `MLP_Mixer` on cv tasks
+  - use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/SAM.py
 
 Optimizers to try
 ```
@@ -186,11 +187,6 @@ optimizer_config_mapping = {
     "rangeradabelief_nogc": {
         "optimizer": RangerAdaBelief,
         "hyperparameters": {"use_gc": False},
-        "wd": {"true_wd": True, "bn_wd": False},
-    },
-    "sam": {
-        "optimizer": SAM,
-        "hyperparameters": {"base_optimizer": AdamW},
         "wd": {"true_wd": True, "bn_wd": False},
     },
     "sgd": {
