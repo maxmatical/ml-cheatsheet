@@ -1,7 +1,10 @@
 # pytorch specific tips
 https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/#5-consider-using-another-optimizer
 
-
+## deepspeed
+- used for model parallelism
+- contains zero optimizer
+- https://github.com/microsoft/DeepSpeed
 
 # integrating fastai functions
 ## learning rate 
