@@ -400,3 +400,6 @@ batch loss filter callback: https://github.com/maxmatical/ml-cheatsheet/blob/mas
 ### using fastai in pytorch training loop
 [example notebook](https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb)
 - uses fastai loss functions and `flat_cos` learning rate scheduler 
+
+### fastai on tpu
+https://github.com/butchland/fastai_xla_extensions
