@@ -64,3 +64,24 @@ GPT-J-6B (on par with GPT-3 6.7B model): https://arankomatsuzaki.wordpress.com/2
 example notebook: https://github.com/maxmatical/fast.ai/blob/master/GPT_J_6B_Topic_Modelling.ipynb
 
 GPT-J-6B on gpus: https://github.com/paulcjh/gpt-j-6b/blob/main/gpt-j-t4.ipynb
+
+### Training model on synthetic data
+- https://arxiv.org/pdf/2109.09193.pdf
+- use a large language model (T5, GPT3, GPTJ, etc.)
+- use prompt to generate sample text **conditioned** on a label, eg
+  ```
+  Sample Movie Review: This is the most saccharine romance I ever
+  sat through. The perfect film for an idle housewife in kerchief,
+  housedress, and ostrich-trimmed high-heeled mules to watch in the
+  afternoon, lying on the couch eating bonbons. In fact, bonbons play a
+  prominent role in the movie. The only reason I was able to watch to
+  the end, is that I finally was able to gaze at Keanu Reeves’ dreamy
+  face in almost every scene. In most of his films, he moves too fast
+  to get a good look. The only rapid action in this show is Giancarlo
+  Giannini waving his hands with Latin emotionality - more Italian than
+  Mexican, really.
+  
+  Negative Movie Review:
+  ```
+- train discriminative model (BERT, T5, BART, etc.) using label and synthetic text
+- (Optional?) fine-tune on actual dataset
