@@ -89,3 +89,6 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   ```
 - train discriminative model (BERT, T5, BART, etc.) using label and synthetic text
 - (Optional?) fine-tune on actual dataset
+
+### Wysdom chat analytics Topic Mining
+https://hackmd.io/uVFpqWb9Q0KV3fmq0LdvMA
