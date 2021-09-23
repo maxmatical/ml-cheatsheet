@@ -67,6 +67,8 @@ GPT-J-6B on gpus: https://github.com/paulcjh/gpt-j-6b/blob/main/gpt-j-t4.ipynb
 
 Fine-tune GPT-J-6B (requires TPUs): https://github.com/kingoflolz/mesh-transformer-jax/blob/master/howto_finetune.md
 
+GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggingface.co/transformers/master/model_doc/gptj.html
+
 ### Training model on synthetic data
 - https://arxiv.org/pdf/2109.09193.pdf
 - use a large language model (T5, GPT3, GPTJ, etc.)
