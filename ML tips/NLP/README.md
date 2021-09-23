@@ -65,6 +65,8 @@ example notebook: https://github.com/maxmatical/fast.ai/blob/master/GPT_J_6B_Top
 
 GPT-J-6B on gpus: https://github.com/paulcjh/gpt-j-6b/blob/main/gpt-j-t4.ipynb
 
+Fine-tune GPT-J-6B (requires TPUs): https://github.com/kingoflolz/mesh-transformer-jax/blob/master/howto_finetune.md
+
 ### Training model on synthetic data
 - https://arxiv.org/pdf/2109.09193.pdf
 - use a large language model (T5, GPT3, GPTJ, etc.)
