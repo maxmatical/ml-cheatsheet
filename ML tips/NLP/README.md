@@ -95,6 +95,8 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 - https://hackmd.io/uVFpqWb9Q0KV3fmq0LdvMA
 - SOTA Survey: https://silviatti.github.io/resources/alliancebernstein_30_10_20.pdf
 - [Cross-lingual Contextualized Topic Models with Zero-shot Learning](https://paperswithcode.com/paper/cross-lingual-contextualized-topic-models)
+  - contexualized topic models (CTM) github repo: https://github.com/MilaNLProc/contextualized-topic-models
+  - Example tutorial with CTM: https://colab.research.google.com/drive/1fXJjr_rwqvpp1IdNQ4dxqN4Dp88cxO97?usp=sharing#scrollTo=iZEPr_QFJdBz
 
 ### Bi-Encoder for Neural Search
 https://www.youtube.com/watch?v=XHY-3FzaLGc
