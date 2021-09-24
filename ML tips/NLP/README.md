@@ -119,9 +119,10 @@ used for
 - Information retreival
 - Question Answering
 
-- Uses a similarity matrix for loss (similar to CLIP)
+Uses a similarity matrix for loss (similar to CLIP)
 
 ### Information Retreival Pipeline
-- can be done with the bi-encoder (for larg collections) https://www.sbert.net/examples/training/ms_marco/README.html#bi-encoder 
-- or cross encoder https://www.sbert.net/examples/training/ms_marco/README.html#cross-encoder
-- One way to combine the 2: https://www.sbert.net/examples/applications/retrieve_rerank/README.html
+- bi-encoder (for large collections of docs): https://www.sbert.net/examples/training/ms_marco/README.html#bi-encoder 
+  - train using `MultipleNegativesRankingLoss`, `MarginMSE`, or the method described above for SOTA text embedding model
+- cross encoder (for smaller collections OR after candidate retreival from bi-encoder): https://www.sbert.net/examples/training/ms_marco/README.html#cross-encoder
+- One way to combine both encoders: https://www.sbert.net/examples/applications/retrieve_rerank/README.html
