@@ -1,6 +1,8 @@
 # CLIP
 https://www.casualganpapers.com/zero-shot-contrastive-loss-image-text-pretraining/CLIP-explained.html
 
+Github repo: https://github.com/openai/CLIP
+
 ## Notes
 - `n` image - text pairs (`n` refers to a batch of images)
 - `I_f = image_encoder(I)` has shape `[n, d_i]` where `n` is batch size `d_i` is output dimension of the encoder (e.g. 512, etc.)
@@ -18,7 +20,7 @@ https://www.casualganpapers.com/zero-shot-contrastive-loss-image-text-pretrainin
   ```
   labels = np.arrange(n)# = [0, 1, ..., n-1]
   loss_i = cross_entropy(logits, labels, axis=0) # (image is columns)
-  loss_t = cross_entropy(logits, labels, axis=0) # (text is rows)
+  loss_t = cross_entropy(logits, labels, axis=1) # (text is rows)
   loss = (loss_i + loss_j)/2
   ```
 
