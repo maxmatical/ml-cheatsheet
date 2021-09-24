@@ -93,3 +93,13 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 ### Wysdom chat analytics Topic Mining
 - unsupervised topic mining
 - https://hackmd.io/uVFpqWb9Q0KV3fmq0LdvMA
+
+### Bi-Encoder for Neural Search
+https://www.youtube.com/watch?v=XHY-3FzaLGc
+
+Sapmle code: https://www.sbert.net/examples/training/ms_marco/README.html#ms-marco
+
+used for 
+- search
+- Information retreival
+- Question Answering
