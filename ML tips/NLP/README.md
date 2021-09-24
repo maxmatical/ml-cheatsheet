@@ -121,7 +121,7 @@ used for
 
 - Uses a similarity matrix for loss (similar to CLIP)
 
-### Information Retreival
+### Information Retreival Pipeline
 - can be done with the bi-encoder (for larg collections) https://www.sbert.net/examples/training/ms_marco/README.html#bi-encoder 
 - or cross encoder https://www.sbert.net/examples/training/ms_marco/README.html#cross-encoder
 - One way to combine the 2: https://www.sbert.net/examples/applications/retrieve_rerank/README.html
