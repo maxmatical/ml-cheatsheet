@@ -92,6 +92,11 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 
 ## Topic Modelling
 - unsupervised topic mining
+- Methods:
+  - LDA
+  - NMF
+  - SBERT + Clustering
+  - GPT 
 - https://hackmd.io/uVFpqWb9Q0KV3fmq0LdvMA
 
 ### Contextualized Topic Models (CTM)
@@ -99,6 +104,8 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 - [Cross-lingual Contextualized Topic Models with Zero-shot Learning](https://paperswithcode.com/paper/cross-lingual-contextualized-topic-models)
   - contexualized topic models (CTM) github repo: https://github.com/MilaNLProc/contextualized-topic-models
   - Example tutorial with CTM: https://colab.research.google.com/drive/1fXJjr_rwqvpp1IdNQ4dxqN4Dp88cxO97?usp=sharing#scrollTo=iZEPr_QFJdBz
+
+- Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
 
 ## Bi-Encoder for Neural Search
 https://www.youtube.com/watch?v=XHY-3FzaLGc
