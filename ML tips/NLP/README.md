@@ -108,7 +108,7 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 - Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
 
 ## Bi-Encoder for Neural Search
-https://www.youtube.com/watch?v=XHY-3FzaLGc
+video: https://www.youtube.com/watch?v=XHY-3FzaLGc
 
 ![training process](https://github.com/maxmatical/ml-cheatsheet/blob/master/images/neural_search.png)
 
