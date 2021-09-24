@@ -2,11 +2,22 @@
 https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/#5-consider-using-another-optimizer
 
 ## deepspeed
-- used for model parallelism
+- used for model parallelism (when model doesn't fit on 1 gpu)
 - contains zero optimizer
-- https://github.com/microsoft/DeepSpeed
+- use DeepSpeed https://github.com/microsoft/DeepSpeed (model parallelism, ZeRO optimizer, etc.)
+  - [getting started](https://www.deepspeed.ai/getting-started/)
+- simple model parallelism https://pytorch.org/tutorials/intermediate/model_parallel_tutorial.html
+
+
+## fastai on tpu
+https://github.com/butchland/fastai_xla_extensions
 
 # integrating fastai functions
+
+## using fastai in pytorch training loop
+[example notebook](https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb)
+- uses fastai loss functions and `flat_cos` learning rate scheduler 
+
 ## learning rate 
 - lr finder: https://github.com/davidtvs/pytorch-lr-finder
 - fit_flat_cos lr schedule (https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb)
