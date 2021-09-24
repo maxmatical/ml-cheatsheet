@@ -97,6 +97,9 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 ### Bi-Encoder for Neural Search
 https://www.youtube.com/watch?v=XHY-3FzaLGc
 
+![training process](https://github.com/maxmatical/ml-cheatsheet/blob/master/images/neural_search.png)
+
+
 Sapmle code: https://www.sbert.net/examples/training/ms_marco/README.html#ms-marco
 
 used for 
