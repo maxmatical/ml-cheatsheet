@@ -90,9 +90,11 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 - train discriminative model (BERT, T5, BART, etc.) using label and synthetic text
 - (Optional?) fine-tune on actual dataset
 
-### Wysdom chat analytics Topic Mining
+### Topic Modelling
 - unsupervised topic mining
 - https://hackmd.io/uVFpqWb9Q0KV3fmq0LdvMA
+- SOTA Survey: https://silviatti.github.io/resources/alliancebernstein_30_10_20.pdf
+- [Cross-lingual Contextualized Topic Models with Zero-shot Learning](https://paperswithcode.com/paper/cross-lingual-contextualized-topic-models)
 
 ### Bi-Encoder for Neural Search
 https://www.youtube.com/watch?v=XHY-3FzaLGc
