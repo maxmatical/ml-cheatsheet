@@ -107,7 +107,7 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 
 - Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
 
-## Bi-Encoder for Neural Search
+## Training State-of-the-art Text Embedding Models
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
 
 ![training process](https://github.com/maxmatical/ml-cheatsheet/blob/master/images/neural_search.png)
@@ -118,3 +118,10 @@ used for
 - search
 - Information retreival
 - Question Answering
+
+- Uses a similarity matrix for loss (similar to CLIP)
+
+### Information Retreival
+- can be done with the bi-encoder (for larg collections) https://www.sbert.net/examples/training/ms_marco/README.html#bi-encoder 
+- or cross encoder https://www.sbert.net/examples/training/ms_marco/README.html#cross-encoder
+- One way to combine the 2: https://www.sbert.net/examples/applications/retrieve_rerank/README.html
