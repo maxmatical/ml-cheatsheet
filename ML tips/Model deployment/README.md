@@ -67,3 +67,17 @@ https://github.com/NVIDIA-AI-IOT/torch2trt
 
 ### Applying GPU to Snap-Scale Machine Learning Inference
 https://eng.snap.com/applying_gpu_to_snap
+
+### Scaling BERT to 1B+ daily request on CPUs
+https://blog.roblox.com/2020/05/scaled-bert-serve-1-billion-daily-requests-cpus/
+
+Key takeaways:
+
+1. GPU works better for batching, but **real time requests worked better for non batching**, use CPU
+2. set `num_threads` to 1
+3. use smaller model (distillbert, distillroberta etc.)
+4. dynamic shapes (turn `padding=False` when tokenizing)
+  - works because using bs of 1
+5. quantize
+6. cache respones to common text inputs (via token ids)
+7. favor horizontal scaling over vertical
