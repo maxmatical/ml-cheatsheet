@@ -106,6 +106,8 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   - Example tutorial with CTM: https://colab.research.google.com/drive/1fXJjr_rwqvpp1IdNQ4dxqN4Dp88cxO97?usp=sharing#scrollTo=iZEPr_QFJdBz
 
 - Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
+  - CTM is used for ~200 tokens, so maybe not as useful for super short documents
+  - maybe inject GPT topic as another context vector (either another vector to concatenate, or add GPT topic to original text)
 
 ## Training State-of-the-art Text Embedding Models
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
