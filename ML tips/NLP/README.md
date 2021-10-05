@@ -132,5 +132,5 @@ Uses a similarity matrix for loss (similar to CLIP)
     - train cross encoder (CE) first (either from scratch or knowledge distillation)
     - for each `(query, doc1, doc2)` triplet, calculate
         - `CE_distance = CEScore(query, doc1) - CEScore(query, doc2)`, (cache `CEScore` as `{query, doc, score}`)
-            - alternatively: use `CE` in the training. don't add `CE` params to optimizer, and freeze parameters (either `no_grad` or `inference_mode`) to compute `CEScore`
+            - alternatively: use `CE` in the training. don't add `CE` params to optimizer, freeze parameters, and make sure gradients aren't tracked when calling `CE` (either `no_grad` or `inference_mode`) to compute `CEScore`
         - `BE_distance = BEScore(query, doc1) - BEScore(query, doc2)` (by default `BEScore` is dot-product, but can also be cosine-similarity)
