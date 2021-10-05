@@ -1,5 +1,5 @@
 # pytorch specific tips
-https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/#5-consider-using-another-optimizer
+https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/
 
 - don't forget to call `optimizer.zero_grad()` before calling `model(xb)`
 
