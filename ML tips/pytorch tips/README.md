@@ -1,7 +1,7 @@
 # pytorch specific tips
 https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/
 
-- don't forget to call `optimizer.zero_grad()` before calling `model(xb)`
+- don't forget to call `optimizer.zero_grad()` before calling `loss.backward()` and `optmizer.step()`
 
 ## deepspeed
 - used for model parallelism (when model doesn't fit on 1 gpu)
