@@ -121,6 +121,9 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 
             return theta
   ```
+  ![image](https://user-images.githubusercontent.com/8890262/136230216-35286ecf-2788-486a-b2a9-88fcc127a3bf.png)
+  - here `|K| == n_components`
+  - take argmax of sampled representation to get topic
 
 - Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
   - CTM is used for ~200 tokens, so maybe not as useful for super short documents
