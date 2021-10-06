@@ -105,6 +105,23 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   - contexualized topic models (CTM) github repo: https://github.com/MilaNLProc/contextualized-topic-models
   - Example tutorial with CTM: https://colab.research.google.com/drive/1fXJjr_rwqvpp1IdNQ4dxqN4Dp88cxO97?usp=sharing#scrollTo=iZEPr_QFJdBz
 
+**Notes**:
+- the encoder generates a `mu` and `sigma`, which are of size `(bs, n_components)` aka `n_topics`
+- to get a predicted topic, the decoder network samples `n` times from a gaussian distribution with `mu, sigma` to get `theta`, then take the argmax of the avg probabilities 
+  ```
+  def get_theta(self, x, x_bert, labels=None):
+        with torch.no_grad():
+            # batch_size x n_components
+            posterior_mu, posterior_log_sigma = self.inf_net(x, x_bert, labels)
+            #posterior_sigma = torch.exp(posterior_log_sigma)
+
+            # generate samples from theta
+            theta = F.softmax(
+                self.reparameterize(posterior_mu, posterior_log_sigma), dim=1)
+
+            return theta
+  ```
+
 - Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
   - CTM is used for ~200 tokens, so maybe not as useful for super short documents
   - maybe inject GPT topic as another context vector (either another vector to concatenate, or add GPT topic to original text)
