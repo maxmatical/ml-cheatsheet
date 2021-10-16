@@ -223,6 +223,11 @@ optimizer_config_mapping = {
 ```
 
 
+**Ranger21**: https://github.com/lessw2020/Ranger21
+- no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
+- `use_madgrad = True` might be better for transformers
+
+
 ### **Save best model**
 
 ```
