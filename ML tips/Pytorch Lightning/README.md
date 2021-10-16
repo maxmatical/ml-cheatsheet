@@ -39,5 +39,13 @@ lr schedules: use pytorch lr shcedules like `OneCycleLR` in the training step, s
 
 label smoothing: either use [fastai implementation](https://github.com/fastai/fastai/blob/e80adfc3786464b38c487a0382424c6197166499/fastai/losses.py#L13) or [see here](https://stackoverflow.com/questions/55681502/label-smoothing-in-pytorch) for pure pytorch
 
-## SAM with pytorch lightning
+## Optimizers
+
+### SAM with pytorch lightning
 https://github.com/davda54/sam
+
+## Ranger21
+https://github.com/lessw2020/Ranger21
+
+- no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`
+- `use_madgrad = True` might be better for transformers
