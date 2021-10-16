@@ -32,6 +32,12 @@ def training_epoch_end(self, outputs):
 ## Useful fastai functionalities in ptl
 [lr finder]: https://pytorch-lightning.readthedocs.io/en/latest/common/trainer.html#auto-lr-find
 
+lr schedules: use pytorch lr shcedules like `OneCycleLR` in the training step, see here: https://pytorch-lightning.readthedocs.io/en/latest/common/optimizers.html#learning-rate-scheduling-manual
+    - need to take fastai implementation for `fit_flat_cos` schedule: https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb
+
 `accuracy` metric: `from torchmetrics.functional import accuracy`
 
 label smoothing: either use [fastai implementation](https://github.com/fastai/fastai/blob/e80adfc3786464b38c487a0382424c6197166499/fastai/losses.py#L13) or [see here](https://stackoverflow.com/questions/55681502/label-smoothing-in-pytorch) for pure pytorch
+
+## SAM with pytorch lightning
+https://github.com/davda54/sam
