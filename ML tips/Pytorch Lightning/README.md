@@ -29,8 +29,11 @@ def training_epoch_end(self, outputs):
         sch.step(self.trainer.callback_metrics["loss"])
 ```
 
+[stochastic weight averaging (SWA)](https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html#stochastic-weight-averaging)
+
 ## Useful fastai functionalities in ptl
 [lr finder]: https://pytorch-lightning.readthedocs.io/en/latest/common/trainer.html#auto-lr-find
+- with cosine annealing, lr schedule is basically `fit_flat_cos`?
 
 lr schedules: use pytorch lr shcedules like `OneCycleLR` in the training step, see here: https://pytorch-lightning.readthedocs.io/en/latest/common/optimizers.html#learning-rate-scheduling-manual
     - need to take fastai implementation for `fit_flat_cos` schedule: https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb
@@ -49,3 +52,13 @@ https://github.com/lessw2020/Ranger21
 
 - no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`
 - `use_madgrad = True` might be better for transformers
+
+## scaling batch size
+https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html#auto-scaling-of-batch-size
+
+## Gradient accumulation and clipping
+https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html#training-tricks
+
+## Model parallelism (inc. deepspeed)
+https://pytorch-lightning.readthedocs.io/en/latest/advanced/advanced_gpu.html
+
