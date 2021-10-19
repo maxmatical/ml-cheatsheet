@@ -15,6 +15,11 @@ https://github.com/ohmeow/blurr
 
 loss_func=FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1) for NLP
 
+## SAM for NLP
+https://github.com/SamsungLabs/ASAM?fbclid=IwAR0_-1leTZ_loGjIDM-y2q-N6jQPdQA0AApNMOCQA2FeVOe5yq0zvQHuRSk
+
+[seems to work well for NLP as well](https://arxiv.org/abs/2110.08529)
+
 
 ## Fixing mismatch between vocab size in data_clas and data_lm:
 
