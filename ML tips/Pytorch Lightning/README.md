@@ -62,3 +62,7 @@ https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html
 ## Model parallelism (inc. deepspeed)
 https://pytorch-lightning.readthedocs.io/en/latest/advanced/advanced_gpu.html
 
+## Mixup for pytorch lightning
+https://github.com/PyTorchLightning/pytorch-lightning/issues/790
+- helpful for vision, may be helpful for nlp as well (classification problems)
+
