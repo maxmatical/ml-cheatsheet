@@ -46,6 +46,8 @@ https://github.com/butchland/fastai_xla_extensions
 ## mixup
 - mixup: https://towardsdatascience.com/enhancing-neural-networks-with-mixup-in-pytorch-5129d261bc4a
   - call be a callback?
+- pytorch implementation: https://github.com/facebookresearch/mixup-cifar10/blob/main/train.py#L152
+  - useful for CV, possibly for NLP in classification tasks
 
 ## SWA
 - SWA: https://pytorch.org/docs/stable/optim.html
