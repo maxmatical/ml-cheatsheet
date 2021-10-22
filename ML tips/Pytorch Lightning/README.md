@@ -65,4 +65,7 @@ https://pytorch-lightning.readthedocs.io/en/latest/advanced/advanced_gpu.html
 ## Mixup for pytorch lightning
 https://github.com/PyTorchLightning/pytorch-lightning/issues/790
 - helpful for vision, may be helpful for nlp as well (classification problems)
+- For NLP: follow strategy from https://arxiv.org/abs/2010.02394
+    - 2 separate datasets, for training, dataloader loads `x_i, x_j, y_i, y_j` and for validation/inference, dataloader only loads `x_i, y_i`
+
 
