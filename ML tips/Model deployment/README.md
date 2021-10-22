@@ -21,6 +21,8 @@ https://muellerzr.github.io/fastinference/
   - note: knowledge distillation will work for self-distillation, but not when there's unlabelled data
 
 
+## Deployment Frameworks
+
 ### flask + gunicorn (not the fastest, most general)
 
 flask: good for web dev
@@ -44,13 +46,20 @@ PYTHONPATH=. venv/bin/gunicorn -w 3 -t 600 --bind 0.0.0.0:{port_number} main:app
 - still not as fast as tfserve/torchserve, but useful to understand how model serving frameworks work to reduce latency 
 
 ### Flask + gevent (better than gunicorn)
-https://www.google.com/search?client=firefox-b-d&q=why+use+gevent+with+flask
+- adds async to flask
+- https://www.google.com/search?client=firefox-b-d&q=why+use+gevent+with+flask
+
+### Fastapi
+- async by default
+- https://fastapi.tiangolo.com/
 
 ### fastai + aws sagemaker 
 https://github.com/fastai/course-v3/blob/master/docs/deployment_amzn_sagemaker.md
 
 ### fastai + torchserve + sagemaker
 https://github.com/aws-samples/amazon-sagemaker-endpoint-deployment-of-fastai-model-with-torchserve
+
+## Pure model serving
 
 ### BentoML (pure model serving)
 
