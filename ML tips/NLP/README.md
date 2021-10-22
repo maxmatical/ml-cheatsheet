@@ -164,7 +164,4 @@ Uses a similarity matrix for loss (similar to CLIP)
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 
 paper: https://arxiv.org/abs/2010.02394
-
-- trains 2 transformers simulatenously, and interpolate their output representation before a FC layer
-- basically ensembling 2 models?
-- for training, `(x_i, x_j)` will be 2 different data points. for eval/inference, `(x_i, x_j)` will be the same data point
+- for `(x_i, x_j)` pair of text, run each data point through transformer (so `tx_i, tx_j = model(x_i), model(x_j)`), and interpolate on `tx_i, tx_j` before a FC layer
