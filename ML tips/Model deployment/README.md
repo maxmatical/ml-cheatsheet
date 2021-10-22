@@ -43,6 +43,9 @@ PYTHONPATH=. venv/bin/gunicorn -w 3 -t 600 --bind 0.0.0.0:{port_number} main:app
 **some optimiations for flask with request batching:** https://www.sicara.ai/blog/optimize-response-time-api
 - still not as fast as tfserve/torchserve, but useful to understand how model serving frameworks work to reduce latency 
 
+### Flask + gevent (better than gunicorn)
+https://www.google.com/search?client=firefox-b-d&q=why+use+gevent+with+flask
+
 ### fastai + aws sagemaker 
 https://github.com/fastai/course-v3/blob/master/docs/deployment_amzn_sagemaker.md
 
