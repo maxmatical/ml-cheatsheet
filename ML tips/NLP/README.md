@@ -164,4 +164,5 @@ Uses a similarity matrix for loss (similar to CLIP)
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 
 paper: https://arxiv.org/abs/2010.02394
-- for `(x_i, x_j)` pair of text, run each data point through transformer (so `tx_i, tx_j = model(x_i), model(x_j)`), and interpolate on `tx_i, tx_j` before a FC layer
+- use mixup implementation https://github.com/facebookresearch/mixup-cifar10/blob/main/train.py#L152
+    - use mixup in the `forward`, and `return (out, targets_a, targets_b) if self.train else out`
