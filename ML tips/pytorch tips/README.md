@@ -63,3 +63,9 @@ https://github.com/butchland/fastai_xla_extensions
 ## loss function and metrics
 - keep `FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1)` and `accuracy` from fastai
 
+
+## Avoid reusing stateless modules
+https://twitter.com/ThomasViehmann/status/1452199693165998081
+
+- eg `nn.Dropout` or activations like `nn.ReLu`
+- Use multiple instances instead of resuing, or use `torch.nn.functional` instead
