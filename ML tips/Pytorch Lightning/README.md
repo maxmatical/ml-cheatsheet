@@ -42,6 +42,8 @@ lr schedules: use pytorch lr shcedules like `OneCycleLR` in the training step, s
 
 label smoothing: either use [fastai implementation](https://github.com/fastai/fastai/blob/e80adfc3786464b38c487a0382424c6197166499/fastai/losses.py#L13) or [see here](https://stackoverflow.com/questions/55681502/label-smoothing-in-pytorch) for pure pytorch
 
+discriminative learning rates: 
+
 ## Optimizers
 
 ### SAM with pytorch lightning
