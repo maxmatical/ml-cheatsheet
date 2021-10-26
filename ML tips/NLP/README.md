@@ -139,7 +139,7 @@ video: https://www.youtube.com/watch?v=XHY-3FzaLGc
 
 ![training process](https://github.com/maxmatical/ml-cheatsheet/blob/master/images/neural_search.png)
 
-Sapmle code: https://www.sbert.net/examples/training/ms_marco/README.html#ms-marco
+Sample code: https://www.sbert.net/examples/training/ms_marco/README.html#ms-marco
 
 used for 
 - search
@@ -159,6 +159,20 @@ Uses a similarity matrix for loss (similar to CLIP)
         - `CE_distance = CEScore(query, doc1) - CEScore(query, doc2)`, (cache `CEScore` as `{query, doc, score}`)
             - alternatively: use `CE` in the training. don't add `CE` params to optimizer, freeze parameters, and make sure gradients aren't tracked when calling `CE` (either `no_grad` or `inference_mode`) to compute `CEScore`
         - `BE_distance = BEScore(query, doc1) - BEScore(query, doc2)` (by default `BEScore` is dot-product, but can also be cosine-similarity)
+
+
+### IR/Neural Search for low resource scenarios
+https://twitter.com/Nils_Reimers/status/1452931505995624451?t=KYJjn4zKvjxaeCtnZgHWPg&s=09&fbclid=IwAR1dp1_QLuPabCnTF4lxWw8LSzVm5IsdGEPomhFYu7J5zjFqlA2_BeXKdlA
+
+video: https://www.youtube.com/watch?v=XNJThigyvos
+
+IR models on zero shot BEIR, ranked by performance
+<img width="1375" alt="image" src="https://user-images.githubusercontent.com/8890262/138903081-2608258f-6688-4c37-ab5b-6083306aada5.png">
+
+Interesting upcoming work to keep track of: GPL for Domain Adaptation
+  - Generate queries for docs in your domain
+  - Fine-tune bi-encoder
+  - Improves performances 4 – 10 points
 
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
