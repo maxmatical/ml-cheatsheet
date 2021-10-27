@@ -66,12 +66,15 @@ def training_epoch_end(self, outputs):
 ## Useful fastai functionalities in ptl
 
 ### lr finder
-[lr finder]: https://pytorch-lightning.readthedocs.io/en/latest/common/trainer.html#auto-lr-find
+
+lr finder: https://pytorch-lightning.readthedocs.io/en/latest/common/trainer.html#auto-lr-find
 
 
 ### LR schedules
+
 lr schedules: use pytorch lr shcedules like `OneCycleLR` in the training step, see here: https://pytorch-lightning.readthedocs.io/en/latest/common/optimizers.html#learning-rate-scheduling-manual
 
+see: https://github.com/mgrankin/over9000/blob/master/train.py
 
 `flat_cos`:
 ```
