@@ -1,5 +1,15 @@
 ## Model deployment
 
+### Pytorch serialization best practices
+1. have a `nn.Module`, `the_model = TheModel(*args)`
+2. after training `torch.save(the_model.state_dict(), PATH)`
+3. during inference:
+  ```
+  the_model = TheModelClass(*args, **kwargs)
+  the_model.load_state_dict(torch.load(PATH))
+  ```
+4. call `the_model(x_inf)`
+
 ### fastai + pure pytorch deployment options (with jit tracing) examples:
 https://github.com/maxmatical/fast.ai/blob/master/fastai_%2B_blurr_%2B_deberta_classification.ipynb
 
