@@ -222,3 +222,13 @@ trainer = Trainer(gpus=8, accelerator="ddp", num_nodes=4)
 ```
  **Note**: use `accelerator="ddp2"` In certain cases, it’s advantageous to use all batches on the same machine instead of a subset. For instance, you might want to compute a NCE loss where it pays to have more negative samples.
  
+ 
+ ## Deployment best practices
+ 1. manually define `nn.Module`, decouple from `pl.LightningModule`
+ 2. Create `pl.LightningModule` as a wrapper for `nn.Module` model
+ 3. Train using trainer
+ 4. save weights
+ 5. During inference, manually define `nn.Module` again, and load trained weights with 
+    ```
+    new_model.load_state_dict(torch.load(saved_model_pth))
+    ```
