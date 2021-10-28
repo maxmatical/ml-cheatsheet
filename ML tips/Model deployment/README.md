@@ -10,6 +10,14 @@
   ```
 4. call `the_model(x_inf)`
 
+### Monitoring data drift 
+1. For prediction models, want to measure confidence (i.e. is model confidence decreasing over time? Can indicate something)
+2. Data side, can utilize some statistical measures on the new data coming in (eg cosine similarity on text embeddings between new data and old data, or maybe clustering to see if new data are being grouped apart from training data)
+  - Not sure about validity of statistical measures, can be finicky 
+3. Train a model to classify new vs training data (can the model detect differences in the data?)
+4. every once in a while, you can grab a sample of the new data, and manually validate the model performance, and see if model predictions are diverging from "ground truth", especially over time
+
+
 ### fastai + pure pytorch deployment options (with jit tracing) examples:
 https://github.com/maxmatical/fast.ai/blob/master/fastai_%2B_blurr_%2B_deberta_classification.ipynb
 
