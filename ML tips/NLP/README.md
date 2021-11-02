@@ -136,9 +136,32 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 
 ## Information Retreval/Neural Search/Open Domain QA
 
-Cross Encoder for acc
+Cross Encoder for stronger perfomance, Bi-encoder methods faster
 
-### 
+### Finetuning Bi-encoders
+framework: [haystack](https://github.com/deepset-ai/haystack)
+
+haystack dpr notebook: https://github.com/deepset-ai/haystack/blob/master/tutorials/Tutorial9_DPR_training.ipynb
+
+framework: [Margin MSE distillation](https://github.com/sebastian-hofstaetter/neural-ranking-kd)
+
+pretrained models: https://huggingface.co/models?other=dpr&sort=downloads
+
+**useful pretrained models**
+RDR: https://arxiv.org/abs/2010.10999
+- question encoder: https://huggingface.co/soheeyang/rdr-question_encoder-single-nq-base
+- ctx encoder: https://huggingface.co/soheeyang/rdr-ctx_encoder-single-nq-base
+
+Condenser: https://arxiv.org/abs/2104.08253
+- pre-training framework, then fine-tune on DPR using haystack
+- github: https://github.com/luyug/Condenser
+- Huggingface pretrained models: https://huggingface.co/Luyu
+
+Sentence Transformer Models:
+- https://huggingface.co/sebastian-hofstaetter/colbert-distilbert-margin_mse-T2-msmarco
+- 
+
+
 
 ### Training State-of-the-art Text Embedding Models
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
