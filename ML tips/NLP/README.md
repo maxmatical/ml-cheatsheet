@@ -134,7 +134,13 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   - CTM is used for ~200 tokens, so maybe not as useful for super short documents
   - maybe inject GPT topic as another context vector (either another vector to concatenate, or add GPT topic to original text)
 
-## Training State-of-the-art Text Embedding Models
+## Information Retreval/Neural Search/Open Domain QA
+
+Cross Encoder for acc
+
+### 
+
+### Training State-of-the-art Text Embedding Models
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
 
 ![training process](https://github.com/maxmatical/ml-cheatsheet/blob/master/images/neural_search.png)
@@ -173,6 +179,8 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
   - Generate queries for docs in your domain
   - Fine-tune bi-encoder
   - Improves performances 4 – 10 points
+
+
 
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
