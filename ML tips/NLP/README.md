@@ -147,6 +147,9 @@ framework: [Margin MSE distillation](https://github.com/sebastian-hofstaetter/ne
 
 pretrained models: https://huggingface.co/models?other=dpr&sort=downloads
 
+framework" [matchmaker](https://github.com/sebastian-hofstaetter/matchmaker)
+  - may be better than haystack? especially for cross-arch kd
+
 **useful pretrained models**
 RDR: https://arxiv.org/abs/2010.10999
 - question encoder: https://huggingface.co/soheeyang/rdr-question_encoder-single-nq-base
