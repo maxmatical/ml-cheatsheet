@@ -8,6 +8,12 @@
 
 [Kaggle 1st place notebooks (with some best practices)](https://devblog.pytorchlightning.ai/3-pytorch-lightning-winning-community-kernels-to-inspire-your-next-kaggle-victory-ea355456229a)
 
+## Useful examples:
+
+ray lighting: https://medium.com/pytorch/getting-started-with-ray-lightning-easy-multi-node-pytorch-lightning-training-e639031aff8b
+  - multi-node training
+  - contains nice template for pytorch lightning module training loop
+
 
 ## Useful callbacks
 - [early stopping](https://pytorch-lightning.readthedocs.io/en/latest/common/early_stopping.html)
