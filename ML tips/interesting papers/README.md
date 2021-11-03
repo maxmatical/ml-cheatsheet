@@ -64,3 +64,29 @@ where `logits_per_image` is equivalent to `logits = np.dot(I_e, T_e.T)*np.exp(t)
   ```
 - train discriminative model (BERT, T5, BART, etc.) using label and synthetic text
 - (Optional?) fine-tune on actual dataset
+
+# IR related papers
+
+## COIL 
+https://arxiv.org/abs/2104.07186
+
+- combines sparse and dense representations (think BM25 + bi-encoder)
+- better than DPR, not that much slower
+
+## Condenser
+https://arxiv.org/abs/2104.08253
+
+- a pre-training scheme 
+
+## RDR
+https://arxiv.org/abs/2010.10999
+
+## Cross-Architecture Knowledge Distillation
+github: https://github.com/sebastian-hofstaetter/neural-ranking-kd
+
+source code for training models: https://github.com/sebastian-hofstaetter/matchmaker
+
+paper: https://arxiv.org/abs/2010.02666
+
+premise: train cross-encoder on QA data (performs much better, but slow), then distill (with MarginMSE) to a student bi-encoder model
+
