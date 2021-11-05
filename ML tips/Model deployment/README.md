@@ -41,6 +41,8 @@ https://muellerzr.github.io/fastinference/
 ### TensorRT (for deployment with Nvidia GPUS)
 https://github.com/NVIDIA-AI-IOT/torch2trt
 
+https://github.com/triton-inference-server/server
+
 ### Applying GPU to Snap-Scale Machine Learning Inference
 https://eng.snap.com/applying_gpu_to_snap
 
@@ -57,6 +59,9 @@ Key takeaways:
 5. quantize
 6. cache respones to common text inputs (via token ids)
 7. favor horizontal scaling over vertical
+
+### Deploying transformers with <ms inference speed
+https://github.com/ELS-RD/triton_transformers
 
 
 ## Deployment Frameworks
