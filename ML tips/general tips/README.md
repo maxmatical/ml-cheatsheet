@@ -414,3 +414,8 @@ batch loss filter callback: https://github.com/maxmatical/ml-cheatsheet/blob/mas
 
 ### fastai on tpu
 https://github.com/butchland/fastai_xla_extensions
+
+### 8 Bit optimizers
+https://github.com/facebookresearch/bitsandbytes
+
+saves up to 75% memory on training models
