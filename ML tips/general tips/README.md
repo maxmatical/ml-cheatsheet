@@ -358,6 +358,8 @@ https://forums.fast.ai/t/mixed-precision-training/29601/21
 
 ### LabelSmoothing loss on everything!
 
+**Note**: don't want to use label smoothing over CE when [pre-training](https://arxiv.org/abs/1906.02629) or when [training teachers in self-training/knowledge distillation](https://arxiv.org/abs/2010.16402)
+
 ### Proper size of validation set
 
 Run model with same hyperparameters 5 times, see the `std` of metric as well as standard error (`std/sqrt(n)`) to see how consistent it is  
