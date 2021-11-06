@@ -359,6 +359,7 @@ https://forums.fast.ai/t/mixed-precision-training/29601/21
 ### LabelSmoothing loss on everything!
 
 **Note**: don't want to use label smoothing over CE when [pre-training](https://arxiv.org/abs/1906.02629) or when [training teachers in self-training/knowledge distillation](https://arxiv.org/abs/2010.16402)
+- **ONLY** use label smoothing when fine-tuning. for pre-training, using `CrossEntropyLoss` acts as a better feature learner
 
 ### Proper size of validation set
 
