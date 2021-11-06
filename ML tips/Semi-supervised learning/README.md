@@ -154,6 +154,13 @@ for t in range(epochs):
 ### example of self-training/soft-pseudolabels
 https://github.com/maxmatical/fast.ai/blob/master/fastai_hf_self_distillation.ipynb
 
+- **Note**: according to [1](https://arxiv.org/abs/2010.16402) and [2](https://arxiv.org/abs/1906.02629), training with CE (no label smoothing) enables better feature representation for teachers. So the ideal training procedure would be
+1. do `n` rounds of self-training (on labelled + unlabelled data) + finetuning on labelled data with `CrossEntropyLoss`
+2. for final round of training, do self-training using `CrossEntropyLoss`, but fine-tune on only labelled data with label smoothing
+
+- if doing self-distillation: do `n` rounds of self-distillation with `CrossEntropyLoss`, final round of self-distillation uses label smoothing
+- if doing traditional distillation: train `n` teachers with `CrossEntropyLoss`. Only train student with label smoothing
+
 ### self-supervised learning with fastai
 https://github.com/KeremTurgutlu/self_supervised
 
