@@ -90,3 +90,9 @@ paper: https://arxiv.org/abs/2010.02666
 
 premise: train cross-encoder on QA data (performs much better, but slow), then distill (with MarginMSE) to a student bi-encoder model
 
+## RocketQAv2
+paper: https://arxiv.org/abs/2110.07367
+
+github: https://github.com/PaddlePaddle/RocketQA
+
+
