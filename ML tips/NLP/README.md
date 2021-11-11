@@ -147,8 +147,8 @@ framework: [Margin MSE distillation](https://github.com/sebastian-hofstaetter/ne
 
 pretrained models: https://huggingface.co/models?other=dpr&sort=downloads
 
-framework" [matchmaker](https://github.com/sebastian-hofstaetter/matchmaker)
-  - may be better than haystack? especially for cross-arch kd
+framework: [matchmaker](https://github.com/sebastian-hofstaetter/matchmaker)
+  -  for cross-arch kd
 
 **useful pretrained models**
 RDR: https://arxiv.org/abs/2010.10999
@@ -165,7 +165,7 @@ Sentence Transformer Models:
 
 coCondenser (current SOTA on NQ and MS-MARCO): https://arxiv.org/pdf/2108.05540.pdf
 - github: https://github.com/luyug/Condenser
-  - Fine-tuning cocondenser for DPR/ODQA (NQ, TriviaQA), use haystack + cocondenser weights
+  - Fine-tuning cocondenser for DPR/ODQA (NQ, TriviaQA), use haystack/fb dpr repo + cocondenser weights
   - Fine-tuning cocondenser models on MS-MARCO: https://github.com/texttron/tevatron/tree/main/examples/coCondenser-marco
 - HF pretrained models: https://huggingface.co/Luyu
   - note these are only pre-trained models (so haven't been fine-tuned for ODQA/IR)
