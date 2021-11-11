@@ -165,7 +165,8 @@ Sentence Transformer Models:
 
 coCondenser (current SOTA on NQ and MS-MARCO): https://arxiv.org/pdf/2108.05540.pdf
 - github: https://github.com/luyug/Condenser
-- Fine-tuning cocondenser models on MS-MARCO: https://github.com/texttron/tevatron/tree/main/examples/coCondenser-marco
+  - Fine-tuning cocondenser for DPR/ODQA (NQ, TriviaQA), use haystack + cocondenser weights
+  - Fine-tuning cocondenser models on MS-MARCO: https://github.com/texttron/tevatron/tree/main/examples/coCondenser-marco
 - HF pretrained models: https://huggingface.co/Luyu
   - note these are only pre-trained models (so haven't been fine-tuned for ODQA/IR)
   - `Luyu/co-condenser-marco-retriever` is a fine-tuned retriever 
