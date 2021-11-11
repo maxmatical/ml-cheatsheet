@@ -162,8 +162,11 @@ Condenser: https://arxiv.org/abs/2104.08253
 
 Sentence Transformer Models:
 - https://huggingface.co/sebastian-hofstaetter/colbert-distilbert-margin_mse-T2-msmarco
-- 
 
+coCondenser (current SOTA on NQ and MS-MARCO): https://arxiv.org/pdf/2108.05540.pdf
+- github: https://github.com/luyug/Condenser
+- HF pretrained models: https://huggingface.co/Luyu
+  - note these are only pre-trained models (so haven't been fine-tuned for ODQA/IR)
 
 
 ### Training State-of-the-art Text Embedding Models
