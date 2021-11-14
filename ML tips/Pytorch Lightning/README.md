@@ -238,3 +238,8 @@ trainer = Trainer(gpus=8, accelerator="ddp", num_nodes=4)
     ```
     new_model.load_state_dict(torch.load(saved_model_pth))
     ```
+    
+## Exponential Moving Average (EMA):
+https://github.com/fadel/pytorch_ema
+
+use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
