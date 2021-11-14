@@ -206,6 +206,8 @@ https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html
 ## Gradient accumulation and clipping
 https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html#training-tricks
 
+**Note**: for manual optimization, when `self.automatic_optimization = False`, must manually specify gradient accumulation, see [here](https://pytorch-lightning.readthedocs.io/en/latest/common/optimizers.html#gradient-accumulation)
+
 ## Model parallelism (inc. deepspeed)
 https://pytorch-lightning.readthedocs.io/en/latest/advanced/advanced_gpu.html
 
