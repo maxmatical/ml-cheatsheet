@@ -95,4 +95,19 @@ paper: https://arxiv.org/abs/2110.07367
 
 github: https://github.com/PaddlePaddle/RocketQA
 
+- equal or slightly worse than `coCondenser`
+
+## coCondenser
+
+paper: https://arxiv.org/abs/2108.05540
+
+github: https://github.com/luyug/Condenser
+
+- currently SOTA
+
+# Masked Autoencoders Are Scalable Vision Learners
+
+paper: https://arxiv.org/abs/2111.06377
+
+video explanation: https://www.youtube.com/watch?v=LKixq2S2Pz8
 
