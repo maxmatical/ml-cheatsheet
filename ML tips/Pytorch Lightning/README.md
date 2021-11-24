@@ -242,6 +242,8 @@ trainer = Trainer(gpus=8, accelerator="ddp", num_nodes=4)
     ```
     
 ## Exponential Moving Average (EMA):
-https://github.com/fadel/pytorch_ema
+https://github.com/fadel/
+- should be fairly simple with `self.automatic_topimization=False` in `LightningModule`
+- just add `ema.update()` after `opt.step()` in `training_step` of `LightningModule`
 
 use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
