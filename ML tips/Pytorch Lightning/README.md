@@ -247,3 +247,13 @@ https://github.com/fadel/
 - just add `ema.update()` after `opt.step()` in `training_step` of `LightningModule`
 
 use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
+
+### EMA/SWA with model checkpoints/early stopping
+
+if using EMA/SWA, better to not use model checkpoints/early stopping, the process would be 
+
+- can also be extended to general training
+- can be done after HPO with a set number of epochs
+1. set `n_epochs` and train model
+2. if at the end of training, monitored metrics (eg `val_acc`) is still improving, increase `n_epochs` and train again
+3. if at the end of training, monitored metrics is worse than in the middle of training (eg epoch 25), set `n_epochs` to somewhere around where metrics was the best (25)
