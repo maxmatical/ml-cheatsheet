@@ -60,7 +60,9 @@ Key takeaways:
 6. cache respones to common text inputs (via token ids)
 7. favor horizontal scaling over vertical
 
-### Deploying transformers with <ms inference speed
+### Deploying transformers with <ms inference speed (MAJOR KEY)
+https://github.com/ELS-RD/transformer-deploy
+                                    
 https://github.com/ELS-RD/triton_transformers
 
 
