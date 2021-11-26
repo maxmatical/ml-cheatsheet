@@ -220,15 +220,7 @@ https://github.com/PyTorchLightning/pytorch-lightning/issues/790
 ## FP16 with amp
 `pl.Trainer(gpus=1, precision=16)`
 
-## DDP with multiple gpus (and nodes(
-```
-# train on 8 GPUs (same machine (ie: node))
-trainer = Trainer(gpus=8, accelerator="ddp")
 
-# train on 32 GPUs (4 nodes)
-trainer = Trainer(gpus=8, accelerator="ddp", num_nodes=4)
-```
- **Note**: use `accelerator="ddp2"` In certain cases, it’s advantageous to use all batches on the same machine instead of a subset. For instance, you might want to compute a NCE loss where it pays to have more negative samples.
  
  
  ## Deployment best practices
@@ -257,3 +249,24 @@ if using EMA/SWA, better to not use model checkpoints/early stopping, the proces
 1. set `n_epochs` and train model
 2. if at the end of training, monitored metrics (eg `val_acc`) is still improving, increase `n_epochs` and train again
 3. if at the end of training, monitored metrics is worse than in the middle of training (eg epoch 25), set `n_epochs` to somewhere around where metrics was the best (25)
+
+
+## Trainer strategy api
+https://devblog.pytorchlightning.ai/announcing-the-new-lightning-trainer-strategy-api-f70ad5f9857e
+```
+# train on 8 GPUs (same machine (ie: node))
+trainer = Trainer(devices=8, accelerator="gpu", strategy="ddp", precision=16)
+
+# train on 32 GPUs (4 nodes 8 gpu each node)
+trainer = Trainer(devices=8, accelerator="gpu", num_nodes=4, strategy="ddp", precision=16)
+
+# train on tpu with 8 cores
+trainer = Trainer(devices=8, accelerator="tpu", strategy="ddp", precision=16)
+
+```
+**Note**: 
+- always use `strategy="ddp"` with multi-device training. 
+- for `device=1` use `strategy=None`
+- use `strategy="ddp2"` In certain cases, it’s advantageous to use all batches on the same machine instead of a subset. For instance, you might want to compute a NCE loss where it pays to have more negative samples.
+
+
