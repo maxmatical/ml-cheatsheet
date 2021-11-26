@@ -59,6 +59,14 @@ https://github.com/piegu/language-models/blob/master/lm2-french.ipynb
 - other methods: https://arxiv.org/abs/2106.07499
 - data augmentation library https://github.com/facebookresearch/AugLy
 
+### additional data augmentation techniques (from kaggle winning solution)
+https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering/discussion/287923?fbclid=IwAR2unJF_zFq0wGTU8d4h_FqcA9JnVrGieriOgVigQoTrWNXnADGYE-E0I1M
+
+- random cropping
+- progressive resizing
+  - eg start with `max_length` in tokenizer of `128`, then `256`, etc.
+- cutout: replace 0-10% of tokens with `[MASK]`
+
 ### repo with transformer related code (training, inference, hpo, pseudolabel training)
 https://github.com/maxmatical/fastai-transformers
 
