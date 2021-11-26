@@ -211,6 +211,18 @@ https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html
 ## Model parallelism (inc. deepspeed)
 https://pytorch-lightning.readthedocs.io/en/latest/advanced/advanced_gpu.html
 
+### tips for using `strategy="deepspeed_stage_3_offload"`
+Here is some helpful information when setting up DeepSpeed ZeRO Stage 3 with Lightning.
+
+If you’re using Adam or AdamW, ensure to use FusedAdam or DeepSpeedCPUAdam (for CPU Offloading) rather than the default torch optimizers as they come with large speed benefits
+
+Treat your GPU/CPU memory as one large pool. In some cases, you may not want to offload certain things (like activations) to provide even more space to offload model parameters
+
+When offloading to the CPU, make sure to **bump up the batch size** as GPU memory will be freed
+
+We also support sharded checkpointing. By passing save_full_weights=False to the DeepSpeedPlugin, we’ll save shards of the model which allows you to save extremely large models. However to load the model and run test/validation/predict you must use the Trainer object.
+
+
 ## Mixup for pytorch lightning
 https://github.com/PyTorchLightning/pytorch-lightning/issues/790
 - helpful for vision, may be helpful for nlp as well (classification problems)
