@@ -246,9 +246,9 @@ https://github.com/PyTorchLightning/pytorch-lightning/issues/790
     ```
     
 ## Exponential Moving Average (EMA):
-https://github.com/fadel/
+https://github.com/fadel/pytorch_ema
 - should be fairly simple with `self.automatic_topimization=False` in `LightningModule`
-- just add `ema.update()` after `opt.step()` in `training_step` of `LightningModule`
+- just add `self.ema.update()` after `opt.step()` in `training_step` of `LightningModule`
 
 use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
 
