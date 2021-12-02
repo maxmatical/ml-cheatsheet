@@ -228,3 +228,7 @@ twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 paper: https://arxiv.org/abs/2010.02394
 - use mixup implementation https://github.com/facebookresearch/mixup-cifar10/blob/main/train.py#L152
     - use mixup in the `forward`, and `return (out, targets_a, targets_b) if self.train else out`
+
+
+## improving NLP models without scaling
+https://hackmd.io/0n1aijQJRMy9xy2oHeQEXg
