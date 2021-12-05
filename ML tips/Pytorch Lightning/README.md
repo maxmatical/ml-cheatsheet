@@ -75,6 +75,15 @@ def training_epoch_end(self, outputs):
 
 lr finder: https://pytorch-lightning.readthedocs.io/en/latest/common/trainer.html#auto-lr-find
 
+[lr finder example](https://lightning-flash.readthedocs.io/en/latest/notebooks/flash_tutorials/electricity_forecasting.html)
+```
+res = trainer.tuner.lr_find(model, datamodule=datamodule, min_lr=1e-5)
+print(f"Suggested learning rate: {res.suggestion()}")
+res.plot(show=True, suggest=True).show()
+
+model.learning_rate = res.suggestion()
+```
+
 
 ### LR schedules
 
