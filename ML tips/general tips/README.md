@@ -425,3 +425,6 @@ saves up to 75% memory on training models
 
 ### Docker for DS/ML
 https://muellerzr.github.io/fastblog/2021/12/05/DockerforDataScience.html
+
+### Xformer library
+https://devblog.pytorchlightning.ai/part-i-simplifying-transformer-research-with-xformers-lightning-a715737b8ad4
