@@ -314,15 +314,8 @@ Load model with best hyperparameters
 model.set_params(**study.best_params)
 model.fit(X, y)
 ```
-### AutoML with microsoft NNI (supports population based training)
-https://github.com/microsoft/nni
-
-- [Population based training (PBT) with NNI](https://github.com/microsoft/nni/blob/master/docs/en_US/Tuner/PBTTuner.md)
-- [Docs here](https://nni.readthedocs.io/en/latest/)
-- supports NAS with pytorch 
-
-### AutoML with autogluon
-https://auto.gluon.ai/stable/index.html
+### Potentially better hyperparameter optimization (hpo) with HEBO (NEURIPS 2020 optimization winner)
+https://github.com/huawei-noah/HEBO 
 
 
 ### Batch size:
