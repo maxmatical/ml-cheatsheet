@@ -105,9 +105,43 @@ github: https://github.com/luyug/Condenser
 
 - currently SOTA
 
+## YONO
+paper: https://arxiv.org/abs/2112.07381
+
+github: currently none
+
+- competitive/slightly better performance on ODQA (NQ/TriviaQA) using just retriever
+- no results on MS-MARCO
+- better performance when adding Ranker as well
+
+## Colbert v2
+
+paper: https://arxiv.org/abs/2112.01488
+
+github https://github.com/stanford-futuredata/ColBERT/tree/new_api
+
+slightly better than coCondenser on MS-MARCO, no results in NQ/TriviaQA
+
+
 # Masked Autoencoders Are Scalable Vision Learners
 
 paper: https://arxiv.org/abs/2111.06377
 
 video explanation: https://www.youtube.com/watch?v=LKixq2S2Pz8
 
+# Efficiently and effectively scaling up language model pretraining for best language representation model on GLUE and SuperGLUE
+https://www.microsoft.com/en-us/research/blog/efficiently-and-effectively-scaling-up-language-model-pretraining-for-best-language-representation-model-on-glue-and-superglue/?OCID=msr_blog_TNLRV5_tw
+
+- no paper yet
+
+# Deberta V3
+paper: https://arxiv.org/abs/2111.09543
+
+- replace MLM pretraining with replaced token detection (RTD) electra style
+
+# GLaM: Efficient Scaling of Language Models with Mixture-of-Experts
+paper: https://arxiv.org/abs/2112.06905
+
+- MoE LM
+- more energy efficient training
+- faster inference
