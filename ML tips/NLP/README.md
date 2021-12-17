@@ -220,6 +220,29 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
   - Fine-tune bi-encoder
   - Improves performances 4 – 10 points
 
+### SOTA literature to keep track of in IR/ODQA
+
+1. coCondenser
+- https://arxiv.org/pdf/2108.05540.pdf
+- github: https://github.com/luyug/Condenser
+  - Fine-tuning cocondenser for DPR/ODQA (NQ, TriviaQA), use haystack/fb dpr repo + cocondenser weights
+  - Fine-tuning cocondenser models on MS-MARCO: https://github.com/texttron/tevatron/tree/main/examples/coCondenser-marco
+- HF pretrained models: https://huggingface.co/Luyu
+  - note these are only pre-trained models (so haven't been fine-tuned for ODQA/IR)
+  - `Luyu/co-condenser-marco-retriever` is a fine-tuned retriever 
+- Easy to plug and play using Haystack/dpr training repo 
+
+2. YONO
+- https://arxiv.org/abs/2112.07381
+- github: currently none
+- competitive/slightly better performance on ODQA (NQ/TriviaQA) using **just** retriever
+- no results on MS-MARCO
+- better performance when adding Ranker as well
+
+3. Colbert v2
+- https://arxiv.org/abs/2112.01488
+- github https://github.com/stanford-futuredata/ColBERT/tree/new_api
+- slightly better than coCondenser on MS-MARCO, no results in NQ/TriviaQA
 
 
 ## Mixup for text
