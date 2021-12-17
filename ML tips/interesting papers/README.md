@@ -122,6 +122,11 @@ github https://github.com/stanford-futuredata/ColBERT/tree/new_api
 
 slightly better than coCondenser on MS-MARCO, no results in NQ/TriviaQA
 
+## GPL: Generative Pseudo Labeling for Unsupervised Domain Adaptation of Dense Retrieval
+paper: https://arxiv.org/abs/2112.07577
+
+- used for unsupervised domain adaptation for dense retrieval
+- no labelled data
 
 # Masked Autoencoders Are Scalable Vision Learners
 
