@@ -422,3 +422,6 @@ https://muellerzr.github.io/fastblog/2021/12/05/DockerforDataScience.html
 
 ### Xformer library
 https://devblog.pytorchlightning.ai/part-i-simplifying-transformer-research-with-xformers-lightning-a715737b8ad4
+
+### Active learning with BaaL
+https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-baal-2216df6f872c
