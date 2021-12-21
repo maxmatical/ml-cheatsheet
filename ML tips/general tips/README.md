@@ -179,6 +179,7 @@ Try using **SGD (momentum = 0.9, nesterov = True) or RMSPROP(momentum=0.9)**, ca
   - use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
   - alternative implementation as callback: https://github.com/sanderson4030/SharpnessAwareMinimization
   - values for `rho` to try: `{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}`
+  - Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
 Optimizers to try
 ```
 optimizer_config_mapping = {
