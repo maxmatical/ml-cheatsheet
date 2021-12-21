@@ -5,6 +5,8 @@ https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/
 
 - don't forget to call `optimizer.zero_grad()` before calling `loss.backward()` and `optmizer.step()`
 
+more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_here_are_17_ways_of_making_pytorch_training/
+
 
 ## integrating fastai functions
 
@@ -50,9 +52,6 @@ https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/
   - call be a callback?
 - pytorch implementation: https://github.com/facebookresearch/mixup-cifar10/blob/main/train.py#L152
   - useful for CV, possibly for NLP in classification tasks
-
-## SWA
-- SWA: https://pytorch.org/docs/stable/optim.html
 
 ## SAM
 - possibly more useful for CV than NLP
