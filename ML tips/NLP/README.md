@@ -67,6 +67,9 @@ https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering/discussion/287
   - eg start with `max_length` in tokenizer of `128`, then `256`, etc.
 - cutout: replace 0-10% of tokens with `[MASK]`
 
+### NL Augmenter
+https://github.com/GEM-benchmark/NL-Augmenter
+
 ### repo with transformer related code (training, inference, hpo, pseudolabel training)
 https://github.com/maxmatical/fastai-transformers
 
