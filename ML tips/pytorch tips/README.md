@@ -26,6 +26,17 @@ more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_he
 - distributed training on multiple gpus: https://stackoverflow.com/questions/54216920/how-to-use-multiple-gpus-in-pytorch
 - DDP tutorial (covers multi-node as well)
 
+
+## mix precision training (amp)
+- fp16 (mixed precision training): https://pytorch.org/docs/stable/notes/amp_examples.html
+    - combining amp with lr schedulers: https://discuss.pytorch.org/t/optimizer-step-before-lr-scheduler-step-error-using-gradscaler/92930
+    - example of amp with `OneCycleLR` https://spell.ml/blog/mixed-precision-training-with-pytorch-Xuk7YBEAACAASJam
+
+## Multi gpu (DDP) with fp16 (amp)
+https://pytorch.org/docs/stable/notes/amp_examples.html#working-with-multiple-gpus
+
+- no real need to modify training loop, just use amp with DDP
+
 ## model parallel with deepspeed
 - used for model parallelism (when model doesn't fit on 1 gpu)
 - contains zero optimizer
@@ -33,12 +44,6 @@ more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_he
   - [getting started tutorial with pytorch module](https://www.deepspeed.ai/getting-started/)
 - simple model parallelism https://pytorch.org/tutorials/intermediate/model_parallel_tutorial.html
 
-
-
-## mix precision training (amp)
-- fp16 (mixed precision training): https://pytorch.org/docs/stable/notes/amp_examples.html
-    - combining amp with lr schedulers: https://discuss.pytorch.org/t/optimizer-step-before-lr-scheduler-step-error-using-gradscaler/92930
-    - example of amp with `OneCycleLR` https://spell.ml/blog/mixed-precision-training-with-pytorch-Xuk7YBEAACAASJam
 
 ## Callbacks
 - early stopping: https://debuggercafe.com/using-learning-rate-scheduler-and-early-stopping-with-pytorch/
