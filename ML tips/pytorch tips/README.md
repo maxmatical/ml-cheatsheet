@@ -78,3 +78,8 @@ https://twitter.com/ThomasViehmann/status/1452199693165998081
 
 ## Batch size finder using koila
 https://github.com/rentruewang/koila
+
+## hard example mining/batch loss filter
+pytorch loss func: https://erogol.com/online-hard-example-mining-pytorch/
+
+idea: sort batch of x, y by loss(x, y), and only take the top k% of the batch by loss (so model only sees the hard examples to use for backprop)
