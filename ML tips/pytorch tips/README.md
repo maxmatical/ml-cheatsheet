@@ -75,3 +75,6 @@ https://twitter.com/ThomasViehmann/status/1452199693165998081
 
 - eg `nn.Dropout` or activations like `nn.ReLu`
 - Use multiple instances instead of resuing, or use `torch.nn.functional` instead
+
+## Batch size finder using koila
+https://github.com/rentruewang/koila
