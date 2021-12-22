@@ -392,6 +392,10 @@ https://www.reddit.com/r/MachineLearning/comments/n9fti7/d_a_few_helpful_pytorch
 ### hard example mining/batch loss filter
 batch loss filter callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
 
+pytorch loss func: https://erogol.com/online-hard-example-mining-pytorch/
+
+idea: sort batch of `x, y` by `loss(x, y)`, and only take the top `k`% of the batch by loss (so model only sees the hard examples to use for backprop)
+
 ### Dealing with positive-negative imbalance in multi-label data
 - issue: if have a lot of classes, each class will see a lot of negative examples per 1 positive example
 - solution: 
