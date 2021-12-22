@@ -166,3 +166,5 @@ https://github.com/KeremTurgutlu/self_supervised
 
 contains algos like DINO, BYOL, SwAV etc.
 
+### Weakly supervised learning with Weasel
+https://github.com/autonlab/weasel
