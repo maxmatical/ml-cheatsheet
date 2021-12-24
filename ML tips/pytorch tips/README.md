@@ -59,8 +59,10 @@ https://pytorch.org/docs/stable/notes/amp_examples.html#working-with-multiple-gp
   - useful for CV, possibly for NLP in classification tasks
 
 ## SAM
-- possibly more useful for CV than NLP
 - add SAM wrapper for optimizer and modify training `if self.sam`: https://github.com/davda54/sam
+- SAM with gradient accumulation:https://github.com/davda54/sam/issues/3
+- SAM with FP16: https://github.com/davda54/sam/issues/7
+
 
 ## hard example mining
 - batch loss filter/hard example mining callback
