@@ -16,11 +16,18 @@ more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_he
 
 ### learning rate 
 - lr finder: https://github.com/davidtvs/pytorch-lr-finder
-- fit_flat_cos lr schedule (https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette_with_pytorch.ipynb)
+- fit_flat_cos lr schedule (https://github.com/mgrankin/over9000/blob/master/train.py)
+- reduce lr on plateau (https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html#reducelronplateau)
+```
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9)
+scheduler = ReduceLROnPlateau(optimizer, 'min')
+for epoch in range(10):
+    train(...)
+    val_loss = validate(...)
+    # Note that step should be called after validate()
+    scheduler.step(val_loss)
+```
 
-
-## dataloaders
-- use pytorch dataloaders `(train_dl, val_dl)`
 
 ## multi-gpu training (distributed data parallel)
 - distributed training on multiple gpus: https://stackoverflow.com/questions/54216920/how-to-use-multiple-gpus-in-pytorch
@@ -46,10 +53,9 @@ https://pytorch.org/docs/stable/notes/amp_examples.html#working-with-multiple-gp
 
 
 ## Callbacks
-- early stopping: https://debuggercafe.com/using-learning-rate-scheduler-and-early-stopping-with-pytorch/
+- early stopping
+- save model
 - reduce lr on plateau callback: https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html
-    - test with using 2 lr schedulers
-    - alternatively do something similar to early stopping, and use `optimizer.set_hyper('lr', new_lr)`
 - terminate on nan callback
 
 ## mixup
@@ -63,10 +69,6 @@ https://pytorch.org/docs/stable/notes/amp_examples.html#working-with-multiple-gp
 - SAM with gradient accumulation:https://github.com/davda54/sam/issues/3
 - SAM with FP16: https://github.com/davda54/sam/issues/7
 
-
-## hard example mining
-- batch loss filter/hard example mining callback
-  - https://erogol.com/online-hard-example-mining-pytorch/
 
 ## loss function and metrics
 - keep `FlattenedLoss(LabelSmoothingCrossEntropy, axis=-1)` and `accuracy` from fastai
