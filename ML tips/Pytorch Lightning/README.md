@@ -261,6 +261,8 @@ https://github.com/fadel/pytorch_ema
 
 use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
 
+EMA callback: https://github.com/PyTorchLightning/pytorch-lightning/issues/10914
+
 ### EMA/SWA with model checkpoints/early stopping
 
 if using EMA/SWA, better to not use model checkpoints/early stopping, the process would be 
