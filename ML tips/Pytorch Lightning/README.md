@@ -203,6 +203,12 @@ discriminative learning rates:
 ### SAM with pytorch lightning
 https://github.com/davda54/sam
 
+when using SAM with PL and ddp, do something like
+https://github.com/PyTorchLightning/pytorch-lightning/discussions/10792
+```
+
+```
+
 ## Ranger21
 https://github.com/lessw2020/Ranger21
 
