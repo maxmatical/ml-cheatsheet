@@ -31,7 +31,7 @@ for epoch in range(10):
 
 ## multi-gpu training (distributed data parallel)
 - distributed training on multiple gpus: https://stackoverflow.com/questions/54216920/how-to-use-multiple-gpus-in-pytorch
-- DDP tutorial (covers multi-node as well)
+- DDP tutorial (covers multi-node as well) https://yangkky.github.io/2019/07/08/distributed-pytorch-tutorial.html
 
 
 ## mix precision training (amp)
