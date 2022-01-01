@@ -429,3 +429,7 @@ https://devblog.pytorchlightning.ai/part-i-simplifying-transformer-research-with
 
 ### Active learning with BaaL
 https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-baal-2216df6f872c
+
+### Convert `nn.CrossEntropyLoss` to `nn.BCEWithLogitsLoss`
+- could potentially work better as a 1-v-all problem
+- use label smoothing could help as well (see pytorch BERT huggingface example)
