@@ -433,3 +433,6 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 ### Convert `nn.CrossEntropyLoss` to `nn.BCEWithLogitsLoss`
 - could potentially work better as a 1-v-all problem
 - use label smoothing could help as well (see pytorch BERT huggingface example)
+
+### 8 bit optimizers for memory saving
+https://github.com/facebookresearch/bitsandbytes
