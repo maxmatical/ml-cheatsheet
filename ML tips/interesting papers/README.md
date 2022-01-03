@@ -156,3 +156,7 @@ paper: https://arxiv.org/abs/2112.06905
 paper: https://arxiv.org/abs/2112.04426
 
 http://jalammar.github.io/illustrated-retrieval-transformer/
+
+question: can retreival enhance other tasks beside LM/IR/QA? eg classification
+  - most naive version is to do a nearest neighbor search on database of vector representations with vector-label key-value pairing
+  - can you use retrieval to augment classifier/encoder?
