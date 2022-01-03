@@ -150,3 +150,9 @@ paper: https://arxiv.org/abs/2112.06905
 - MoE LM
 - more energy efficient training
 - faster inference
+
+# Retro Retrieval-Enhanced TRansfOrmer
+
+paper: https://arxiv.org/abs/2112.04426
+
+http://jalammar.github.io/illustrated-retrieval-transformer/
