@@ -1,6 +1,5 @@
-# fast.ai
-
-collection of projects done using fastai as well as useful resources to improve results
+# ML Cheatshet
+collection of random bits of code for future reference as well as useful resources to improve results
 
 # Categories
 1. [General](https://github.com/maxmatical/ml-cheatsheet/tree/master/ML%20tips/general%20tips)
@@ -13,3 +12,9 @@ collection of projects done using fastai as well as useful resources to improve 
 8. [Multi-task Learning](https://github.com/maxmatical/ml-cheatsheet/tree/master/ML%20tips/multi-task%20learning)
 9. [Model Deployment](https://github.com/maxmatical/ml-cheatsheet/tree/master/ML%20tips/Model%20deployment)
 10. [Reinforcement learning](https://github.com/maxmatical/ml-cheatsheet/tree/master/ML%20tips/Reinforcement%20Learning)
+
+
+
+# Interview related stuff
+
+[Deep Learning Interviews: Hundreds of fully solved job interview questions from a wide range of key topics in AI](https://arxiv.org/abs/2201.00650)
