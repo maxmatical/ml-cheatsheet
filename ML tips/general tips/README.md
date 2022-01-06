@@ -173,6 +173,31 @@ According to https://www.reddit.com/r/MachineLearning/comments/dhws0l/r_on_the_a
 
 Try using **SGD (momentum = 0.9, nesterov = True) or RMSPROP(momentum=0.9)**, can maybe generalize better (try for CV, maybe also works for NLP)
 
+See this thread: https://twitter.com/borisdayma/status/1479068659146534917?t=a79kxQ2c_oU_BFnkl7hyyw&s=09&fbclid=IwAR0xaBcED36-4ONnq2DD2gi5i4NUdDyLCY9zciiHrufVHTapbaA9Fgzc0Yo
+
+For performance
+- SGDM
+- RMSPROP
+- LAMB
+- AdamW
+- Ranger
+- Ranger21
+- RangerAdabelief
+- Shampoo
+- SAM + optimizer
+
+For training large models when memory is an issue
+- AdaFactor (although AdamW might be better for Large LMs)
+- Shampoo 
+- Novograd
+- AdaGraft
+- SM3
+- Try 8 bit optimizers (eg 8bit adamw) https://github.com/facebookresearch/bitsandbytes
+
+https://github.com/facebookresearch/bitsandbytes
+
+saves up to 75% memory on training models
+
 [**Sharpness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) 
   - try for CV like tasks
   - May be especially good for `ViT` and `Mlp_Mixer`
@@ -395,6 +420,8 @@ batch loss filter callback: https://github.com/maxmatical/ml-cheatsheet/blob/mas
 pytorch loss func: https://erogol.com/online-hard-example-mining-pytorch/
 
 idea: sort batch of `x, y` by `loss(x, y)`, and only take the top `k`% of the batch by loss (so model only sees the hard examples to use for backprop)
+
+**ALT** it might actually be good to remove the top k% by loss. see https://twitter.com/giffmana/status/1479015354366111746?t=pDWudblhtPkqgqxABdFlyQ&s=09&fbclid=IwAR2tHrrjDpDkEPfp1xFJWPux2vXgYkELUqJe8Llre7s8hjjRorg08mLGteA
 
 ### Dealing with positive-negative imbalance in multi-label data
 - issue: if have a lot of classes, each class will see a lot of negative examples per 1 positive example
