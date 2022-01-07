@@ -186,7 +186,7 @@ For performance
 - (Adaptive) SAM + optimizer
 
 For training large models when memory is an issue
-- AdaFactor (although AdamW might be better for Large LMs)
+- AdaFactor (although AdamW might be better for Large LMs, see twitter thread and GOPHER paper)
 - Distributed Shampoo 
 - Novograd
 - AdaGraft
