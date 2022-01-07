@@ -183,12 +183,11 @@ For performance
 - Ranger
 - Ranger21
 - RangerAdabelief
-- Shampoo
-- SAM + optimizer
+- (Adaptive) SAM + optimizer
 
 For training large models when memory is an issue
 - AdaFactor (although AdamW might be better for Large LMs)
-- Shampoo 
+- Distributed Shampoo 
 - Novograd
 - AdaGraft
 - SM3
@@ -197,6 +196,24 @@ For training large models when memory is an issue
 https://github.com/facebookresearch/bitsandbytes
 
 saves up to 75% memory on training models
+
+may require running embedding layers in fp32 (see this discussion for details: https://github.com/huggingface/transformers/issues/14819), eg
+```
+import torch
+import bitsandbytes as bnb
+from transformers import GPTNeoForCausalLM
+from bitsandbytes.optim import GlobalOptimManager
+
+def set_optim_to_run_embedding_in_fp32(model):
+    for module in model.modules():
+        if isinstance(module, torch.nn.Embedding):
+            GlobalOptimManager.get_instance().register_module_override(module, 'weight', {'optim_bits': 32})
+
+mname = "EleutherAI/gpt-neo-125M"
+model = GPTNeoForCausalLM.from_pretrained(mname)
+set_optim_to_run_embedding_in_fp32(model)
+
+```
 
 [**Sharpness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) 
   - try for CV like tasks
