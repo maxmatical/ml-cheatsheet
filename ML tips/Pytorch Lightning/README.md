@@ -8,6 +8,11 @@
 
 [Kaggle 1st place notebooks (with some best practices)](https://devblog.pytorchlightning.ai/3-pytorch-lightning-winning-community-kernels-to-inspire-your-next-kaggle-victory-ea355456229a)
 
+## Pytorch lightning bolts
+https://pytorch-lightning-bolts.readthedocs.io/en/0.3.0/introduction_guide.html
+
+- useful for self-supervised learning stuff
+
 ## Useful examples:
 
 ray lighting: https://medium.com/pytorch/getting-started-with-ray-lightning-easy-multi-node-pytorch-lightning-training-e639031aff8b
