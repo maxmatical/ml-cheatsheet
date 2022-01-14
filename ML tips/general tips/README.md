@@ -23,7 +23,7 @@
     2. performance of other classes improve
     If both cases are true, consider removing some data from that class
     
-## Adeptmind data curation process
+## Example data curation process
 1. train on data
 2. evaluation (per class p/r/f1 and overall accuracy) on validation data
   - look at underperforming classes
@@ -183,11 +183,14 @@ For performance
 - Ranger
 - Ranger21
 - RangerAdabelief
+- Shampoo
+  - distributed shampoo for JAX
 - (Adaptive) SAM + optimizer
 
 For training large models when memory is an issue
 - AdaFactor (although AdamW might be better for Large LMs, see twitter thread and GOPHER paper)
 - Distributed Shampoo 
+  - more memory overhead than adam, but more stable, better performance for large models
 - Novograd
 - AdaGraft
 - SM3
