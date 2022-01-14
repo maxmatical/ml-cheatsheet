@@ -7,3 +7,7 @@ Notes for using Jax/Flax
 - https://www.kaggle.com/asvskartheek/bert-tpus-jax-huggingface?fbclid=IwAR19964oeK47rhzlYxOV9o6esoz6VGH1JIgmAlRefOyUEBfDYcR1DH_wVKw
 
 - uses `optax` for AdamW and OneCycleLR
+
+
+## Distributed shampoo optimizer
+https://github.com/google-research/google-research/tree/master/scalable_shampoo
