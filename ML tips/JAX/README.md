@@ -41,6 +41,8 @@ class ResidualModel(nn.Module):
 ## Distributed shampoo optimizer
 https://github.com/google-research/google-research/tree/master/scalable_shampoo
 
+- use the optax version of shampoo
+
 ## Huggingface JAX/Flax tutorials
 
 ### Pretraining Causal LM on TPU w/ JAX/Flax
