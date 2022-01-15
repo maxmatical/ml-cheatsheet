@@ -8,6 +8,24 @@ https://colab.research.google.com/github/BertrandRdp/flax/blob/master/docs/noteb
 ### Saving best model
 either use serialization: https://flax.readthedocs.io/en/latest/notebooks/flax_basics.html#Serializing-the-result
 
+### Dealing with setting `training = True/False`
+https://flax.readthedocs.io/en/latest/design_notes/arguments.html
+
+add argument in `model.__call__` method eg 
+```
+from functools import partial
+from flax import linen as nn
+
+class ResidualModel(nn.Module):
+  drop_rate: float
+
+  @nn.compact
+  def __call__(self, x, *, train):
+    dropout = partial(nn.Dropout, rate=self.drop_rate, deterministic=not train) # <- setting train sets wether to use dropout or not
+    for i in range(10):
+      x += ResidualBlock(dropout=dropout, ...)(x)
+```
+
 or checkpoints https://flax.readthedocs.io/en/latest/flax.training.html
 
 ## kaggle tutorial notebooks
