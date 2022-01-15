@@ -8,6 +8,8 @@ https://colab.research.google.com/github/BertrandRdp/flax/blob/master/docs/noteb
 ### Saving best model
 either use serialization: https://flax.readthedocs.io/en/latest/notebooks/flax_basics.html#Serializing-the-result
 
+or checkpoints https://flax.readthedocs.io/en/latest/flax.training.html
+
 ### Dealing with setting `training = True/False`
 https://flax.readthedocs.io/en/latest/design_notes/arguments.html
 
@@ -26,7 +28,8 @@ class ResidualModel(nn.Module):
       x += ResidualBlock(dropout=dropout, ...)(x)
 ```
 
-or checkpoints https://flax.readthedocs.io/en/latest/flax.training.html
+### Mixed precision (bf16) training
+
 
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
