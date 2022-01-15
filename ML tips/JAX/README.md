@@ -28,7 +28,10 @@ class ResidualModel(nn.Module):
       x += ResidualBlock(dropout=dropout, ...)(x)
 ```
 
-### Mixed precision (bf16) training
+### Mixed precision (float16/bfloat16) training
+- set `model_detype` and `input_dtype` to float16
+- scaling done using `DynamicScale`: https://flax.readthedocs.io/en/latest/_autosummary/flax.optim.DynamicScale.html
+- full example of using float16 w/ dynamic scaling on imagenet here: https://github.com/google/flax/blob/main/examples/imagenet/train.py
 
 
 ## kaggle tutorial notebooks
