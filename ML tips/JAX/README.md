@@ -14,3 +14,11 @@ https://colab.research.google.com/github/BertrandRdp/flax/blob/master/docs/noteb
 
 ## Distributed shampoo optimizer
 https://github.com/google-research/google-research/tree/master/scalable_shampoo
+
+## Huggingface JAX/Flax tutorials
+
+### Pretraining Causal LM on TPU w/ JAX/Flax
+https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/causal_language_modeling_flax.ipynb
+
+### Fine-tuning BERT on GLUE 
+https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification_flax.ipynb#scrollTo=kTCFado4IrIc
