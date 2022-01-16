@@ -7,6 +7,9 @@ https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/
 
 more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_here_are_17_ways_of_making_pytorch_training/
 
+Huggingface - [Performance and Scalability: How To Fit a Bigger Model and Train It Faster](https://huggingface.co/docs/transformers/performance)
+
+Huggingface - [Model parallelism guide](https://huggingface.co/docs/transformers/parallelism#model-parallelism)
 
 ## integrating fastai functions
 
