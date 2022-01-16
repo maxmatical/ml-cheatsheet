@@ -33,6 +33,7 @@ class ResidualModel(nn.Module):
 - scaling done using `DynamicScale`: https://flax.readthedocs.io/en/latest/_autosummary/flax.optim.DynamicScale.html
 - full example of using float16 w/ dynamic scaling on imagenet here: https://github.com/google/flax/blob/main/examples/imagenet/train.py
 
+### JAX/Flax on (multiple) GPUs
 
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
