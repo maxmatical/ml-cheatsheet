@@ -48,7 +48,7 @@ mesh transformers (GPT-J6B) done using JAX and Haiku: https://github.com/kingofl
 - has `AdamW` and `OneCycleLR` (among other optimizers + lr schedules)
 - distributed shampoo in optax: https://github.com/google-research/google-research/tree/master/scalable_shampoo
   - example usage of distributed shampoo vs Adam/AdaFactor: https://wandb.ai/dalle-mini/dalle-mini/reports/Evaluation-of-Distributed-Shampoo--VmlldzoxNDIyNTUy
-  - example training script with optax and distributed shampoo
+  - example training script with optax and distributed shampoo: https://github.com/borisdayma/dalle-mini/blob/main/tools/train/train.py
 
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
