@@ -144,12 +144,25 @@ paper: https://arxiv.org/abs/2111.09543
 
 - replace MLM pretraining with replaced token detection (RTD) electra style
 
-# GLaM: Efficient Scaling of Language Models with Mixture-of-Experts
+# MoE papers
+
+## GLaM: Efficient Scaling of Language Models with Mixture-of-Experts
 paper: https://arxiv.org/abs/2112.06905
 
 - MoE LM
 - more energy efficient training
 - faster inference
+
+## DeepSpeed-MoE
+https://deepai.org/publication/deepspeed-moe-advancing-mixture-of-experts-inference-and-training-to-power-next-generation-ai-scale
+
+- deepspeed + MoE
+- deepspeed MoE tutorials
+  - https://www.deepspeed.ai/tutorials/mixture-of-experts/
+  - https://www.deepspeed.ai/tutorials/mixture-of-experts-nlg/
+
+## Efficient Large Scale Language Modeling with Mixtures of Experts
+https://arxiv.org/pdf/2112.10684.pdf
 
 # Retro Retrieval-Enhanced TRansfOrmer
 
