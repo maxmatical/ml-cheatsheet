@@ -10,7 +10,7 @@ https://forums.fast.ai/t/time-series-sequential-data-study-group/29686/331
 
 https://github.com/ai-fast-track/timeseries
 
-### Data agumentation for timeseries:
+### Data augmentation for timeseries:
 https://medium.com/@keur.plkar/from-sound-to-image-to-building-an-image-classifier-for-sound-with-fast-ai-3294909b3885
 
 https://medium.com/@makcedward/data-augmentation-for-audio-76912b01fdf6
