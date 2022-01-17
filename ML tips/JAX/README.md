@@ -35,6 +35,21 @@ class ResidualModel(nn.Module):
 
 ### JAX/Flax on (multiple) GPUs
 
+### model paralellism in JAX
+done using `xmap` and `mesh`
+
+xmap tutorial: https://jax.readthedocs.io/en/latest/notebooks/xmap_tutorial.html
+
+mesh tutorial: https://jax.readthedocs.io/en/latest/jax.experimental.maps.html
+
+mesh transformers (GPT-J6B) done using JAX and Haiku: https://github.com/kingoflolz/mesh-transformer-jax
+
+### Training Flax/Haiku models using `optax`
+- has `AdamW` and `OneCycleLR` (among other optimizers + lr schedules)
+- distributed shampoo in optax: https://github.com/google-research/google-research/tree/master/scalable_shampoo
+  - example usage of distributed shampoo vs Adam/AdaFactor: https://wandb.ai/dalle-mini/dalle-mini/reports/Evaluation-of-Distributed-Shampoo--VmlldzoxNDIyNTUy
+  - example training script with optax and distributed shampoo
+
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
 - https://www.kaggle.com/asvskartheek/bert-tpus-jax-huggingface?fbclid=IwAR19964oeK47rhzlYxOV9o6esoz6VGH1JIgmAlRefOyUEBfDYcR1DH_wVKw
