@@ -62,6 +62,12 @@ https://github.com/google-research/google-research/tree/master/scalable_shampoo
 
 - use the optax version of shampoo
 
+- Distributed shampoo notes: https://twitter.com/borisdayma/status/1483845589280382976
+  - use quantization on everything except diagonal statistics (should be the case by default)
+  - quantization especially useful in single GPU/TPU settings
+  - may not be necessary in multi-GPU/TPU setting due to sharding
+
+- example of training model in JAX with distributed shampoo: https://wandb.ai/dalle-mini/dalle-mini/reports/Evaluation-of-Distributed-Shampoo--VmlldzoxNDIyNTUy
 ## Huggingface JAX/Flax tutorials
 
 ### Pretraining Causal LM on TPU w/ JAX/Flax
