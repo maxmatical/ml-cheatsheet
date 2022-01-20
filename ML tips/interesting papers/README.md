@@ -174,7 +174,13 @@ question: can retreival enhance other tasks beside LM/IR/QA? eg classification
   - most naive version is to do a nearest neighbor search on database of vector representations with vector-label key-value pairing
   - can you use retrieval to augment classifier/encoder?
   - maybe better done as a seq2seq like t5/retro
-  - 2 possible ways to create a classifier
-  - 1. Have a classifier on top of the original model + nearest neighbors
-    - inputs to the final classifier: predicted probas of model, class of k nearest neighbors, l2 distance of each neighbor to model output vector
-  - 2. Use a retro style architecture, inject external vectors into model
+
+2 possible ways to create a classifier
+1. Have a classifier on top of the original model + nearest neighbors
+  - train classifier, generate encoded representation (ie use layer before classifier layer's output), and store in DB along with true class
+  - inputs to the final classifier: predicted probas of model, class of k nearest neighbors, l2 distance of each neighbor to model output vector
+  - since the encoder is used to generate encoded representation AND classification, maybe using label smoothing might not be useful
+    - should test with and without label smoothing
+2. Use a retro style architecture, inject external vectors into model
+  - requires 2 NNs, one (frozen) to generate the encoded representations and 1 to take (input + nearest neighbors) into the model
+  - the encoder model should not use label smoothing in this case
