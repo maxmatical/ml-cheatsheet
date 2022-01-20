@@ -170,12 +170,17 @@ paper: https://arxiv.org/abs/2112.04426
 
 http://jalammar.github.io/illustrated-retrieval-transformer/
 
+- major benefit of retro: easier to scale a database than scaling model
+  - model scaling is much more expensive
+  - allows incorporating more knowledge than what can be encoded in model params
+  - also allows scaling in 2 ways (db and model) as opposed to model only
+
 question: can retreival enhance other tasks beside LM/IR/QA? eg classification
   - most naive version is to do a nearest neighbor search on database of vector representations with vector-label key-value pairing
   - can you use retrieval to augment classifier/encoder?
   - maybe better done as a seq2seq like t5/retro
 
-2 possible ways to create a classifier
+3 possible ways to create a classifier
 1. Have a classifier on top of the original model + nearest neighbors
   - train classifier, generate encoded representation (ie use layer before classifier layer's output), and store in DB along with true class
   - inputs to the final classifier: predicted probas of model, class of k nearest neighbors, l2 distance of each neighbor to model output vector
@@ -184,3 +189,4 @@ question: can retreival enhance other tasks beside LM/IR/QA? eg classification
 2. Use a retro style architecture, inject external vectors into model
   - requires 2 NNs, one (frozen) to generate the encoded representations and 1 to take (input + nearest neighbors) into the model
   - the encoder model should not use label smoothing in this case
+3. frame classification as a seq2seq task (think t5), then use retro directly
