@@ -173,4 +173,8 @@ http://jalammar.github.io/illustrated-retrieval-transformer/
 question: can retreival enhance other tasks beside LM/IR/QA? eg classification
   - most naive version is to do a nearest neighbor search on database of vector representations with vector-label key-value pairing
   - can you use retrieval to augment classifier/encoder?
-  - maybe better done as a seq2seq lie t5/retro
+  - maybe better done as a seq2seq like t5/retro
+  - 2 possible ways to create a classifier
+  - 1. Have a classifier on top of the original model + nearest neighbors
+    - inputs to the final classifier: predicted probas of model, class of k nearest neighbors, l2 distance of each neighbor to model output vector
+  - 2. Use a retro style architecture, inject external vectors into model
