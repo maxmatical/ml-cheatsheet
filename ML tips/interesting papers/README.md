@@ -146,6 +146,20 @@ paper: https://arxiv.org/abs/2111.09543
 
 # MoE papers
 
+## Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+paper: https://arxiv.org/abs/2101.03961
+
+The first in a series of MoE papers
+
+Main takeaways
+- fine-tuning regularization: use dropout + expert dropout (dropping entire experts)
+  - smaller models can outperform flop-matched dense models in downstream tasks for supervised fine-tuning
+- various strategies to train large MoE models
+![image](https://user-images.githubusercontent.com/8890262/150568439-262d8ad1-99b8-420c-8659-2c946edad005.png)
+
+scaling MoE models to 1T+ parameters
+- lm performance (neg log perplexity) improves, but downstream performance (such as SGLUE) does not outperform dense models (T5-XXL at 13B)
+
 ## GLaM: Efficient Scaling of Language Models with Mixture-of-Experts
 paper: https://arxiv.org/abs/2112.06905
 
@@ -180,6 +194,8 @@ Main findings:
 - MoE models can yield competitive zero/few shot performance (compared to dense models) at fraction of computation for training and inference
 - In a fully supervised fine-tuning regime, MoE models still underperform relative to dense models
   - Hypothesize MoE models may need alternative fine-tuning strategies compared to dense models
+
+
 
 # Retro Retrieval-Enhanced TRansfOrmer
 
