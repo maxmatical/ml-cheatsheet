@@ -175,6 +175,12 @@ https://deepai.org/publication/deepspeed-moe-advancing-mixture-of-experts-infere
 ## Efficient Large Scale Language Modeling with Mixtures of Experts
 https://arxiv.org/pdf/2112.10684.pdf
 
+Main findings:
+- MoE models can indeed achieve similar downstream task performance as dense models at a fraction of the compute
+- MoE models can yield competitive zero/few shot performance (compared to dense models) at fraction of computation for training and inference
+- In a fully supervised fine-tuning regime, MoE models still underperform relative to dense models
+  - Hypothesize MoE models may need alternative fine-tuning strategies compared to dense models
+
 # Retro Retrieval-Enhanced TRansfOrmer
 
 paper: https://arxiv.org/abs/2112.04426
