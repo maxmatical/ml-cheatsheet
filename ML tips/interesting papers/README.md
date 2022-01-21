@@ -149,9 +149,20 @@ paper: https://arxiv.org/abs/2111.09543
 ## GLaM: Efficient Scaling of Language Models with Mixture-of-Experts
 paper: https://arxiv.org/abs/2112.06905
 
+summary of paper: https://twitter.com/MosaicML/status/1484253206112780291
+
 - MoE LM
 - more energy efficient training
 - faster inference
+- each input is fed through a gating layer to determine which of the 2 experts will be used 
+
+![image](https://user-images.githubusercontent.com/8890262/150565245-958a192b-2ea0-4931-a966-efd516cf030a.png)
+
+
+Dealing with training instability:
+- debugging everything with smaller-scale models first
+- skip updates with Nan/inf values
+- restarting from an earlier checkpoint when there are “large fluctuations”
 
 ## DeepSpeed-MoE
 https://deepai.org/publication/deepspeed-moe-advancing-mixture-of-experts-inference-and-training-to-power-next-generation-ai-scale
