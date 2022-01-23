@@ -123,9 +123,16 @@ WeightedDL example: https://www.kaggle.com/dienhoa/healthy-lung-classification-s
 https://github.com/muellerzr/Practical-Deep-Learning-for-Coders-2.0
 
 
-### FP16
+### FP16 training
+- faster training (if using tensor cores)
+- smaller model size (can use larger model)
+- some regularization effects due to lower numerical precision
 
-setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
+If dealing with instabilities in training
+- if using an optimizer like `adam`, set `eps` to a higher value (eg `1e-8 -> 1e-7, 1e-6` etc.)
+- skipping update steps where loss is `nan/inf`
+- revert model checkpoints if training diverges
+- last resort: train in fp32
 
 
 ### Model ensembling
@@ -133,7 +140,7 @@ setting learner to fp16 Learner(data, model, metrics=[accuracy]).to_fp16()
 Average a bunch of models together trained with different seeds/hyperparameters
 
 easy way to snapshot ensemble:
-- checkpoint learners at end of training cycle (`fit_fc` or `fit_one_cycle`) as `stage1, stage2...`
+- save models at end of training cycle as `stage1, stage2...`
 - at inference, load multiple learners from each checkpoint and ensemble predictions
 
 another way to ensemble: using stratified k-fold cv (to train k models), then ensemble models together. [see here](https://walkwithfastai.com/tab.cv)
@@ -274,24 +281,13 @@ optimizer_config_mapping = {
 - `use_madgrad = True` might be better for transformers
 
 
-### **Save best model**
+### Save best model and early stopping
+- may not be the best idea
+- better to adjust number of epochs or learning rate so that the best model is at the end of training
 
-```
-learn.fit_one_cycle(10,
-                   slice(lr/(2.6**4),lr), 
-                   moms=(0.8,0.7),
-                   callbacks=[SaveModelCallback(learn, every='improvement', monitor='accuracy', 
-                                                             name='best_classifier_final')])
-
-```
-### Save best model vs reducing number of epochs
+### Save best model/early stopping vs reducing number of epochs
 - might be better to re-train at reduced number of epochs (the epoch with best metric) instead of using `SaveModelCallback`
-- want a model with low learning rate
-
-
-### Early stopping
-https://docs.fast.ai/callbacks.tracker.html#EarlyStoppingCallback
-
+- want a model with low learning rate at the end
 
 ### choosing LR
 
@@ -486,7 +482,7 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 ### Don't use early stopping/save best model callbacks!
 - reasoning
 - applies both to DL, as well as some ML models (eg xgboost w/ early stopping)
-- both can introduce too much variance to the model (**especially** when doing cross validation)
+- both can introduce too much variance to the model (**especially** when doing cross validation/ hpo)
 - want model at the last epoch to be the best model
 - 3 ways to make sure the best model is a the last epoch
   1. naive way: start with some number, if performance is still improving at the end, try increasing number of epochs. if performance starts to drop before the end (eg at epoch 35), set the number of epochs to the epoch with best performance
