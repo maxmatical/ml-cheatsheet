@@ -20,29 +20,7 @@ ray lighting: https://medium.com/pytorch/getting-started-with-ray-lightning-easy
   - contains nice template for pytorch lightning module training loop
 
 
-## Useful callbacks
-- [early stopping](https://pytorch-lightning.readthedocs.io/en/latest/common/early_stopping.html)
-eg
-```
-early_stopping_callback = EarlyStopping(monitor='val_loss', patience=6)
-
-```
-
-- [save best weights](https://pytorch-lightning.readthedocs.io/en/latest/common/weights_loading.html)
-eg
-```
-checkpoint_callback = ModelCheckpoint(
-  dirpath="checkpoints",
-  filename="best-checkpoint",
-  save_top_k=1,
-  verbose=True,
-  monitor="val_loss",
-  mode="min"
-)
-```
-
-**Note**: for early stopping and model checkpoint, if want `monitor="val_acc"` or similar metric, need to calculate metric in 
-
+## logging metrics
 ```
 def training_step(self, batch, batch_idx):
     ...
@@ -55,24 +33,8 @@ def validation_step(self, batch, batch_idx):
 
 - `LearningRateMonitor`: `lr_monitor = LearningRateMonitor(logging_interval='step')`
 
-- `ReduceLROnPlateau`: use pytorch implementation, eg
-```
-def __init__(self):
-    super().__init__()
-    self.automatic_optimization = False
 
 
-def training_epoch_end(self, outputs):
-    sch = self.lr_schedulers()
-
-    # If the selected scheduler is a ReduceLROnPlateau scheduler.
-    if isinstance(sch, torch.optim.lr_scheduler.ReduceLROnPlateau):
-        sch.step(self.trainer.callback_metrics["loss"])
-```
-
-
-
-[stochastic weight averaging (SWA)](https://pytorch-lightning.readthedocs.io/en/latest/advanced/training_tricks.html#stochastic-weight-averaging)
 
 ## Useful fastai functionalities in ptl
 
@@ -140,6 +102,22 @@ class LightningModel(pl.LightningModule):
         }  
         return [optimizer], [meta_sched]
 ```
+
+- `ReduceLROnPlateau`: use pytorch implementation, eg
+```
+def __init__(self):
+    super().__init__()
+    self.automatic_optimization = False
+
+
+def training_epoch_end(self, outputs):
+    sch = self.lr_schedulers()
+
+    # If the selected scheduler is a ReduceLROnPlateau scheduler.
+    if isinstance(sch, torch.optim.lr_scheduler.ReduceLROnPlateau):
+        sch.step(self.trainer.callback_metrics["loss"])
+```
+
 
 ### LR schedules with multi gpu training
 see: https://github.com/PyTorchLightning/pytorch-lightning/discussions/2149
