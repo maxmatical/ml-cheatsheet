@@ -56,10 +56,9 @@ https://pytorch.org/docs/stable/notes/amp_examples.html#working-with-multiple-gp
 
 
 ## Callbacks
-- early stopping
-- save model
 - reduce lr on plateau callback: https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html
-- terminate on nan callback
+- terminate on nan
+- skipping update steps with `nan/inf`, may be better than terminating training entirely
 
 ## mixup
 - mixup: https://towardsdatascience.com/enhancing-neural-networks-with-mixup-in-pytorch-5129d261bc4a
