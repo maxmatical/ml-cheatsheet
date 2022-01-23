@@ -353,6 +353,8 @@ Hyperband/Optuna example: [full_twitter_sentiment_transformers.ipynb](https://gi
 
 [Optuna + ray tune](https://medium.com/optuna/scaling-up-optuna-with-ray-tune-88f6ca87b8c7)
 
+- Tip for HPO: for hyperparameters that are percentages (eg dropout), use uniform distribution, otherwise (eg lr, wd, Adam eps) use log uniform scale
+
 **note:** for pretrained models, save and reload weights every trial
 
 Load model with best hyperparameters
@@ -480,4 +482,12 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 ### Convert `nn.CrossEntropyLoss` to `nn.BCEWithLogitsLoss`
 - could potentially work better as a 1-v-all problem
 - use label smoothing could help as well (see pytorch BERT huggingface example)
+
+### Don't use early stopping/save best model callbacks!
+- applies both to DL, as well as some ML models (eg xgboost w/ early stopping)
+- both can introduce too much variance to the model (**especially** when doing cross validation)
+- want model at the last epoch to be the best model
+- choosing best number of epochs (2 ways)
+  1. naive way: start with some number, if performance is still improving at the end, try increasing number of epochs. if performance starts to drop before the end (eg at epoch 35), set the number of epochs to the epoch with best performance
+  2. add number of epochs as a hyperparameter, and run hpo with that
 
