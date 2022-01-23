@@ -484,10 +484,12 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 - use label smoothing could help as well (see pytorch BERT huggingface example)
 
 ### Don't use early stopping/save best model callbacks!
+- reasoning
 - applies both to DL, as well as some ML models (eg xgboost w/ early stopping)
 - both can introduce too much variance to the model (**especially** when doing cross validation)
 - want model at the last epoch to be the best model
-- choosing best number of epochs (2 ways)
+- 3 ways to make sure the best model is a the last epoch
   1. naive way: start with some number, if performance is still improving at the end, try increasing number of epochs. if performance starts to drop before the end (eg at epoch 35), set the number of epochs to the epoch with best performance
   2. add number of epochs as a hyperparameter, and run hpo with that
+  3. alternatively, tune lr such that the best model is at the last epoch
 
