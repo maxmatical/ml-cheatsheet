@@ -5,7 +5,7 @@ Notes for using Jax/Flax
 ## Flax basics
 https://colab.research.google.com/github/BertrandRdp/flax/blob/master/docs/notebooks/flax_basics.ipynb
 
-### Saving best model
+### Saving model
 either use serialization: https://flax.readthedocs.io/en/latest/notebooks/flax_basics.html#Serializing-the-result
 
 or checkpoints https://flax.readthedocs.io/en/latest/flax.training.html
@@ -36,7 +36,7 @@ class ResidualModel(nn.Module):
 ### JAX/Flax on (multiple) GPUs
 
 ### model paralellism in JAX
-done using `xmap` and `mesh`
+done using `xmap` and `mesh` or `pjit`
 
 xmap tutorial: https://jax.readthedocs.io/en/latest/notebooks/xmap_tutorial.html
 
@@ -49,6 +49,12 @@ mesh transformers (GPT-J6B) done using JAX and Haiku: https://github.com/kingofl
 - distributed shampoo in optax: https://github.com/google-research/google-research/tree/master/scalable_shampoo
   - example usage of distributed shampoo vs Adam/AdaFactor: https://wandb.ai/dalle-mini/dalle-mini/reports/Evaluation-of-Distributed-Shampoo--VmlldzoxNDIyNTUy
   - example training script with optax and distributed shampoo: https://github.com/borisdayma/dalle-mini/blob/main/tools/train/train.py
+
+### `pjit` in JAX
+- used for 2D paralellism (data + model parallelism)
+- https://twitter.com/borisdayma/status/1486085583764135938?t=z_nsJ2ttUPExlykSQHwcIQ&s=09&fbclid=IwAR1lO3zaNWzLI82zKzHQ5wm9nMtQSTPH2_2-XgxrlLjjncNGLw1knL88HaE
+  - example of `pjit` https://github.com/borisdayma/dalle-mini/commit/2b7f5f1daad2e3a24e883748ec3e818af5aab3b0
+- `pjit` tutorial: https://jax.readthedocs.io/en/latest/jax-101/08-pjit.html?fbclid=IwAR0nDEmjv1mOUY85qTrJEofyizYRAUZDqVGIbmTEJoQJEzwDd_VN80cHckE
 
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
