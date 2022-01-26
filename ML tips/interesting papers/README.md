@@ -146,6 +146,8 @@ paper: https://arxiv.org/abs/2111.09543
 
 # MoE papers
 
+MoE survey notes: https://hackmd.io/Ah9cd9fRR2uJLnvKExMkEw
+
 ## Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
 paper: https://arxiv.org/abs/2101.03961
 
