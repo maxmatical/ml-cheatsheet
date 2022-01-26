@@ -109,6 +109,9 @@ Note:
 - Can either use hard or soft pseudo labelling (soft pseudo labels might be slightly better)
 - possible loss for soft speudo labels: https://discuss.pytorch.org/t/catrogircal-cross-entropy-with-soft-classes/50871
 
+### Example of leveraging self training with unlabeled data
+https://twitter.com/ai_fast_track/status/1486187160042713091?t=xfB1lbLoLCUDJCSJMNWZXA&s=09&fbclid=IwAR10JhZs5k8NWxPhYJ49yNuIZZSQF9deEnyTryUJ2TTsvX_m2EsxTPPN5Mc
+- interesting note: can manually validate/correct predictions in early stages of self training when model performance isn't as good
 
 ### practical application of self training
 
