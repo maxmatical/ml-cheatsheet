@@ -55,6 +55,7 @@ mesh transformers (GPT-J6B) done using JAX and Haiku: https://github.com/kingofl
 - https://twitter.com/borisdayma/status/1486085583764135938?t=z_nsJ2ttUPExlykSQHwcIQ&s=09&fbclid=IwAR1lO3zaNWzLI82zKzHQ5wm9nMtQSTPH2_2-XgxrlLjjncNGLw1knL88HaE
   - example of `pjit` https://github.com/borisdayma/dalle-mini/commit/2b7f5f1daad2e3a24e883748ec3e818af5aab3b0
 - `pjit` tutorial: https://jax.readthedocs.io/en/latest/jax-101/08-pjit.html?fbclid=IwAR0nDEmjv1mOUY85qTrJEofyizYRAUZDqVGIbmTEJoQJEzwDd_VN80cHckE
+- creating a 2D mesh for MP + DP in dalle_mini: https://github.com/borisdayma/dalle-mini/blob/main/tools/train/train.py
 
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
@@ -81,3 +82,9 @@ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examp
 
 ### Fine-tuning BERT on GLUE 
 https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification_flax.ipynb#scrollTo=kTCFado4IrIc
+
+## Other useful JAX projects/tutorials
+Dalle Mini: https://github.com/borisdayma/dalle-mini
+  - 2D parallelism (model parallel + data parallel) with mesh and `pjit`
+  - uses distributed shampoo optimizer
+
