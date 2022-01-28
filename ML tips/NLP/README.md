@@ -251,6 +251,9 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 - `multi-qa-mpnet-base-dot-v1`
 - `msmarco-bert-base-dot-v5`
 
+5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
+- splade v2
+
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 
