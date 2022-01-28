@@ -247,6 +247,9 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 - github https://github.com/stanford-futuredata/ColBERT/tree/new_api
 - slightly better than coCondenser on MS-MARCO, no results in NQ/TriviaQA
 
+4. SBERT Models:
+- `multi-qa-mpnet-base-dot-v1`
+- `msmarco-bert-base-dot-v5`
 
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
