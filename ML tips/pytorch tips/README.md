@@ -10,6 +10,54 @@ more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_he
 Huggingface - [Performance and Scalability: How To Fit a Bigger Model and Train It Faster](https://huggingface.co/docs/transformers/performance)
 
 Huggingface - [Model parallelism guide](https://huggingface.co/docs/transformers/parallelism#model-parallelism)
+```
+Here is a very rough outline at which parallelism strategy to use when. The first on each list is typically faster.
+
+⇨ Single GPU
+
+    Model fits onto a single GPU:
+        Normal use
+
+    Model doesn’t fit onto a single GPU:
+        ZeRO + Offload CPU and optionally NVMe
+        as above plus Memory Centric Tiling (see below for details) if the largest layer can’t fit into a single GPU
+
+    Largest Layer not fitting into a single GPU:
+
+    ZeRO - Enable Memory Centric Tiling (MCT). It allows you to run arbitrarily large layers by automatically splitting them and executing them sequentially. MCT reduces the number of parameters that are live on a GPU, but it does not affect the activation memory. As this need is very rare as of this writing a manual override of torch.nn.Linear needs to be done by the user.
+
+⇨ Single Node / Multi-GPU
+
+    Model fits onto a single GPU:
+        DDP - Distributed DP
+        ZeRO - may or may not be faster depending on the situation and configuration used
+
+    Model doesn’t fit onto a single GPU:
+
+        PP
+
+        ZeRO
+
+        TP
+
+        With very fast intra-node connectivity of NVLINK or NVSwitch all three should be mostly on par, without these PP will be faster than TP or ZeRO. The degree of TP may also make a difference. Best to experiment to find the winner on your particular setup.
+
+        TP is almost always used within a single node. That is TP size <= gpus per node.
+
+    Largest Layer not fitting into a single GPU:
+        If not using ZeRO - must use TP, as PP alone won’t be able to fit.
+        With ZeRO see the same entry for “Single GPU” above
+
+⇨ Multi-Node / Multi-GPU
+
+    When you have fast inter-node connectivity:
+        ZeRO - as it requires close to no modifications to the model
+        PP+TP+DP - less communications, but requires massive changes to the model
+
+    when you have slow inter-node connectivity and still low on GPU memory:
+        DP+PP+TP+ZeRO-1
+
+```
 
 ## integrating fastai functions
 
