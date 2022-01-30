@@ -10,7 +10,7 @@ more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_he
 Huggingface - [Performance and Scalability: How To Fit a Bigger Model and Train It Faster](https://huggingface.co/docs/transformers/performance)
 
 Huggingface - [Model parallelism guide](https://huggingface.co/docs/transformers/parallelism#model-parallelism)
-```
+
 Here is a very rough outline at which parallelism strategy to use when. The first on each list is typically faster.
 
 ⇨ Single GPU
@@ -56,8 +56,6 @@ Here is a very rough outline at which parallelism strategy to use when. The firs
 
     when you have slow inter-node connectivity and still low on GPU memory:
         DP+PP+TP+ZeRO-1
-
-```
 
 ## integrating fastai functions
 
