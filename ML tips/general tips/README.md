@@ -502,3 +502,7 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
   2. add number of epochs as a hyperparameter, and run hpo with that
   3. alternatively, tune lr such that the best model is at the last epoch
 
+### Exponential moving average (EMA) of model weights
+https://github.com/fadel/pytorch_ema
+
+see pytorch/pytorch lightning BERT notebook example
