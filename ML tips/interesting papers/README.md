@@ -198,6 +198,12 @@ Main findings:
   - Hypothesize MoE models may need alternative fine-tuning strategies compared to dense models
 
 
+## Unified Scaling Laws for Routed Language Models
+
+https://arxiv.org/abs/2202.01169#deepmind
+
+main findings:
+- MoE advantage disappears at 900B dense parameters
 
 # Retro Retrieval-Enhanced TRansfOrmer
 
