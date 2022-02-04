@@ -297,6 +297,19 @@ lr_min, lr_steep = learn.lr_find()
 print(f"choose lr between {lr_steep} and {lr_min/10}")
 ```
 
+### Learning Rate schedulers
+The following seem to be good choices
+1. `FitOneCycle`
+  - probably works well in most circumstances
+2. `fit_flat_cos` 
+  - Flat + cosine decay 
+  - works well with ranger + variants
+3. `ReduceLROnPlateau`
+  - keeping patience fairly high (eg reduce lr as late as possible) might be beneficial
+  - patience can be a hyperparameter
+  - may work better when number of epochs is really high  
+  - optional: add a linear/cosine decay at the end for last `x`% of training
+
 ### Learning rate tips for transfer learning
 
 - decrease base learning rate for the unfrozen model 
