@@ -205,6 +205,10 @@ https://arxiv.org/abs/2202.01169#deepmind
 main findings:
 - MoE advantage disappears at 900B dense parameters
 
+## Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model
+
+https://deepai.org/publication/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-a-large-scale-generative-language-model
+
 # Retro Retrieval-Enhanced TRansfOrmer
 
 paper: https://arxiv.org/abs/2112.04426
