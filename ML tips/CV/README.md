@@ -58,3 +58,7 @@ https://www.youtube.com/watch?v=552FVdcHIUU
 
 ### BlurPool for shift invariance
 [example notebook](https://github.com/maxmatical/ml-cheatsheet/blob/master/imagenette%20-%205%20epochs.ipynb)
+
+
+### Dealing with imbalance in object detection
+https://twitter.com/ai_fast_track/status/1488353683461095424?t=31ss-zCN4RTnoze9VyHi_A&s=09&fbclid=IwAR0UDEKPy_GmAPq5N-RBs0ASxhR8YrKQ5h_gZ1OqeCzu1_7gEIrhZgN2nCI
