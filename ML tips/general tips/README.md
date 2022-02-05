@@ -309,6 +309,74 @@ The following seem to be good choices
   - patience can be a hyperparameter
   - may work better when number of epochs is really high  
   - optional: add a linear/cosine decay at the end for last `x`% of training
+  - optional: add SWA at the last `x`% of training
+  - can also do `scheduler.step(train_loss)` every `k` steps of training (if data is really large and doing large number of epochs doesn't make sense)
+    - or run validation step every `k` steps of training and `scheduler.step(val_loss/val_metric)`
+4. [Flat LR + SWA](https://arxiv.org/abs/1803.05407?fbclid=IwAR0EctkySwLuvPJAlM-q31AIB9a6s8NSQPsh2ww6qJ7sbN1Z4TBJfHSwIP8)
+  - Recommend to use flat LR + swa for last `x`% of training
+  - **Could** work well with `ReduceLROnPlateau` because it's flat LR
+  - can be done either per epoch or every `k` steps after `x`%
+```
+# after k % of epochs, swa at the end of every epoch
+opt = torchcontrib.optim.SWA(base_opt)
+scheduler = ReduceLROnPlateau(optimizer, 'min/max')
+
+for i in range(n_epochs):
+    ##########
+    # training step
+    ##########
+    for x, y in train_dls:
+        pred = model(x)
+        loss = loss_func(preds, y)
+        loss.backward()
+        opt.step()
+    
+    # only start swa after k% of epochs
+    if i > int(k * n_epochs):
+        opt.update_swa()
+        
+    ##########
+    # val step
+    ##########
+    ...
+    scheduler.step(val_metric)
+    
+# outside of training loop
+opt.swap_swa_sgd()
+
+# after x% of total training steps, swa update every k steps after
+opt = torchcontrib.optim.SWA(base_opt)
+scheduler = ReduceLROnPlateau(optimizer, 'min/max')
+total_steps = n_epochs * len(train_dl)
+curr_step = 0
+for i in range(n_epochs):
+    ##########
+    # training step
+    ##########
+    for x, y in train_dls:
+        pred = model(x)
+        loss = loss_func(preds, y)
+        loss.backward()
+        opt.step()
+        
+        # update curr_step
+        curr_step += 1
+    
+        # only start swa after x% of total steps
+        # and update every k steps
+        if curr_step > int(x * total_steps) and curr_step % k == 0:
+            opt.update_swa()
+            
+    ##########
+    # val step
+    ##########
+    ...
+    scheduler.step(val_metric)
+    
+# outside of training loop
+opt.swap_swa_sgd()
+
+```
 
 ### Learning rate tips for transfer learning
 
