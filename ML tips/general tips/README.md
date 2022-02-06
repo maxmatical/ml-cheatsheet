@@ -315,11 +315,13 @@ The following seem to be good choices
 4. [Flat LR + SWA](https://arxiv.org/abs/1803.05407?fbclid=IwAR0EctkySwLuvPJAlM-q31AIB9a6s8NSQPsh2ww6qJ7sbN1Z4TBJfHSwIP8)
   - Recommend to use flat LR + swa for last `x`% of training
   - **Could** work well with `ReduceLROnPlateau` because it's flat LR
+    - **alternatively**: switch between LR scheduler and SWA. don't `schedule.step()` when swa is being used (can be a hyperparam to experiment with)
   - can be done either per epoch or every `k` steps after `x`%
 ```
 # after k % of epochs, swa at the end of every epoch
-opt = torchcontrib.optim.SWA(base_opt)
+swa_model = torch.optim.swa_utils.AveragedModel(model)
 scheduler = ReduceLROnPlateau(optimizer, 'min/max')
+swa_disable_scheduler = True
 
 for i in range(n_epochs):
     ##########
@@ -333,21 +335,40 @@ for i in range(n_epochs):
     
     # only start swa after k% of epochs
     if i > int(k * n_epochs):
-        opt.update_swa()
+        swa_model.update_parameters(model)
         
     ##########
     # val step
     ##########
-    ...
+    # don't use swa yet
+    if i <= int(k * n_epochs):
+        for x, y in val_dls:
+            preds = model(x)
+            ...
+            
+    # starting swa: switch over to swa_model
+    else:
+        for x, y in val_dls:
+            preds = swa_model(x) # <- IMPORTANT to use swa_model!
+            ...
+        
+        # optionally don't scheduler.step
+        if swa_disable_scheduler:
+            continue
+      
     scheduler.step(val_metric)
-    
-# outside of training loop
-opt.swap_swa_sgd()
+
+# Update bn statistics for the swa_model at the end
+torch.optim.swa_utils.update_bn(loader, swa_model)
+
 
 # after x% of total training steps, swa update every k steps after
-opt = torchcontrib.optim.SWA(base_opt)
-scheduler = ReduceLROnPlateau(optimizer, 'min/max')
+# using a different lr cycle
+
+swa_model = torch.optim.swa_utils.AveragedModel(model)
 total_steps = n_epochs * len(train_dl)
+scheduler = OneCycleLR(optimizer, max_lr=lr, total_steps=total_steps)
+
 curr_step = 0
 for i in range(n_epochs):
     ##########
@@ -365,17 +386,39 @@ for i in range(n_epochs):
         # only start swa after x% of total steps
         # and update every k steps
         if curr_step > int(x * total_steps) and curr_step % k == 0:
-            opt.update_swa()
+            swa_model.update_parameters(model)
+            # skip updating lr scheduler
+            if swa_disable_scheduler = True:
+                continue
+        scheduler.step()
             
     ##########
     # val step
     ##########
-    ...
-    scheduler.step(val_metric)
+    # don't use swa yet
+    if i <= int(k * n_epochs):
+        for x, y in val_dls:
+            preds = model(x)
+            ...
+            
+    # starting swa: switch over to swa_model
+    else:
+        for x, y in val_dls:
+            preds = swa_model(x) # <- IMPORTANT to use swa_model!
+            ...
     
 # outside of training loop
-opt.swap_swa_sgd()
+torch.optim.swa_utils.update_bn(loader, swa_model)
 
+
+# note: make inferences with swa_model
+# can also make ema models with
+
+ema_avg = lambda averaged_model_parameter, model_parameter, num_averaged:\
+        0.1 * averaged_model_parameter + 0.9 * model_parameter
+ema_model = torch.optim.swa_utils.AveragedModel(model, avg_fn=ema_avg)
+
+will always be making val pred with ema_model in val step
 ```
 
 ### Learning rate tips for transfer learning
