@@ -21,3 +21,8 @@ https://medium.com/@makcedward/data-augmentation-for-audio-76912b01fdf6
 ### N-BEATS
 article https://towardsdatascience.com/n-beats-beating-statistical-models-with-neural-nets-28a4ba4a4de8
 paper https://arxiv.org/abs/1905.10437
+
+## ETSformer: Exponential Smoothing Transformers for Time-series Forecasting
+https://arxiv.org/abs/2202.01381
+
+pytorch implementation: https://github.com/lucidrains/ETSformer-pytorch
