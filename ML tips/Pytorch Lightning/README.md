@@ -243,6 +243,12 @@ https://github.com/PyTorchLightning/pytorch-lightning/issues/790
     new_model.load_state_dict(torch.load(saved_model_pth))
     ```
     
+## Stochastic weight averaging (SWA)
+https://pytorch-lightning.readthedocs.io/en/latest/extensions/generated/pytorch_lightning.callbacks.StochasticWeightAveraging.html
+
+- could improve generalization by searching for flatter minima
+- using SGD only? may not be useful for other optimizers like AdamW, Ranger etc.
+
 ## Exponential Moving Average (EMA):
 https://github.com/fadel/pytorch_ema
 - should be fairly simple with `self.automatic_topimization=False` in `LightningModule`
@@ -250,7 +256,9 @@ https://github.com/fadel/pytorch_ema
 
 use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
 
-EMA callback: https://github.com/PyTorchLightning/pytorch-lightning/issues/10914
+**potential EMA callback**: https://github.com/PyTorchLightning/pytorch-lightning/issues/10914
+  - could be more useful that naive implementation
+
 
 ### EMA/SWA with model checkpoints/early stopping
 
