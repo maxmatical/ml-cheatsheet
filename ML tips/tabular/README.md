@@ -95,6 +95,15 @@ Alternative: use NNs (can easily handle extrapolation into future) **OR** detren
 1. start with RF for steps above
 2. Move on to GBT/NN after feature engineering
 
+## Modelling options
+https://twitter.com/marktenenholtz/status/1490671701884952576?t=f-HLbRhzn2g5uD6rsZnp1A&s=09&fbclid=IwAR1nNEhVXfdxWB9VXORJHpBsgflUKNay7IciBEl-IsSxSdSP6rhffBIrWsw
+
+1. RF/Extratrees
+2. GBM: lightgbm/catboost/xgboost
+3. MLP: eg tabular learner in fastai
+4. 1D-CNNs: https://www.kaggle.com/c/lish-moa/discussion/202256
+5. TabNet 
+
 ### Tabnet
 https://walkwithfastai.com/TabNet
 
