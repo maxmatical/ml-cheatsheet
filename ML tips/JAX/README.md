@@ -57,6 +57,16 @@ mesh transformers (GPT-J6B) done using JAX and Haiku: https://github.com/kingofl
 - `pjit` tutorial: https://jax.readthedocs.io/en/latest/jax-101/08-pjit.html?fbclid=IwAR0nDEmjv1mOUY85qTrJEofyizYRAUZDqVGIbmTEJoQJEzwDd_VN80cHckE
 - creating a 2D mesh for MP + DP in dalle_mini: https://github.com/borisdayma/dalle-mini/blob/main/tools/train/train.py
 
+### persistent compilation cache
+https://github.com/google/jax/issues/476#issuecomment-1015773039
+```
+from jax.experimental.compilation_cache import compilation_cache as cc
+
+cc.initialize_cache("/path/name/here", max_cache_size_bytes=32 * 2**30)
+```
+- should speed up JAX operations
+- only on TPUs (for now)
+
 ## kaggle tutorial notebooks
 - https://www.kaggle.com/heyytanay/sentiment-clf-jax-flax-on-tpus-w-b?fbclid=IwAR3efsSkQfYxfncQhhT7yWlFs1L8BSkRx1TAfW_sHBM4xUB4Yu0CnNPWga8
 - https://www.kaggle.com/asvskartheek/bert-tpus-jax-huggingface?fbclid=IwAR19964oeK47rhzlYxOV9o6esoz6VGH1JIgmAlRefOyUEBfDYcR1DH_wVKw
