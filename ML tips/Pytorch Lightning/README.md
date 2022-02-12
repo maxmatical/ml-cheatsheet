@@ -289,4 +289,6 @@ trainer = Trainer(devices=8, accelerator="tpu", strategy="ddp", precision=16)
 - for `device=1` use `strategy=None`
 - use `strategy="ddp2"` In certain cases, it’s advantageous to use all batches on the same machine instead of a subset. For instance, you might want to compute a NCE loss where it pays to have more negative samples.
 
+## distributed training with Bagua
 
+https://pytorch-lightning.readthedocs.io/en/latest/accelerators/gpu.html#bagua
