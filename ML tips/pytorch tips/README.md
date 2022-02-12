@@ -139,3 +139,9 @@ idea: sort batch of x, y by loss(x, y), and only take the top k% of the batch by
 ## MoE training with DeepSpeed
 1. MoE tutorial on cifar10: https://www.deepspeed.ai/tutorials/mixture-of-experts/
 2. Applying MoE to Megatron-LM (gpt3 style autoregressive LM) for NLG: https://www.deepspeed.ai/tutorials/mixture-of-experts-nlg/
+
+
+## Distributed training with Bagua
+https://github.com/BaguaSys/bagua
+
+examples: https://github.com/BaguaSys/bagua/tree/master/examples
