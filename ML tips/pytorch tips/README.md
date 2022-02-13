@@ -145,3 +145,19 @@ idea: sort batch of x, y by loss(x, y), and only take the top k% of the batch by
 https://github.com/BaguaSys/bagua
 
 examples: https://github.com/BaguaSys/bagua/tree/master/examples
+
+## Dealing with numerical instability with mixed precision
+- especially prevalent when scaling
+- try using `"bf16"` instead of `16` for precision
+  - improved numerical stability
+  - useful for Ampere gpus (3090, A100 etc.)
+  - requires pytorch `1.10.0` and up
+- warning: if a model is pre-trained in `bf16`, fine-tuning in `fp16` will result in numerical instability
+- bf16 is less precise than fp16
+- no longer need to manually scale loss. especially useful if running mixed precision with `SAM`, 
+```
+from torch.cuda.amp import autocast
+with autocast(dtype=torch.bfloat16):
+    loss, outputs = ...
+```
+
