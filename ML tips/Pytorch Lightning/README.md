@@ -292,3 +292,20 @@ trainer = Trainer(devices=8, accelerator="tpu", strategy="ddp", precision=16)
 ## distributed training with Bagua
 
 https://pytorch-lightning.readthedocs.io/en/latest/accelerators/gpu.html#bagua
+
+- may provide speed up over ddp
+
+## Dealing with numerical instability with mixed precision
+- especially prevalent when scaling
+- try using `"bf16"` instead of `16` for precision
+  - improved numerical stability
+  - useful for Ampere gpus (3090, A100 etc.)
+  - requires pytorch `1.10.0` and up
+- warning: if a model is pre-trained in `bf16`, fine-tuning in `fp16` will result in numerical instability
+- bf16 has worse precision than fp16, sometimes you still want to run in fp16
+- no longer need to manually scale loss. especially useful if running `self.automatic_optimization = False` with `SAM`, 
+```
+from torch.cuda.amp import autocast
+with autocast(dtype=torch.bfloat16):
+    loss, outputs = ...
+```
