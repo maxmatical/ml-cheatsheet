@@ -268,7 +268,7 @@ https://hackmd.io/0n1aijQJRMy9xy2oHeQEXg
 
 ## GPT-NeoX 20B
 https://github.com/EleutherAI/gpt-neox
-- can use for zero-shot learning with prompt tunning
+- can use for zero-shot learning with prompt engineering
 
 paper: http://eaidata.bmk.sh/data/GPT_NeoX_20B.pdf
 
