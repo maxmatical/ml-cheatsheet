@@ -264,3 +264,13 @@ paper: https://arxiv.org/abs/2010.02394
 
 ## improving NLP models without scaling
 https://hackmd.io/0n1aijQJRMy9xy2oHeQEXg
+
+
+## GPT-NeoX 20B
+https://github.com/EleutherAI/gpt-neox
+- can use for zero-shot learning with prompt tunning
+
+paper: http://eaidata.bmk.sh/data/GPT_NeoX_20B.pdf
+
+running GPT-NeoX inference with T4s: https://nlpcloud.io/deploying-gpt-neox-20-production-focus-deepspeed.html?utm_source=reddit&utm_campaign=ehyiek56-ed8e-11eb-ba80-5242ac13d5jv
+  - useful for topic modelling/distilling longer sentences into shorter ones (see topic modelling)
