@@ -115,6 +115,11 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   - GPT 
 - https://hackmd.io/uVFpqWb9Q0KV3fmq0LdvMA
 
+### Distilling sentences to make it easier to model topics
+- intuition: shorter sentences lead -> easier to cluster -> better topic model topics
+- zero-shot: using GPT/LLM model for zero-shot summarization using prompt engineering
+- supervised: use a model like BART to distill text into shorter text
+
 ### Contextualized Topic Models (CTM)
 - SOTA Survey: https://silviatti.github.io/resources/alliancebernstein_30_10_20.pdf
 - [Cross-lingual Contextualized Topic Models with Zero-shot Learning](https://paperswithcode.com/paper/cross-lingual-contextualized-topic-models)
@@ -144,6 +149,7 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
 - Possible extension: use GPT (or some summarization model) as a summarizer (reduce the length of text to make it easier to learn), then use CTM 
   - CTM is used for ~200 tokens, so maybe not as useful for super short documents
   - maybe inject GPT topic as another context vector (either another vector to concatenate, or add GPT topic to original text)
+  - instead of reconstructing original sentence, construct a distilled sentence (eg summarized by GPT/BART etc.)
 
 ## Information Retreval/Neural Search/Open Domain QA
 
