@@ -235,3 +235,9 @@ question: can retreival enhance other tasks beside LM/IR/QA? eg classification
   - requires 2 NNs, one (frozen) to generate the encoded representations and 1 to take (input + nearest neighbors) into the model
   - the encoder model should not use label smoothing in this case
 3. frame classification as a seq2seq task (think t5), then use retro directly
+
+# CM3: A Causal Masked Multimodal Model of the Internet
+
+paper: https://arxiv.org/abs/2201.07520
+
+video explanation: https://www.youtube.com/watch?v=qNfCVGbvnJc
