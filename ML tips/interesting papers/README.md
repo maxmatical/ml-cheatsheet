@@ -241,3 +241,9 @@ question: can retreival enhance other tasks beside LM/IR/QA? eg classification
 paper: https://arxiv.org/abs/2201.07520
 
 video explanation: https://www.youtube.com/watch?v=qNfCVGbvnJc
+
+interesting notes:
+- on encoder-decoder vs decoder only
+  - encoder-decoder models (like T5) are really good for fine-tuning, but not as good for prompting (eg emergent properties)
+  - training is harder. decoder only models does per token generation (train on all tokens), but models like BART only masks a % of the total data
+  - consistent with ideas presented in big science workshop
