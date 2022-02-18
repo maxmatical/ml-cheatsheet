@@ -248,6 +248,7 @@ https://pytorch-lightning.readthedocs.io/en/latest/extensions/generated/pytorch_
 
 - could improve generalization by searching for flatter minima
 - using SGD only? may not be useful for other optimizers like AdamW, Ranger etc.
+  - used succesfully with Adam see https://twitter.com/jeankaddour/status/1494437438856572932
 
 ## Exponential Moving Average (EMA):
 https://github.com/fadel/pytorch_ema
