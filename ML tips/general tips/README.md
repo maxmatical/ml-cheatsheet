@@ -617,3 +617,10 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 https://github.com/fadel/pytorch_ema
 
 see pytorch/pytorch lightning BERT notebook example
+
+### SWA + SAM
+find flat-minima
+
+paper: https://arxiv.org/pdf/2202.00661.pdf
+
+twitter discussion: https://twitter.com/jeankaddour/status/1494437438856572932
