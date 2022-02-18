@@ -249,7 +249,8 @@ https://pytorch-lightning.readthedocs.io/en/latest/extensions/generated/pytorch_
 - could improve generalization by searching for flatter minima
 - using SGD only? may not be useful for other optimizers like AdamW, Ranger etc.
   - used succesfully with Adam see https://twitter.com/jeankaddour/status/1494437438856572932
-- **IMPORTANT**: if using save model checkpoints, the checkpoints that are saved are NOT of the averaged model weights.
+- **IMPOrTANT**: if using save model checkpoints, model at the end of each epoch (eg for checkpoints, train/val metrics, etc.) is NOT of the averaged model weights.
+  - so if you train with or without swa (assuming same seed, same lr schedule etc.), the train/val metrics will be the same across the 2
   - so if you load best model checkpoint before saving model, you will not save the averaged model
   - to save the SWA model, only save the model (no loading checkpoints) after entire training is done
 
