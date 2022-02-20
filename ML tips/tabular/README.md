@@ -128,3 +128,8 @@ https://twitter.com/TheZachMueller/status/1400533460784197638
 - light gbm or catboost (catboost seems to be best single model)
 - https://catboost.ai/docs/concepts/about.html
 - hyperparam tuning for catboost https://catboost.ai/docs/concepts/parameter-tuning.html
+
+### DeepETA: How Uber Predicts Arrival Times Using Deep Learning 
+https://eng.uber.com/deepeta-how-uber-predicts-arrival-times/
+
+- transformer model > xgboost at scale
