@@ -209,6 +209,14 @@ main findings:
 
 https://deepai.org/publication/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-a-large-scale-generative-language-model
 
+## Designing Effective Sparse Expert Models
+https://arxiv.org/abs/2202.08906
+
+- follow up to switch transformer paper
+- Fixes issues for finetuning MoEs
+- SOTA on SGLUE
+- paper summary: https://twitter.com/LiamFedus/status/1495846662606143488
+
 # Retro Retrieval-Enhanced TRansfOrmer
 
 paper: https://arxiv.org/abs/2112.04426
