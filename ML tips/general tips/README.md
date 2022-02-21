@@ -109,6 +109,8 @@ print(f"using {learn.loss_func}")
           return fl_loss.mean() if self.reduce == 'mean' else fl_loss.sum() if self.reduce == 'sum' else fl_loss
   ```
 
+### Cyclical focal loss
+https://arxiv.org/abs/2202.08978
 
 ### Weighted Dataloader
 samples data accorted to probability of appearing in batch
