@@ -313,4 +313,8 @@ https://pytorch-lightning.readthedocs.io/en/latest/accelerators/gpu.html#bagua
 from torch.cuda.amp import autocast
 with autocast(dtype=torch.bfloat16):
     loss, outputs = ...
+    
 ```
+
+## Cross validation with pytorch lightning
+https://github.com/SkafteNicki/pl_cross
