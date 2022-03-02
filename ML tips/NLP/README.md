@@ -280,3 +280,9 @@ paper: http://eaidata.bmk.sh/data/GPT_NeoX_20B.pdf
 
 running GPT-NeoX inference with T4s: https://nlpcloud.io/deploying-gpt-neox-20-production-focus-deepspeed.html?utm_source=reddit&utm_campaign=ehyiek56-ed8e-11eb-ba80-5242ac13d5jv
   - useful for topic modelling/distilling longer sentences into shorter ones (see topic modelling)
+
+
+## domain adaptation of text embedding models
+- eg adapt a SBERT model to your text corpus
+
+https://www.sbert.net/examples/domain_adaptation/README.html
