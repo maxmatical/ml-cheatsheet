@@ -283,6 +283,8 @@ running GPT-NeoX inference with T4s: https://nlpcloud.io/deploying-gpt-neox-20-p
 
 
 ## domain adaptation of text embedding models
-- eg adapt a SBERT model to your text corpus
 
 https://www.sbert.net/examples/domain_adaptation/README.html
+- eg adapt a SBERT model to your text corpus
+- data can come in different formats see: https://huggingface.co/datasets/sentence-transformers/embedding-training-data
+  - can have a similar set up to DPR with `query, pos` pairs
