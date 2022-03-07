@@ -260,6 +260,14 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
 - splade v2
 
+
+### Generative Pseudo Labeling (GPL) 
+GPL is an unsupervised domain adaptation method for training dense retrievers. It is based on query generation and pseudo labeling with powerful cross-encoders. To train a domain-adapted model, it needs only the unlabeled target corpus and can achieve significant improvement over zero-shot models.
+
+https://sbert.net/examples/domain_adaptation/README.html#gpl-generative-pseudo-labeling
+
+code https://github.com/UKPLab/gpl
+
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 
