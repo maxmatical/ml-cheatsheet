@@ -626,3 +626,5 @@ find flat-minima
 paper: https://arxiv.org/pdf/2202.00661.pdf
 
 twitter discussion: https://twitter.com/jeankaddour/status/1494437438856572932
+
+efficient SAM: https://arxiv.org/abs/2203.02714
