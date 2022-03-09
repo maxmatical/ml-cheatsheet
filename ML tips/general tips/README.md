@@ -194,7 +194,7 @@ For performance
 - RangerAdabelief
 - Shampoo
   - distributed shampoo for JAX
-- (Adaptive) SAM + optimizer
+- (Adaptive)/(Efficient) SAM + optimizer
 
 For training large models when memory is an issue
 - AdaFactor (although AdamW might be better for Large LMs, see twitter thread and GOPHER paper)
@@ -234,7 +234,15 @@ set_optim_to_run_embedding_in_fp32(model)
   - alternative implementation as callback: https://github.com/sanderson4030/SharpnessAwareMinimization
   - values for `rho` to try: `{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}`
   - Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
-Optimizers to try
+  - Efficient sam: https://arxiv.org/abs/2203.02714
+
+[**Ranger21**](https://github.com/lessw2020/Ranger21)
+- no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
+- `use_madgrad = True` might be better for transformers
+
+
+
+**Optimizers to try**
 ```
 optimizer_config_mapping = {
     "adamw": {"optimizer": AdamW, "wd": {"true_wd": True, "bn_wd": True}},
@@ -278,9 +286,6 @@ optimizer_config_mapping = {
 ```
 
 
-[**Ranger21**](https://github.com/lessw2020/Ranger21)
-- no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
-- `use_madgrad = True` might be better for transformers
 
 
 ### Save best model and early stopping
