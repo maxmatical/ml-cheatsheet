@@ -30,3 +30,8 @@ pytorch implementation: https://github.com/lucidrains/ETSformer-pytorch
 ## Do We Really Need Deep Learning Models for Time Series Forecasting?
 
 https://arxiv.org/abs/2101.02118
+
+Followup discussion: https://www.reddit.com/r/MachineLearning/comments/t9ou4z/d_do_we_really_need_deep_learning_models_for_time/
+- more modern dl forecasting methods eg temporal fusion transformer (TFT) may still be better
+- GBDT by default cannot extrapolate so may also fail in longer term forecasting with trend
+  - will need to de-trend to make timeseries stationary (may not always be possible?)
