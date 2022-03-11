@@ -260,6 +260,26 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
 - splade v2
 
+### Domain adaptation (from pretrained model)
+https://www.youtube.com/watch?v=qzQPbIcQu9Q
+
+problem: 
+- IR models perform worse out of domain (eg model finetuned on MS-MARCO performs worse than BM25 on BioASQ)
+- Due to text it has not seen before
+- How do you adapt a model to out of domain data (**without any labelled data in the target domain**)
+
+2 solutions
+1. Adaptive pre-training
+  - pre-train model on target domain (eg MLM, coCondenser, SimCSE, TSDAE etc.)
+  - Fine-tune on labeled data **it was originally finetuned on ** (eg MS MARCO)
+  - Note: this would also work if you have labeled data in target domain (eg finetuning on BioASQ). this just becomes a standard 2 stage finetuning task
+  - However, this is expensive: requires pre-training AND finetuning
+2. Unsupervised domain adaptation
+  - Take a pre-trained model finetuned on a dataset (eg MS MARCO checkpoint)
+  - unsupervised training on target domain
+  - pros: don't have to run fine-tuning again (which is expensive)
+  - How: use GPL (see below)
+
 
 ### Generative Pseudo Labeling (GPL) 
 GPL is an unsupervised domain adaptation method for training dense retrievers. It is based on query generation and pseudo labeling with powerful cross-encoders. To train a domain-adapted model, it needs only the unlabeled target corpus and can achieve significant improvement over zero-shot models.
@@ -267,6 +287,37 @@ GPL is an unsupervised domain adaptation method for training dense retrievers. I
 https://sbert.net/examples/domain_adaptation/README.html#gpl-generative-pseudo-labeling
 
 code https://github.com/UKPLab/gpl
+
+How GPL works:
+- take a fine-tuned model and perform unsupervised domain adaptation
+- 4 stages
+
+1. Query generation
+  - use T5 (currently best text generation model that can be fine-tuned)
+  - either take a pre-trained checkpoint (eg finetuned on MS MARCO) or finetune on your own data if you have data
+  - similar to doc2query (given doc, generate `n` queries about it)
+
+2. Negative mining
+  - use the generated questions to query the corpus to generate negative examples
+  - eg given `original_doc, generated_query_1` search in ES using `generated_query_1` to get `k` docs (and exclude `original_doc` to get `k-1` negative docs)
+  - end up with `k` `(query, doc)` pairs 1 positive and k-1 negatives
+
+3. CE pseudo-labelling
+  - score pairs with CE
+  - use concatenated `(query, doc_1), ... (query_doc_k)` and CE to generate a pseudo-label score (how relevant the query and doc are)
+
+4. Train bi-encoder with `MarginMSELoss`
+  - can use either a fine-tuned model (eg finetuned on MS MARCO) or a base model (eg `bert-base-uncased`)
+  - from GPL experiments: both reach about the same end result, but fine-tuned model takes shorter time (already have a head start)
+
+**Note:**
+- steps 3 and 4 can also be replaced with other training (eg dpr, cocondenser etc.) since you have query, positive/negative docs
+ 
+ 
+ ### Notes for training and using bi-encoders
+ - if possible, use the same model for query and document encoders (same arch, weights? etc.). sometimes it may not be possible eg in multi-modal cases
+ - mean pooling seems to work better than other pooling strategies
+ - a hybrid approach (combining BM25 w/ dense model) could work really well
 
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
