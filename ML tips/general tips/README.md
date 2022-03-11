@@ -634,6 +634,57 @@ twitter discussion: https://twitter.com/jeankaddour/status/1494437438856572932
 
 efficient SAM: https://arxiv.org/abs/2203.02714
 
+### Neat way to ensemble dropout in models
+from this kaggle competition: https://www.kaggle.com/c/we-are-all-alike-on-the-inside/discussion/312371
+
+sample code
+
+```
+class Model(nn.Module):
+    def __init__(self, model_name, num_labels):
+        super().__init__()
+        self.model_name = model_name
+        self.num_labels = num_labels
+
+        hidden_dropout_prob: float = 0.1
+        layer_norm_eps: float = 1e-7
+
+        config = AutoConfig.from_pretrained(model_name)
+
+        config.update(
+            {
+                "output_hidden_states": True,
+                "hidden_dropout_prob": hidden_dropout_prob,
+                "layer_norm_eps": layer_norm_eps,
+                "add_pooling_layer": True,
+                "num_labels": self.num_labels,
+            }
+        )
+
+        self.transformer = AutoModel.from_pretrained(model_name, config=config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.dropout1 = nn.Dropout(0.1)
+        self.dropout2 = nn.Dropout(0.2)
+        self.dropout3 = nn.Dropout(0.3)
+        self.dropout4 = nn.Dropout(0.4)
+        self.dropout5 = nn.Dropout(0.5)
+        self.output = nn.Linear(config.hidden_size, self.num_labels)
+
+    def forward(self, ids, mask, targets=None):
+        transformer_out = self.transformer(ids, mask)
+        pooled_output = transformer_out.pooler_output
+        pooled_output = self.dropout(pooled_output)
+
+        logits1 = self.output(self.dropout1(pooled_output))
+        logits2 = self.output(self.dropout2(pooled_output))
+        logits3 = self.output(self.dropout3(pooled_output))
+        logits4 = self.output(self.dropout4(pooled_output))
+        logits5 = self.output(self.dropout5(pooled_output))
+
+        logits = (logits1 + logits2 + logits3 + logits4 + logits5) / 5
+        logits = torch.softmax(logits, dim=-1)
+        return logits
+```
 # AutoML stuff
 
 ## autogluon
