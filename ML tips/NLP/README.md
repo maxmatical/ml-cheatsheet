@@ -260,6 +260,11 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
 - splade v2
 
+6. LaPraDoR
+- https://arxiv.org/abs/2203.06169
+- unsupervised
+- SOTA in zero-shot retrieval (BEIR)
+
 ### Domain adaptation (from pretrained model)
 https://www.youtube.com/watch?v=qzQPbIcQu9Q
 
