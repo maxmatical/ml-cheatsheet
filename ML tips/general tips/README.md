@@ -685,6 +685,19 @@ class Model(nn.Module):
         logits = torch.softmax(logits, dim=-1)
         return logits
 ```
+
+### Maximal update parametrization (muP)
+paper: https://arxiv.org/abs/2203.03466
+
+repo: https://github.com/microsoft/mup
+
+mutransformers: https://github.com/microsoft/mutransformers
+
+muP in transformers repo?: https://github.com/huggingface/transformers/issues/16157
+
+
+
+
 # AutoML stuff
 
 ## autogluon
