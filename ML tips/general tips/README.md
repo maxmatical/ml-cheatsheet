@@ -696,6 +696,11 @@ mutransformers: https://github.com/microsoft/mutransformers
 muP in transformers repo?: https://github.com/huggingface/transformers/issues/16157
 
 
+### Averaging model weights
+https://www.reddit.com/r/MachineLearning/comments/tcp8ya/r_model_soups_averaging_weights_of_multiple/
+
+- like SWA but for different model runs
+- more computationally efficient, but less powerful than ensembling (averaging outputs)
 
 
 # AutoML stuff
