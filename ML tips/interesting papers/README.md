@@ -217,6 +217,13 @@ https://arxiv.org/abs/2202.08906
 - SOTA on SGLUE
 - paper summary: https://twitter.com/LiamFedus/status/1495846662606143488
 
+## Efficient Language Modeling with Sparse all-MLP
+https://arxiv.org/abs/2203.06850
+
+- gMLP + sparse MoE
+- gMLP is all mlp model that is competitive with transformers in LM tasks, but fails to perform in downstream tasks (note: check if emergent or fine-tuned)
+- uses MoE to get better emergent downstream performance (competitive/surpass transformers and moe-transformers)
+
 # Retro Retrieval-Enhanced TRansfOrmer
 
 paper: https://arxiv.org/abs/2112.04426
