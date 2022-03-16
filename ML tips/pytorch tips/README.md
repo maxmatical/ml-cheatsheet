@@ -161,3 +161,9 @@ with autocast(dtype=torch.bfloat16):
     loss, outputs = ...
 ```
 
+## MosaicML tips to improve training
+
+https://www.mosaicml.com/blog/5-best-practices-for-efficient-model-training
+
+Algorithms that can improve training performance: https://docs.mosaicml.com/en/latest/trainer/algorithms.html
+
