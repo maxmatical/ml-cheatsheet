@@ -151,6 +151,13 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   - maybe inject GPT topic as another context vector (either another vector to concatenate, or add GPT topic to original text)
   - instead of reconstructing original sentence, construct a distilled sentence (eg summarized by GPT/BART etc.)
 
+
+- idea: 
+  - embeddings seems to work better on shorter sentences? (from observation)
+  - use gpt to "summarize"
+  - use trained/pretrained autoencoder to generate embeddings
+  - cluster/knn from that?
+
 ## Information Retreval/Neural Search/Open Domain QA
 
 Cross Encoder for stronger perfomance, Bi-encoder methods faster
