@@ -702,6 +702,12 @@ https://www.reddit.com/r/MachineLearning/comments/tcp8ya/r_model_soups_averaging
 - like SWA but for different model runs
 - more computationally efficient, but less powerful than ensembling (averaging outputs)
 
+### MosaicML tips
+
+https://www.mosaicml.com/blog/5-best-practices-for-efficient-model-training
+
+Algorithms that can improve training performance: https://docs.mosaicml.com/en/latest/trainer/algorithms.html
+
 
 # AutoML stuff
 
