@@ -708,6 +708,12 @@ https://www.mosaicml.com/blog/5-best-practices-for-efficient-model-training
 
 Algorithms that can improve training performance: https://docs.mosaicml.com/en/latest/trainer/algorithms.html
 
+### converting multiclass to multi-label
+seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
+
+- improves over multi-class
+- works really well with mixup/cutmix
+- use `torch.nn.BCEWithLogitsLoss` on logits (before sigmoid)
 
 # AutoML stuff
 
