@@ -247,6 +247,7 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
   - note these are only pre-trained models (so haven't been fine-tuned for ODQA/IR)
   - `Luyu/co-condenser-marco-retriever` is a fine-tuned retriever 
 - Easy to plug and play using Haystack/dpr training repo 
+- may not work as well in adaptive pre-training? performs worse than base model/mlm
 
 2. YONO
 - https://arxiv.org/abs/2112.07381
@@ -266,11 +267,19 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 
 5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
 - splade v2
+- combining sparse and dense models: 2 runs
+  - 1 run with sparse retrieval (eg BM25) and 1 run with dense (dpr/cocondenser etc.)
+  - linear combination of the 2 scores as the new score (similar to score combiner work)
 
 6. LaPraDoR
 - https://arxiv.org/abs/2203.06169
 - unsupervised
 - SOTA in zero-shot retrieval (BEIR)
+
+7. Spider
+- https://arxiv.org/pdf/2112.07708.pdf
+- zero-shot performance better than cocondenser
+- similar in-domain (finetuned) performance as cocondenser
 
 ### Domain adaptation (from pretrained model)
 https://www.youtube.com/watch?v=qzQPbIcQu9Q
