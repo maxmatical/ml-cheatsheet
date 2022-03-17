@@ -133,3 +133,8 @@ https://twitter.com/TheZachMueller/status/1400533460784197638
 https://eng.uber.com/deepeta-how-uber-predicts-arrival-times/
 
 - transformer model > xgboost at scale
+
+### On Embeddings for Numerical Features in Tabular Deep Learning
+https://arxiv.org/abs/2203.05556
+
+- tl;dr: embeddings for continuous features as well -> gainz
