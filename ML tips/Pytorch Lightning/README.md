@@ -318,3 +318,25 @@ with autocast(dtype=torch.bfloat16):
 
 ## Cross validation with pytorch lightning
 https://github.com/SkafteNicki/pl_cross
+
+## speeding up pytorch lightning
+https://william-falcon.medium.com/pytorch-lightning-vs-deepspeed-vs-fsdp-vs-ffcv-vs-e0d6b2a95719
+
+- can be slower than other frameworks due to all the additional things 
+- if want to speed up training, do the following
+```
+trainer = Trainer(
+    ...
+    enable_progress_bar=False,
+    enable_model_summary=False,
+    enable_checkpointing=False,
+    logger=False,
+    replace_sampler_ddp=False
+)
+```
+
+## using pytorch lightning with composer
+https://william-falcon.medium.com/pytorch-lightning-vs-deepspeed-vs-fsdp-vs-ffcv-vs-e0d6b2a95719
+
+- composer gives lots of nice training tricks
+- can use `composer.functional` in conjunction with pytorch/lightning
