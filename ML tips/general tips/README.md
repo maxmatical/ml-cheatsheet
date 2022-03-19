@@ -699,8 +699,13 @@ muP in transformers repo?: https://github.com/huggingface/transformers/issues/16
 ### Averaging model weights
 https://www.reddit.com/r/MachineLearning/comments/tcp8ya/r_model_soups_averaging_weights_of_multiple/
 
-- like SWA but for different model runs
-- more computationally efficient, but less powerful than ensembling (averaging outputs)
+- like SWA but for different model runs, potentially better
+- more computationally efficient than ensembling and competitive (may be slightly less performant in certain situations)
+- works really well with fine-tuning
+- greedy soup method: add models to the soup if adding it improves val metric 
+- vary hyperparameters like: optimizer, data aug, lr, train iterations, random seed (or data shuffle)
+- caution for averaging language models! many newer lms use weight tying for the output and embedding layers. averaging weights in this case can cause undesired behavior
+- **key**: initialized weights need to be the same. if using pretrained weights -> can vary seed. if training from scratch -> keep seed same so initialized weights are the same
 
 ### MosaicML tips
 
