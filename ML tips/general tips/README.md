@@ -706,6 +706,12 @@ https://www.reddit.com/r/MachineLearning/comments/tcp8ya/r_model_soups_averaging
 - vary hyperparameters like: optimizer, data aug, lr, train iterations, random seed (or data shuffle)
 - caution for averaging language models! many newer lms use weight tying for the output and embedding layers. averaging weights in this case can cause undesired behavior
 - **key**: initialized weights need to be the same. if using pretrained weights -> can vary seed. if training from scratch -> keep seed same so initialized weights are the same
+- idea: 
+  1. run HPO and track all hyperparams + results. make sure initial weights is the same (careful about the linear layer, use seed_all or save the initialized weights)
+  2. sort by metric (val acc etc.)
+  3. starting from best model, for `n` models, re-train using hyperparams
+  4. measure the new avg model (`new_souped_model = (k/(k+1) * best_souped_model + 1/(k+1) * cur_model`) vs `best_souped_model` where `k` is number of models currently in the soup
+  5. if performance improves, make `best_soup_model = new_souped_model`
 
 ### MosaicML tips
 
