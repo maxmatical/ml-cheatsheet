@@ -275,6 +275,7 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 - https://arxiv.org/abs/2203.06169
 - unsupervised
 - SOTA in zero-shot retrieval (BEIR)
+- claim: doesn't need to fine-tune on a downstream dataset
 
 7. Spider
 - https://arxiv.org/pdf/2112.07708.pdf
