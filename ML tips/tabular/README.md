@@ -138,3 +138,6 @@ https://eng.uber.com/deepeta-how-uber-predicts-arrival-times/
 https://arxiv.org/abs/2203.05556
 
 - tl;dr: embeddings for continuous features as well -> gainz
+
+### entity embeddings in sklearn
+https://github.com/cpa-analytics/embedding-encoder
