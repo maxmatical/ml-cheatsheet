@@ -369,3 +369,7 @@ https://www.sbert.net/examples/domain_adaptation/README.html
 - eg adapt a SBERT model to your text corpus
 - data can come in different formats see: https://huggingface.co/datasets/sentence-transformers/embedding-training-data
   - can have a similar set up to DPR with `query, pos` pairs
+
+
+## replace attention layers with ALIBI 
+https://docs.mosaicml.com/en/v0.5.0/method_cards/alibi.html
