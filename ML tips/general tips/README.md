@@ -695,6 +695,8 @@ mutransformers: https://github.com/microsoft/mutransformers
 
 muP in transformers repo?: https://github.com/huggingface/transformers/issues/16157
 
+video: https://www.youtube.com/watch?v=iI_wsuXcj6Y
+
 
 ### Averaging model weights
 https://www.reddit.com/r/MachineLearning/comments/tcp8ya/r_model_soups_averaging_weights_of_multiple/
