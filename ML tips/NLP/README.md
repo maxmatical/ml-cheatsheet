@@ -282,6 +282,11 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 - zero-shot performance better than cocondenser
 - similar in-domain (finetuned) performance as cocondenser
 
+8. InPars:
+- https://arxiv.org/abs/2202.05144
+- Use GPT3 to generate questions from a document (simlar to GPL)
+- Fine-tune on synethetic + real data
+
 ### Domain adaptation (from pretrained model)
 https://www.youtube.com/watch?v=qzQPbIcQu9Q
 
