@@ -255,14 +255,10 @@ https://pytorch-lightning.readthedocs.io/en/latest/extensions/generated/pytorch_
   - to save the SWA model, only save the model (no loading checkpoints) after entire training is done
 
 ## Exponential Moving Average (EMA):
-https://github.com/fadel/pytorch_ema
-- should be fairly simple with `self.automatic_topimization=False` in `LightningModule`
-- just add `self.ema.update()` after `opt.step()` in `training_step` of `LightningModule`
-
-use EMA in PL: https://forums.pytorchlightning.ai/t/adopting-exponential-moving-average-ema-for-pl-pipeline/488
-
 **potential EMA callback**: https://github.com/PyTorchLightning/pytorch-lightning/issues/10914
   - could be more useful that naive implementation
+
+timm EMA callback with pytorch lightning callback: https://benihime91.github.io/gale/collections.callbacks.ema.html?fbclid=IwAR34fW167fiwn6Xm5L8F0aYYw4EvZn5gONiO5bw-M9sJ1PXc3KHQmY4w19k
 
 
 ### EMA/SWA with model checkpoints/early stopping
