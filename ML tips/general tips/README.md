@@ -428,6 +428,11 @@ ema_model = torch.optim.swa_utils.AveragedModel(model, avg_fn=ema_avg)
 will always be making val pred with ema_model in val step
 ```
 
+### Efficiently Estimating Pareto Frontiers with Cyclic Learning Rate Schedules
+https://twitter.com/MosaicML/status/1513561796833075207?t=ph2e6IGpZUBsKgu93R3i7g&s=09&fbclid=IwAR1MpsPY0-5bt0BRC2r3mggC7tFaWtVNP600ScrAATvoEJiBLMpRm7EVC0w
+
+https://www.mosaicml.com/blog/efficiently-estimating-pareto-frontiers
+
 ### Learning rate tips for transfer learning
 
 - decrease base learning rate for the unfrozen model 
