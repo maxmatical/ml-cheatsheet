@@ -104,7 +104,16 @@ GPT-J on pytorch vis huggingface (make sure using half-precision): https://huggi
   Negative Movie Review:
   ```
 - train discriminative model (BERT, T5, BART, etc.) using label and synthetic text
-- (Optional?) fine-tune on actual dataset
+- (Optional) fine-tune on actual dataset, can use dev set performane to decide whether or not to perform this step
+
+### synthetic data in IR
+InPars:
+- https://arxiv.org/abs/2202.05144
+- Use GPT3 to generate questions from a document (simlar to GPL)
+- Fine-tune on synethetic + real data
+
+GPL: using finetuned T5 to generate queries from a document
+
 
 ## Topic Modelling
 - unsupervised topic mining
@@ -376,5 +385,17 @@ https://www.sbert.net/examples/domain_adaptation/README.html
   - can have a similar set up to DPR with `query, pos` pairs
 
 
-## replace attention layers with ALIBI 
+## replace attention layers with ALIBI in decoder only LMs
 https://docs.mosaicml.com/en/v0.5.0/method_cards/alibi.html
+
+## Self training for NLP (few-shot classification)
+
+STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
+  - https://arxiv.org/abs/2109.06270
+  - github: https://github.com/google-research/google-research/tree/master/STraTA
+  - similar to other self training techniques
+
+<img width="808" alt="image" src="https://user-images.githubusercontent.com/8890262/163197076-e64e19f1-a5e7-410e-bef0-e9cb45a145ba.png">
+
+<img width="399" alt="image" src="https://user-images.githubusercontent.com/8890262/163197129-437cb2af-c632-4bed-9f6b-8f132489f58d.png">
+
