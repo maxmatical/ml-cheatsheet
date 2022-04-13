@@ -167,3 +167,6 @@ https://www.mosaicml.com/blog/5-best-practices-for-efficient-model-training
 
 Algorithms that can improve training performance: https://docs.mosaicml.com/en/latest/trainer/algorithms.html
 
+
+## Megatron-deepspeed
+https://github.com/bigscience-workshop/Megatron-DeepSpeed
