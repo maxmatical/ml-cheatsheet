@@ -399,3 +399,9 @@ STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
 
 <img width="399" alt="image" src="https://user-images.githubusercontent.com/8890262/163197129-437cb2af-c632-4bed-9f6b-8f132489f58d.png">
 
+## What Language Model Architecture and Pretraining Objective Work Best for Zero-Shot Generalization?
+https://arxiv.org/abs/2204.05832
+
+- best zero-shot performance, decoder only transformer trained on causal language modelling (think GPT-x)
+- however not really for IR
+
