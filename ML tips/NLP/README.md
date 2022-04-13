@@ -393,6 +393,7 @@ https://docs.mosaicml.com/en/v0.5.0/method_cards/alibi.html
 STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
   - https://arxiv.org/abs/2109.06270
   - github: https://github.com/google-research/google-research/tree/master/STraTA
+  - on huggingface: https://github.com/huggingface/transformers/tree/main/examples/research_projects/self-training-text-classification
   - similar to other self training techniques
 
 <img width="808" alt="image" src="https://user-images.githubusercontent.com/8890262/163197076-e64e19f1-a5e7-410e-bef0-e9cb45a145ba.png">
