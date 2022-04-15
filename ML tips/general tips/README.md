@@ -499,8 +499,9 @@ https://github.com/huawei-noah/HEBO
 
 
 ### Batch size:
-For speed: set bs to as large as will fit in GPU memory
-For generalization performance: it seems like 32/64 is the best for generalization (more updates, more noise for regularization)
+- For speed: set bs to as large as will fit in GPU memory
+- For generalization performance: it seems like 32/64 is the best for generalization (more updates, more noise for regularization)
+- For contrastive learning (eg DPR, other in batch negatives), bs want to be as large as possible
 
 ### Batch size finder
 
