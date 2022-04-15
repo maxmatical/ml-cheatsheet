@@ -246,6 +246,7 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
   - Improves performances 4 – 10 points
 
 ### SOTA literature to keep track of in IR/ODQA
+Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyPaXrL8iEelJLGqlMqXKPX2oSP_R10pZoy77Ns/edit#gid=0
 
 1. coCondenser
 - https://arxiv.org/pdf/2108.05540.pdf
@@ -295,6 +296,8 @@ Interesting upcoming work to keep track of: GPL for Domain Adaptation
 - https://arxiv.org/abs/2202.05144
 - Use GPT3 to generate questions from a document (simlar to GPL)
 - Fine-tune on synethetic + real data
+
+9. Contriver
 
 ### Domain adaptation (from pretrained model)
 https://www.youtube.com/watch?v=qzQPbIcQu9Q
