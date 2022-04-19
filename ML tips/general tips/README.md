@@ -615,6 +615,7 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 ### Convert `nn.CrossEntropyLoss` to `nn.BCEWithLogitsLoss`
 - could potentially work better as a 1-v-all problem
 - use label smoothing could help as well (see pytorch BERT huggingface example)
+- **NOTE** probably doesn't work on its own, but works better with mixup style data augmentation 
 
 ### Don't use early stopping/save best model callbacks!
 - reasoning
