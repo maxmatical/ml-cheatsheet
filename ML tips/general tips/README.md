@@ -742,6 +742,7 @@ seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
 - improves over multi-class
 - works really well with mixup/cutmix
 - use `torch.nn.BCEWithLogitsLoss` on logits (before sigmoid)
+- may not actually be better than multiclass, but works because of mixup/cutmix data aug
 
 # AutoML stuff
 
