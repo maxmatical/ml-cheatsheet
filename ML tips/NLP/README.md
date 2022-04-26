@@ -2,8 +2,6 @@
 # NLP:
 
 ## Fastai2 with transformers:
-https://github.com/aikindergarten/fasthugs
-
 https://github.com/ohmeow/blurr
 
 **Tip:** seems like unfreezing and fine-tuning entire model can have equal or better performance than freezing and gradually unfreezing model
