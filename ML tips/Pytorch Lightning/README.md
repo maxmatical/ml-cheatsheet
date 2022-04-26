@@ -336,3 +336,19 @@ https://william-falcon.medium.com/pytorch-lightning-vs-deepspeed-vs-fsdp-vs-ffcv
 
 - composer gives lots of nice training tricks
 - can use `composer.functional` in conjunction with pytorch/lightning
+
+
+## Loading Billion param models faster with pytorch lightning
+https://devblog.pytorchlightning.ai/experiment-with-billion-parameter-models-faster-using-deepspeed-and-meta-tensors-2e9c255edd71
+
+```
+from pytorch_lightning.utilities.meta import init_meta_context
+
+with init_meta_context():
+    # create pl module here
+    
+
+# call trainer.fit here
+
+```
+
