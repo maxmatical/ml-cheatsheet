@@ -9,7 +9,7 @@ https://github.com/ohmeow/blurr
 **Tip:** seems like unfreezing and fine-tuning entire model can have equal or better performance than freezing and gradually unfreezing model
 
 **General models to use**
-- classification: (distil)roberta, bart, deberta ([deberta-v3](https://huggingface.co/microsoft/deberta-v3-small))
+- classification: (distil)roberta, bart, deberta ([deberta-v3](https://huggingface.co/microsoft/deberta-v3-small)), electra, t5 (conditional generation)
 
 ## **Label Smoothing**:
 
