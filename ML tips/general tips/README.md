@@ -58,6 +58,8 @@ multi-gpu training in notebooks: https://github.com/philtrade/mpify
 
 # Handling imbalanced data
 
+good summary of dealing with imbalanced datsets: https://twitter.com/Fra_Pochetti/status/1518599651536027648?t=ODJKwqwBkdSVJLgjQslPuQ&s=09&fbclid=IwAR307j8N_57fTkkkL4C_5nnVBRmFBEJSPxnW0vMcMEHzbhmdyILAP2zIjpo
+
 ## naive oversampling data
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
@@ -649,6 +651,12 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 https://github.com/fadel/pytorch_ema
 
 see pytorch/pytorch lightning BERT notebook example
+
+discussion on ema: https://www.reddit.com/r/MachineLearning/comments/ucflc2/d_understanding_the_use_of_ema_in_diffusion_models/
+- notes:
+- don't use ema model in val/train, only load in inference
+- keep ema and regular model checkpoints
+  - if at test time ema model doesn't perform well, but has good training/val numbers, try dropping ema model for regular model
 
 ### SWA + SAM
 find flat-minima
