@@ -772,6 +772,11 @@ seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
 - use `torch.nn.BCEWithLogitsLoss` on logits (before sigmoid)
 - may not actually be better than multiclass, but works because of mixup/cutmix data aug
 
+### Polyloss instead of CrossEntropy or FocalLoss
+- https://arxiv.org/abs/2204.12511
+- twitter thread: https://twitter.com/tanmingxing/status/1519787578160869376
+- pytorch impl: currently none, but shoudl be fairly simple to implement yoself
+
 # AutoML stuff
 
 ## autogluon
