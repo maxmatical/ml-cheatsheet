@@ -17,6 +17,13 @@ https://isaac-flath.github.io/blog/deep%20learning/2020/12/15/Pseudo-Labeling.ht
 4. train on labelled data +  **ALL** pseudo-labelled data. Then further fine-tune on labelled data
 
  Not 100% sure which way is best
+ 
+### removing noisy examples (low confidence) from pseudolabels may improve results
+https://twitter.com/giffmana/status/1479015354366111746?t=pDWudblhtPkqgqxABdFlyQ&s=09&fbclid=IwAR2tHrrjDpDkEPfp1xFJWPux2vXgYkELUqJe8Llre7s8hjjRorg08mLGteA
+
+- removing the lowest `k`% of pseudolabels by confidence (eg most confused examples) might improve results
+- intuition: the most confused examples are noisy, low quality examples you don't want in training data
+- works well in practice
 
 ### predicting soft pseudo-labels (distributions) to use for distillation/self training etc.
 2 ways
