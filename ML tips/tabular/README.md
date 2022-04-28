@@ -141,3 +141,9 @@ https://arxiv.org/abs/2203.05556
 
 ### entity embeddings in sklearn
 https://github.com/cpa-analytics/embedding-encoder
+
+
+### Categorical feature encodings library
+https://github.com/scikit-learn-contrib/category_encoders
+
+http://contrib.scikit-learn.org/category_encoders/index.html
