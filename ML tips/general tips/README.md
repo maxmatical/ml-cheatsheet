@@ -598,7 +598,7 @@ idea: sort batch of `x, y` by `loss(x, y)`, and only take the top `k`% of the ba
 
 **ALT** it might actually be good to remove the top k% by loss. see https://twitter.com/giffmana/status/1479015354366111746?t=pDWudblhtPkqgqxABdFlyQ&s=09&fbclid=IwAR2tHrrjDpDkEPfp1xFJWPux2vXgYkELUqJe8Llre7s8hjjRorg08mLGteA
 - idea: highest loss might actually be noisy, so remove the most noisy examples and learn with only high quality examples
-- actually seems to work pretty well in practice
+- NOTE: loss != predicted probability, so maybe it will not work as well in practice
 
 ### Dealing with positive-negative imbalance in multi-label data
 - issue: if have a lot of classes, each class will see a lot of negative examples per 1 positive example
