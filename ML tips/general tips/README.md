@@ -775,7 +775,7 @@ seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
 ### Polyloss instead of CrossEntropy or FocalLoss
 - https://arxiv.org/abs/2204.12511
 - twitter thread: https://twitter.com/tanmingxing/status/1519787578160869376
-- pytorch impl: currently none, but shoudl be fairly simple to implement yoself
+- pytorch impl: see [useful_loss_functions.py](https://github.com/maxmatical/ml-cheatsheet/blob/master/useful_loss_functions.py)
 
 # AutoML stuff
 
