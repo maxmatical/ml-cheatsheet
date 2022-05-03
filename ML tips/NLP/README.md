@@ -216,9 +216,13 @@ https://arxiv.org/abs/2204.05832
 - best zero-shot performance, decoder only transformer trained on causal language modelling (think GPT-x)
 - however not really for IR
 
-# Weak supervision for NLP (skweak, snorkle)
+## Weak supervision for NLP (skweak, snorkle)
 - define a set of labelling functions
 - aggregate to create labels
 - train model on weakly supervised labels
 - [skweak](https://github.com/NorskRegnesentral/skweak)
 - [snorkle](https://github.com/snorkel-team/snorkel)
+
+
+## Synthetic Data Generation to Improve Model Performance
+https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
