@@ -195,4 +195,5 @@ How GPL works:
 - steps 3 and 4 can also be replaced with other training (eg dpr, cocondenser etc.) since you have query, positive/negative docs
  
  
-
+## Synthetic Data Generation to Improve Model Performance
+https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
