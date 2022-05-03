@@ -191,3 +191,7 @@ STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
 <img width="808" alt="image" src="https://user-images.githubusercontent.com/8890262/163197076-e64e19f1-a5e7-410e-bef0-e9cb45a145ba.png">
 
 <img width="399" alt="image" src="https://user-images.githubusercontent.com/8890262/163197129-437cb2af-c632-4bed-9f6b-8f132489f58d.png">
+
+
+## Synthetic Data Generation to Improve Model Performance
+https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
