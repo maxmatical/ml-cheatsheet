@@ -719,7 +719,23 @@ class Model(nn.Module):
         logits = (logits1 + logits2 + logits3 + logits4 + logits5) / 5
         logits = torch.softmax(logits, dim=-1)
         return logits
+        
+
 ```
+Note during inference dropout isn't used, essentially
+
+```
+def forward(self, ids, mask, token_type_ids=None):
+    if token_type_ids is not None:
+        transformer_out = self.transformer(ids, mask, token_type_ids)
+    else:
+        transformer_out = self.transformer(ids, mask)
+    pooled_output = transformer_out.pooler_output
+    logits = self.output(pooled_output)
+    return logits
+
+```
+
 
 ### Maximal update parametrization (muP)
 paper: https://arxiv.org/abs/2203.03466
