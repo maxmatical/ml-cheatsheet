@@ -709,30 +709,21 @@ class Model(nn.Module):
         transformer_out = self.transformer(ids, mask)
         pooled_output = transformer_out.pooler_output
         pooled_output = self.dropout(pooled_output)
+        
+        if self.training:
+          logits1 = self.output(self.dropout1(pooled_output))
+          logits2 = self.output(self.dropout2(pooled_output))
+          logits3 = self.output(self.dropout3(pooled_output))
+          logits4 = self.output(self.dropout4(pooled_output))
+          logits5 = self.output(self.dropout5(pooled_output))
 
-        logits1 = self.output(self.dropout1(pooled_output))
-        logits2 = self.output(self.dropout2(pooled_output))
-        logits3 = self.output(self.dropout3(pooled_output))
-        logits4 = self.output(self.dropout4(pooled_output))
-        logits5 = self.output(self.dropout5(pooled_output))
-
-        logits = (logits1 + logits2 + logits3 + logits4 + logits5) / 5
-        logits = torch.softmax(logits, dim=-1)
+          logits = (logits1 + logits2 + logits3 + logits4 + logits5) / 5
+          
+        # during inference dropout isn't used so can bypass
+        else:
+          logits = self.output(pooled_output)
         return logits
         
-
-```
-Note during inference dropout isn't used, essentially
-
-```
-def forward(self, ids, mask, token_type_ids=None):
-    if token_type_ids is not None:
-        transformer_out = self.transformer(ids, mask, token_type_ids)
-    else:
-        transformer_out = self.transformer(ids, mask)
-    pooled_output = transformer_out.pooler_output
-    logits = self.output(pooled_output)
-    return logits
 
 ```
 
