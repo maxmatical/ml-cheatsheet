@@ -98,8 +98,10 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - Fine-tune on synethetic + real data
 - also see GPL
 
-9. Contriver
-- might not be that good?
+9. QGen
+- https://aclanthology.org/2021.eacl-main.92/
+- Similar idea to InPars, but uses a finetuned encoder-decoder model instaed of zero-shot
+
 
 10. Unsupervised Passage Re-ranker (UPR)
 - https://arxiv.org/abs/2204.07496
