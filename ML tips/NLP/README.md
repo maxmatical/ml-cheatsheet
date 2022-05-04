@@ -1,6 +1,24 @@
 
 # NLP:
 
+## Interesting Kaggle NLP challenge solutions
+
+[NBME - Score Clinical Patient Notes](https://www.kaggle.com/competitions/nbme-score-clinical-patient-notes/discussion/323085)
+- 2nd place solution
+- deberta model ensemble
+- training data fairly small
+- Use classifier head w/ 5 different levels of dropout and averaged 5 logits
+
+[We are all alike, on the inside](https://www.kaggle.com/c/we-are-all-alike-on-the-inside/discussion/312371)
+- 1st place solution
+- Use classifier head w/ 5 different levels of dropout and averaged 5 logits
+
+
+[chaii - Hindi and Tamil Question Answering](https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering/discussion/287923?fbclid=IwAR2unJF_zFq0wGTU8d4h_FqcA9JnVrGieriOgVigQoTrWNXnADGYE-E0I1M)
+- 1st place solution
+- interesting data augmentation techniques inspired by fastai/CV data augmentations
+
+
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
 
@@ -19,39 +37,6 @@ https://github.com/davda54/sam
 [seems to work well for NLP as well](https://arxiv.org/abs/2110.08529)
 
 
-## Fixing mismatch between vocab size in data_clas and data_lm:
-
-```
-data_clas.vocab.itos = data_lm.vocab.itos
-
-```
-Before the following line
-```
-learn_c = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.3)
-```
-This has fixed the error.
-
-## **Concatenating models to use metadata:**
-
-https://towardsdatascience.com/next-best-action-prediction-with-text-and-metadata-building-an-agent-assistant-81117730be6b
-
-and notebook https://www.kaggle.com/adai183/metadata-enhanced-text-classification
-
-## **Can try using QRNN***
-
-https://github.com/piegu/language-models 
-
-https://github.com/piegu/language-models/blob/master/lm2-french.ipynb 
-
-
-## **AWD-LSTM Specific**
-
-- Higher drop_mult on LM learner (1.), then smaller dropout on classifier
-
-- Ensemble a fwd and backwards bwd = True models
-  - backwards model: https://github.com/fastai/course-nlp/blob/master/nn-vietnamese-bwd.ipynb 
-  - ensemble model: https://github.com/fastai/course-nlp 
-  
 ## Data augmentation for NLP
 - backtranslation - translate text into another language, then translate back: https://amitness.com/2020/02/back-translation-in-google-sheets/
 - other methods: https://arxiv.org/abs/2106.07499
