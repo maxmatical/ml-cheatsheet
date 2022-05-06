@@ -85,7 +85,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 6. LaPraDoR
 - https://arxiv.org/abs/2203.06169
 - unsupervised
-- SOTA in zero-shot retrieval (BEIR)
+- SOTA in zero-shot retrieval (BEIR) **.485 nDCG@10**
 - claim: doesn't need to fine-tune on a downstream dataset
 
 7. Spider
@@ -102,12 +102,23 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 9. QGen
 - https://aclanthology.org/2021.eacl-main.92/
 - Similar idea to InPars, but uses a finetuned encoder-decoder model instaed of zero-shot
-
+- see GPL for domain adaptation on top of QGen
 
 10. Unsupervised Passage Re-ranker (UPR)
 - https://arxiv.org/abs/2204.07496
 - twitter thread: https://twitter.com/Devendr06654102/status/1516106999175467018?fbclid=IwAR3C78yR4NYN9KjPTo5EDpdNhdKSS0-0hHb6hWg_VgRI3xidvT9t9gnQZLQ
 - on top of a model (eg DPR)
+
+11. GTR (Generalizable T5-based dense Retrievers)
+- https://arxiv.org/abs/2112.07899
+- between **0.416 - 0.458 on BEIR NDCG@10** (competitive with CE rerankers)
+- Current(?) best in-domain MSMARCO performance at **nDCG@10 0.442**
+- Scaling up encoder, but keeping bottle neck embedding size fixed at 768
+- Scaling T5 (using only the encoder), use multi-stage training
+ - multi-stage training and architecture taken from [Sentence-T5](https://arxiv.org/abs/2108.08877)
+ - mean pooling seemed to work the best (The sentence embedding is defined as the average of the encoder outputs across all input tokens)
+ - pretrain on large general corpus of QA pairs, then finetune on MSMARCO
+ - only needed 10% of MSMARCO data to reach best results on BEIR
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
