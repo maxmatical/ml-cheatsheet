@@ -71,9 +71,10 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - github https://github.com/stanford-futuredata/ColBERT/tree/new_api
 - slightly better than coCondenser on MS-MARCO, no results in NQ/TriviaQA
 
-4. SBERT Models:
-- `multi-qa-mpnet-base-dot-v1`
-- `msmarco-bert-base-dot-v5`
+4. Sentence transformer Models:
+- https://www.sbert.net/docs/pretrained_models.html
+- `multi-qa` and `msmarco` models for IR
+- possilbly `all-*` models like `all-mpnet-base-v1` and `all-roberta-large-v1`
 
 5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
 - splade v2
