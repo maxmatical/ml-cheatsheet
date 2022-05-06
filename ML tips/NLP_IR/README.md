@@ -87,6 +87,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - unsupervised
 - SOTA in zero-shot retrieval (BEIR) **.485 nDCG@10**
 - claim: doesn't need to fine-tune on a downstream dataset
+- also uses mean pooling (like GTR, Sentence T5)
 
 7. Spider
 - https://arxiv.org/pdf/2112.07708.pdf
@@ -119,6 +120,15 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - mean pooling seemed to work the best (The sentence embedding is defined as the average of the encoder outputs across all input tokens)
  - pretrain on large general corpus of QA pairs, then finetune on MSMARCO
  - only needed 10% of MSMARCO data to reach best results on BEIR
+ - mean pooling:
+ ```
+ def mean_pooling(model_output, attention_mask):
+    token_embeddings = model_output[0] #First element of model_output contains all token embeddings
+    input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+    return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+
+
+ ```
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
