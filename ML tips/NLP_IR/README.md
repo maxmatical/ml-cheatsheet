@@ -77,7 +77,6 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - possilbly `all-*` models like `all-mpnet-base-v1` and `all-roberta-large-v1`
 
 5. Combining dense embeddings with sparse models (BM25/Splade v2 etc)
-- splade v2
 - combining sparse and dense models: 2 runs
   - 1 run with sparse retrieval (eg BM25) and 1 run with dense (dpr/cocondenser etc.)
   - linear combination of the 2 scores as the new score (similar to score combiner work)
@@ -129,6 +128,12 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 
 
  ```
+ 12. Splade V2/++
+- [SPLADE ++](https://arxiv.org/abs/2205.04733)
+- Sparse models
+- Use MLM + modern IR training techniques to build a sparse retrieval model 
+- Github repo: https://github.com/naver/splade
+- huggingface models: https://huggingface.co/naver
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
