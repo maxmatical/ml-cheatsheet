@@ -150,6 +150,19 @@ GPL: using finetuned T5 to generate queries from a document
   - use trained/pretrained autoencoder to generate embeddings
   - cluster/knn from that?
 
+### using BERTopic for topic modelling
+https://www.pinecone.io/learn/bertopic/?utm_content=207629974&utm_medium=social&utm_source=linkedin&hss_channel=lcp-20299330
+
+- transformer embedding model
+- UMAP dimensionality reduction
+- HDBSCAN clustering
+- Cluster tagging using c-TF-IDF
+
+use custom tranformer model with
+```
+topic_model = BERTopic(embedding_model={$hf-model-checkpoint})
+```
+
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 
