@@ -211,3 +211,8 @@ https://arxiv.org/abs/2204.05832
 
 ## Synthetic Data Generation to Improve Model Performance
 https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
+
+## Running inference with LLMs without enough cpu/gpu RAM
+- https://twitter.com/huggingface/status/1524783489593360385
+- huggignface accelerate for `load_checkpoint_and_dispatch`
+- example google colab notebook: https://colab.research.google.com/drive/14wnxMvD9zsiBQo2FtTpxn6w2cpXCcb-7#scrollTo=y8Ne7jJdaF9F&uniqifier=1
