@@ -144,7 +144,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - encoder models (like GTR-XXL) still outperform SGPT in fine-tuned setting
  - but SGPT outperforms in zero-shot over GTR-XXL
 - For cross-encoder, just took GPT as is using log probability extraction
-
+- Bi-encoder: **0.490 average nDCG@10 on BEIR**
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
