@@ -135,6 +135,17 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - Github repo: https://github.com/naver/splade
 - huggingface models: https://huggingface.co/naver
 
+13. SGPT: GPT Sentence Embeddings for Semantic Search
+- Arxiv: https://arxiv.org/pdf/2202.08904v4.pdf
+- github: https://github.com/muennighoff/sgpt
+ - includes example code for bi-encoder/cross-encoder usage
+ - Bi-encoder asymetric is what we care about (query and docs are not interchangable)
+- For bi-encoder, fine-tuned only the bias tensors (see [bitfit](https://arxiv.org/abs/2106.10199)) w/ contrastive fine-tuning
+ - encoder models (like GTR-XXL) still outperform SGPT in fine-tuned setting
+ - but SGPT outperforms in zero-shot over GTR-XXL
+- For cross-encoder, just took GPT as is using log probability extraction
+
+
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
