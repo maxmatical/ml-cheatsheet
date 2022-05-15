@@ -212,7 +212,10 @@ STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
 https://arxiv.org/abs/2204.05832
 
 - best zero-shot performance, decoder only transformer trained on causal language modelling (think GPT-x)
-- however not really for IR
+- encoder-decoder model w/ mlm pretraining + multitask finetuning performed the best
+- Compromise: decoder only model + causal lm + additional mlm (non causal lm)
+- Question: does this generalize to IR? doesn't seem to be an evaluated task so not too sure
+  - seems from recent papers (SGPT-BE, GTR) encoder only still performs better in fine-tuning, but SGPT generalizes better in BEIR
 
 ## Weak supervision for NLP (skweak, snorkle)
 - define a set of labelling functions
