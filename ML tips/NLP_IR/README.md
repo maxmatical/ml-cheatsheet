@@ -141,6 +141,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - includes example code for bi-encoder/cross-encoder usage
  - Bi-encoder asymetric is what we care about (query and docs are not interchangable)
 - For bi-encoder, fine-tuned only the bias tensors (see [bitfit](https://arxiv.org/abs/2106.10199)) w/ contrastive fine-tuning
+ - example code to only FT some parameters in a model: https://www.kaggle.com/code/heyytanay/train-ai4code-pytorch-bert-large-w-b?scriptVersionId=95570216&cellId=22
  - encoder models (like GTR-XXL) still outperform SGPT in fine-tuned setting
  - but SGPT outperforms in zero-shot over GTR-XXL
 - For cross-encoder, just took GPT as is using log probability extraction
