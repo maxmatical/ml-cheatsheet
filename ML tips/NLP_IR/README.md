@@ -125,8 +125,18 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
     token_embeddings = model_output[0] #First element of model_output contains all token embeddings
     input_mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
     return torch.sum(token_embeddings * input_mask_expanded, 1) / torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+ ```
+ - using `T5Encoder`
+ ```
+ from transformers import T5Tokenizer, T5EncoderModel
 
-
+ tokenizer = T5Tokenizer.from_pretrained("t5-small")
+ model = T5EncoderModel.from_pretrained("t5-small")
+ input_ids = tokenizer(
+     "Studies have been shown that owning a dog is good for you", return_tensors="pt"
+ ).input_ids  # Batch size 1
+ outputs = model(input_ids=input_ids)
+ last_hidden_states = outputs.last_hidden_state
  ```
  12. Splade V2/++
 - [SPLADE ++](https://arxiv.org/abs/2205.04733)
