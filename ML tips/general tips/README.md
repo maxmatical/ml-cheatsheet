@@ -23,6 +23,7 @@
     2. performance of other classes improve
     If both cases are true, consider removing some data from that class
     
+   
 ## Example data curation process
 1. train on data
 2. evaluation (per class p/r/f1 and overall accuracy) on validation data
@@ -34,6 +35,12 @@
   - **note:** can really only improve precision for that class, improving recall might require actively sourcing positive examples for that class
 
 **note:** can also do step **3** on training data to monitor/improve training data quality
+
+## Data curation distribution tips
+- real-world data distribution is ~N(0,1)
+- good dataset is ~U(-2,2)
+
+Want to have balanced dataset across all classes, especially long tail
 
 # fastai2 extension libraries
 https://github.com/nestordemeure/fastai-extensions-repository
