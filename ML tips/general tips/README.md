@@ -793,6 +793,13 @@ seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
 - twitter thread: https://twitter.com/tanmingxing/status/1519787578160869376
 - pytorch impl: see [useful_loss_functions.py](https://github.com/maxmatical/ml-cheatsheet/blob/master/useful_loss_functions.py)
 
+
+### Tracking gradients with `wandb.watch`
+https://docs.wandb.ai/guides/integrations/pytorch#logging-gradients-with-wandb.watch
+
+- tracking gradients may be useful to diagnose model performance
+- more of an issue as model scales up? eg 1B+
+
 # AutoML stuff
 
 ## autogluon
