@@ -2,6 +2,19 @@
 
 Notes for using Jax/Flax
 
+## Jax tutorial:
+https://colinraffel.com/blog/you-don-t-know-jax.html
+
+Note on `vmap` (same for `functorch` `vmap` but with `in_dims` and `out_dims` instead)
+```
+jax.vmap takes in additional arguments:
+
+- in_axes is a tuple or integer which tells JAX over which axes the function's arguments should be parallelized. The tuple should have the same length as the number of arguments of the function being vmap'd, or should be an integer when there is only one argument. In our example, we'll use (None, 0, 0), meaning “don't parallelize over the first argument (params), and parallelize over the first (zeroth) dimension of the second and third arguments (x and y)". 
+
+- out_axes is analogous to in_axes, except it specifies which axes of the function's output to parallelize over. In our case, we'll use 0, meaning to parallelize over the first (zeroth) dimension of the function's sole output (the loss gradients).
+```
+
+
 ## Flax basics
 https://colab.research.google.com/github/BertrandRdp/flax/blob/master/docs/notebooks/flax_basics.ipynb
 
