@@ -352,3 +352,6 @@ with init_meta_context():
 
 ```
 
+
+## distributed shampoo for pytorch
+https://github.com/facebookresearch/optimizers
