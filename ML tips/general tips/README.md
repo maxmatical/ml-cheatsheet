@@ -219,8 +219,7 @@ For performance
 - Ranger
 - Ranger21
 - RangerAdabelief
-- Shampoo
-  - distributed shampoo for JAX
+- distributed shampoo
 - (Adaptive)/(Efficient) SAM + optimizer
 
 For training large models when memory is an issue
@@ -267,7 +266,8 @@ set_optim_to_run_embedding_in_fp32(model)
 - no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
 - `use_madgrad = True` might be better for transformers
 
-
+**Distributed Shampoo for pytorch**
+https://github.com/facebookresearch/optimizers
 
 **Optimizers to try**
 ```
