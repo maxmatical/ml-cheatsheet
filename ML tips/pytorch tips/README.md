@@ -170,3 +170,6 @@ Algorithms that can improve training performance: https://docs.mosaicml.com/en/l
 
 ## Megatron-deepspeed
 https://github.com/bigscience-workshop/Megatron-DeepSpeed
+
+## Distributed shampoo
+https://github.com/facebookresearch/optimizers
