@@ -235,3 +235,10 @@ https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
 
 ## Training LMs with RL + human feedback
 https://github.com/lvwerra/trl
+
+## Inference using encoder-decoder/decoder only models for classification type tasks
+- want to prevent hallucination
+  - eg labels are `["positive", "negative"]`, but LMs can generate anything
+  - want to only contrain output to labels at inference
+- use constrained beam search
+- https://huggingface.co/blog/constrained-beam-search
