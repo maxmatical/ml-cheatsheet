@@ -50,6 +50,12 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 
 1. coCondenser
 - https://arxiv.org/pdf/2108.05540.pdf
+- MSMarco Results
+ - MRR@10: 38.2
+ - R@1000: 98.4
+- NQ:
+ - R@5: 75.8
+ - R@20: 84.3
 - github: https://github.com/luyug/Condenser
   - Fine-tuning cocondenser for DPR/ODQA (NQ, TriviaQA), use haystack/fb dpr repo + cocondenser weights
   - Fine-tuning cocondenser models on MS-MARCO: https://github.com/texttron/tevatron/tree/main/examples/coCondenser-marco
@@ -84,7 +90,8 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 6. LaPraDoR
 - https://arxiv.org/abs/2203.06169
 - unsupervised
-- SOTA in zero-shot retrieval (BEIR) **.485 nDCG@10**
+- BEIR Results:
+ - .438 nDCG@10
 - claim: doesn't need to fine-tune on a downstream dataset
 - also uses mean pooling (like GTR, Sentence T5)
 
@@ -104,15 +111,18 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - Similar idea to InPars, but uses a finetuned encoder-decoder model instaed of zero-shot
 - see GPL for domain adaptation on top of QGen
 
-10. Unsupervised Passage Re-ranker (UPR)
-- https://arxiv.org/abs/2204.07496
-- twitter thread: https://twitter.com/Devendr06654102/status/1516106999175467018?fbclid=IwAR3C78yR4NYN9KjPTo5EDpdNhdKSS0-0hHb6hWg_VgRI3xidvT9t9gnQZLQ
-- on top of a model (eg DPR)
+10. GPL:
+- https://arxiv.org/abs/2112.07577
+- BEIR results
+ - base: 0.445 NDCG@10
+ - Upper bound (TAS-B + GPL): 0.459 NDCG@10
 
 11. GTR (Generalizable T5-based dense Retrievers)
 - https://arxiv.org/abs/2112.07899
-- between **0.416 - 0.458 on BEIR NDCG@10** (competitive with CE rerankers)
-- Current(?) best in-domain MSMARCO performance at **nDCG@10 0.442**
+- BEIR Results:
+ - between **0.416 - 0.458 on BEIR NDCG@10** 
+- MS Marco Results:
+ - **nDCG@10 0.442** (currently SOTA)
 - Scaling up encoder, but keeping bottle neck embedding size fixed at 768
 - Scaling T5 (using only the encoder), use multi-stage training
  - multi-stage training and architecture taken from [Sentence-T5](https://arxiv.org/abs/2108.08877)
@@ -144,6 +154,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - Use MLM + modern IR training techniques to build a sparse retrieval model 
 - Github repo: https://github.com/naver/splade
 - huggingface models: https://huggingface.co/naver
+- Best sparse method on BEIR atm
 
 13. SGPT: GPT Sentence Embeddings for Semantic Search
 - Arxiv: https://arxiv.org/pdf/2202.08904v4.pdf
@@ -155,7 +166,17 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - encoder models (like GTR-XXL) still outperform SGPT in fine-tuned setting
  - but SGPT outperforms in zero-shot over GTR-XXL
 - For cross-encoder, just took GPT as is using log probability extraction
-- Bi-encoder: **0.490 average nDCG@10 on BEIR**
+- BEIR Results:
+ - Bi-encoder: **0.490 average nDCG@10 on BEIR** (Current SOTA)
+
+14. RetroMAE:
+- https://arxiv.org/abs/2205.12035
+- Results on MS MARCO:
+ - MRR@10: 0.3501
+  - better than laprador and condenser
+  - no comparison to CoCondenser, ColbertV2 etc. because no nDCG@10
+- BEIR Results:
+ - avg 0.488 NDCG@10
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
