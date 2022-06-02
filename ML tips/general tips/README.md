@@ -254,13 +254,21 @@ set_optim_to_run_embedding_in_fp32(model)
 ```
 
 [**Sharpness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) 
-  - try for CV like tasks
-  - May be especially good for `ViT` and `Mlp_Mixer`
-  - use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
-  - alternative implementation as callback: https://github.com/sanderson4030/SharpnessAwareMinimization
-  - values for `rho` to try: `{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}`
-  - Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
+- seems to be useful for CV and NLP
+- May be especially good for `ViT` and `Mlp_Mixer`
+- use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
+- alternative implementation as callback: https://github.com/sanderson4030/SharpnessAwareMinimization
+- values for `rho` to try: `{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}`
+- Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
+- SAM extensions:
   - Efficient sam: https://arxiv.org/abs/2203.02714
+  - GSAM: https://arxiv.org/abs/2203.08065
+    - Better performance than SAM
+    - Github code: https://github.com/juntang-zhuang/GSAM
+  - ESAM: https://arxiv.org/abs/2205.14083
+    - Faster than (G)SAM
+    - Competitive results in imagenet w/ Resnets. Bit worse for ViTs
+    - No code currently 
 
 [**Ranger21**](https://github.com/lessw2020/Ranger21)
 - no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
