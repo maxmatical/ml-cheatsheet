@@ -49,6 +49,7 @@ https://www.kaggle.com/c/chaii-hindi-and-tamil-question-answering/discussion/287
 - progressive resizing
   - eg start with `max_length` in tokenizer of `128`, then `256`, etc.
 - cutout: replace 0-10% of tokens with `[MASK]`
+  - this will need to be done in the collator function
 
 ### NL Augmenter
 https://github.com/GEM-benchmark/NL-Augmenter
