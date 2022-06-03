@@ -67,7 +67,7 @@ multi-gpu training in notebooks: https://github.com/philtrade/mpify
 
 good summary of dealing with imbalanced datsets: https://twitter.com/Fra_Pochetti/status/1518599651536027648?t=ODJKwqwBkdSVJLgjQslPuQ&s=09&fbclid=IwAR307j8N_57fTkkkL4C_5nnVBRmFBEJSPxnW0vMcMEHzbhmdyILAP2zIjpo
 
-## naive oversampling data
+## naive over[sam](https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam)pling data
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
 
@@ -256,11 +256,12 @@ set_optim_to_run_embedding_in_fp32(model)
 [**Sharpness-Aware Minimization (SAM) optimizer**](https://github.com/davda54/sam) 
 - seems to be useful for CV and NLP
 - May be especially good for `ViT` and `Mlp_Mixer`
-- use in fastai as a callback: https://github.com/maxmatical/ml-cheatsheet/blob/master/fastai_callbacks.py
-- alternative implementation as callback: https://github.com/sanderson4030/SharpnessAwareMinimization
+- Good to prevent overfitting, no real benefit when each datapoint is only seen once (eg LLM training setup)
 - values for `rho` to try: `{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}`
 - Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
+- composer implementation of SAM: https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam
 - SAM extensions:
+  - SAM in composer (might be better impl): https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam
   - Efficient sam: https://arxiv.org/abs/2203.02714
   - GSAM: https://arxiv.org/abs/2203.08065
     - Better performance than SAM
