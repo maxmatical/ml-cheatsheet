@@ -183,6 +183,14 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  2. Asymmetric structure: BERT base for encoder, 1 layer transformer decoder
  3. Asymmetric masking ratio: 15% for encoder, 50-90% ratio for decoder
 
+15. No Parameter Left Behind: How Distillation and Model Size Affect Zero-Shot Retrieval
+- https://arxiv.org/abs/2206.02873
+- twitter thread: https://twitter.com/rodrigfnogueira/status/1534564449452969985
+- CE reranker latency issues are not as much of an issue when the initial number of retrieved document is small (achieve <1s latency with 3B param reranker with 50 retrieved docs from BM25 with better nccg@10 and only 100ms slower than a 22M param minilm reranker w/ 1000 retrieved docs)
+- scaling model size has marginal effects on in domain performance, but affects generalization to OOD data to a much higher degree
+- similar sized rerankers outperform dense retrievers, particularly zero-shot generalization (not that surprising)
+
+
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
