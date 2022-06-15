@@ -262,7 +262,9 @@ set_optim_to_run_embedding_in_fp32(model)
   - Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
   - Should likely not use FP16 due to issues
   - gradient clipping: https://github.com/davda54/sam/issues/64
-  - cannot use gradient accumulation: https://github.com/davda54/sam/issues/62
+  - using gradient accumulation:
+    - https://github.com/maxmatical/ml-cheatsheet/blob/master/Pytorch_Lightning_BERT_Huggingface_w_SAM_%2B_EMA.ipynb
+    - https://github.com/davda54/sam/issues/3
   - using SAM in pytorch lightning: https://github.com/davda54/sam/issues/42
 - composer implementation of SAM: https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam
 - SAM extensions:
