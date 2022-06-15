@@ -258,7 +258,12 @@ set_optim_to_run_embedding_in_fp32(model)
 - May be especially good for `ViT` and `Mlp_Mixer`
 - Good to prevent overfitting, no real benefit when each datapoint is only seen once (eg LLM training setup)
 - values for `rho` to try: `{0.01, 0.02, 0.05, 0.1, 0.2, 0.5}`
-- Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
+- Using SAM in  https://github.com/davda54/sam/
+  - Note: to use SAM with FP16 (AMP) https://github.com/davda54/sam/issues/7
+  - Should likely not use FP16 due to issues
+  - gradient clipping: https://github.com/davda54/sam/issues/64
+  - cannot use gradient accumulation: https://github.com/davda54/sam/issues/62
+  - using SAM in pytorch lightning: https://github.com/davda54/sam/issues/42
 - composer implementation of SAM: https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam
 - SAM extensions:
   - SAM in composer (might be better impl): https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam
