@@ -66,3 +66,7 @@ https://twitter.com/ai_fast_track/status/1488353683461095424?t=31ss-zCN4RTnoze9V
 ### Blazingly Fast Computer Vision Training with the Mosaic ResNet and Composer
 https://www.mosaicml.com/blog/mosaic-resnet?src=jfrankle
 
+### FFCV dataloader to speed up training
+https://docs.ffcv.io/
+- image data only
+
