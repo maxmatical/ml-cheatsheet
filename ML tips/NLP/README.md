@@ -18,6 +18,12 @@
 - 1st place solution
 - interesting data augmentation techniques inspired by fastai/CV data augmentations
 
+[US patent phrase to phrase matching](https://twitter.com/marktenenholtz/status/1539578965920083968?t=FEZfQssOLCZAFfQs3Mtu5g&s=09&fbclid=IwAR3yePeplbJAjyjMhl9EF-Pjuoph9IqIC2dKWHriFF4zFKVukXouegsjd8k)
+- solo silver writeup
+- feature engineering for text by clever combination of text e.g. `"similarity of {anchor} to {target} in relation to {CPC description}"`
+- 8-bit Adam for larger batch sizes
+- linear optimizer for ensembling over stacking/boosting
+
 
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
