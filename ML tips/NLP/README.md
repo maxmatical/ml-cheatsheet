@@ -23,7 +23,9 @@
 - feature engineering for text by clever combination of text e.g. `"similarity of {anchor} to {target} in relation to {CPC description}"`
 - 8-bit Adam for larger batch sizes
 - linear optimizer for ensembling over stacking/boosting
-
+- More solutions
+  - [1st place solution](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/332243)
+  - [2nd place solution](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/332234)
 
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
