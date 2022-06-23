@@ -799,7 +799,6 @@ Algorithms that can improve training performance: https://docs.mosaicml.com/en/l
 ### converting multiclass to multi-label
 seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
 
-- improves over multi-class
 - works really well with mixup/cutmix
 - use `torch.nn.BCEWithLogitsLoss` on logits (before sigmoid)
 - may not actually be better than multiclass, but works because of mixup/cutmix data aug
@@ -808,13 +807,22 @@ seen in resnet strikes back paper: https://arxiv.org/pdf/2110.00476.pdf
 - https://arxiv.org/abs/2204.12511
 - twitter thread: https://twitter.com/tanmingxing/status/1519787578160869376
 - pytorch impl: see [useful_loss_functions.py](https://github.com/maxmatical/ml-cheatsheet/blob/master/useful_loss_functions.py)
-
+- note: doesn't seem to help much from my experiments
 
 ### Tracking gradients with `wandb.watch`
 https://docs.wandb.ai/guides/integrations/pytorch#logging-gradients-with-wandb.watch
 
 - tracking gradients may be useful to diagnose model performance
 - more of an issue as model scales up? eg 1B+
+
+### Curriculum learning inspired training ideas
+- start with small batch size, grow to max batch size
+  - similar idea (and can be combined with) progressive resizing (for text and images)
+- can do multi phase eg bs=32, bs=64, bs=128 with 3 separate `trainer.fit` steps
+  - this way because dataloader bs is static
+- helps in 2 ways
+  1. The loss function drops quite quickly in the very beginning, regardless of the number of examples to the model at each iteration. Since we decrease the number of computations in the beginning of training, we pass this stage of the loss plateau much faster.
+  2. claims to stablize training
 
 # AutoML stuff
 
