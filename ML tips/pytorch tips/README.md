@@ -168,8 +168,7 @@ https://www.mosaicml.com/blog/5-best-practices-for-efficient-model-training
 Algorithms that can improve training performance: https://docs.mosaicml.com/en/latest/trainer/algorithms.html
 
 
-## Megatron-deepspeed
-https://github.com/bigscience-workshop/Megatron-DeepSpeed
 
-## Distributed shampoo
-https://github.com/facebookresearch/optimizers
+# Training recipe for LLMs (100B model)
+https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
+- useful tricks for speeding up and stablizing training of large language models
