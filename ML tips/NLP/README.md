@@ -251,3 +251,7 @@ https://github.com/lvwerra/trl
   - want to only contrain output to labels at inference
 - use constrained beam search
 - https://huggingface.co/blog/constrained-beam-search
+
+## Training recipe for LLMs (100B model)
+https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
+- useful tricks for speeding up and stablizing training of large language models
