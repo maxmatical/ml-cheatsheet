@@ -113,6 +113,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 
 10. GPL:
 - https://arxiv.org/abs/2112.07577
+- Take a T5 finetuned on MS MARCO to generate queries, apply to downstream datasets to generate questions from docs for synthetic training samples
 - BEIR results
  - base: 0.445 NDCG@10
  - Upper bound (TAS-B + GPL): 0.459 NDCG@10
@@ -190,6 +191,22 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - scaling model size has marginal effects on in domain performance, but affects generalization to OOD data to a much higher degree
 - similar sized rerankers outperform dense retrievers, particularly zero-shot generalization (not that surprising)
 
+16. Questions Are All You Need to Train a Dense Passage Retriever
+- https://arxiv.org/abs/2206.10658
+- Only need set of questions and a set of documents, no direct label for question/doc pairs needed
+- Gets SOTA on several supervised benchmarks for **retrieval accuracy**
+ - SQUAD-open
+ - TriviaQA
+ - NQ-Open
+ - WebQ
+- Also gets improvements (and some SOTA results) in zero shot transfer (no BEIR though)
+ - Finetune on NQ-Open/MS MARCO/NQ-full + MS MARCO
+ - evaluate on 
+  - SQUAD-open
+  - TriviaQA
+  - WebQ
+  - EW
+
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
@@ -260,7 +277,7 @@ How GPL works:
 
 1. Query generation
   - use T5 (currently best text generation model that can be fine-tuned)
-  - either take a pre-trained checkpoint (eg finetuned on MS MARCO) or finetune on your own data if you have data
+  - either take a pre-trained checkpoint (eg finetuned on MS MARCO) or finetune on your own data if you have data (not directly finetuning on the target dataset, since it would not have query/doc pairs)
   - similar to doc2query (given doc, generate `n` queries about it)
 
 2. Negative mining
