@@ -8,6 +8,8 @@ write new training file of train data + synthetic data
 
 example usage: note will need at least a T4 gpu
 
+docs on generation hyperparams: https://huggingface.co/docs/transformers/main/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin.generate
+
 python -m scripts.intent.gpt_generate_intent_queries \
     --intent_training_data_path {data-dir}/kajabi_train_large.jsonl \
     --intent_sample_generation_data_path {data-dir}/kajabi_train_large.jsonl \
