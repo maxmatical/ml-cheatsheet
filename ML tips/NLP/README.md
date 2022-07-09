@@ -255,3 +255,10 @@ https://github.com/lvwerra/trl
 ## Training recipe for LLMs (100B model)
 https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
 - useful tricks for speeding up and stablizing training of large language models
+
+## On debugging large scal training;
+https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIKT0U0bKw&s=09&fbclid=IwAR2S5MAS8CFvTX3d4OeB_lrp-flH0gW_CbGMaMh-kG6JNe0-MQciTRA-4zM
+
+## Prompt engineering for LLMs
+https://txt.cohere.ai/how-to-train-your-pet-llm-prompt-engineering/?utm_content=213394473&utm_medium=social&utm_source=linkedin&hss_channel=lcp-24024765
+
