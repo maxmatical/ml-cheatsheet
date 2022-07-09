@@ -169,6 +169,18 @@ Algorithms that can improve training performance: https://docs.mosaicml.com/en/l
 
 
 
-# Training recipe for LLMs (100B model)
+## Training recipe for LLMs (100B model)
 https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
 - useful tricks for speeding up and stablizing training of large language models
+
+# Huggingface Accelerate
+https://github.com/huggingface/accelerate
+
+## Dealing with gradient accumulation 
+- need to deal with gradient accumulation manually in accelerate
+- https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
+- error in the code posted, should be when `step % grad_accum_steps != 0: with accelerator.no_sync(model)...`
+
+## Deepspeed in accelerate
+- https://github.com/huggingface/accelerate#launching-training-using-deepspeed
+- need to handle gradient accumulation manually
