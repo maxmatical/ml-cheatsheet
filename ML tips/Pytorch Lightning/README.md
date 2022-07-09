@@ -357,4 +357,7 @@ with init_meta_context():
 https://github.com/facebookresearch/optimizers
 
 ## Manual optimization, disable grad sync with gradient accumulation in distributed training
-https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
+- https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
+- when step idx doesn't equal grad accumulation steps, use `no_sync` to prevent slowdowns
+  - only sync when running the backwards
+- handled by default in automatic optimization :)
