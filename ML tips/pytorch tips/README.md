@@ -176,10 +176,14 @@ https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-ne
 # Huggingface Accelerate
 https://github.com/huggingface/accelerate
 
-## Dealing with gradient accumulation 
+## [DEPRECATED] Dealing with gradient accumulation 
 - need to deal with gradient accumulation manually in accelerate
 - https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
 - error in the code posted, should be when `step % grad_accum_steps != 0: with accelerator.no_sync(model)...`
+
+## Auto grad accumulation with accelerate
+- https://huggingface.co/docs/accelerate/v0.11.0/en/gradient_accumulation
+- requires >`V0.11.0`
 
 ## Deepspeed in accelerate
 - https://github.com/huggingface/accelerate#launching-training-using-deepspeed
