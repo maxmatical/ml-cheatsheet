@@ -242,6 +242,10 @@ https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
 - huggignface accelerate for `load_checkpoint_and_dispatch`
 - example google colab notebook: https://colab.research.google.com/drive/14wnxMvD9zsiBQo2FtTpxn6w2cpXCcb-7#scrollTo=y8Ne7jJdaF9F&uniqifier=1
 
+### Using accelerate
+- https://twitter.com/moyix/status/1546961979566325760?t=cMI_Yw37XzbncqzILBCgrw&s=09&fbclid=IwAR1E4eGinYDADIU9BdRtteWJHYBFqDpq6B0J18tgAB-2aP06FOYP0vO8IDw
+- colab notebook: https://colab.research.google.com/drive/14wnxMvD9zsiBQo2FtTpxn6w2cpXCcb-7#scrollTo=SGS9OW5qnaUH&uniqifier=1
+
 ## Training LMs with RL + human feedback
 https://github.com/lvwerra/trl
 
