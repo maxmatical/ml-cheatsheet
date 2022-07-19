@@ -70,3 +70,7 @@ https://www.mosaicml.com/blog/mosaic-resnet?src=jfrankle
 https://docs.ffcv.io/
 - image data only
 
+### Which image model checkpoints to use?
+- kaggle notebook: https://www.kaggle.com/code/jhoward/which-image-models-are-best
+- 
+
