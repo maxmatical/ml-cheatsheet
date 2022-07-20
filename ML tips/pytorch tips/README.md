@@ -188,3 +188,6 @@ https://github.com/huggingface/accelerate
 ## Deepspeed in accelerate
 - https://github.com/huggingface/accelerate#launching-training-using-deepspeed
 - need to handle gradient accumulation manually
+
+## Auto batch size finder
+https://huggingface.co/docs/accelerate/memory
