@@ -177,7 +177,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
   - better than laprador and condenser
   - no comparison to CoCondenser, ColbertV2 etc. because no nDCG@10
 - BEIR Results:
- - avg **0.488 NDCG@10** (Current best for bert sized model eg no SGPT)
+ - avg **0.448 NDCG@10** (Current best for bert sized model eg no SGPT, GTR etc.)
  - pretty competitive especially at the size (BERT-base size)
 - Novel pre-training framework for dense retrieval, 3 main designs
  1. Masked auto-encoding: input sentence is corrupted twice with 2 different masked (1 for encoder and 1 for decoder)
