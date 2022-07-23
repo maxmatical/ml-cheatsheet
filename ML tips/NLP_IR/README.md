@@ -208,6 +208,9 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
   - WebQ
   - EW
 
+17. Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling (TAS-B) 
+ - https://arxiv.org/abs/2104.06967
+ - closely related to GPL, CE distillation
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
