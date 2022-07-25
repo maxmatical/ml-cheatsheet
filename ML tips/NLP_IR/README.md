@@ -210,7 +210,8 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 
 17. Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling (TAS-B) 
  - https://arxiv.org/abs/2104.06967
- - closely related to GPL, CE distillation
+ - closely related to GPL, CE distillation (MarginMSE)
+ - training code https://github.com/sebastian-hofstaetter/matchmaker
 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
