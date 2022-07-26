@@ -262,3 +262,7 @@ interesting notes:
   - encoder-decoder models (like T5) are really good for fine-tuning, but not as good for prompting (eg emergent properties)
   - training is harder. decoder only models does per token generation (train on all tokens), but models like BART only masks a % of the total data
   - consistent with ideas presented in big science workshop
+  
+# Scaling Laws vs Model Architectures: How does Inductive Bias Influence Scaling?
+- twitter thread: https://twitter.com/YiTayML/status/1551657355036676096
+- paper https://arxiv.org/abs/2207.10551
