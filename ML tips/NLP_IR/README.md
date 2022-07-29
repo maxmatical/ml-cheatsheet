@@ -213,6 +213,10 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - closely related to GPL, CE distillation (MarginMSE)
  - training code https://github.com/sebastian-hofstaetter/matchmaker
 
+18. Parameter-Efficient Prompt Tuning Makes Generalized and Calibrated Neural Text Retrievers
+ - https://arxiv.org/abs/2207.07087
+ - promp tuning instead full finetuning from a model checkpoint 
+ - pt instead of ft on dpr-nq -> ms marco -> better performance on BEIR than full finetuning
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
