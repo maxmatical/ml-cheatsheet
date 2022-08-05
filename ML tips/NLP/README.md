@@ -267,3 +267,9 @@ https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIK
 ## Prompt engineering for LLMs
 https://txt.cohere.ai/how-to-train-your-pet-llm-prompt-engineering/?utm_content=213394473&utm_medium=social&utm_source=linkedin&hss_channel=lcp-24024765
 
+## GLM-130B
+- blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
+- github: https://github.com/THUDM/GLM-130B
+  - includes training + architecture recipe
+  - Interesting finding: using embedding normalization (used in BLOOM) stabilizes training, but reduces downstream performance significantly
+
