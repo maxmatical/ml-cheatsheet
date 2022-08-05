@@ -183,16 +183,24 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
   1. Masked auto-encoding: input sentence is corrupted twice with 2 different masked (1 for encoder and 1 for decoder)
   2. Asymmetric structure: BERT base for encoder, 1 layer transformer decoder
   3. Asymmetric masking ratio: 15% for encoder, 50-90% ratio for decoder
+  
+15. Masked Autoencoders As The Unified Learners For Pre-Trained Sentence Representation
+- Followup paper on RetroMAE
+- https://arxiv.org/abs/2208.00231
+- retroMAE on generic corpus has strong zero-shot performance (0.452 NDCG@10, just a 0.01 pts worse than GTR-XL)
+- 2nd stage in domain pretraining on MS-MARCO (+ ANCE finetuning) yields better in domain performance on MSMARCO than CoCondenser (MRR@k)
+ - but slightly worse out of domain performance on BEIR
+- Can also achieve strong sentence embedding tasks
 
 
-15. No Parameter Left Behind: How Distillation and Model Size Affect Zero-Shot Retrieval
+16. No Parameter Left Behind: How Distillation and Model Size Affect Zero-Shot Retrieval
 - https://arxiv.org/abs/2206.02873
 - twitter thread: https://twitter.com/rodrigfnogueira/status/1534564449452969985
 - CE reranker latency issues are not as much of an issue when the initial number of retrieved document is small (achieve <1s latency with 3B param reranker with 50 retrieved docs from BM25 with better nccg@10 and only 100ms slower than a 22M param minilm reranker w/ 1000 retrieved docs)
 - scaling model size has marginal effects on in domain performance, but affects generalization to OOD data to a much higher degree
 - similar sized rerankers outperform dense retrievers, particularly zero-shot generalization (not that surprising)
 
-16. Questions Are All You Need to Train a Dense Passage Retriever
+17. Questions Are All You Need to Train a Dense Passage Retriever
 - https://arxiv.org/abs/2206.10658
 - Only need set of questions and a set of documents, no direct label for question/doc pairs needed
 - Gets SOTA on several supervised benchmarks for **retrieval accuracy**
@@ -208,12 +216,12 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
   - WebQ
   - EW
 
-17. Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling (TAS-B) 
+18. Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling (TAS-B) 
  - https://arxiv.org/abs/2104.06967
  - closely related to GPL, CE distillation (MarginMSE)
  - training code https://github.com/sebastian-hofstaetter/matchmaker
 
-18. Parameter-Efficient Prompt Tuning Makes Generalized and Calibrated Neural Text Retrievers
+19. Parameter-Efficient Prompt Tuning Makes Generalized and Calibrated Neural Text Retrievers
  - https://arxiv.org/abs/2207.07087
  - promp tuning instead full finetuning from a model checkpoint 
  - pt instead of ft on dpr-nq -> ms marco -> better performance on BEIR than full finetuning
