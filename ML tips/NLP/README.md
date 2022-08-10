@@ -247,6 +247,12 @@ https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
 - https://twitter.com/moyix/status/1546961979566325760?t=cMI_Yw37XzbncqzILBCgrw&s=09&fbclid=IwAR1E4eGinYDADIU9BdRtteWJHYBFqDpq6B0J18tgAB-2aP06FOYP0vO8IDw
 - colab notebook: https://colab.research.google.com/drive/14wnxMvD9zsiBQo2FtTpxn6w2cpXCcb-7#scrollTo=SGS9OW5qnaUH&uniqifier=1
 
+### transformers + accelerate + offload
+https://twitter.com/moyix/status/1546961979566325760?t=cGtMefQd2_6_bKBW1KaJVQ&s=09&fbclid=IwAR1zQkZ-GF5SFTU1ev14kY6qEvXmLzHbuDNyxnlIV3qsP628FpBdx8WQudo
+
+### transformers + accelerate + bnb int8
+https://docs.google.com/document/d/1JxSo4lQgMDBdnd19VBEoaG-mMfQupQ3XvOrgmRAVtpU/edit?usp=sharing
+
 ## Training LMs with RL + human feedback
 https://github.com/lvwerra/trl
 
