@@ -147,3 +147,6 @@ https://github.com/cpa-analytics/embedding-encoder
 https://github.com/scikit-learn-contrib/category_encoders
 
 http://contrib.scikit-learn.org/category_encoders/index.html
+
+### Sample kaggle tabular data pipeline 
+https://github.com/arnabbiswas1/kaggle_pipeline_tps_aug_22
