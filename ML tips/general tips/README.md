@@ -20,8 +20,11 @@
 2. Start with smaller models/data: goal is to iterate quickly on ideas
   - models: use smaller models like distilbert
   - data: use smaller images/text size (eg truncate `max_length` of tokenizer to `128` to start)
+  - Here is where you try different ideas (synthetic data, data aug strategies, model strategies etc.)
 3. When yo have exhausted all ideas, now it's the time to start scaling up
-  - Hyperparam tuning also goes here
+4. Getting the most out of your model:
+  - Hyperparam optimization
+  - Ensembling techniques: SWA, EMA, model souping, model averaging, stacking etc.
 
 
 # Data curation
