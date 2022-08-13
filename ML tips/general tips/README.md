@@ -14,6 +14,16 @@
 3. if no further improvements on data side (or cost/benefit too high), then run hyperparameter tuning
   - can try hyperparameter tuning on a subset of data for faster experimentation (only if subset gains => full data gains)
 
+# Modelling tips from Kaggle
+- https://twitter.com/lucasgvazquez/status/1550416693683699712?t=Q-bnVneXf6PygY-dDplT4w&s=09&fbclid=IwAR32pZBNOxUKAihnasi44tTgc_wyq73gw0WCLmt5qmSh22lB278DAd0YQ7Y
+1. Establish good validation
+2. Start with smaller models/data: goal is to iterate quickly on ideas
+  - models: use smaller models like distilbert
+  - data: use smaller images/text size (eg truncate `max_length` of tokenizer to `128` to start)
+3. When yo have exhausted all ideas, now it's the time to start scaling up
+  - Hyperparam tuning also goes here
+
+
 # Data curation
 - An active process > just collecting data
 - Want to collect more data for challenging/underperforming classes
