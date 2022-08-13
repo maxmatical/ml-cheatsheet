@@ -74,3 +74,6 @@ https://docs.ffcv.io/
 - kaggle notebook: https://www.kaggle.com/code/jhoward/which-image-models-are-best
 - 
 
+### fastxtend (extended tools for fastai)
+https://github.com/warner-benjamin/fastxtend
+
