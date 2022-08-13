@@ -191,3 +191,7 @@ https://github.com/huggingface/accelerate
 
 ## Auto batch size finder
 https://huggingface.co/docs/accelerate/memory
+
+## Python-level JIT compiler designed to make unmodified PyTorch programs faster. 
+https://github.com/pytorch/torchdynamo
+
