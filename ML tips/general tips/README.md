@@ -836,6 +836,10 @@ https://docs.wandb.ai/guides/integrations/pytorch#logging-gradients-with-wandb.w
 - helps in 2 ways
   1. The loss function drops quite quickly in the very beginning, regardless of the number of examples to the model at each iteration. Since we decrease the number of computations in the beginning of training, we pass this stage of the loss plateau much faster.
   2. claims to stablize training
+- note: growing batch size should only be useful if you're not training for multiple epochs (i.e. pre-training LLMs)? otherwise wall time per epoch may increase
+
+### Learning with noisy labels
+https://github.com/songhwanjun/Awesome-Noisy-Labels?fbclid=IwAR2y9hkYhvm2o8R5Bd_DNGkMnPyUTMm0hppvF6FbRV4PjzF6YEZZsoKOhEs
 
 # AutoML stuff
 
