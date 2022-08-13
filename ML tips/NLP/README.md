@@ -262,6 +262,7 @@ https://github.com/lvwerra/trl
   - want to only contrain output to labels at inference
 - use constrained beam search
 - https://huggingface.co/blog/constrained-beam-search
+- Alternatively, use sum of log probabilities (see SGPT cross encoder)
 
 ## Training recipe for LLMs (100B model)
 https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
@@ -271,7 +272,9 @@ https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-ne
 https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIKT0U0bKw&s=09&fbclid=IwAR2S5MAS8CFvTX3d4OeB_lrp-flH0gW_CbGMaMh-kG6JNe0-MQciTRA-4zM
 
 ## Prompt engineering for LLMs
-https://txt.cohere.ai/how-to-train-your-pet-llm-prompt-engineering/?utm_content=213394473&utm_medium=social&utm_source=linkedin&hss_channel=lcp-24024765
+- https://txt.cohere.ai/how-to-train-your-pet-llm-prompt-engineering/?utm_content=213394473&utm_medium=social&utm_source=linkedin&hss_channel=lcp-24024765
+- https://docs.cohere.ai/prompt-engineering-wiki/?fbclid=IwAR0J08sW24dcBq_YpGpF4G0Pb-5OexCdlcscSsTlk28l5Ij2sXeQlg7GLrQ
+- NER specific: https://towardsdatascience.com/advanced-ner-with-gpt-3-and-gpt-j-ce43dc6cdb9c#4010-fa6647c13fbe-reply
 
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
@@ -279,3 +282,11 @@ https://txt.cohere.ai/how-to-train-your-pet-llm-prompt-engineering/?utm_content=
   - includes training + architecture recipe
   - Interesting finding: using embedding normalization (used in BLOOM) stabilizes training, but reduces downstream performance significantly
 
+## Improvements to train large language models
+https://twitter.com/nlpguy_/status/1556881385927098369
+- 2D positional encodings (GLM > GPT3)
+- allowing arbitrary order to predict spans
+- Normformer
+- P-tuning v2
+- MoE (mixture of experts)
+- Scaling data is as important as scaling model size (Chinchilla)
