@@ -290,3 +290,13 @@ https://twitter.com/nlpguy_/status/1556881385927098369
 - P-tuning v2
 - MoE (mixture of experts)
 - Scaling data is as important as scaling model size (Chinchilla)
+
+
+## Mosaic ML: Composer - ALiBi for BERT/RoBERTa
+https://docs.mosaicml.com/en/stable/method_cards/alibi.html#alibi
+- requires composer >= 0.9
+- Supports BERT/RoBERTa and similar archs
+  - will log an error if model class is unsupported (double check)
+
+## Finetuning GPT-NeoX
+https://nn.labml.ai/neox/index.html
