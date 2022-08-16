@@ -845,6 +845,8 @@ https://github.com/songhwanjun/Awesome-Noisy-Labels?fbclid=IwAR2y9hkYhvm2o8R5Bd_
 
 ### Increasing numerical precision to remove spikes from loss curves
 - https://twitter.com/_arohan_/status/1559327820546916353?t=y8-EHAzKX61s-XHrpspkaQ&s=09&fbclid=IwAR2BdqXlihxUAjOXsePRhGIS-zDxWwp3G1-__VWLADHkSsLH7h4A6FA-zMk
+- if loss looks like this ![image](https://user-images.githubusercontent.com/8890262/184979560-fddba306-ff4c-4669-b504-a9fb85d34ed7.png)
+
 - eg `float32 -> float64` before `log_softmax`
 - NOTE: not sure if is solved by grad scaler (eg like in fp16) or would also work in that scenario
 
