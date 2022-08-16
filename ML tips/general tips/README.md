@@ -678,7 +678,7 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
 - **NOTE** probably doesn't work on its own, but works better with mixup style data augmentation 
 
 ### Don't use early stopping/save best model callbacks!
-- reasoning
+- twitter thread: https://twitter.com/JFPuget/status/1558549407091625985?t=8o9iAodC8ES0MWu4Ws7x3A&s=09&fbclid=IwAR32tgirDraLvRmySmsQGL36IpTVMmdnlxIPvCmEpqKSCAESvPAg-GLvHh4
 - applies both to DL, as well as some ML models (eg xgboost w/ early stopping)
 - both can introduce too much variance to the model (**especially** when doing cross validation/ hpo)
 - want model at the last epoch to be the best model
@@ -686,6 +686,8 @@ https://devblog.pytorchlightning.ai/active-learning-made-simple-using-flash-and-
   1. naive way: start with some number, if performance is still improving at the end, try increasing number of epochs. if performance starts to drop before the end (eg at epoch 35), set the number of epochs to the epoch with best performance
   2. add number of epochs as a hyperparameter, and run hpo with that
   3. alternatively, tune lr such that the best model is at the last epoch
+ - overall goal: tune the last epoch result
+  - number of epochs way require experimentation (i.e. no rules of thumb best practice for choosing  `n_epochs`)
 
 ### Exponential moving average (EMA) of model weights
 https://github.com/fadel/pytorch_ema
@@ -840,6 +842,11 @@ https://docs.wandb.ai/guides/integrations/pytorch#logging-gradients-with-wandb.w
 
 ### Learning with noisy labels
 https://github.com/songhwanjun/Awesome-Noisy-Labels?fbclid=IwAR2y9hkYhvm2o8R5Bd_DNGkMnPyUTMm0hppvF6FbRV4PjzF6YEZZsoKOhEs
+
+### Increasing numerical precision to remove spikes from loss curves
+- https://twitter.com/_arohan_/status/1559327820546916353?t=y8-EHAzKX61s-XHrpspkaQ&s=09&fbclid=IwAR2BdqXlihxUAjOXsePRhGIS-zDxWwp3G1-__VWLADHkSsLH7h4A6FA-zMk
+- eg `float32 -> float64` before `log_softmax`
+- NOTE: not sure if is solved by grad scaler (eg like in fp16) or would also work in that scenario
 
 # AutoML stuff
 
