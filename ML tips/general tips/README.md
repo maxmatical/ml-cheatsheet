@@ -850,6 +850,11 @@ https://github.com/songhwanjun/Awesome-Noisy-Labels?fbclid=IwAR2y9hkYhvm2o8R5Bd_
 - eg `float32 -> float64` before `log_softmax`
 - NOTE: not sure if is solved by grad scaler (eg like in fp16) or would also work in that scenario
 
+
+### using large batch sizes for contrastive loss when gpu memory is a bottleneck
+1. use model paralellism (eg deepspeed zero3 + offload) to free up as much mem as possible for largest batch size
+2. cache logits and targets per step, similar to gradient accumulation, until you get to a large enough batch size, then compute the loss with all the cache
+
 # AutoML stuff
 
 ## autogluon
