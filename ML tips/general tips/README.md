@@ -234,6 +234,7 @@ For performance
 - RangerAdabelief
 - distributed shampoo
 - (Adaptive)/(Efficient) SAM + optimizer
+- [Adan](https://twitter.com/davisblalock/status/1561976182567870465)
 
 For training large models when memory is an issue
 - AdaFactor (although AdamW might be better for Large LMs, see twitter thread and GOPHER paper)
@@ -297,6 +298,12 @@ set_optim_to_run_embedding_in_fp32(model)
 
 **Distributed Shampoo for pytorch**
 https://github.com/facebookresearch/optimizers
+
+**Adan**
+- https://twitter.com/davisblalock/status/1561976182567870465
+- arxiv: https://arxiv.org/abs/2208.06677
+- beats AdamW, SAM, SGD, Adabelief, etc. in Vision/NLP/RL tasks
+- Code: https://github.com/sail-sg/Adan
 
 **Optimizers to try**
 ```
