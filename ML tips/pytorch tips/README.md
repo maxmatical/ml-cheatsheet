@@ -173,6 +173,14 @@ Algorithms that can improve training performance: https://docs.mosaicml.com/en/l
 https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
 - useful tricks for speeding up and stablizing training of large language models
 
+
+## Auto batch size finder
+https://huggingface.co/docs/accelerate/memory
+
+## Python-level JIT compiler designed to make unmodified PyTorch programs faster. 
+https://github.com/pytorch/torchdynamo
+
+
 # Huggingface Accelerate
 https://github.com/huggingface/accelerate
 
@@ -189,9 +197,9 @@ https://github.com/huggingface/accelerate
 - https://github.com/huggingface/accelerate#launching-training-using-deepspeed
 - need to handle gradient accumulation manually
 
-## Auto batch size finder
-https://huggingface.co/docs/accelerate/memory
-
-## Python-level JIT compiler designed to make unmodified PyTorch programs faster. 
-https://github.com/pytorch/torchdynamo
-
+## `no_sync()` in accelerate
+https://huggingface.co/docs/accelerate/v0.12.0/en/concept_guides/gradient_synchronization#the-slowdown-in-gradient-accumulation
+- Use `no_sync()` in 2 ways:
+1. Every step until end of epoch. i.e. only sync at the end of an epoch
+2. `no_sync()` on steps when performing gradient accumulation, only sync when `if (index+1) % gradient_accumulation_steps == 0:`
+- ** NOTE: ALWAYS USE `with accelerator.no_sync(model):` or `with ddp_model.no_sync():` during gradient accumulation steps!!**
