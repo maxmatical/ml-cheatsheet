@@ -202,4 +202,4 @@ https://huggingface.co/docs/accelerate/v0.12.0/en/concept_guides/gradient_synchr
 - Use `no_sync()` in 2 ways:
 1. Every step until end of epoch. i.e. only sync at the end of an epoch
 2. `no_sync()` on steps when performing gradient accumulation, only sync when `if (index+1) % gradient_accumulation_steps == 0:`
-- ** NOTE: ALWAYS USE `with accelerator.no_sync(model):` or `with ddp_model.no_sync():` during gradient accumulation steps!!**
+- **NOTE: ALWAYS USE `with accelerator.no_sync(model):` or `with ddp_model.no_sync():` during gradient accumulation steps!!**
