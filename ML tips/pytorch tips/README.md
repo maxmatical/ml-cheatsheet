@@ -184,14 +184,16 @@ https://github.com/pytorch/torchdynamo
 # Huggingface Accelerate
 https://github.com/huggingface/accelerate
 
-## [DEPRECATED] Dealing with gradient accumulation 
-- need to deal with gradient accumulation manually in accelerate
-- https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
-- error in the code posted, should be when `step % grad_accum_steps != 0: with accelerator.no_sync(model)...`
 
 ## Auto grad accumulation with accelerate
 - https://huggingface.co/docs/accelerate/v0.11.0/en/gradient_accumulation
 - requires >`V0.11.0`
+
+### Dealing with gradient syncing in gradient accumulation steps
+- (as of `v0.11.0`) need to deal with gradient sync manually in accelerate
+- manually call `accelerator.no_sync(model)` during gradient accumulation steps
+- https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
+- error in the code posted, should be when `step % grad_accum_steps != 0: with accelerator.no_sync(model)...`
 
 ## Deepspeed in accelerate
 - https://github.com/huggingface/accelerate#launching-training-using-deepspeed
