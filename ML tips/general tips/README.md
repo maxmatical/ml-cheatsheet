@@ -299,11 +299,12 @@ set_optim_to_run_embedding_in_fp32(model)
 **Distributed Shampoo for pytorch**
 https://github.com/facebookresearch/optimizers
 
-**Adan**
+**Adan optimizer**
 - https://twitter.com/davisblalock/status/1561976182567870465
 - arxiv: https://arxiv.org/abs/2208.06677
 - beats AdamW, SAM, SGD, Adabelief, etc. in Vision/NLP/RL tasks
 - Code: https://github.com/sail-sg/Adan
+- (non-official) pytorch implementation: https://github.com/lucidrains/Adan-pytorch
 
 **Optimizers to try**
 ```
