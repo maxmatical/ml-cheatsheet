@@ -27,6 +27,9 @@
   - [1st place solution](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/332243)
   - [2nd place solution](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/332234)
 
+[Feedback Prize - Predicting Effective Arguments 1st place solution](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/347536)
+- 
+
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
 
@@ -303,3 +306,7 @@ https://docs.mosaicml.com/en/stable/method_cards/alibi.html#alibi
 
 ## Finetuning GPT-NeoX
 https://nn.labml.ai/neox/index.html
+
+## Finetuning models with only 20 examples
+- https://twitter.com/colinraffel/status/1560672781330567174?t=HOpz3AgPBtJJa4HAdm8dSA&s=09&fbclid=IwAR0pxKq39IcNfnZgLCTOJuGdW7U7ZVBOF-RlaUVBdMqNwj5jEAPiMB-ZZy0
+- Few-shot parameter efficient finetuning
