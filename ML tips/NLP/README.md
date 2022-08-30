@@ -172,6 +172,9 @@ use custom tranformer model with
 topic_model = BERTopic(embedding_model={$hf-model-checkpoint})
 ```
 
+### BertTopic + GPU with cuML
+https://medium.com/bumble-tech/multilingual-gpu-powered-topic-modelling-at-scale-dc8bd08609ef?fbclid=IwAR05S4dwVZcAvpJ3e7jks2yaUTJ_6LA2ONS67iayBU_OX6VV2GF5j0FbW_8
+
 ## Mixup for text
 twitter thread: https://twitter.com/TheZachMueller/status/1451187672072921101
 
