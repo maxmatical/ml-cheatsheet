@@ -305,6 +305,12 @@ https://github.com/facebookresearch/optimizers
 - beats AdamW, SAM, SGD, Adabelief, etc. in Vision/NLP/RL tasks
 - Code: https://github.com/sail-sg/Adan
 - (non-official) pytorch implementation: https://github.com/lucidrains/Adan-pytorch
+- report on Adan vs adam: https://wandb.ai/capecape/adan_optimizer/reports/Adan-A-New-Optimizer-That-Challenges-Adam--VmlldzoyNTQ5NjQ5
+  - recommends `betas = (0.02, 0.08, 0.01)` aka baseline values
+  - recommends 10x lr of adam
+  - seems to perform very similar to AdamW, but slower
+    - note: only on 1 model for image classification
+  - need comparison to Ranger21 to decide the "best" optimizer
 
 **Optimizers to try**
 ```
