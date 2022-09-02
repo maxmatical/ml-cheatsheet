@@ -190,10 +190,8 @@ https://github.com/huggingface/accelerate
 - requires >`V0.11.0`
 
 ### Dealing with gradient syncing in gradient accumulation steps
-- (as of `v0.11.0`) need to deal with gradient sync manually in accelerate
-- manually call `accelerator.no_sync(model)` during gradient accumulation steps
-- https://twitter.com/TheZachMueller/status/1541396521668575232?t=KtJspZqH7Pz3smxzlwgkMg&s=09&fbclid=IwAR2Zjo89ss9RRuCJXWz5evZqT8n3qeNrd9X-6iK9AHewHSWbYk8IT4nwu1Q
-- error in the code posted, should be when `step % grad_accum_steps != 0: with accelerator.no_sync(model)...`
+- (as of `v0.12.0`) the `with accelerator.accumulate(model):` context manager solves this
+    - only performs gradient sync if we reach grad accumulation steps or end of epoch 
 
 ## Deepspeed in accelerate
 - https://github.com/huggingface/accelerate#launching-training-using-deepspeed
