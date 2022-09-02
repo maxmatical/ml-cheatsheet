@@ -195,3 +195,9 @@ STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
 
 ## Synthetic Data Generation to Improve Model Performance
 https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
+
+## COSINE: Fine-tuning pre-trained LMs without any labeled data
+https://twitter.com/dvilasuero/status/1565580468862566400?t=hnpGI7QBKYbyYegdvWUA8w&s=09&fbclid=IwAR1Kb5aAHIaJzpSfQsTswi5U7IZlZBh6DCjJRt_T6jUfZth-NJELf6_bozw
+
+## ASTRA: Self-training with Weak Supervision
+https://twitter.com/dvilasuero/status/1565248371325026304?t=jnkGlrWhhbBJgjxkonEwag&s=09&fbclid=IwAR1Kb5aAHIaJzpSfQsTswi5U7IZlZBh6DCjJRt_T6jUfZth-NJELf6_bozw
