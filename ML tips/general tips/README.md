@@ -71,6 +71,13 @@ multi-gpu training in notebooks: https://github.com/philtrade/mpify
 **Tip:** Can use class loss/confusion and generate unlabelled data pseudolabels (if you have unlabelled data) to prioritize classes for manual labelling
   - eg `cats` and `dogs` get confused a lot in validation data, predict on unlabelled dataset, and focus on predictions of `cats` and `dogs` for manual labelling
 
+# Diagnosing DL model performance
+https://twitter.com/rasbt/status/1565798671781961728
+1. Make sure training loss converged
+2. Check for overfitting
+3. Compare accuracy to a zero-rule baseline
+4. Look at failure cases
+5. Plot at a confusion matrix
 
 # production setting considerations
 - have train/val/test set
