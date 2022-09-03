@@ -28,7 +28,10 @@
   - [2nd place solution](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching/discussion/332234)
 
 [Feedback Prize - Predicting Effective Arguments 1st place solution](https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/347536)
-- 
+[Feedback Prize - Predicting Effective Arguments 2nd place solution](https://wandb.ai/darek/fbck/reports/How-To-Build-an-Efficient-NLP-Model--VmlldzoyNTE5MDEx#full-data-and-stochastic-weight-averaging-(swa))
+- uses SWA to improve generalization performance
+- uses [Adversarial Weight Perturbation (AWP)](https://www.kaggle.com/code/wht1996/feedback-nn-train/notebook)
+  - required more hyperparam tuning + longer training
 
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
