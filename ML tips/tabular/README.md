@@ -150,3 +150,7 @@ http://contrib.scikit-learn.org/category_encoders/index.html
 
 ### Sample kaggle tabular data pipeline 
 https://github.com/arnabbiswas1/kaggle_pipeline_tps_aug_22
+
+### (Regualrization technique) swap noise
+- https://twitter.com/rasbt/status/1567521047221604353
+- with some percentage (15%), replace values of a column with another value in the same column
