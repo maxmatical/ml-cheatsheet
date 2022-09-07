@@ -27,6 +27,8 @@ https://arxiv.org/abs/2202.01381
 
 pytorch implementation: https://github.com/lucidrains/ETSformer-pytorch
 
+official github: https://github.com/salesforce/ETSformer
+
 ## Do We Really Need Deep Learning Models for Time Series Forecasting?
 
 https://arxiv.org/abs/2101.02118
