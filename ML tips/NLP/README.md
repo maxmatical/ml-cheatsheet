@@ -285,6 +285,9 @@ https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIK
 - https://docs.cohere.ai/prompt-engineering-wiki/?fbclid=IwAR0J08sW24dcBq_YpGpF4G0Pb-5OexCdlcscSsTlk28l5Ij2sXeQlg7GLrQ
 - NER specific: https://towardsdatascience.com/advanced-ner-with-gpt-3-and-gpt-j-ce43dc6cdb9c#4010-fa6647c13fbe-reply
 
+### using weird delimiters in prompts
+https://twitter.com/goodside/status/1566899368535408640?fbclid=IwAR13iUzCVHnKpb2hX5kXJ2dsOvevspQATdPFnABHK0tDaGGQLgAxJ4kJUuI
+
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
 - github: https://github.com/THUDM/GLM-130B
