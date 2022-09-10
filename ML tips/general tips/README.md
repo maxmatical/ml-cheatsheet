@@ -362,7 +362,7 @@ optimizer_config_mapping = {
 }
 ```
 
-Consider setting the following (for transformers, AdamW only?
+Consider setting the following (for transformers, AdamW only?)
 ```
 no_decay = ['bias', 'LayerNorm.weight']
 optimizer_grouped_parameters = [
@@ -417,6 +417,10 @@ total_steps = n_epochs * len(train_dl)
 scheduler = OneCycleLR(optimizer, max_lr=lr, total_steps=total_steps)
 
 for i in range(n_epochs):
+    # check:
+    # 1. k is > 0 (if 0, don't use swa at all)
+    # 2. ith epoch is at k% pct of training
+    use_swa: bool = (k > 0) and (i >= int(k * n_epochs))
     ##########
     # training step
     ##########
@@ -426,11 +430,11 @@ for i in range(n_epochs):
         loss.backward()
         opt.step()
         # only update lr schedule if not using SWA
-        if i < int(k * n_epochs):
+        if not use_swa:
           scheduler.step()
     
-    # only start swa after k% of epochs
-    if i >= int(k * n_epochs):
+    # only update parameters for swa if conditions are met
+    if use_swa:
         swa_model.update_parameters(model)
         
     ##########
