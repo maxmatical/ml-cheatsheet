@@ -413,8 +413,8 @@ The following seem to be good choices
 ```
 # after k % of epochs, swa at the end of every epoch
 swa_model = torch.optim.swa_utils.AveragedModel(model)
-scheduler = ReduceLROnPlateau(optimizer, 'min/max')
-swa_disable_scheduler = True
+total_steps = n_epochs * len(train_dl)
+scheduler = OneCycleLR(optimizer, max_lr=lr, total_steps=total_steps)
 
 for i in range(n_epochs):
     ##########
@@ -425,36 +425,39 @@ for i in range(n_epochs):
         loss = loss_func(preds, y)
         loss.backward()
         opt.step()
+        # only update lr schedule if not using SWA
+        if i < int(k * n_epochs):
+          scheduler.step()
     
     # only start swa after k% of epochs
-    if i > int(k * n_epochs):
+    if i >= int(k * n_epochs):
         swa_model.update_parameters(model)
         
     ##########
     # val step
     ##########
     # don't use swa yet
-    if i <= int(k * n_epochs):
-        for x, y in val_dls:
-            preds = model(x)
-            ...
+    for x, y in val_dls:
+        preds = model(x)
+        ...
             
-    # starting swa: switch over to swa_model
-    else:
-        for x, y in val_dls:
-            preds = swa_model(x) # <- IMPORTANT to use swa_model!
-            ...
-        
-        # optionally don't scheduler.step
-        if swa_disable_scheduler:
-            continue
-      
-    scheduler.step(val_metric)
 
 # Update bn statistics for the swa_model at the end
 torch.optim.swa_utils.update_bn(loader, swa_model)
 
-
+# final validation check wtih SWA model now
+if swa_model:
+  model = swa_model
+for x, y in val_dls:
+  preds = model(x)
+  # calc loss + metrics
+  ....
+print(swa_loss, swa_metric)
+        
+        
+#########
+alternative meethod
+#########
 # after x% of total training steps, swa update every k steps after
 # using a different lr cycle
 
@@ -488,18 +491,11 @@ for i in range(n_epochs):
     ##########
     # val step
     ##########
-    # don't use swa yet
-    if i <= int(k * n_epochs):
-        for x, y in val_dls:
-            preds = model(x)
-            ...
+    # don't use swa in validation
+    for x, y in val_dls:
+        preds = model(x)
+        ...
             
-    # starting swa: switch over to swa_model
-    else:
-        for x, y in val_dls:
-            preds = swa_model(x) # <- IMPORTANT to use swa_model!
-            ...
-    
 # outside of training loop
 torch.optim.swa_utils.update_bn(loader, swa_model)
 
