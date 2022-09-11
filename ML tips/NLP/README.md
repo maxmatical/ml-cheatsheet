@@ -316,6 +316,8 @@ https://nn.labml.ai/neox/index.html
 ## Finetuning models with only 20 examples
 - https://twitter.com/colinraffel/status/1560672781330567174?t=HOpz3AgPBtJJa4HAdm8dSA&s=09&fbclid=IwAR0pxKq39IcNfnZgLCTOJuGdW7U7ZVBOF-RlaUVBdMqNwj5jEAPiMB-ZZy0
 - Few-shot parameter efficient finetuning
+- paper: [Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning](https://arxiv.org/abs/2205.05638)
+- github: https://github.com/r-three/t-few
 
 ## Efficient Methods for Natural Language Processing: A Survey
 https://arxiv.org/abs/2209.00099
