@@ -313,7 +313,7 @@ https://docs.mosaicml.com/en/stable/method_cards/alibi.html#alibi
 ## Finetuning GPT-NeoX
 https://nn.labml.ai/neox/index.html
 
-## Finetuning models with only 20 examples
+## Finetuning models with only 20 examples (T-few)
 - https://twitter.com/colinraffel/status/1560672781330567174?t=HOpz3AgPBtJJa4HAdm8dSA&s=09&fbclid=IwAR0pxKq39IcNfnZgLCTOJuGdW7U7ZVBOF-RlaUVBdMqNwj5jEAPiMB-ZZy0
 - Few-shot parameter efficient finetuning
 - paper: [Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning](https://arxiv.org/abs/2205.05638)
@@ -321,3 +321,14 @@ https://nn.labml.ai/neox/index.html
 
 ## Efficient Methods for Natural Language Processing: A Survey
 https://arxiv.org/abs/2209.00099
+
+## Selective Annotation Makes Language Models Better Few-Shot Learners
+- https://arxiv.org/abs/2209.01975
+- Compared to state-of-the-art supervised finetuning approaches, it yields similar performance with 10-100x less annotation cost across 10 task
+- How does this compare to t-few?
+- Github: https://github.com/HKUNLP/icl-selective-annotation
+
+## Alexa Teacher Models
+- paper: https://arxiv.org/abs/2208.01448
+- 20B seq2seq model (like T5)
+- Better than large decoder only models on zero-shot superglue (except PALM)
