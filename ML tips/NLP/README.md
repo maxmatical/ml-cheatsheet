@@ -31,6 +31,7 @@
 
 
 [Feedback Prize - Predicting Effective Arguments 2nd place solution](https://wandb.ai/darek/fbck/reports/How-To-Build-an-Efficient-NLP-Model--VmlldzoyNTE5MDEx#full-data-and-stochastic-weight-averaging-(swa))
+- domain adaptation by pretraining on target corpus
 - uses SWA to improve generalization performance
 - uses [Adversarial Weight Perturbation (AWP)](https://www.kaggle.com/code/wht1996/feedback-nn-train/notebook)
   - required more hyperparam tuning + longer training
