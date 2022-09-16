@@ -349,3 +349,6 @@ https://huggingface.co/blog/megatron-training
 ### Resources for prompt engineering 
 https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040ZG8XTtA&s=09&fbclid=IwAR3tW69m60AzFdGZbqd5g0ZVKH2BVPyYPmb8EsN7PbScrS0LzKDkrHgjdQk
 
+### Building a Search-Based Discord Bot with Language Models
+https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?fbclid=IwAR1-PzwBsNYI8IYqGl2mmxYolNGJUu_CEj75XTWklbyU0_-Zhbe78s9uDlc
+
