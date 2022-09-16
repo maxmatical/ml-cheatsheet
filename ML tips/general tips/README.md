@@ -885,6 +885,13 @@ https://github.com/songhwanjun/Awesome-Noisy-Labels?fbclid=IwAR2y9hkYhvm2o8R5Bd_
 1. use model paralellism (eg deepspeed zero3 + offload) to free up as much mem as possible for largest batch size
 2. cache logits and targets per step, similar to gradient accumulation, until you get to a large enough batch size, then compute the loss with all the cache
 
+### Various tools for python/pytorch etc.
+https://github.com/stas00/toolbox?fbclid=IwAR3Kod863Qg4SYTfJl8qq9-s-VbRY0UpjG4K3JNCLlP4xmMeDOvrhc_arIE
+
+### The WeightWatcher tool for predicting the accuracy of Deep Neural Networks
+https://github.com/CalculatedContent/WeightWatcher
+
+
 # AutoML stuff
 
 ## autogluon
