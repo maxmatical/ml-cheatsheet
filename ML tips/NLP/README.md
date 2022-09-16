@@ -335,3 +335,17 @@ https://arxiv.org/abs/2209.00099
 - paper: https://arxiv.org/abs/2208.01448
 - 20B seq2seq model (like T5)
 - Better than large decoder only models on zero-shot superglue (except PALM)
+
+### Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate
+https://huggingface.co/blog/bloom-inference-pytorch-scripts?fbclid=IwAR32GkgjNi9Towdm6DwqzpWdotP5hXNv-WQl7ilM83xQ4ZmO9a48kQtriWI
+- only provides deepspeed inference script
+
+### Accelerate GPT-J inference with DeepSpeed-Inference on GPUs
+https://www.philschmid.de/gptj-deepspeed-inference#3-optimize-gpt-j-for-gpu-using-deepspeeds-inferenceengine
+
+### How to train a Language Model with Megatron-LM
+https://huggingface.co/blog/megatron-training
+
+### Resources for prompt engineering 
+https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040ZG8XTtA&s=09&fbclid=IwAR3tW69m60AzFdGZbqd5g0ZVKH2BVPyYPmb8EsN7PbScrS0LzKDkrHgjdQk
+
