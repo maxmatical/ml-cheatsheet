@@ -35,6 +35,55 @@
 - uses SWA to improve generalization performance
 - uses [Adversarial Weight Perturbation (AWP)](https://www.kaggle.com/code/wht1996/feedback-nn-train/notebook)
   - required more hyperparam tuning + longer training
+  
+## Kaggle - how to build an efficient NLP model 
+based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution](https://wandb.ai/darek/fbck/reports/How-To-Build-an-Efficient-NLP-Model--VmlldzoyNTE5MDEx#full-data-and-stochastic-weight-averaging-(swa))
+
+### deberta
+- most top solutions for nlp converged to deberta for seq classification tasks
+- if > 512 tokens, longformer works better than bert/roberta/bart, but deberta can handle >512 tokens
+- note for deberta >v2 use new vocab
+- encoder-decoder models may work better for seq2seq tasks (translation, QA, summarization)
+    - classification -> better to use encoder only
+    - T5 would be an interesting model to try as well
+
+### data augmentation for NLP
+- random crop: take only a part of text
+- cutout: replace tokens with `MASK` token -> very common technique in kaggle comps (also called token dropout, random masking)
+- progressive resizing: start with shorter seq len -> grow as you train
+
+### advarsarial weight perturbation (AWP)
+- during training, perturb the inputs and weights
+- leads to flatter loss landscape -> better generalization 
+- requires longer training (2-3x)
+- requires tuining `adv_lr`, `adv_eps`, `start_epoch`
+- check the AWP notebook on kaggle
+
+### using additional data (pseudolabelling)
+- might have acess to a lot of data, but unlabelled
+    - this was the case with this kaggle comp
+    - had a lot of essays form prev comps that didn't have labels
+1. additional mlm in-domain pre-training (domain adaptation)
+2. multi-task (multi-stage) finetuning
+    - finetune on auxillary task(a similar task) then finetune on target task (sequential)
+3. pseudolabels
+    - train on labelled data (1 or multiple models)
+    - generate pseudolabels for unlabelled data
+    - noisier labels, but lots more data
+    - soft labels work better than hard labels in practice
+        - take all data instead of just high confidence hard labels
+        - use KL divergence loss on soft labels! (check logits or confidence?)
+            - seems like predicted probability
+
+### additional techniques
+1. setting dropout to 0
+    - all layers in transformers
+    - may vary across arch/tasks
+        - may need to experiment (may be case by case basis)
+2. SWA
+    - average weights across checkpoints
+    - took task 3 checkpoints instead of a % of training epochs
+
 
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
