@@ -37,7 +37,7 @@
   - required more hyperparam tuning + longer training
   
 ## Kaggle - how to build an efficient NLP model 
-based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution](https://wandb.ai/darek/fbck/reports/How-To-Build-an-Efficient-NLP-Model--VmlldzoyNTE5MDEx#full-data-and-stochastic-weight-averaging-(swa))
+based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution](https://wandb.ai/darek/fbck/reports/How-To-Build-an-Efficient-NLP-Model--VmlldzoyNTE5MDEx)
 
 ### deberta
 - most top solutions for nlp converged to deberta for seq classification tasks
@@ -74,6 +74,7 @@ based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution
         - take all data instead of just high confidence hard labels
         - use KL divergence loss on soft labels! (check logits or confidence?)
             - seems like predicted probability
+    - first train on pseudolabeled data ONLY via KL divergence, then finetune on labeled data normally
 
 ### additional techniques
 1. setting dropout to 0
