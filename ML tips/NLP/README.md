@@ -402,3 +402,11 @@ https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040Z
 ### Building a Search-Based Discord Bot with Language Models
 https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?fbclid=IwAR1-PzwBsNYI8IYqGl2mmxYolNGJUu_CEj75XTWklbyU0_-Zhbe78s9uDlc
 
+### Efficient Few-Shot Learning Without Prompts
+- paper: https://arxiv.org/abs/2209.11055
+- github: https://github.com/huggingface/setfit
+- pretrained models: https://huggingface.co/setfit
+- finetune a pretrained sentence transformer on a small set of sentence pairs (can be as low as 2 example sentences per class) using a contrastive loss
+- using ft sentence transformer to generate embeddings
+- training a classifier head on top
+
