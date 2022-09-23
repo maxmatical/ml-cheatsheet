@@ -125,9 +125,10 @@ https://muellerzr.github.io/fastblog/2020/04/22/TabularNumpy.html
 https://twitter.com/TheZachMueller/status/1400533460784197638
 
 ### GBM
-- light gbm or catboost (catboost seems to be best single model)
+- light gbm, catboost, xgboost
 - https://catboost.ai/docs/concepts/about.html
 - hyperparam tuning for catboost https://catboost.ai/docs/concepts/parameter-tuning.html
+- hyperparam tuning xgboost + optuna: https://github.com/tunguz/TPS_11_2021/blob/main/scripts/XGB_Optuna_Dask_DGX_Station_A100_3.ipynb
 
 ### DeepETA: How Uber Predicts Arrival Times Using Deep Learning 
 https://eng.uber.com/deepeta-how-uber-predicts-arrival-times/
@@ -154,3 +155,6 @@ https://github.com/arnabbiswas1/kaggle_pipeline_tps_aug_22
 ### (Regualrization technique) swap noise
 - https://twitter.com/rasbt/status/1567521047221604353
 - with some percentage (15%), replace values of a column with another value in the same column
+
+### regularization techniques for trainning NN on tabular data
+https://twitter.com/rasbt/status/1572616437977546754?fbclid=IwAR3olVyGHIOmQ6RwAq-vnkxXs-Dxvch46YFyYY3zBhtFoDZpPVMrAb7-hhg
