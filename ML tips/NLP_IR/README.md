@@ -237,6 +237,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
    - Train *initial* retriever using ALL data
    - use initial retriever to filter out synthetic `(q, d)` pairs where `d` is not in top-k most retrieved docs (practically, `k=1`)
    - continue training from initial retriever checkpoint
+   - performs better on 8/11 tested BEIR datasets
   3. Training retriever
    - start form T5 encoder checkpoint
    - pretrain on C4 with independent cropping task from Contriever
@@ -244,6 +245,12 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
    - After a set of epochs, apply filtering on synthetic data
    - Continue training on filtered data
    - When number of docs < 6k, use `bs=128`, otherise use `bs=6k`
+  - Better than GPL on 8 measured tasks
+  - better reranker too than monoT5 (3b) with a 110M model
+  - Possible extension to include pseudolabel distillation:
+   - use roudabout filtering to filter for relevancy
+   - train CE reranker
+   - use CE scores to distill via MarginMSE
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
