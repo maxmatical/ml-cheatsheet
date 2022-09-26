@@ -225,6 +225,25 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - https://arxiv.org/abs/2207.07087
  - promp tuning instead full finetuning from a model checkpoint 
  - pt instead of ft on dpr-nq -> ms marco -> better performance on BEIR than full finetuning
+ 
+20. Promptagator: Few-shot Dense Retrieval From 8 Examples
+ - https://arxiv.org/abs/2209.11755
+ - similar to GPL, but scaling super hard!
+ - 3 main steps:
+  1. Using a PLM (in this case 137B FLAN model) to generate queries (like QGen, GPL)
+   - done either 0-shot or few-shot (up to 8 examples depending on context length)
+  2. Consistency filtering using only generated data
+   - methods like GPL require an external model as the filter (eg MSMARCO MiniLM)
+   - Train *initial* retriever using ALL data
+   - use initial retriever to filter out synthetic `(q, d)` pairs where `d` is not in top-k most retrieved docs (practically, `k=1`)
+   - continue training from initial retriever checkpoint
+  3. Training retriever
+   - start form T5 encoder checkpoint
+   - pretrain on C4 with independent cropping task from Contriever
+   - finetune using DPR on ALL data
+   - After a set of epochs, apply filtering on synthetic data
+   - Continue training on filtered data
+   - When number of docs < 6k, use `bs=128`, otherise use `bs=6k`
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
