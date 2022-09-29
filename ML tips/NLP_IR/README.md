@@ -248,9 +248,12 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
   - Better than GPL on 8 measured tasks
   - better reranker too than monoT5 (3b) with a 110M model
   - Possible extension to include pseudolabel distillation:
-   - use roudabout filtering to filter for relevancy
+   - use round-trip filtering to filter for relevancy
    - train CE reranker
    - use CE scores to distill via MarginMSE
+  - Questions:
+   1. Finetuned (eg T-Few, T5 etc.) vs prompting
+   2. CE distillation vs round-trip filtering (or combining the 2 if possible)
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
