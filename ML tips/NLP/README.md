@@ -410,3 +410,6 @@ https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?
 - using ft sentence transformer to generate embeddings
 - training a classifier head on top
 
+### Training transformer language models with reinforcement learning (trlx)
+- https://twitter.com/carperai/status/1577015392773414914?t=0Iqc4B0znD48FNFjqdAiTw&s=09&fbclid=IwAR0-tniAgUA_CHCJ1ryZyDZepRyH1SPX9X4FlTuDfRRAb4G8lx_IZpc8gFk
+- https://github.com/CarperAI/trlx
