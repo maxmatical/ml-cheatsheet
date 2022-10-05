@@ -68,6 +68,9 @@ https://github.com/ELS-RD/triton_transformers
 ### Accerlating BERT inference with DeepSpeed-Inference on GPUs
 https://www.philschmid.de/bert-deepspeed-inference
 
+### Facebook AITemplate
+
+
 
 ## Deployment Frameworks
 
