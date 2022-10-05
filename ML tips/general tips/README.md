@@ -583,6 +583,8 @@ model.fit(X, y)
 ### Potentially better hyperparameter optimization (hpo) with HEBO (NEURIPS 2020 optimization winner)
 https://github.com/huawei-noah/HEBO 
 
+### Alternative: LIPO vs Optuna
+https://github.com/jdb78/lipo
 
 ### Batch size:
 - For speed: set bs to as large as will fit in GPU memory
