@@ -267,6 +267,12 @@ https://www.sbert.net/examples/domain_adaptation/README.html
 ## replace attention layers with ALIBI in decoder only LMs
 https://docs.mosaicml.com/en/v0.5.0/method_cards/alibi.html
 
+## Mosaic ML: Composer - ALiBi for BERT/RoBERTa
+https://docs.mosaicml.com/en/stable/method_cards/alibi.html#alibi
+- requires composer >= 0.9
+- Supports BERT/RoBERTa and similar archs
+  - will log an error if model class is unsupported (double check)
+
 ## Self training for NLP (few-shot classification)
 
 STraTA: Self-Training with Task Augmentation for Better Few-shot Learning
@@ -330,7 +336,7 @@ https://github.com/lvwerra/trl
 https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-neural-network-in-open-source-d1df53d0e9a6
 - useful tricks for speeding up and stablizing training of large language models
 
-## On debugging large scal training;
+## On debugging large scale training;
 https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIKT0U0bKw&s=09&fbclid=IwAR2S5MAS8CFvTX3d4OeB_lrp-flH0gW_CbGMaMh-kG6JNe0-MQciTRA-4zM
 
 ## Prompt engineering for LLMs
@@ -340,6 +346,18 @@ https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIK
 
 ### using weird delimiters in prompts
 https://twitter.com/goodside/status/1566899368535408640?fbclid=IwAR13iUzCVHnKpb2hX5kXJ2dsOvevspQATdPFnABHK0tDaGGQLgAxJ4kJUuI
+
+### Resources for prompt engineering 
+https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040ZG8XTtA&s=09&fbclid=IwAR3tW69m60AzFdGZbqd5g0ZVKH2BVPyYPmb8EsN7PbScrS0LzKDkrHgjdQk
+
+### AMA prompting for LLMs
+- https://arxiv.org/abs/2210.02441
+- Enables GPT-J-6B model to perform better than GPT3 on 15/20 benchmarks
+- Github: https://github.com/HazyResearch/ama_prompting
+
+### Self ask prompting
+- paper https://ofir.io/self-ask.pdf
+- code https://github.com/ofirpress/self-ask/blob/main/self-ask_plus_search-engine_demo.ipynb
 
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
@@ -357,11 +375,7 @@ https://twitter.com/nlpguy_/status/1556881385927098369
 - Scaling data is as important as scaling model size (Chinchilla)
 
 
-## Mosaic ML: Composer - ALiBi for BERT/RoBERTa
-https://docs.mosaicml.com/en/stable/method_cards/alibi.html#alibi
-- requires composer >= 0.9
-- Supports BERT/RoBERTa and similar archs
-  - will log an error if model class is unsupported (double check)
+
 
 ## Finetuning GPT-NeoX
 https://nn.labml.ai/neox/index.html
@@ -386,23 +400,21 @@ https://arxiv.org/abs/2209.00099
 - 20B seq2seq model (like T5)
 - Better than large decoder only models on zero-shot superglue (except PALM)
 
-### Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate
+## Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate
 https://huggingface.co/blog/bloom-inference-pytorch-scripts?fbclid=IwAR32GkgjNi9Towdm6DwqzpWdotP5hXNv-WQl7ilM83xQ4ZmO9a48kQtriWI
 - only provides deepspeed inference script
 
-### Accelerate GPT-J inference with DeepSpeed-Inference on GPUs
+## Accelerate GPT-J inference with DeepSpeed-Inference on GPUs
 https://www.philschmid.de/gptj-deepspeed-inference#3-optimize-gpt-j-for-gpu-using-deepspeeds-inferenceengine
 
-### How to train a Language Model with Megatron-LM
+## How to train a Language Model with Megatron-LM
 https://huggingface.co/blog/megatron-training
 
-### Resources for prompt engineering 
-https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040ZG8XTtA&s=09&fbclid=IwAR3tW69m60AzFdGZbqd5g0ZVKH2BVPyYPmb8EsN7PbScrS0LzKDkrHgjdQk
 
-### Building a Search-Based Discord Bot with Language Models
+## Building a Search-Based Discord Bot with Language Models
 https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?fbclid=IwAR1-PzwBsNYI8IYqGl2mmxYolNGJUu_CEj75XTWklbyU0_-Zhbe78s9uDlc
 
-### Efficient Few-Shot Learning Without Prompts
+## Efficient Few-Shot Learning Without Prompts
 - paper: https://arxiv.org/abs/2209.11055
 - github: https://github.com/huggingface/setfit
 - pretrained models: https://huggingface.co/setfit
@@ -410,6 +422,32 @@ https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?
 - using ft sentence transformer to generate embeddings
 - training a classifier head on top
 
-### Training transformer language models with reinforcement learning (trlx)
+## Training transformer language models with reinforcement learning (trlx)
 - https://twitter.com/carperai/status/1577015392773414914?t=0Iqc4B0znD48FNFjqdAiTw&s=09&fbclid=IwAR0-tniAgUA_CHCJ1ryZyDZepRyH1SPX9X4FlTuDfRRAb4G8lx_IZpc8gFk
 - https://github.com/CarperAI/trlx
+
+## MoE + Weight sharing (WideNet)
+- https://arxiv.org/abs/2107.11817
+- Free speedup for training, more parameter efficient than MoE
+- WideNet on HomebrewNLP-Jax: https://github.com/HomebrewNLP/HomebrewNLP-Jax/pull/85
+
+## Considerations for code generation models (discussions from BigCode)
+1. Architecture choice: AE, DE, Seq2seq
+  - DE may work better for zero-shot, seq2seq better for finetuning
+2. Training objective
+  - AR (left to right) generation vs fill-in-the-middle (FIM)/causal masking
+  - FIM seems more promising than causal masking?
+3. Positional encoding
+  - Rotary embedding vs ALIBI
+  - ALIBI + FIM/causal masking may hurt performance since the tokens are rotated
+    - may require "rotating" the matrix
+
+Considerations:
+1. FIM + rotary 
+2. FIM + alibi
+  - rotated vs un-rotated alibi
+3. rotary + no FIM
+
+Useful papers:
+- [InCoder (FAIR)](https://arxiv.org/abs/2204.05999)
+- [FIM (OpenAI)](https://arxiv.org/abs/2207.14255)
