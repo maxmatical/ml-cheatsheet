@@ -204,3 +204,7 @@ https://huggingface.co/docs/accelerate/v0.12.0/en/concept_guides/gradient_synchr
 2. `no_sync()` on steps when performing gradient accumulation, only sync when `if (index+1) % gradient_accumulation_steps == 0:`
 - **NOTE: ALWAYS USE `with accelerator.no_sync(model):` or `with ddp_model.no_sync():` during gradient accumulation steps!!**
     - syncing during grad accumulation steps is only going to cause slowdown
+    
+## Auto batch size finder in accelerate
+https://twitter.com/TheZachMueller/status/1578022296681213958?t=32efoaOLbMEcRuijbLQvog&s=09&fbclid=IwAR01HSxcREe1jGhgGKigkUPQSt3INTnLR6mD2KN2X5oOAA1risH1dlgjDTM
+
