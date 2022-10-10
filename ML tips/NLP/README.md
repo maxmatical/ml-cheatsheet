@@ -364,6 +364,8 @@ https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040Z
 - github: https://github.com/THUDM/GLM-130B
   - includes training + architecture recipe
   - Interesting finding: using embedding normalization (used in BLOOM) stabilizes training, but reduces downstream performance significantly
+  - https://github.com/THUDM/GLM-130B/blob/main/logs/main-log-en.md
+- leverage a unique scaling property of GLM-130B to reach INT4 quantization, without quantization aware training and with almost no performance loss, making it the first among 100B-scale models
 
 ## Improvements to train large language models
 https://twitter.com/nlpguy_/status/1556881385927098369
