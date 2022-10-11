@@ -361,20 +361,33 @@ https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040Z
 
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
+- arxiv: https://arxiv.org/abs/2210.02414
 - github: https://github.com/THUDM/GLM-130B
   - includes training + architecture recipe
   - Interesting finding: using embedding normalization (used in BLOOM) stabilizes training, but reduces downstream performance significantly
   - https://github.com/THUDM/GLM-130B/blob/main/logs/main-log-en.md
 - leverage a unique scaling property of GLM-130B to reach INT4 quantization, without quantization aware training and with almost no performance loss, making it the first among 100B-scale models
+- Improvements over GPT/PALM/OPT/BLOOM etc.
+  - ROPE as positional encoding was better than ALIBI
+  - mask in-filling + prefix lm objective
+  - Deepnorm instead of pre-LN for layer norm improved stability in training
+  - GeGLU instead of FFN (GLU + GELU activation)
+  - No embedding norm (from BLOOM) since it lowered performance
+  - Embedding Layer Gradient Shrink: identifies that the gradient norm can serve as an informative indicator of training collapses
 
 ## Improvements to train large language models
 https://twitter.com/nlpguy_/status/1556881385927098369
 - 2D positional encodings (GLM > GPT3)
+  - from GLM experiments ROPE > ALIBI (may be due to infilling objective)
 - allowing arbitrary order to predict spans
 - Normformer
 - P-tuning v2
 - MoE (mixture of experts)
 - Scaling data is as important as scaling model size (Chinchilla)
+- In-filling maybe better than left to right decoding (GLM)
+- GeGLU instead of FFN
+- DeepNorm instead of pre-LN for layer norm
+- don't use embedding norm
 
 
 
