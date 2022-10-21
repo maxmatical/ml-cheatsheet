@@ -492,6 +492,7 @@ https://huggingface.co/spaces/mteb/leaderboard
   - scaling number of tasks
   - scaling model size
   - finetuning on chain-of-thought-data
+- Flan T5 huggingface checkpoint: https://huggingface.co/google/flan-t5-xxl?text=Answer+the+following+yes%2Fno+question.+Can+you+write+a+whole+Haiku+in+a+single+tweet%3F
   
 ## InstructGPT
 - instruction finetuning using RLHF 
