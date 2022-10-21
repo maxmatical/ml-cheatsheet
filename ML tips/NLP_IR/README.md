@@ -349,3 +349,7 @@ https://hackmd.io/gmDAH0fqRAKcZl3sPLdjsg
 ## Building a Search-Based Discord Bot with Language Models
 https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?fbclid=IwAR1-PzwBsNYI8IYqGl2mmxYolNGJUu_CEj75XTWklbyU0_-Zhbe78s9uDlc
 
+## Massive Text Embedding Benchmark (MTEB) Leaderboard
+https://huggingface.co/spaces/mteb/leaderboard
+
+
