@@ -466,3 +466,34 @@ Considerations:
 Useful papers:
 - [InCoder (FAIR)](https://arxiv.org/abs/2204.05999)
 - [FIM (OpenAI)](https://arxiv.org/abs/2207.14255)
+
+
+## Massive Text Embedding Benchmark (MTEB) Leaderboard
+https://huggingface.co/spaces/mteb/leaderboard
+
+## UL2
+- paper: https://arxiv.org/abs/2205.05131v1
+- uses a mixture of denoiser training objective
+ - x-denoiser: extreme denoising
+ - r-denoiser: short spans and low corruption
+ - s-denoiser: sequential denoising/prefix lm objective
+ - helps add data (better scaling laws?)
+- enc/dec > decoder only
+- weights https://huggingface.co/google/ul2
+
+## Transcending Scaling Laws with 0.1% Extra Compute
+- paper: https://arxiv.org/abs/2210.11399
+- continues training a LLM (PALM) on a. few more steps with UL2's mixture-of-denoiser objective
+- improves scaling properties
+
+## Scaling Instruction-Finetuned Language Models
+- instruction finetuning (not using RL from human feedback, but similar to T0's multitask finetuning)
+- explores
+  - scaling number of tasks
+  - scaling model size
+  - finetuning on chain-of-thought-data
+  
+## InstructGPT
+- instruction finetuning using RLHF 
+- https://openai.com/blog/instruction-following/
+- outperforms supervised finetuning
