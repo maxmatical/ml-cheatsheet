@@ -487,6 +487,7 @@ https://huggingface.co/spaces/mteb/leaderboard
 - improves scaling properties
 
 ## Scaling Instruction-Finetuned Language Models
+- https://arxiv.org/abs/2210.11416
 - instruction finetuning (not using RL from human feedback, but similar to T0's multitask finetuning)
 - explores
   - scaling number of tasks
