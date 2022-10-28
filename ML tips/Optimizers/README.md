@@ -134,6 +134,7 @@ https://github.com/facebookresearch/optimizers
 ## Amos optimizer
 - https://twitter.com/Robin_Tian/status/1585311211457249280
 - converges faster than AdamW, but also better performance
+- up to 50% reduction in slot variables (eg running averages in AdamW), up to 70% reduction in training time (# of training steps)
 
 ## Some common optimizer configs
 ```
