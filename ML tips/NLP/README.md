@@ -85,6 +85,10 @@ based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution
     - average weights across checkpoints
     - took task 3 checkpoints instead of a % of training epochs
 
+## Better pretrained models
+https://ibm.github.io/model-recycling/
+
+example: instead of using `roberta-base`, use `janeel/muppet-roberta-base-finetuned-squad` instead
 
 ## Fastai2 with transformers:
 https://github.com/ohmeow/blurr
