@@ -268,11 +268,17 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  
 21. AlignR: Multi-Vector Retrieval as Sparse Alignment
 - https://arxiv.org/abs/2211.01267
+- twitter thread: https://twitter.com/zyzzhaoyuzhe/status/1588587504240058369
 - Claim: multi-vector retrieval models improve over single vector dual retrievers on many IR tasks
 - results:
  - 11/13 BEIR datasets (excluding NQ/Quora): 47.0 (a bit worse than promptagator)
  - **on full BEIR: 51.1 (current SOTA)** better than GTRxxl, SpladeV2, ColbertV2 etc.
 
+22. RankT5:
+- T5 reranker: either encoder-decoder or encoder-only
+- use listwise ranking losses instead of pairwise classification losses
+- better in-domain and out of domain performance
+- T5 models seems to outperform BERT, but listwise ranking losses still helps
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
