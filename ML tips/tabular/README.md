@@ -158,3 +158,9 @@ https://github.com/arnabbiswas1/kaggle_pipeline_tps_aug_22
 
 ### regularization techniques for trainning NN on tabular data
 https://twitter.com/rasbt/status/1572616437977546754?fbclid=IwAR3olVyGHIOmQ6RwAq-vnkxXs-Dxvch46YFyYY3zBhtFoDZpPVMrAb7-hhg
+
+### GBDT on residual(target - highly_correlated_feature) instead of target itself
+- https://twitter.com/a_erdem4/status/1587791119772811265
+- start to minimize from a smaller error
+- keep the feature in the GBDT model
+
