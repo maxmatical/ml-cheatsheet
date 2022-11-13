@@ -116,3 +116,6 @@ Dalle Mini: https://github.com/borisdayma/dalle-mini
 - https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html#control-flow
 - If your operations don't lend themselves to vectorization, another option is to use [lax control flow](https://jax.readthedocs.io/en/latest/jax.lax.html#control-flow-operators) operators in place of the for loops:
 
+
+## using `jax.jit` for inference pitfalls in transformers
+- https://twitter.com/ayaka14732/status/1589490234819227648
