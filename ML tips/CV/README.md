@@ -77,3 +77,6 @@ https://docs.ffcv.io/
 ### fastxtend (extended tools for fastai)
 https://github.com/warner-benjamin/fastxtend
 
+### focalnet (object detection)
+- https://twitter.com/jw2yang4ai/status/1591735758729404417?t=piNM1I3p8FgiL5LTp8LB-w&s=09&fbclid=IwAR2pBEy8OiPUas6u6vVEx7biNQOfju0ITnundDX0KXuVEm1zsmqQlqGEVHk
+- SOTA on coco
