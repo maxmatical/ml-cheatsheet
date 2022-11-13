@@ -263,6 +263,9 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - Colbert v2: 46.2
  - Promptgator (zero-shot): 45.5
  - **Promptgator (few-shot): 47.8 (current SOTA retriever only)**
+- Rerankers
+ - `cross-encoder/ms-marco-MiniLM-L-6-v2`: 0.474
+ - `castorini/monot5-3b-msmarco-10k`: 0.51 
  - Promptgator++ (zero-shot CE): 49.9
  - **Promptgator++ (few-shot CE): 52.8 (current sota CE)**
  
@@ -275,6 +278,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - **on full BEIR: 51.1 (current SOTA)** better than GTRxxl, SpladeV2, ColbertV2 etc.
 
 22. RankT5:
+- https://arxiv.org/abs/2210.10634
 - T5 reranker: either encoder-decoder or encoder-only
 - use listwise ranking losses instead of pairwise classification losses
 - better in-domain and out of domain performance
