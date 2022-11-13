@@ -111,4 +111,8 @@ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examp
 Dalle Mini: https://github.com/borisdayma/dalle-mini
   - 2D parallelism (model parallel + data parallel) with mesh and `pjit`
   - uses distributed shampoo optimizer
+  
+## Python control flow + JIT in Jax
+- https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html#control-flow
+- If your operations don't lend themselves to vectorization, another option is to use [lax control flow](https://jax.readthedocs.io/en/latest/jax.lax.html#control-flow-operators) operators in place of the for loops:
 
