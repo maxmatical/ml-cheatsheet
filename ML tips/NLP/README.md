@@ -506,3 +506,7 @@ https://huggingface.co/spaces/mteb/leaderboard
 
 ## Constrastive search in transformers
 - https://huggingface.co/blog/introducing-csearch
+
+## Flash attention
+- https://github.com/HazyResearch/flash-attention
+- metaseq + flash-attention (megatron-lm + model parallelism) https://github.com/HazyResearch/flash_metaseq
