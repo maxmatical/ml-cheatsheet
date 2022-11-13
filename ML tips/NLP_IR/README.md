@@ -254,6 +254,25 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
   - Questions:
    1. Finetuned (eg T-Few, T5 etc.) vs prompting
    2. CE distillation vs round-trip filtering (or combining the 2 if possible)
+- results:
+ - 11/13 BEIR datasets (excluding NQ/Quora)
+ - BM25: 41.9
+ - GTR-XXL: 44.9
+ - GPL: 45.5
+ - Splade v2: 46.6
+ - Colbert v2: 46.2
+ - Promptgator (zero-shot): 45.5
+ - **Promptgator (few-shot): 47.8 (current SOTA retriever only)**
+ - Promptgator++ (zero-shot CE): 49.9
+ - **Promptgator++ (few-shot CE): 52.8 (current sota CE)**
+ 
+21. AlignR: Multi-Vector Retrieval as Sparse Alignment
+- https://arxiv.org/abs/2211.01267
+- Claim: multi-vector retrieval models improve over single vector dual retrievers on many IR tasks
+- results:
+ - 11/13 BEIR datasets (excluding NQ/Quora): 47.0 (a bit worse than promptagator)
+ - **on full BEIR: 51.1 (current SOTA)** better than GTRxxl, SpladeV2, ColbertV2 etc.
+
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
