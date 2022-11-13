@@ -503,3 +503,6 @@ https://huggingface.co/spaces/mteb/leaderboard
 - instruction finetuning using RLHF 
 - https://openai.com/blog/instruction-following/
 - outperforms supervised finetuning
+
+## Constrastive search in transformers
+- https://huggingface.co/blog/introducing-csearch
