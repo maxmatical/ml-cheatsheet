@@ -726,6 +726,7 @@ https://github.com/CalculatedContent/WeightWatcher
 - https://twitter.com/__nmca__/status/1588575691284807682
 - https://arxiv.org/abs/2211.01568
 
-
+## initialize embedding layers (transformers) with normal distribution with std of 0.02 instead of 0.1
+- https://twitter.com/borisdayma/status/1588636026482089984
 
 
