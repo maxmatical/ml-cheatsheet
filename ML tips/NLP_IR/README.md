@@ -378,3 +378,8 @@ https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?
 https://huggingface.co/spaces/mteb/leaderboard
 
 
+## monoT5 reranker checkpoints
+- https://huggingface.co/castorini/monot5-3b-msmarco (10 epochs)
+- https://huggingface.co/castorini/monot5-3b-msmarco-10k (1 epoch)
+- https://huggingface.co/castorini/monot5-base-msmarco (base, 10 epochs)
+- 10k version might be better for zero-shot
