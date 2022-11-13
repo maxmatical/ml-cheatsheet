@@ -722,6 +722,24 @@ https://github.com/CalculatedContent/WeightWatcher
 - speeds up training (not about performance like SWA)
 - save last k checkpoints (after each epoch)
 
+### using active learning
+- https://twitter.com/__nmca__/status/1588575691284807682
+- https://arxiv.org/abs/2211.01568
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # AutoML stuff
 
