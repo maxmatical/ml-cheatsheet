@@ -115,8 +115,11 @@ set_optim_to_run_embedding_in_fp32(model)
 - no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
 - `use_madgrad = True` might be better for transformers
 
-## Distributed Shampoo for pytorch
-https://github.com/facebookresearch/optimizers
+## Distributed Shampoo 
+- for pytorch: https://github.com/facebookresearch/optimizers
+  - might not fully work yet
+- jax/optax: https://github.com/google-research/google-research/tree/master/scalable_shampoo
+- possible exension: fishy: https://openreview.net/forum?id=cScb-RrBQC
 
 ## Adan optimizer
 - https://twitter.com/davisblalock/status/1561976182567870465
