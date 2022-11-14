@@ -99,6 +99,8 @@ https://github.com/google-research/google-research/tree/master/scalable_shampoo
   - may not be necessary in multi-GPU/TPU setting due to sharding
 
 - example of training model in JAX with distributed shampoo: https://wandb.ai/dalle-mini/dalle-mini/reports/Evaluation-of-Distributed-Shampoo--VmlldzoxNDIyNTUy
+
+
 ## Huggingface JAX/Flax tutorials
 
 ### Pretraining Causal LM on TPU w/ JAX/Flax
@@ -106,6 +108,13 @@ https://colab.research.google.com/github/huggingface/notebooks/blob/master/examp
 
 ### Fine-tuning BERT on GLUE 
 https://colab.research.google.com/github/huggingface/notebooks/blob/master/examples/text_classification_flax.ipynb#scrollTo=kTCFado4IrIc
+
+### JaxSeq
+https://github.com/Sea-Snell/JAXSeq
+
+- built on top of Transformers
+- currently supports GPT2, GPTJ, T5, OPT models
+- making training models wtih arbitrary model and data parallelism really easy
 
 ## Other useful JAX projects/tutorials
 Dalle Mini: https://github.com/borisdayma/dalle-mini
@@ -119,3 +128,5 @@ Dalle Mini: https://github.com/borisdayma/dalle-mini
 
 ## using `jax.jit` for inference pitfalls in transformers
 - https://twitter.com/ayaka14732/status/1589490234819227648
+
+
