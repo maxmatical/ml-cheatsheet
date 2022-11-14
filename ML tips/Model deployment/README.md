@@ -69,6 +69,7 @@ https://github.com/ELS-RD/triton_transformers
 https://www.philschmid.de/bert-deepspeed-inference
 
 ### Facebook AITemplate
+https://github.com/facebookincubator/AITemplate
 
 
 
