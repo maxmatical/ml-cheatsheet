@@ -409,6 +409,9 @@ https://github.com/huawei-noah/HEBO
 ### Alternative: LIPO vs Optuna
 https://github.com/jdb78/lipo
 
+### Google vizier for hpo
+https://github.com/google/vizier
+
 ### Batch size:
 - For speed: set bs to as large as will fit in GPU memory
 - For generalization performance: it seems like 32/64 is the best for generalization (more updates, more noise for regularization)
