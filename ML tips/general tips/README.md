@@ -110,6 +110,8 @@ if weighted_loss:
 print(f"using {learn.loss_func}")
 ```
 ### focal loss
+- based on this conversation: https://twitter.com/giffmana/status/1596176744763256834
+  - may not perform better than standard BCE loss + pred prob calibration
 - [for multi-class classification](https://github.com/gokulprasadthekkel/pytorch-multi-class-focal-loss)
   - gamma is `gamma` and alpha is `weight` in constructor
   - set both = 1 for regular focal loss, and `alpha = 0.25, gamma = 2.` for weighted focal loss
@@ -195,7 +197,7 @@ easy way to snapshot ensemble:
 another way to ensemble: using stratified k-fold cv (to train k models), then ensemble models together. [see here](https://walkwithfastai.com/tab.cv)
 - k-fold cv for imagewoof: https://walkwithfastai.com/Cross_Validation#What-is-K-Fold-Cross-Validation?
 
-
+- ensembling via training same model on different losses
 
 ### Save best model and early stopping
 - may not be the best idea
