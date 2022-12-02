@@ -11,3 +11,6 @@ https://twitter.com/radekosmulski/status/1567716877572653056?t=hazaKXlHvJdLd1EbP
 ## Monolith: recsys from ByteDance (tiktok)
 - https://arxiv.org/abs/2209.07663
 - might not be used for tiktok specifically, but for BytePlus Recommended product
+
+## Kaggle OTTO RecSys competition walkthrough
+https://twitter.com/radekosmulski/status/1596404650923610113
