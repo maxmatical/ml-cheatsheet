@@ -71,7 +71,8 @@ https://www.philschmid.de/bert-deepspeed-inference
 ### Facebook AITemplate
 https://github.com/facebookincubator/AITemplate
 
-
+### Fast distilbert on cpus
+https://arxiv.org/abs/2211.07715
 
 ## Deployment Frameworks
 
