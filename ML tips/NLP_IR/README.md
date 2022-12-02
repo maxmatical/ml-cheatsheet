@@ -387,3 +387,6 @@ https://huggingface.co/spaces/mteb/leaderboard
 - https://huggingface.co/castorini/monot5-3b-msmarco-10k (1 epoch)
 - https://huggingface.co/castorini/monot5-base-msmarco (base, 10 epochs)
 - 10k version might be better for zero-shot
+
+## Learning to rank with XGBoost and LightGBM
+https://twitter.com/jobergum/status/1596127307542020101
