@@ -441,9 +441,10 @@ https://txt.cohere.ai/building-a-search-based-discord-bot-with-language-models/?
 - using ft sentence transformer to generate embeddings
 - training a classifier head on top
 
-## Training transformer language models with reinforcement learning (trlx)
+## Training transformer language models with reinforcement learning (tlr/trlx)
 - https://twitter.com/carperai/status/1577015392773414914?t=0Iqc4B0znD48FNFjqdAiTw&s=09&fbclid=IwAR0-tniAgUA_CHCJ1ryZyDZepRyH1SPX9X4FlTuDfRRAb4G8lx_IZpc8gFk
 - https://github.com/CarperAI/trlx
+- https://github.com/lvwerra/trl (PPO only)
 
 ## MoE + Weight sharing (WideNet)
 - https://arxiv.org/abs/2107.11817
@@ -509,4 +510,11 @@ https://huggingface.co/spaces/mteb/leaderboard
 
 ## Flash attention
 - https://github.com/HazyResearch/flash-attention
-- metaseq + flash-attention (megatron-lm + model parallelism) https://github.com/HazyResearch/flash_metaseq
+- metaseq + flash-attention (megatron-lm + model parallelism) https://github.com/HazyResearch/
+
+## GPT-JT-6B
+- GPT-J + UL2 training objective + instruction finetuning (similar to Flan-t5)
+- strong performance in few-shot prompting (HELM/RAFT)
+- https://huggingface.co/togethercomputer/GPT-JT-6B-v1
+  - see `Hosted Inference API` for example prompt
+ 
