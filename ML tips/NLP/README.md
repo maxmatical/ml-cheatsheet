@@ -504,6 +504,7 @@ https://huggingface.co/spaces/mteb/leaderboard
 - instruction finetuning using RLHF 
 - https://openai.com/blog/instruction-following/
 - outperforms supervised finetuning
+- Discussion on RLHF vs supervised finetuning: https://twitter.com/haoliuhl/status/1598774263166554112
 
 ## Constrastive search in transformers
 - https://huggingface.co/blog/introducing-csearch
@@ -512,7 +513,7 @@ https://huggingface.co/spaces/mteb/leaderboard
 - https://github.com/HazyResearch/flash-attention
 - metaseq + flash-attention (megatron-lm + model parallelism) https://github.com/HazyResearch/
 
-## GPT-JT-6B
+## GPT-JT-6B (strong few shot classification performance)
 - GPT-J + UL2 training objective + instruction finetuning (similar to Flan-t5)
 - strong performance in few-shot prompting (HELM/RAFT)
 - https://huggingface.co/togethercomputer/GPT-JT-6B-v1
