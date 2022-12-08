@@ -363,6 +363,9 @@ https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040Z
 - paper https://ofir.io/self-ask.pdf
 - code https://github.com/ofirpress/self-ask/blob/main/self-ask_plus_search-engine_demo.ipynb
 
+### Prompt design from Cohere (instruction vs examples)
+https://txt.cohere.ai/generative-ai-part-1/
+
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
 - arxiv: https://arxiv.org/abs/2210.02414
