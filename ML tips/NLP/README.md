@@ -522,3 +522,13 @@ https://huggingface.co/spaces/mteb/leaderboard
 - https://huggingface.co/togethercomputer/GPT-JT-6B-v1
   - see `Hosted Inference API` for example prompt
  
+## Pretraining and finetuning large language models
+https://hackmd.io/Cx0GK41RT5yPqNeeFwcT_g
+
+key concepts covered:
+- UL2
+- FLAN-T5/FLAN-PaLM
+- Instruction finetuning
+- RLHF
+  - trlx
+- ILQL
