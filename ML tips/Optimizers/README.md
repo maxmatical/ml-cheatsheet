@@ -193,3 +193,7 @@ optimizer_grouped_parameters = [
 ]
 optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 ```
+
+## Setting `foreach=True` in pytorch optimizers for fused optimizers
+- torch >= 1.13
+- should speedup optimizer
