@@ -343,7 +343,7 @@ https://medium.com/yandex/yandex-publishes-yalm-100b-its-the-largest-gpt-like-ne
 ## On debugging large scale training;
 https://twitter.com/LoubnaBenAllal1/status/1542521845483655171?t=sfRLq876stw0CIKT0U0bKw&s=09&fbclid=IwAR2S5MAS8CFvTX3d4OeB_lrp-flH0gW_CbGMaMh-kG6JNe0-MQciTRA-4zM
 
-## Prompt engineering for LLMs
+## Prompting for LLMs
 - https://txt.cohere.ai/how-to-train-your-pet-llm-prompt-engineering/?utm_content=213394473&utm_medium=social&utm_source=linkedin&hss_channel=lcp-24024765
 - https://docs.cohere.ai/prompt-engineering-wiki/?fbclid=IwAR0J08sW24dcBq_YpGpF4G0Pb-5OexCdlcscSsTlk28l5Ij2sXeQlg7GLrQ
 - NER specific: https://towardsdatascience.com/advanced-ner-with-gpt-3-and-gpt-j-ce43dc6cdb9c#4010-fa6647c13fbe-reply
@@ -365,6 +365,9 @@ https://twitter.com/maria_antoniak/status/1569006194261659648?t=cRQDXuF3njbd040Z
 
 ### Prompt design from Cohere (instruction vs examples)
 https://txt.cohere.ai/generative-ai-part-1/
+
+### providing diverse examples in prompts
+https://twitter.com/xiye_nlp/status/1603821850592628738
 
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
