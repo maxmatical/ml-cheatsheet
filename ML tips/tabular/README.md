@@ -164,3 +164,15 @@ https://twitter.com/rasbt/status/1572616437977546754?fbclid=IwAR3olVyGHIOmQ6RwAq
 - start to minimize from a smaller error
 - keep the feature in the GBDT model
 
+### tuning xgboost/lightgbm
+- 99% of time only need to tune
+```
+• Objective function
+• num_leaves/max_depth
+• feature_fraction
+• bagging_fraction
+• min_child_samples
+
+```
+- usually default lr of 0.05 is fine, but can also tune
+
