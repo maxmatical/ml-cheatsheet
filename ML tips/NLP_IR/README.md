@@ -255,7 +255,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
    1. Finetuned (eg T-Few, T5 etc.) vs prompting
    2. CE distillation vs round-trip filtering (or combining the 2 if possible)
 - results:
- - 11/13 BEIR datasets (excluding NQ/Quora)
+ - 11/16 BEIR datasets (excluding NQ/Quora)
  - BM25: 41.9
  - GTR-XXL: 44.9
  - GPL: 45.5
@@ -274,8 +274,8 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - twitter thread: https://twitter.com/zyzzhaoyuzhe/status/1588587504240058369
 - Claim: multi-vector retrieval models improve over single vector dual retrievers on many IR tasks
 - results:
- - 11/13 BEIR datasets (excluding NQ/Quora): 47.0 (a bit worse than promptagator)
- - **on full BEIR: 51.1 (current SOTA)** better than GTRxxl, SpladeV2, ColbertV2 etc.
+ - 11/16 BEIR datasets (excluding NQ/Quora): 47.0 (a bit worse than promptagator)
+ - **on BEIR (13 datasets): 51.1 (current SOTA)** better than GTRxxl, SpladeV2, ColbertV2 etc.
 
 22. RankT5:
 - https://arxiv.org/abs/2210.10634
@@ -283,6 +283,28 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - use listwise ranking losses instead of pairwise classification losses
 - better in-domain and out of domain performance
 - T5 models seems to outperform BERT, but listwise ranking losses still helps
+
+23. COCO-DR:
+- https://arxiv.org/abs/2210.15212
+- 2 steps
+1. Continuous Contrastive Pretraining
+ - eg co-condenser pretraining objective
+ - contrastive loss + language modeling
+2. implicit Distributionally Robust optimization (iDRO)
+
+Results
+- NDCG@10 (BEIR 18 datasets)
+- GPL: 0.459
+- GTR_xxl: 0.458
+- ColBERT: 0.431
+- COCO-DR base (bert base): 0.462
+- **COCO-DR large (bert large): 0.484 (SOTA)**
+
+- NDCG@10 (BEIR CPT-sub 11 datasets)
+- GPL: 0.516
+- GTR_xxl: 0.516
+- COCO-DR Base: 0.521
+- COCO-DR large: 0.541
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
