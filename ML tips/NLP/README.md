@@ -532,3 +532,34 @@ key concepts covered:
 - RLHF
   - trlx
 - ILQL
+
+## AdaMix: Mixture-of-Adaptations for Parameter-efficient Model Tuning
+- Paper: https://arxiv.org/abs/2205.12410
+- Code: https://github.com/microsoft/AdaMix
+-  By only tuning 0.1-0.2% of PLM parameters, we show that AdaMix outperforms SOTA parameter-efficient fine-tuning and full model fine-tuning for both NLU and NLG tasks. 
+
+## PubMedGPT
+Idea
+- 2.7B LM -> new SOTA on medical data
+- standard transformer model on large amounts of text 300B tokens from the pile + full finetuning
+- beats generic 100B+ models
+- custom <10B parameter models trained on domain-specific data beats large generic models
+
+twitter discussion
+- https://twitter.com/percyliang/status/1603469265583353856
+- https://twitter.com/MosaicML/status/1603436855067910147
+
+blog post: 
+- https://www.mosaicml.com/blog/introducing-pubmed-gpt
+- https://crfm.stanford.edu/2022/12/15/pubmedgpt.html
+
+code: https://github.com/stanford-crfm/pubmedgpt
+
+huggingface model: https://huggingface.co/stanford-crfm/pubmedgpt
+
+
+## SetFit
+- few-shot learning using sentence transformers + contrastive loss + finetune classifier layer
+- only needs 8 examples per class for really strong results
+- github: https://github.com/huggingface/setfit
+- compressing setfit models with kd and quantization: https://github.com/huggingface/workshops/blob/main/fewshot-learning-in-production/setfit-optimisation.ipynb
