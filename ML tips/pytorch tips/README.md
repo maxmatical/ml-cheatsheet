@@ -180,6 +180,9 @@ https://huggingface.co/docs/accelerate/memory
 ## Python-level JIT compiler designed to make unmodified PyTorch programs faster. 
 https://github.com/pytorch/torchdynamo
 
+## pytorch 2.0 tips
+- if not using fp16, add `torch.backends.cuda.matmul.allow_tf32 = True ` to use tensor cores when compiler
+- **main goal of compiler is used for training!**
 
 # Huggingface Accelerate
 https://github.com/huggingface/accelerate
