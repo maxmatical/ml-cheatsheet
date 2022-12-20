@@ -292,6 +292,18 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
  - contrastive loss + language modeling
 2. implicit Distributionally Robust optimization (iDRO)
 
+24. HyDE
+- http://boston.lti.cs.cmu.edu/luyug/HyDE/HyDE.pdf
+- twitter thread: https://twitter.com/luyu_gao/status/1605232516817752065
+- code: https://github.com/texttron/hyde
+- main idea: question -> instructGPT -> contriever (unsup or sup) encode -> vector sim search over docs
+```
+One of the most interesting problems we encountered while working on this was: if strong generative models can largely improve sole retriever’s performance, should we shift the responsibility of high precision away from the retriever.
+
+...
+We argue HyDE is also of practical use though not necessarily over the entire lifespan of a search system. At the very beginning of the life of the search system, serving queries using HyDE offers performance comparable to a fine-tuned model, which no other relevance-free model can offer. As the search log grows, a supervised dense retriever can be gradually rolled out. As the dense retriever grows stronger, more queries will be routed to it, with only less common and emerging ones going to HyDE backend.
+```
+
 Results
 - NDCG@10 (BEIR 18 datasets)
 - GPL: 0.459
