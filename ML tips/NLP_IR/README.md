@@ -296,7 +296,7 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 - http://boston.lti.cs.cmu.edu/luyug/HyDE/HyDE.pdf
 - twitter thread: https://twitter.com/luyu_gao/status/1605232516817752065
 - code: https://github.com/texttron/hyde
-- main idea: question -> instructGPT -> contriever (unsup or sup) encode -> vector sim search over docs
+- main idea: question -> instructGPT -> contriever (unsup or sup but intended for unsup) encode -> vector sim search over docs
 ```
 One of the most interesting problems we encountered while working on this was: if strong generative models can largely improve sole retriever’s performance, should we shift the responsibility of high precision away from the retriever.
 
