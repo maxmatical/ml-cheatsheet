@@ -130,5 +130,5 @@ Dalle Mini: https://github.com/borisdayma/dalle-mini
 - https://twitter.com/ayaka14732/status/1589490234819227648
 
 ## Flax + pjit
-https://flax.readthedocs.io/en/latest/guides/flax_on_pjit.html?fbclid=IwAR1ySw5eVDKZ1m9Au6VLsx5PnIUTwMCvAk7-KpY4XrukNOpt4e6ERMp0Y1w
+https://flax.readthedocs.io/en/latest/guides/flax_on_pjit.html
 
