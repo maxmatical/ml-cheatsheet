@@ -548,6 +548,7 @@ Idea
 - beats generic 100B+ models
 - custom <10B parameter models trained on domain-specific data beats large generic models
   - **actually may not longer be the case, since beaten by med-palm**
+  - 
 twitter discussion
 - https://twitter.com/percyliang/status/1603469265583353856
 - https://twitter.com/MosaicML/status/1603436855067910147
