@@ -184,6 +184,11 @@ https://github.com/pytorch/torchdynamo
 - if not using fp16, add `torch.backends.cuda.matmul.allow_tf32 = True ` to use tensor cores when compiler
 - **main goal of compiler is used for training!**
 
+## optimizing transformer models:
+https://twitter.com/karpathy/status/1607791537978748929
+
+- also can use https://github.com/facebookresearch/xformers
+- torchscale: https://twitter.com/realpython/status/1607058685368455168
 # Huggingface Accelerate
 https://github.com/huggingface/accelerate
 
