@@ -566,3 +566,36 @@ huggingface model: https://huggingface.co/stanford-crfm/pubmedgpt
 - only needs 8 examples per class for really strong results
 - github: https://github.com/huggingface/setfit
 - compressing setfit models with kd and quantization: https://github.com/huggingface/workshops/blob/main/fewshot-learning-in-production/setfit-optimisation.ipynb
+
+## self-instruct
+tweet: https://twitter.com/yizhongwyz/status/1605382356054859777
+arxiv: https://arxiv.org/abs/2212.10560
+github: https://github.com/yizhongw/self-instruct
+
+- bootstrapping PLMs to generate instruction, input, and output samples from a LM
+- prunes samples
+- use to finetune the original lm
+- gets close to instructGPT-001
+- also outperforms public instruction datasets by large margin (5%)
+- almost annotation free method for aligning PLMs twith instructioins
+- dataset included
+
+## Unnatural Instructions: Tuning Language Models with (Almost) No Human Labor
+tweet: https://twitter.com/arankomatsuzaki/status/1605018849606533121
+arxiv: https://arxiv.org/abs/2212.09689
+
+- dataset generated from PLM for instructions
+- not cleaned up, so contains noise
+- despite containing noise, T5 trained outperforms open source datasets eg T0++ 
+  - still underperforms FLAN-T5, but getting there
+- unlike self-instruct, uses T5 models instead of GPT models
+
+
+## How good of a BERT can one get in ONE DAY on ONE GPU?
+tweet: https://twitter.com/giffmana/status/1608568387583737856
+paper + code: https://paperswithcode.com/paper/cramming-training-a-language-model-on-a
+
+what changes really mattered (gains on GLUE):
+- 2% from arch changes (eg prenorm layer structure which also allowed higher LR)
+- 1% from data
+- 0.5% from training modifications
