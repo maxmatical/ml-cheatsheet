@@ -318,6 +318,25 @@ Results
 - COCO-DR Base: 0.521
 - COCO-DR large: 0.541
 
+
+25. InPars-v2 (better reranker)
+- arxiv: https://arxiv.org/abs/2301.01820
+- github: https://github.com/zetaalphavector/inPars/blob/master/tpu/README.md
+- model checkpoints (1 model for each dataset on BEIR): https://huggingface.co/zeta-alpha-ai
+
+Main ideas:
+- uses GPT-J (open sourced model) instead of closed source
+- Uses monoT5-3b (msmarco 10k 1 epoch) for filtering (select top 10k query-doc pairs with highest scores)
+- Negatives are randomly sampled from top 1k bm25 retrieved docs
+- further finetune monot5-3b-10k for 1 more epoch on new docs
+
+Result:
+- new SOTA on reranker on BEIR (full, 0.551)
+ - better than promptagator++ 
+  - although note promptagator++ is a t5 base model (much smaller)
+ - competitive with RankT5 (0.533 vs 0.536 on measured datasets in BEIR)
+ 
+
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
 
