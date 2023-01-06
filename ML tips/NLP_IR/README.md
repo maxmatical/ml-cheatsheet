@@ -326,6 +326,7 @@ Results
 
 Main ideas:
 - uses GPT-J (open sourced model) instead of closed source
+- Uses greedy decoding and "gbq" prompt template from inpars-v1, so only 1 query per doc
 - Uses monoT5-3b (msmarco 10k 1 epoch) for filtering (select top 10k query-doc pairs with highest scores)
 - Negatives are randomly sampled from top 1k bm25 retrieved docs
 - further finetune monot5-3b-10k for 1 more epoch on new docs
