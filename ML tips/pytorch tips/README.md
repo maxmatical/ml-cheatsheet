@@ -7,6 +7,37 @@ https://efficientdl.com/faster-deep-learning-in-pytorch-a-guide/
 
 more pytorch tips: https://www.reddit.com/r/MachineLearning/comments/kvs1ex/d_here_are_17_ways_of_making_pytorch_training/
 
+common pytorch tips/mistakes:
+- https://www.youtube.com/watch?v=BoC8SGaT3GE
+1. create torch tensors directly on device whenever possible (much faster)
+```
+# bad
+tensor = torch.ones((1000, 64, 64))
+tensor = tensor.cuda()
+
+# good
+tensor = torch.ones((1000, 64, 64), device="cuda:0")
+```
+2. use `nn.Sequential` when possible (or an `OrderedDict`)
+3. passing a list of layers
+    - will throw an issue if using gpu
+    - use `nn.Sequential(*layers)` or `nn.ModuleList` instead
+4. use `torch.distributions` when possible
+5. use `detach()` on metrics (or use `metric.item()`)
+    - by default metrics comes with `grad_fn` which could lead to memory leaks
+    - use `detach()` to get detach the metric from the gradient graph -> returns just scalars
+6. deleting models from GPU
+    - sometimes `del cuda_model` doesn't delete the model from mem
+```
+import gc
+
+del cuda_model
+gc.collect()
+torch.cuda.empty_cache()
+```
+7. call `model.eval()` when not training
+    - to disable dropout etc.
+
 Huggingface - [Performance and Scalability: How To Fit a Bigger Model and Train It Faster](https://huggingface.co/docs/transformers/performance)
 
 Huggingface - [Model parallelism guide](https://huggingface.co/docs/transformers/parallelism#model-parallelism)
