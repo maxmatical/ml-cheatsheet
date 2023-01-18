@@ -515,9 +515,11 @@ https://huggingface.co/spaces/mteb/leaderboard
 ## Constrastive search in transformers
 - https://huggingface.co/blog/introducing-csearch
 
-## Flash attention
+## Flash attention/xformers
 - https://github.com/HazyResearch/flash-attention
 - metaseq + flash-attention (megatron-lm + model parallelism) https://github.com/HazyResearch/
+- Usage in other ml frameworks: https://github.com/HazyResearch/flash-attention/blob/main/usage.md
+- xformers (similar): https://github.com/facebookresearch/xformers
 
 ## GPT-JT-6B (strong few shot classification performance)
 - GPT-J + UL2 training objective + instruction finetuning (similar to Flan-t5)
