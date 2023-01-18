@@ -247,3 +247,10 @@ https://huggingface.co/docs/accelerate/v0.12.0/en/concept_guides/gradient_synchr
 ## Auto batch size finder in accelerate
 https://twitter.com/TheZachMueller/status/1578022296681213958?t=32efoaOLbMEcRuijbLQvog&s=09&fbclid=IwAR01HSxcREe1jGhgGKigkUPQSt3INTnLR6mD2KN2X5oOAA1risH1dlgjDTM
 
+
+## Flash attention/xformers
+- https://github.com/HazyResearch/flash-attention
+- metaseq + flash-attention (megatron-lm + model parallelism) https://github.com/HazyResearch/
+- Usage in other ml frameworks: https://github.com/HazyResearch/flash-attention/blob/main/usage.md
+- xformers (similar): https://github.com/facebookresearch/xformers
+
