@@ -16,3 +16,6 @@ https://twitter.com/radekosmulski/status/1567716877572653056?t=hazaKXlHvJdLd1EbP
 
 ## Kaggle OTTO RecSys competition walkthrough
 https://twitter.com/radekosmulski/status/1596404650923610113
+
+##  H&M Personalised Fashion Recommendations | Understanding Top Kaggle Solutions 
+https://www.youtube.com/watch?v=l0KNPQn5EmE
