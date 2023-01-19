@@ -361,3 +361,10 @@ https://github.com/facebookresearch/optimizers
 - when step idx doesn't equal grad accumulation steps, use `no_sync` to prevent slowdowns
   - only sync when running the backwards
 - handled by default in automatic optimization :)
+
+
+## Colossal-AI for large model training/inference
+- github: https://github.com/hpcaitech/ColossalAI
+- website: https://www.colossalai.org/
+- pytorch lightning integration: https://pytorch-lightning.readthedocs.io/en/latest/advanced/model_parallel.html?highlight=colossal-ai#colossal-ai
+  - https://www.hpc-ai.tech/blog/colossal-ai-0-2-0
