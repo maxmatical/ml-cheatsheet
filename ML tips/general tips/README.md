@@ -737,3 +737,6 @@ https://github.com/CalculatedContent/WeightWatcher
 ### Compute-Efficient Deep Learning: Algorithmic Trends and Opportunities
 - https://twitter.com/davisblalock/status/1601520350612770816
 
+### Google research tuning playbook
+https://github.com/google-research/tuning_playbook
+
