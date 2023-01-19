@@ -36,7 +36,7 @@
 - uses [Adversarial Weight Perturbation (AWP)](https://www.kaggle.com/code/wht1996/feedback-nn-train/notebook)
   - required more hyperparam tuning + longer training
   
-[Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/_
+[Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/)
 - smaller batch sizes helps model train more quickly
 - **train on ALL data (train + dev) after hyperparam tuning/optimization**
   
