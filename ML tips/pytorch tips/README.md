@@ -254,3 +254,9 @@ https://twitter.com/TheZachMueller/status/1578022296681213958?t=32efoaOLbMEcRuij
 - Usage in other ml frameworks: https://github.com/HazyResearch/flash-attention/blob/main/usage.md
 - xformers (similar): https://github.com/facebookresearch/xformers
 
+## Colossal-AI for large model training/inference
+- github: https://github.com/hpcaitech/ColossalAI
+- website: https://www.colossalai.org/
+- pytorch lightning integration: https://pytorch-lightning.readthedocs.io/en/latest/advanced/model_parallel.html?highlight=colossal-ai#colossal-ai
+  - https://www.hpc-ai.tech/blog/colossal-ai-0-2-0
+
