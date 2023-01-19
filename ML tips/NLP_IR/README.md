@@ -337,6 +337,20 @@ Result:
   - although note promptagator++ is a t5 base model (much smaller)
  - competitive with RankT5 (0.533 vs 0.536 on measured datasets in BEIR)
  
+Concurrent work: InPars-Light:
+- http://boytsov.info/pubs/inpars_light_2023.pdf
+- Work inspired by InPars-v2
+- Uses another open source model (bloom 7b) instead of GPT-J
+    - Means we can likely leverage multiple LLMs to generate multiple sets of synthetic queries
+- Uses a different filtering strategy than InPars-v2
+    - Uses self consistency filtering + log probabilities
+    - Note: Authors of InPars-v2 found additional self consistency filtering did not help in their case vs just monoT5 ranking
+- Uses much smaller models for training reranker
+    - Smallest was minilm-L6, largest was Deberta-v3 large
+- **Key takeaways:**
+    - can use multiple LLMs to generate queries
+    - can likely get away with a smaller model than a T5 sized model
+ 
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
