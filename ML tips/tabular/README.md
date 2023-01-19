@@ -176,3 +176,5 @@ https://twitter.com/rasbt/status/1572616437977546754?fbclid=IwAR3olVyGHIOmQ6RwAq
 ```
 - usually default lr of 0.05 is fine, but can also tune
 
+### uplift modelling
+https://medium.com/@rndonnelly/a-simpler-alternative-to-x-learner-for-uplift-modeling-f3a11ebf6bf1
