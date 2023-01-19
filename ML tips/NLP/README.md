@@ -373,6 +373,9 @@ https://txt.cohere.ai/generative-ai-part-1/
 ### providing diverse examples in prompts
 https://twitter.com/xiye_nlp/status/1603821850592628738
 
+### Openai cookbook
+https://github.com/openai/openai-cookbook
+
 ## GLM-130B
 - blog post: http://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/
 - arxiv: https://arxiv.org/abs/2210.02414
