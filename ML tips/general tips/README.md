@@ -740,3 +740,6 @@ https://github.com/CalculatedContent/WeightWatcher
 ### Google research tuning playbook
 https://github.com/google-research/tuning_playbook
 
+### [Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/)
+- smaller batch sizes helps model train more quickly
+- **train on ALL data (train + dev) after hyperparam tuning/optimization**
