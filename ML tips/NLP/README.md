@@ -36,6 +36,10 @@
 - uses [Adversarial Weight Perturbation (AWP)](https://www.kaggle.com/code/wht1996/feedback-nn-train/notebook)
   - required more hyperparam tuning + longer training
   
+[Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/_
+- smaller batch sizes helps model train more quickly
+- **train on ALL data (train + dev) after hyperparam tuning/optimization**
+  
 ## Kaggle - how to build an efficient NLP model 
 based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution](https://wandb.ai/darek/fbck/reports/How-To-Build-an-Efficient-NLP-Model--VmlldzoyNTE5MDEx)
 
