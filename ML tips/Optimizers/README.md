@@ -133,6 +133,9 @@ set_optim_to_run_embedding_in_fp32(model)
   - seems to perform very similar to AdamW, but slower
     - note: only on 1 model for image classification
   - need comparison to lookahead/Ranger21/rangeradabelief etc. to decide the "best" optimizer
+- at 1B+ scale memory could become an issue
+  - at 350M, 5% extra memory usage, at 1B+, 50% extra memory (from big code experiments)
+  
   
 ## Amos optimizer
 - https://twitter.com/Robin_Tian/status/1585311211457249280
