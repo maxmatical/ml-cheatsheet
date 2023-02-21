@@ -612,3 +612,17 @@ what changes really mattered (gains on GLUE):
 
 ## Finetuine FLAN-T5 with deepspeed + huggingface
 https://www.philschmid.de/fine-tune-flan-t5-deepspeed?fbclid=IwAR3b8PqZYpRHrJ_AVXJ-IIWCLAwBHYAUuKaADhbXKrwArUB50s1k0ceCZiM
+
+## Parameter efficient finetuning (PEFT) methods for LLMs
+- https://github.com/huggingface/peft
+- Lora, P-tuning (v2), prompt tuning
+- p-tuning v2 may be comparable to full finetuning
+- how does it stack up vs (mixture of) adapters?
+
+## Training GPT3 quality model for <$500k
+https://www.mosaicml.com/blog/gpt-3-quality-for-500k
+
+## Importance sampling of pretraining data to boost downstream performance
+https://twitter.com/sangmichaelxie/status/1623397365443960832
+
+
