@@ -609,3 +609,6 @@ what changes really mattered (gains on GLUE):
 - 2% from arch changes (eg prenorm layer structure which also allowed higher LR)
 - 1% from data
 - 0.5% from training modifications
+
+## Finetuine FLAN-T5 with deepspeed + huggingface
+https://www.philschmid.de/fine-tune-flan-t5-deepspeed?fbclid=IwAR3b8PqZYpRHrJ_AVXJ-IIWCLAwBHYAUuKaADhbXKrwArUB50s1k0ceCZiM
