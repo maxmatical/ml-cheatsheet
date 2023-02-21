@@ -750,3 +750,7 @@ https://github.com/google-research/tuning_playbook
 - pytorch lightning integration: https://pytorch-lightning.readthedocs.io/en/latest/advanced/model_parallel.html?highlight=colossal-ai#colossal-ai
   - https://www.hpc-ai.tech/blog/colossal-ai-0-2-0
 
+### Using FSDP may be better if you can fit trainign into gpu mem
+- i.e. no need for cpu offloading
+- pros: more customizable, since using just pytorch code other than deepspeed/megatron/colossal ai etc.
+- cons: no cpu offload
