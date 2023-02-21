@@ -754,3 +754,10 @@ https://github.com/google-research/tuning_playbook
 - i.e. no need for cpu offloading
 - pros: more customizable, since using just pytorch code other than deepspeed/megatron/colossal ai etc.
 - cons: no cpu offload
+
+
+### Parameter efficient finetuning (PEFT) methods for LLMs
+- https://github.com/huggingface/peft
+- Lora, P-tuning (v2), prompt tuning
+- p-tuning v2 may be comparable to full finetuning
+- how does it stack up vs (mixture of) adapters?
