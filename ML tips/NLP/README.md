@@ -625,4 +625,7 @@ https://www.mosaicml.com/blog/gpt-3-quality-for-500k
 ## Importance sampling of pretraining data to boost downstream performance
 https://twitter.com/sangmichaelxie/status/1623397365443960832
 
-
+## Instructor embedding model
+- SOTA on MTEB 
+- https://instructor-embedding.github.io/
+- huggingface: https://huggingface.co/hkunlp/instructor-xl
