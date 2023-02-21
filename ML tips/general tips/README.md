@@ -749,15 +749,27 @@ https://github.com/google-research/tuning_playbook
 - website: https://www.colossalai.org/
 - pytorch lightning integration: https://pytorch-lightning.readthedocs.io/en/latest/advanced/model_parallel.html?highlight=colossal-ai#colossal-ai
   - https://www.hpc-ai.tech/blog/colossal-ai-0-2-0
+  - more docs: https://github.com/hpcaitech/ColossalAI-Pytorch-lightning
 
-### Using FSDP may be better if you can fit trainign into gpu mem
+### Using FSDP may be better if you can fit training into gpu mem
 - i.e. no need for cpu offloading
 - pros: more customizable, since using just pytorch code other than deepspeed/megatron/colossal ai etc.
 - cons: no cpu offload
 
+### Scaling model training w/ accelerate
+https://huggingface.co/docs/transformers/v4.18.0/en/performance
+
+### Activation checkpointing with HF models
+- just use `model.gradient_checkpointing_enable()`
 
 ### Parameter efficient finetuning (PEFT) methods for LLMs
 - https://github.com/huggingface/peft
 - Lora, P-tuning (v2), prompt tuning
 - p-tuning v2 may be comparable to full finetuning
 - how does it stack up vs (mixture of) adapters?
+
+
+### MosaicML streaming dataset
+https://www.mosaicml.com/blog/mosaicml-streamingdataset
+
+- fetch from S3
