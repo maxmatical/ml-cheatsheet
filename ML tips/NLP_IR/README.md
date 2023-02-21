@@ -351,6 +351,9 @@ Concurrent work: InPars-Light:
     - can use multiple LLMs to generate queries
     - can likely get away with a smaller model than a T5 sized model
  
+26. DRAGON
+- https://twitter.com/fly51fly/status/1626107214690766849
+- adding lots of data augmentation to improve dense retriever
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
