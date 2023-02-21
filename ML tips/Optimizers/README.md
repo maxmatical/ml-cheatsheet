@@ -110,6 +110,11 @@ set_optim_to_run_embedding_in_fp32(model)
   - Faster than (G)SAM
   - Competitive results in imagenet w/ Resnets. Bit worse for ViTs
   - No code currently 
+  
+### SAM may be too slow
+- https://twitter.com/rasbt/status/1626226500461793282
+- stochastic weight perturbation (advasarial weight perturbation?) may be more efficient
+  - same w/ SWA?
 
 ## [Ranger21](https://github.com/lessw2020/Ranger21)
 - no need for lr schedule (define lr schedule in the optimizer itself), just need to call `trainer.fit()`, `learner.fit()`, etc.
@@ -201,3 +206,11 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - torch >= 1.13
 - should speedup optimizer
 - in fastai: https://fastxtend.benjaminwarner.dev/optimizer.fused.html
+
+
+## LION optimizer
+- https://twitter.com/DrJimFan/status/1625920773042089984
+- more mem efficient than AdamW, reports better performance too in CV/NLP tasks
+- torch implementation: https://github.com/lucidrains/lion-pytorch
+- still needs to be validated
+- apparently doesn't work as well on RL?
