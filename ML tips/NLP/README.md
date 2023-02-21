@@ -629,3 +629,7 @@ https://twitter.com/sangmichaelxie/status/1623397365443960832
 - SOTA on MTEB 
 - https://instructor-embedding.github.io/
 - huggingface: https://huggingface.co/hkunlp/instructor-xl
+
+## FLAN-T5 as a starting pt for few-shot prompting and finetuning
+- currently SOTA of open sourced models
+- https://twitter.com/tuvuumass/status/1620820330293100544
