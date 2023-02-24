@@ -773,3 +773,7 @@ https://huggingface.co/docs/transformers/v4.18.0/en/performance
 https://www.mosaicml.com/blog/mosaicml-streamingdataset
 
 - fetch from S3
+
+### SWA tips:
+- If using SWA callback with pytorch lightning trainer, add a `trainer.validate(model=model, dataloaders=val_dataloaders)` outside the training loop to see true validation performance
+- https://pytorch-lightning.readthedocs.io/en/stable/common/trainer.html#validation
