@@ -88,6 +88,11 @@ based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution
 2. SWA
     - average weights across checkpoints
     - took task 3 checkpoints instead of a % of training epochs
+    
+### [Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/)
+- smaller batch sizes helps model train more quickly
+- **train on ALL data (train + dev) after hyperparam tuning/optimization**
+
 
 ## Better pretrained models
 https://ibm.github.io/model-recycling/
