@@ -79,6 +79,13 @@ based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution
         - use KL divergence loss on soft labels! (check logits or confidence?)
             - seems like predicted probability
     - first train on pseudolabeled data ONLY via KL divergence, then finetune on labeled data normally
+    - another usecase (not in this article could be self-consistency filtering)
+      - 1. train on all pseudolabeled data w/ hard labels
+      - 2. predict on itself, keep only data where `pred == label`
+      - 3. finetune on (can try different configs)
+        - filtered pseudolabel data + labeled data, OR
+        - filtered pseudolabel data -> labeled data OR
+        - filtered pseudolabel data + labeled data -> labeled data (3 step finetuning)
 
 ### additional techniques
 1. setting dropout to 0
