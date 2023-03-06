@@ -25,6 +25,46 @@
 4. Getting the most out of your model:
   - Hyperparam optimization
   - Ensembling techniques: SWA, EMA, model souping, model averaging, stacking etc.
+  
+### [Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/)
+- smaller batch sizes helps model train more quickly
+- **train on ALL data (train + dev) after hyperparam tuning/optimization**
+
+### Practical Tips for Deep Transfer Learning
+https://www.youtube.com/watch?v=NCGkBseUSdM
+
+1. Use cosine decay LR schedule
+  - can use a warmup step, but often a single decay step is enough
+  - warmup can be more crucial for transformer/nlp models than in vision
+2. Always take last checkpoint. DON'T use early stopping/best model checkpot -> overfit to validation
+  - tune LR/num epochs such that the last epoch has the best validation metrics
+3. Most of the time: **start with tuning LR and epochs first**
+  - different model families may need different lrs (eg transformers typically have much lower lrs like 1e-5 or lower)
+  - tuning lr can be useful for generalization
+  - can use differential LR if you really want
+  - try to keep the batch size static if possible (unless OOM)
+    - rule of thumb: linear relationshipt between bs and lr change. eg. batch size 32 -> 16 => lr gets halved too
+4. Data augmentations are useful
+  - particularly in vision, but can also apply to NLP, but not as effective
+  - typically want to increase num of epochs as you increase data augmentation
+5. Experiment with model and input complexity
+  - generally want to save this for last since smaller model/input enables faster experiments
+  - scaling up model almost always works
+  - larger image size/seq length also tend to help
+  - experiment with different model archs/checkpts
+  - **IMPORTANT:** larger (or more complex) models and input will likely require retuning hyperparameters
+    - more augmentations and regularization
+    - different lr and epochs
+6. Inference tricks
+  - retrain model on full training data (including validation)
+  - blending
+    - models, seed, backbone, augmentations, epochs etc.
+      - useful to investigate model performance across different seeds if resources allow
+    - more practical for real life deployment where ensembling is not practical: SWA, souping w/ same model arch
+  - test time augmentations
+    - images: typically only horizontal flip, but other augs possibe (vertical flip, resize, random crop etc.)
+    - nlp: if using enc-dec or dec only models: try self consistency
+  - inference on larger input size than what was trained can also help
 
 
 # Data curation
@@ -740,9 +780,6 @@ https://github.com/CalculatedContent/WeightWatcher
 ### Google research tuning playbook
 https://github.com/google-research/tuning_playbook
 
-### [Natural Language Processing with Disaster Tweets](https://chrwittm.github.io/posts/2023-01-17-nlp-with-disaster-tweets/)
-- smaller batch sizes helps model train more quickly
-- **train on ALL data (train + dev) after hyperparam tuning/optimization**
 
 ### Colossal-AI for large model training/inference
 - github: https://github.com/hpcaitech/ColossalAI
