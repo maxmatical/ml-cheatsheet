@@ -369,6 +369,10 @@ used for
 
 Uses a similarity matrix for loss (similar to CLIP)
 
+27. UADAPDR:
+- twitter: https://twitter.com/JonSaadFalcon/status/1632815738766385153
+- arxiv: https://arxiv.org/abs/2303.00807
+
 ### Information Retreival Pipeline
 - bi-encoder (for large collections of docs): https://www.sbert.net/examples/training/ms_marco/README.html#bi-encoder 
   - train using `MultipleNegativesRankingLoss`, `MarginMSE`, or the method described above for SOTA text embedding model
