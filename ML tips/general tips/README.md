@@ -66,6 +66,8 @@ https://www.youtube.com/watch?v=NCGkBseUSdM
     - nlp: if using enc-dec or dec only models: try self consistency
   - inference on larger input size than what was trained can also help
 
+### The State of Competitive Machine Learning 2022
+https://mlcontests.com/state-of-competitive-machine-learning-2022/#winning-solutions
 
 # Data curation
 - An active process > just collecting data
