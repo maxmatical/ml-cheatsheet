@@ -87,6 +87,21 @@ based off of [Feedback Prize - Predicting Effective Arguments 2nd place solution
         - filtered pseudolabel data -> labeled data OR
         - filtered pseudolabel data + labeled data -> labeled data (3 step finetuning)
 
+### More pseudolabeling tips from same competition (1st place winner)
+https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/347536?ref=mlcontests
+
+Pseudo labels
+Another major part of our solution is pseudo labeling. We applied 3 stages of pseudo labeling on the extra data from the previous Feedback competition. It was done in a leak-free manner for the individual folds and additionally for our models trained on all the data (6 versions of pseudo labels in total). The process consisted of the following steps:
+
+1. Train an ensemble of models only on the given train data
+2. Run predictions on the previous Feedback competition data using our full 2-stage pipeline
+3. Use soft pseudo labels from this extra dataset and apply it to modeling in two different ways:
+  - Concatenate pseudo labels with the actual labels in the given train data, and train simultaneously on all this data
+  - Pre-train models on the pseudo labels and finetune it only on the given train data afterwards. Similar to: https://arxiv.org/abs/1904.04445
+4. Repeat steps 1-3 three times using an ensemble of models trained on pseudo labels now
+
+Apart from using previous Feedback competition data for pseudo labels, it was also used in some models as a pre-training dataset. The model was warmed up on the old data predicting the type of the chunk and further finetuned on the given train data.
+
 ### additional techniques
 1. setting dropout to 0
     - all layers in transformers
