@@ -789,6 +789,7 @@ https://github.com/google-research/tuning_playbook
 - pytorch lightning integration: https://pytorch-lightning.readthedocs.io/en/latest/advanced/model_parallel.html?highlight=colossal-ai#colossal-ai
   - https://www.hpc-ai.tech/blog/colossal-ai-0-2-0
   - more docs: https://github.com/hpcaitech/ColossalAI-Pytorch-lightning
+- Using LORA with colossal ai: look at their chatgpt [LoRAModule](https://github.com/hpcaitech/ColossalAI/blob/main/applications/ChatGPT/chatgpt/models/lora.py)
 
 ### Using FSDP may be better if you can fit training into gpu mem
 - i.e. no need for cpu offloading
