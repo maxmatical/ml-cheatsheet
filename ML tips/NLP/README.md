@@ -660,3 +660,8 @@ https://twitter.com/sangmichaelxie/status/1623397365443960832
 ## FLAN-T5 as a starting pt for few-shot prompting and finetuning
 - currently SOTA of open sourced models
 - https://twitter.com/tuvuumass/status/1620820330293100544
+
+## TRL/TRLX + PEFT (lora) to train 20B param model with RLHF
+- https://huggingface.co/blog/trl-peft?fbclid=IwAR1QqnI29DhMTMpuZ8OUFV_9HD9Z6_hCvu4cs-yOrfHf8hbGJr4i4lkglvc
+- [can also do this in trlx with `delta_method`](https://wandb.ai/carperai/trlx/reports/trlx-LORA-support--VmlldzozMjgyMzcy)
+  - more details see here: https://github.com/CarperAI/trlx/blob/main/trlx/data/configs.py#L52
