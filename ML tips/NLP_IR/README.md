@@ -354,6 +354,14 @@ Concurrent work: InPars-Light:
 26. DRAGON
 - https://twitter.com/fly51fly/status/1626107214690766849
 - adding lots of data augmentation to improve dense retriever
+- Current SOTA summary with bert base sized models
+ - note COCO-DR large still is a bit better on BEIR, but that uses a bert large model and a target corpus
+<img width="810" alt="image" src="https://user-images.githubusercontent.com/8890262/226913267-b4c29535-61d7-46db-b45a-fcb9cb4a748e.png">
+
+27. UADAPDR:
+- twitter: https://twitter.com/JonSaadFalcon/status/1632815738766385153
+- arxiv: https://arxiv.org/abs/2303.00807
+- Extending InPars to in-domain question generation
 
 ## Training State-of-the-art Text Embedding Models from Sentence Transformers
 video: https://www.youtube.com/watch?v=XHY-3FzaLGc
@@ -369,9 +377,7 @@ used for
 
 Uses a similarity matrix for loss (similar to CLIP)
 
-27. UADAPDR:
-- twitter: https://twitter.com/JonSaadFalcon/status/1632815738766385153
-- arxiv: https://arxiv.org/abs/2303.00807
+
 
 ### Information Retreival Pipeline
 - bi-encoder (for large collections of docs): https://www.sbert.net/examples/training/ms_marco/README.html#bi-encoder 
