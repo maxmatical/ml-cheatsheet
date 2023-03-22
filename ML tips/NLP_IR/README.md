@@ -287,10 +287,10 @@ Can use BEIR dataset as a guide: https://docs.google.com/spreadsheets/d/1L8aACyP
 23. COCO-DR:
 - https://arxiv.org/abs/2210.15212
 - 2 steps
- 1. Continuous Contrastive Pretraining
+ - 1. Continuous Contrastive Pretraining
   - eg co-condenser pretraining objective
   - contrastive loss + language modeling
- 2. implicit Distributionally Robust optimization (iDRO)
+ - 2. implicit Distributionally Robust optimization (iDRO)
 
 24. HyDE
 - http://boston.lti.cs.cmu.edu/luyug/HyDE/HyDE.pdf
