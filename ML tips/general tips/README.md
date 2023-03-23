@@ -817,3 +817,8 @@ https://www.mosaicml.com/blog/mosaicml-streamingdataset
 ### SWA tips:
 - If using SWA callback with pytorch lightning trainer, add a `trainer.validate(model=model, dataloaders=val_dataloaders)` outside the training loop to see true validation performance
 - https://pytorch-lightning.readthedocs.io/en/stable/common/trainer.html#validation
+
+### Tips on using weight decay
+- https://twitter.com/ph_singer/status/1638093439995633664
+- suggests trying different methods of regularization first (like fewer epochs) with no weight decay, esp. for finetuning
+- weight decay seems crucial for training from scratch, but for finetuning try without weight decay first
