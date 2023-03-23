@@ -661,7 +661,34 @@ https://twitter.com/sangmichaelxie/status/1623397365443960832
 - currently SOTA of open sourced models
 - https://twitter.com/tuvuumass/status/1620820330293100544
 
-## TRL/TRLX + PEFT (lora) to train 20B param model with RLHF
+## TRL/TRLX + PEFT (lora) to train 20B param model with RLHF on 24gb gpu
 - https://huggingface.co/blog/trl-peft?fbclid=IwAR1QqnI29DhMTMpuZ8OUFV_9HD9Z6_hCvu4cs-yOrfHf8hbGJr4i4lkglvc
 - [can also do this in trlx with `delta_method`](https://wandb.ai/carperai/trlx/reports/trlx-LORA-support--VmlldzozMjgyMzcy)
   - more details see here: https://github.com/CarperAI/trlx/blob/main/trlx/data/configs.py#L52
+
+## Alpaca - Instruction tuned LLaMa
+- trained on 52k (unique) instructions generated via the `self instruct` method with GPT
+- alpaca-30b available (finetuned on dataset with LoRA) https://twitter.com/aqaderb/status/1637828011130073088
+  - hf model: https://huggingface.co/baseten/alpaca-30b
+  - cleaned dataset: https://github.com/tloen/alpaca-lora/blob/main/alpaca_data_cleaned.json
+- alpaca-7b: 
+  - adapters: https://huggingface.co/tloen/alpaca-lora-7b
+  - base model: https://huggingface.co/decapoda-research/llama-7b-hf
+ - code repo for training: https://github.com/tloen/alpaca-lora
+  
+  
+## Transformer arch improvements in PALM
+- https://twitter.com/rasbt/status/1637803700944093184
+- multi-query attention (i.e. k, v weight matrices are shared
+- parallelized transformer blocks
+- swiglu activation
+- ROPE embedding
+- shared input/output embeddings. weight tying
+- no biases in dense or layernorms for improved stability (esp important for layernorm?)
+- sentencepiece tokenizer
+
+## FLAN instruction templates:
+https://twitter.com/abacaj/status/1633494842352214016
+
+## Pretraining bert for $20
+https://www.mosaicml.com/blog/mosaicbert
