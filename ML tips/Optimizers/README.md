@@ -26,6 +26,8 @@ For training large models when memory is an issue
 - AdaGraft
 - SM3
 - Try 8 bit optimizers (eg 8bit adamw) https://github.com/facebookresearch/bitsandbytes
+- hybridadam for colossalai
+- LION
 
 
 ## Ranger seems to work really well (try with both `fit_one_cycle` and `fit_flat_cos`)
@@ -213,4 +215,6 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - more mem efficient than AdamW, reports better performance too in CV/NLP tasks
 - torch implementation: https://github.com/lucidrains/lion-pytorch
 - still needs to be validated
+  - https://twitter.com/rasbt/status/1633935266053251074
+  - reports similar performance, but mem savings
 - apparently doesn't work as well on RL?
