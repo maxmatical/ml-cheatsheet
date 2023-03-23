@@ -665,6 +665,9 @@ https://twitter.com/sangmichaelxie/status/1623397365443960832
 - https://huggingface.co/blog/trl-peft?fbclid=IwAR1QqnI29DhMTMpuZ8OUFV_9HD9Z6_hCvu4cs-yOrfHf8hbGJr4i4lkglvc
 - [can also do this in trlx with `delta_method`](https://wandb.ai/carperai/trlx/reports/trlx-LORA-support--VmlldzozMjgyMzcy)
   - more details see here: https://github.com/CarperAI/trlx/blob/main/trlx/data/configs.py#L52
+  
+## Finetuning Flan-T5-XXL (11b) on A10 gpu with PEFT + LoRA
+https://www.philschmid.de/fine-tune-flan-t5-peft
 
 ## Alpaca - Instruction tuned LLaMa
 - trained on 52k (unique) instructions generated via the `self instruct` method with GPT
