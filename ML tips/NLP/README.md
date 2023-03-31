@@ -708,6 +708,8 @@ https://www.mosaicml.com/blog/mosaicbert
     - example of using Fabric for pretraining/finetuning llama: https://github.com/lightning-AI/lit-llama#finetune-the-model
     - lightning trainer also provides ability to use SWA callback, but can also just average last k checkpoints or something
     - Accelerate can't use colossalai, but can use deepspeed, may have issues with fsdp + cpu offload: https://github.com/huggingface/peft#peft---accelerate
+  - pytorch lightning 2.0 also supports `torch.compile(model)` when `model` is a `LightningModule`
+    - https://lightning.ai/pages/blog/training-compiled-pytorch-2.0-with-pytorch-lightning/
 4. If lora model still doesn't fit on 1 gpu (need cpu offload), or using multiple gpus with model parallelism, use colossal-ai (better than deepspeed)
   - see chatgpt replication using just colossalai: https://github.com/hpcaitech/ColossalAI/tree/main/applications/Chat
     - important bits: loramodule
