@@ -695,3 +695,26 @@ https://twitter.com/abacaj/status/1633494842352214016
 
 ## Pretraining bert for $20
 https://www.mosaicml.com/blog/mosaicbert
+
+## Ultimate stack for PEFT for LLMs (focused on SFT here)
+1. transformer model + load in 8bit (4bit in future?)
+  - enable gradient checkpointing? or not needed with lora
+2. [PEFT](https://github.com/huggingface/peft) library for `get_peft_model` and `prepare_model_for_int8_training`
+  - example: [flan-t5-11b + peft single A10](https://www.philschmid.de/fine-tune-flan-t5-peft)
+  - wrap the model and prepare for training
+  - other examples provided in repo
+3. Lightning or Accelerate as the trainer (lightning preferred)
+  - lighting: can use either trainer or `L.Fabric` (which is equivalent to Accelerate), but can use colossal-ai
+    - example of using Fabric for pretraining/finetuning llama: https://github.com/lightning-AI/lit-llama#finetune-the-model
+    - lightning trainer also provides ability to use SWA callback, but can also just average last k checkpoints or something
+    - Accelerate can't use colossalai, but can use deepspeed, may have issues with fsdp + cpu offload: https://github.com/huggingface/peft#peft---accelerate
+4. If using multiple gpus with model parallelism, use colossal-ai (better than deepspeed)
+  - see chatgpt replication using just colossalai: https://github.com/hpcaitech/ColossalAI/tree/main/applications/Chat
+    - important bits: loramodule
+  - also note: compatible with lightning: 
+    - see docs: https://lightning.ai/docs/pytorch/stable/advanced/third_party/colossalai.html
+      - few caveats:
+        - need `configure_sharded_model` in lightning module (see example in colossalai repo below)
+        - needs `colossalai.nn.optimizer.HybridAdam`
+        - grad accumulation is only 1 for now
+    - example using pytorch lightning: https://github.com/hpcaitech/ColossalAI-Pytorch-lightning/tree/main/benchmark/gpt
