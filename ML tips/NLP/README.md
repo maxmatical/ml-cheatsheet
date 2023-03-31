@@ -718,3 +718,7 @@ https://www.mosaicml.com/blog/mosaicbert
         - needs `colossalai.nn.optimizer.HybridAdam`
         - grad accumulation is only 1 for now
     - example using pytorch lightning: https://github.com/hpcaitech/ColossalAI-Pytorch-lightning/tree/main/benchmark/gpt
+5. If RLHF on top of that, use [trlx](https://github.com/CarperAI/trlx)
+  - [suports lora](https://wandb.ai/carperai/trlx/reports/trlx-LORA-support--VmlldzozMjgyMzcy) (but so does trl)
+  - [supports 8bit adam](https://wandb.ai/jon-tow/trlx/reports/trlx-Add-bitsandbytes-optimizer-support-133--VmlldzozMjY1MzI1)
+  - supports ilql method and nemo-megatron (ilql only for now)
