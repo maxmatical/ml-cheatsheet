@@ -69,6 +69,11 @@ https://www.youtube.com/watch?v=NCGkBseUSdM
 ### The State of Competitive Machine Learning 2022
 https://mlcontests.com/state-of-competitive-machine-learning-2022/#winning-solutions
 
+# Recipe for Training Large Models (v useful for LLMs)
+https://wandb.ai/craiyon/report/reports/Recipe-Training-Large-Models--VmlldzozNjc4MzQz
+
+
+
 # Data curation
 - An active process > just collecting data
 - Want to collect more data for challenging/underperforming classes
@@ -129,7 +134,7 @@ https://twitter.com/rasbt/status/1565798671781961728
 
 good summary of dealing with imbalanced datsets: https://twitter.com/Fra_Pochetti/status/1518599651536027648?t=ODJKwqwBkdSVJLgjQslPuQ&s=09&fbclid=IwAR307j8N_57fTkkkL4C_5nnVBRmFBEJSPxnW0vMcMEHzbhmdyILAP2zIjpo
 
-## naive over[sam](https://github.com/mosaicml/composer/tree/dev/composer/algorithms/sam)pling data
+## naive oversampling data
 - They found oversampling the rare class until it's equally frequent was the best approach in every dataset they tested
 - paper: https://arxiv.org/abs/1710.05381
 
