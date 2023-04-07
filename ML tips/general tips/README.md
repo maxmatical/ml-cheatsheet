@@ -72,6 +72,8 @@ https://mlcontests.com/state-of-competitive-machine-learning-2022/#winning-solut
 # Recipe for Training Large Models (v useful for LLMs)
 https://wandb.ai/craiyon/report/reports/Recipe-Training-Large-Models--VmlldzozNjc4MzQz
 
+Note: some tipes may not apply to finetuning. such as init, constant learning rate(??) etc.
+
 
 
 # Data curation
