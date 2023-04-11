@@ -22,14 +22,14 @@ https://medium.com/@makcedward/data-augmentation-for-audio-76912b01fdf6
 article https://towardsdatascience.com/n-beats-beating-statistical-models-with-neural-nets-28a4ba4a4de8
 paper https://arxiv.org/abs/1905.10437
 
-## ETSformer: Exponential Smoothing Transformers for Time-series Forecasting
+### ETSformer: Exponential Smoothing Transformers for Time-series Forecasting
 https://arxiv.org/abs/2202.01381
 
 pytorch implementation: https://github.com/lucidrains/ETSformer-pytorch
 
 official github: https://github.com/salesforce/ETSformer
 
-## Do We Really Need Deep Learning Models for Time Series Forecasting?
+### Do We Really Need Deep Learning Models for Time Series Forecasting?
 
 https://arxiv.org/abs/2101.02118
 
@@ -37,3 +37,8 @@ Followup discussion: https://www.reddit.com/r/MachineLearning/comments/t9ou4z/d_
 - more modern dl forecasting methods eg temporal fusion transformer (TFT) may still be better
 - GBDT by default cannot extrapolate so may also fail in longer term forecasting with trend (eg weeks months years)
   - will need to de-trend to make timeseries stationary (may not always be possible?)
+  
+  
+### Deep ETA - Uber
+https://www.uber.com/en-CA/blog/deepeta-how-uber-predicts-arrival-times/
+- gbm -> dl
