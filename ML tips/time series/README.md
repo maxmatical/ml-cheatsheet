@@ -38,7 +38,4 @@ Followup discussion: https://www.reddit.com/r/MachineLearning/comments/t9ou4z/d_
 - GBDT by default cannot extrapolate so may also fail in longer term forecasting with trend (eg weeks months years)
   - will need to de-trend to make timeseries stationary (may not always be possible?)
   
-  
-### Deep ETA - Uber
-https://www.uber.com/en-CA/blog/deepeta-how-uber-predicts-arrival-times/
-- gbm -> dl
+ 
