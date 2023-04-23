@@ -724,3 +724,87 @@ https://www.mosaicml.com/blog/mosaicbert
   - [suports lora](https://wandb.ai/carperai/trlx/reports/trlx-LORA-support--VmlldzozMjgyMzcy) (but so does trl)
   - [supports 8bit adam](https://wandb.ai/jon-tow/trlx/reports/trlx-Add-bitsandbytes-optimizer-support-133--VmlldzozMjY1MzI1)
   - supports ilql method and nemo-megatron (ilql only for now)
+  
+## Finetuning LLM tips (#1 kaggle grandmaster) - focus on conversational data
+- data: quality > quantity
+- Foundation models: llama (non-commercial), `EleutherAI/pythia-12b-deduped` or `EleutherAI/gpt-neox-20b` are the best to use for finetuning for conversation right now.
+  - recommend pythia over neox: https://twitter.com/BlancheMinerva/status/1649448167782449164
+- LORA: use `bf16` for speed
+  - for memory, use int8, gradient checkpointing, reduce batch size. should still get decent results
+- **loss**: more consistent results only calculating loss on answer (i.e. masking out non-label input ids when calculating ce loss)
+- prompt design: a hyperparameter to tune (using tokens, not using tokens, what kind of tokens etc.)
+
+## A Theory on Adam Instability in Large-Scale Machine Learning 
+https://arxiv.org/abs/2304.09871
+
+mitigations for instability training llms:
+- skipping batches. challenging to implement and require manual monitoring and intervention
+- lower learning rate. but makes training longer (need more steps to reach same loss)
+- lower `eps` in optimizer. could result in divide by 0 with low precision (fp16 etc.), so 1e-7/1e-8 might be good
+- lowering batch size could help, but inefficient
+- reduce `beta1` and `beta2` in adam optimizer (see mosaic), downside is could make update stale
+- composition of data: higher quality data leads to less instability
+
+## using deepspeed inference to get 2x inference speed on llms vs standard huggingface
+https://twitter.com/abacaj/status/1649875255219847173
+
+## Code data in LLMs seem to improve complex reasoning capabilities
+https://twitter.com/abacaj/status/1647999551964323844
+
+## Finetuning llms > prompting llms (should be fairly obvious)
+https://twitter.com/rasbt/status/1646870571542536195
+
+benefits of finetuning: https://twitter.com/abacaj/status/1646365774083244032
+  - better model performance, examples become per of models internal knowledge
+  - reduce cost of prediction (less tokens used)
+  
+## Recipe for training large models (LLM related)
+twitter thread: https://twitter.com/borisdayma/status/1644358390313877504
+
+report: https://wandb.ai/craiyon/report/reports/Recipe-Training-Large-Models--VmlldzozNjc4MzQz
+
+mainly related to pretraining, not finetuning
+
+key ideas:
+
+General
+- start with small model first
+- don't stop experiments early, initially promising results could end up worse when fully trained
+- experiment fast, keep notes/logs
+
+Stability
+- optmizer: shampoo for stability (but not in torch?), adamw with tips from https://arxiv.org/abs/2304.09871
+- bf16 more stable than standard fp16
+- weight decay might not be needed (or kept very low)
+- no need for dropout
+- normformer (stacking layernorms before and after attn + mlp) may help
+- GLU may help
+- gradient clipping by global norm to 1.0 or something
+
+batch size and lr
+- largest batchsize you can, use gradient accumulation or gradient checkpointing
+- lr ports pretty well with model size increase in 5-10x increments
+  - lr correlates with effective batch size: if multiply batch size by `k`, also multiply lr by `k`
+- do a lr sweep of 3x/10x diff eg 1e-4, 3e-4, 1e-3
+- optimize lr before expensive training run 
+- use a lr warmup typically <=5-10%
+- keep lr constant and from time to time increase/decrease lr by 3x increments
+  - can use cosine/linear decay if lazy
+  - cosine/linear decay to 0 near end of training
+  - keep in mind mosaic ml just uses a standard linear decay after warmup so may not be need
+  
+logging
+- Logging of training/validation loss + relevant metrics (accuracy…).
+- Logging of parameters and gradients: 
+  - The norm of parameters and gradients should regularly be logged so you can refer to it during instabilities
+  - Histograms can be logged optionally (it will impact training speed but is nice to enable when debugging instabilities)
+  - At start of training, manually verify that all gradients are flowing properly in your model and that parameters are being updated
+
+
+## Vicuna
+https://vicuna.lmsys.org/
+
+## instruction flipping makes llms better zero-shot learners
+https://arxiv.org/abs/2210.02969
+- https://twitter.com/abacaj/status/1643416835843293186
+
