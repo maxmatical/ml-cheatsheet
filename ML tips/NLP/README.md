@@ -801,6 +801,32 @@ logging
   - At start of training, manually verify that all gradients are flowing properly in your model and that parameters are being updated
 
 
+example yamls from mosaic gpt:
+- https://github.com/mosaicml/examples/blob/main/examples/llm/yamls/mosaic_gpt/30b.yaml
+- https://github.com/mosaicml/examples/blob/main/examples/llm/yamls/mosaic_gpt/70b.yaml
+```
+# Optimization
+scheduler:
+  name: cosine_with_warmup
+  t_warmup: 100ba
+  alpha_f: 0.1
+
+optimizer:
+  name: decoupled_adamw
+  lr: 8.0e-5
+  betas:
+  - 0.9
+  - 0.95
+  eps: 1.0e-08
+  weight_decay: 0.0
+
+algorithms:
+  gradient_clipping:
+    clipping_type: norm
+    clipping_threshold: 1.0
+```
+
+
 ## Vicuna
 https://vicuna.lmsys.org/
 
