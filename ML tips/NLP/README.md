@@ -834,3 +834,12 @@ https://vicuna.lmsys.org/
 https://arxiv.org/abs/2210.02969
 - https://twitter.com/abacaj/status/1643416835843293186
 
+## distillation > annoate + finetuning
+- twitter thread: https://twitter.com/abacaj/status/1653977494196723712
+- arxiv: https://arxiv.org/abs/2305.01645
+- we find that distilling from T5-XXL (11B) to T5-Small (60M) leads to almost always a cost-efficient option compared to annotating more data to directly train a compact model (T5-Small (60M))
+- **main idea**: given a fixed dataset + budget. better to spend the $ to train a large model on the data, and distill into smaller model, rather than spendig $ to annotate more data and finetune smaller model directly on combined data
+- distillation done via KL divergence loss on **unlabeled data** (eg pseudolabeling)
+  - q: would it perform even better if smaller model was finetuned on the labeled data afterwards? would be interesting to check
+
+
