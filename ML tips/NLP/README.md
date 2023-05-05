@@ -842,4 +842,15 @@ https://arxiv.org/abs/2210.02969
 - distillation done via KL divergence loss on **unlabeled data** (eg pseudolabeling)
   - q: would it perform even better if smaller model was finetuned on the labeled data afterwards? would be interesting to check
 
+## MPT-7b
+https://www.mosaicml.com/blog/mpt-7b
+
+- 7b param model better than llama or at least competitive
+- because trained on 1T tokens like llama
+- Uses GPT-NeoX20B tokenizer (slightly better than standard gpt2 tokenizer)
+  - set vocab size from 50,257 -> 50,432 (multiple of 128) and improved MFU by 4 percentage points
+- Uses streaming dataset
+- Uses ALIBI over positional encoding (improves stability)
+- uses Lion optimizer over AdamW
+  - more stable update magnitutes AND less optimizer state mem
 
