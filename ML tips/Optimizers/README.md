@@ -224,5 +224,6 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
   - reports similar performance, but mem savings
 - apparently doesn't work as well on RL?
 - Mosaic MPT uses LION optimizer - reports mem savings and better stability
-  - mosaic impl: https://github.com/mosaicml/llm-foundry/blob/main/llmfoundry/optim/lion.py
+  - mosaic impl: https://github.com/mosaicml/llm-foundry/blob/main/llmfoundry/optim
+    - includes an adaptive variant that automatically detects outliers in moment and decreases
   - note: mosaic example yamls doesn't contain the actual mpt 7b run with lion optimizer -> hyperparams not knownn
