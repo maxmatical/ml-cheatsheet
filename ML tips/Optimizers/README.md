@@ -211,10 +211,18 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 
 
 ## LION optimizer
+- https://arxiv.org/abs/2302.06675
 - https://twitter.com/DrJimFan/status/1625920773042089984
 - more mem efficient than AdamW, reports better performance too in CV/NLP tasks
+- may require:
+  - larger batch size (larger = better, min >= 64)
+  - smaller lr
+  - larger wd (to get simiar effect of wd as adamw) if not using wd keep to 0 (which may be better in most cases)
 - torch implementation: https://github.com/lucidrains/lion-pytorch
 - still needs to be validated
   - https://twitter.com/rasbt/status/1633935266053251074
   - reports similar performance, but mem savings
 - apparently doesn't work as well on RL?
+- Mosaic MPT uses LION optimizer - reports mem savings and better stability
+  - mosaic impl: https://github.com/mosaicml/llm-foundry/blob/main/llmfoundry/optim/lion.py
+  - note: mosaic example yamls doesn't contain the actual mpt 7b run with lion optimizer -> hyperparams not knownn
