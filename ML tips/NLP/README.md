@@ -854,3 +854,9 @@ https://www.mosaicml.com/blog/mpt-7b
 - uses Lion optimizer over AdamW
   - more stable update magnitutes AND less optimizer state mem
 
+##  Large-scale Near-deduplication Behind BigCode 
+https://huggingface.co/blog/dedup
+
+## Text Classification via Large Language Models
+https://arxiv.org/abs/2305.08377
+
