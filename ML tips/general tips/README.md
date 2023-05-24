@@ -829,3 +829,15 @@ https://www.mosaicml.com/blog/mosaicml-streamingdataset
 - https://twitter.com/ph_singer/status/1638093439995633664
 - suggests trying different methods of regularization first (like fewer epochs) with no weight decay, esp. for finetuning
 - weight decay seems crucial for training from scratch, but for finetuning try without weight decay first
+
+
+### Hyperparameter optimization with low cost proxy tasks
+- From the LION optimizer paper: https://arxiv.org/pdf/2302.06675.pdf
+- aim to overcome generalization gap: hyperparams that perform well on low cost proxy might not generalize to actual task
+- use a funnel selection method:
+  - start with a baseline and task C (full train), task B (1/10th data, model size, training steps) and task A (1/100th data, model size, training steps)
+  - low cost proxy task is task A
+  - hyperparams that outperform baseline on task A is then used on eval task B
+  - hyperparams that outperform baseline on task B is then evaluated on task C (full task)
+  - take the best performin one on task C
+  - leads to selection of hyperparams that generalize well to larger tasks
