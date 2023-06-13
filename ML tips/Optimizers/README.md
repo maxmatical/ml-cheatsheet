@@ -226,4 +226,17 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - Mosaic MPT uses LION optimizer - reports mem savings and better stability
   - mosaic impl: https://github.com/mosaicml/llm-foundry/blob/main/llmfoundry/optim
     - includes an adaptive variant that automatically detects outliers in moment and decreases
-  - note: mosaic example yamls doesn't contain the actual mpt 7b run with lion optimizer -> hyperparams not knownn
+  - note: mosaic example yamls doesn't contain the actual mpt 7b run with lion optimizer -> hyperparams not known
+
+## Benchmarking Neural Network Training Algorithms
+- arxiv: https://arxiv.org/abs/2306.07179
+- tweet: https://twitter.com/arankomatsuzaki/status/1668421282449305602
+- Looked at:
+  - AdamW
+  - NadamW
+  - Distributed Shampoo
+  - LAMB
+  - SAM (w Adamw)
+- NadamW seems to perform particularly well
+- SAM/shampoo takes 2x time per step
+- SAM doesn't do well
