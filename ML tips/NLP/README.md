@@ -860,3 +860,10 @@ https://huggingface.co/blog/dedup
 ## Text Classification via Large Language Models
 https://arxiv.org/abs/2305.08377
 
+## Label flipping for IFT
+- https://twitter.com/Yampeleg/status/1679476706434752512
+- a source of data augmentation
+- standard: given instruction and input, predict the output
+- flipped: given input and output, predict instruction
+- channel: given output only, predict instruction and input
+
