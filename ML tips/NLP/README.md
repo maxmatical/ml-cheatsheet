@@ -745,6 +745,23 @@ mitigations for instability training llms:
 - reduce `beta1` and `beta2` in adam optimizer (see mosaic), downside is could make update stale
 - composition of data: higher quality data leads to less instability
 
+something like this
+```
+optimizer:
+  name: decoupled_adamw
+  lr: 8.0e-5
+  betas:
+  - 0.9
+  - 0.95
+  eps: 1.0e-08
+  weight_decay: 0.0
+
+algorithms:
+  gradient_clipping:
+    clipping_type: norm
+    clipping_threshold: 1.0
+```
+
 ## using deepspeed inference to get 2x inference speed on llms vs standard huggingface
 https://twitter.com/abacaj/status/1649875255219847173
 
@@ -867,3 +884,11 @@ https://arxiv.org/abs/2305.08377
 - flipped: given input and output, predict instruction
 - channel: given output only, predict instruction and input
 
+
+## No Train No Gain: Revisiting Efficient Training Algorithms For Transformer-based Language Models
+https://arxiv.org/abs/2307.06440
+- 3 classes of algorithms for efficient training tested on BERT and T5 pretraining
+- dynamic architecture: layer stacking, layer dropping
+- batch selection: selective backprop, RHO loss
+- efficient optimizers: Lion, Sophia
+- "When pre-training BERT and T5 with a fixed computation budget using such methods, we find that their training, validation, and downstream gains vanish compared to a baseline with a fully-decayed learning rate."
