@@ -240,3 +240,11 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - NadamW seems to perform particularly well
 - SAM/shampoo takes 2x time per step
 - SAM doesn't do well
+
+## No Train No Gain: Revisiting Efficient Training Algorithms For Transformer-based Language Models
+- 3 classes of algorithms for efficient training tested on BERT and T5 pretraining
+- dynamic architecture: layer stacking, layer dropping
+- batch selection: selective backprop, RHO loss
+- efficient optimizers: Lion, Sophia
+- "When pre-training BERT and T5 with a fixed computation budget using such methods, we find that their training, validation, and downstream gains vanish compared to a baseline with a fully-decayed learning rate."
+- all these fancy tricks to improve llm training, yet nothing beats plain adamw + more tokens. although the training setup is quite constrained in certain aspects
