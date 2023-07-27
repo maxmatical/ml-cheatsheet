@@ -892,3 +892,11 @@ https://arxiv.org/abs/2307.06440
 - batch selection: selective backprop, RHO loss
 - efficient optimizers: Lion, Sophia
 - "When pre-training BERT and T5 with a fixed computation budget using such methods, we find that their training, validation, and downstream gains vanish compared to a baseline with a fully-decayed learning rate."
+- 
+
+## PPO Max for RLHF
+https://github.com/OpenLMLab/MOSS-RLHF/tree/main
+
+- reward model: https://github.com/OpenLMLab/MOSS-RLHF/blob/main/train_ppo.py#L113
+  - note need to train own reward model, but can use hf trainer or something, use above as guide
+- PPO train https://github.com/OpenLMLab/MOSS-RLHF/blob/main/run_en.sh
