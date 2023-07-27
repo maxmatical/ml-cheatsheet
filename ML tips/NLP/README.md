@@ -899,4 +899,5 @@ https://github.com/OpenLMLab/MOSS-RLHF/tree/main
 
 - reward model: https://github.com/OpenLMLab/MOSS-RLHF/blob/main/train_ppo.py#L113
   - note need to train own reward model, but can use hf trainer or something, use above as guide
+  - see `reward_model` folder
 - PPO train https://github.com/OpenLMLab/MOSS-RLHF/blob/main/run_en.sh
