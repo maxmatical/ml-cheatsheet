@@ -901,3 +901,9 @@ https://github.com/OpenLMLab/MOSS-RLHF/tree/main
   - note need to train own reward model, but can use hf trainer or something, use above as guide
   - see `reward_model` folder
 - PPO train https://github.com/OpenLMLab/MOSS-RLHF/blob/main/run_en.sh
+
+
+## Deepspeed chat for more efficient rlhf
+https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-chat
+
+https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpeed-Chat
