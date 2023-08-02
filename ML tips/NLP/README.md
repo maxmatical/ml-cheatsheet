@@ -907,3 +907,9 @@ https://github.com/OpenLMLab/MOSS-RLHF/tree/main
 https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-chat
 
 https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpeed-Chat
+
+## Some open question on RLHF
+- RLHF vs RLAIF
+- RLHF vs [DPO](https://www.lesswrong.com/posts/7ruzY5LvBqFBWzyMo/direct-preference-optimization-in-two-minutes)
+  - DPO
+- DPO + AIF? 
