@@ -913,3 +913,7 @@ https://github.com/microsoft/DeepSpeedExamples/tree/master/applications/DeepSpee
 - RLHF vs [DPO](https://www.lesswrong.com/posts/7ruzY5LvBqFBWzyMo/direct-preference-optimization-in-two-minutes)
   - DPO
 - DPO + AIF? 
+
+## Pretraining + IFT/RLHF frameworks
+- pretraining: LMFlow (due to `block_size` sequence packing)
+- IFT/RLHF: consider deepspeed chat
