@@ -841,3 +841,6 @@ https://www.mosaicml.com/blog/mosaicml-streamingdataset
   - hyperparams that outperform baseline on task B is then evaluated on task C (full task)
   - take the best performin one on task C
   - leads to selection of hyperparams that generalize well to larger tasks
+
+### Making sure dataloader is not a bottleneck
+https://twitter.com/borisdayma/status/1697654591121162245?t=UwA4tZu3elXPQV1a5P6qKw&s=07
