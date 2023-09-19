@@ -123,8 +123,9 @@ set_optim_to_run_embedding_in_fp32(model)
 - `use_madgrad = True` might be better for transformers
 
 ## Distributed Shampoo 
-- for pytorch: https://github.com/facebookresearch/optimizers
-  - might not fully work yet
+- pytorch: https://github.com/facebookresearch/optimizers/tree/main/distributed_shampoo
+  - fsdp support is still experimental
+  - who knows if it's actually better than adamw
 - jax/optax: https://github.com/google-research/google-research/tree/master/scalable_shampoo
 - possible exension: fishy: https://openreview.net/forum?id=cScb-RrBQC
 
@@ -210,6 +211,8 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - in fastai: https://fastxtend.benjaminwarner.dev/optimizer.fused.html
 
 
+
+
 ## LION optimizer
 - https://arxiv.org/abs/2302.06675
 - https://twitter.com/DrJimFan/status/1625920773042089984
@@ -241,6 +244,9 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - SAM/shampoo takes 2x time per step
 - SAM doesn't do well
 
+
+
+
 ## No Train No Gain: Revisiting Efficient Training Algorithms For Transformer-based Language Models
 - 3 classes of algorithms for efficient training tested on BERT and T5 pretraining
 - dynamic architecture: layer stacking, layer dropping
@@ -248,3 +254,19 @@ optimizer = AdamW(optimizer_grouped_parameters, lr=1e-5)
 - efficient optimizers: Lion, Sophia
 - "When pre-training BERT and T5 with a fixed computation budget using such methods, we find that their training, validation, and downstream gains vanish compared to a baseline with a fully-decayed learning rate."
 - all these fancy tricks to improve llm training, yet nothing beats plain adamw + more tokens. although the training setup is quite constrained in certain aspects
+
+## Optimizer choices for finetuning
+- SGD may be preferable for finetuning over adam
+    - less memory, less tunable parameters, not much difference in results
+    - try using a much lower LR (like 10x lower?)
+    - may not be suited for pretraining though!
+    - empirically found not to give good results, but still worth testing in mem constrained scenarios
+
+- maybe the above also applies to lion?
+
+- some finetuning tips: https://twitter.com/giffmana/status/1634828535729618944
+    - low lr
+    - no wd
+    - zero init new linear head
+
+- momentum *may* be needed to get higher quality models, see: https://twitter.com/_arohan_/status/1630062139259101185
