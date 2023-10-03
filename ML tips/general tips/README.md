@@ -82,7 +82,8 @@ Note: some tipes may not apply to finetuning. such as init, constant learning ra
     - eg using a model to find the low quality samples
 - look at the bad samples
     - highest loss/perplexity samples
-    - examples where model predicts wrong in classification setting 
+    - examples where model predicts wrong in classification setting
+    - ERROR ANALYSIS
     - etc. 
 - look at the data being removed/duplicates
 
