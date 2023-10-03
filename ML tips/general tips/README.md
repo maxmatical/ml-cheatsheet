@@ -74,6 +74,17 @@ https://wandb.ai/craiyon/report/reports/Recipe-Training-Large-Models--VmlldzozNj
 
 Note: some tipes may not apply to finetuning. such as init, constant learning rate(??) etc.
 
+# LOOK AT THE DATA!
+- manually inspect the data 
+    - gain further insight into the data
+    - to remove bad quality samples
+- can be maybe combined with training smaller model?
+    - eg using a model to find the low quality samples
+- look at the bad samples
+    - highest loss/perplexity samples
+    - examples where model predicts wrong in classification setting 
+    - etc. 
+- look at the data being removed/duplicates
 
 
 # Data curation
@@ -103,11 +114,6 @@ Note: some tipes may not apply to finetuning. such as init, constant learning ra
 - good dataset is ~U(-2,2)
 
 Want to have balanced dataset across all classes, especially long tail
-
-# fastai2 extension libraries
-https://github.com/nestordemeure/fastai-extensions-repository
-
-multi-gpu training in notebooks: https://github.com/philtrade/mpify
 
  
 # Diagnose model performance
